@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import { MapPin } from "lucide-react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./cityFilter.css";
 import Link from "next/link";
@@ -112,7 +111,7 @@ export default function CityCards() {
                   <div className="cardFooter">
                     <Link href="#">
                       <button className="exploreButton">
-                        <MapPin size={16} />
+                        {/* <MapPin size={16} /> */}
                         <span>Explore</span>
                       </button>
                     </Link>
