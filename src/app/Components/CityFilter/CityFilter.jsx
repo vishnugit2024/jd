@@ -111,6 +111,7 @@ export default function CityCards() {
                     <Link href="#">
                       <button className="exploreButton">
                         <i className="bi bi-geo-alt"></i>
+                        {/* <MapPin size={16} /> */}
                         <span>Explore</span>
                       </button>
                     </Link>
