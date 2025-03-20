@@ -1,64 +1,203 @@
 "use client";
-import Link from "next/link";
-import { useState } from "react";
-import Image from "next/image";
-import Logo from "../../Images/logo.jpg";
+import React, { useRef, useEffect, useState } from "react";
 import "./navbar.css";
+import Link from "next/link";
+import logo from "../../Images/logo.jpg";
+import Image from "next/image";
+// import service1 from "../../images/service1.png";
+// import service2 from "../../images/service2.png";
+// import service3 from "../../images/service3.png";
+// import service4 from "../../images/service4.png";
+// import service6 from "../../images/service6.png";
+// import service7 from "../../images/service7.png";
+// import service9 from "../../images/service9.png";
+// import service10 from "../../images/service10.png";
+// import ivrService from "../../images/ivrServices.png";
+// import voicecall from "../../images/voicecall.png";
+// import whatsappSMS from "../../images/whatsappSMS.png";
+// import seo from "../../images/seo.png";
+// import { Link } from "react-router-dom";
+// import logo from "../../images/logo.png";
 
-const Navbar = () => {
-  const [showDropdown, setShowDropdown] = useState(false);
+const Header = () => {
+  const navbarCollapseRef = useRef(null);
+
+  useEffect(() => {
+    const handleDropdownClose = (event) => {
+      if (
+        navbarCollapseRef.current &&
+        !navbarCollapseRef.current.contains(event.target)
+      ) {
+        const bsCollapse = new window.bootstrap.Collapse(
+          navbarCollapseRef.current,
+          {
+            toggle: false,
+          }
+        );
+        bsCollapse.hide();
+      }
+    };
+
+    document.addEventListener("click", handleDropdownClose);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      document.removeEventListener("click", handleDropdownClose);
+    };
+  }, []);
+
+  const handleDropdownClick = (event) => {
+    event.stopPropagation(); // Prevents the click event from closing the dropdown immediately
+  };
+
+  const [services, setServices] = useState(false);
+  const [webdesign, setWebdesign] = useState(false);
+
+  const handleMouseEnter = () => {
+    setServices(true);
+  };
+
+  const handleRemoveSetService = () => {
+    setServices(false);
+  };
+
+  const WebDesignhandleMouseEnter = () => {
+    setWebdesign(true);
+  };
+
+  const handleRemovesetWebdesign = () => {
+    setWebdesign(false);
+  };
+
+  const categories = [
+    { name: "Art & Design", link: "/bulk-sms-promotion" },
+    { name: "Digital Marketing", link: "/digital-marketing" },
+    { name: "Web Development", link: "/web-development" },
+    { name: "Graphic Design", link: "/graphic-design" },
+    { name: "Content Writing", link: "/content-writing" },
+  ];
 
   return (
-    <nav className="navbar">
-      <div className="container">
-        {/* Logo Section */}
-        <div className="logo">
-          <Link href="/">
-            <Image src={Logo} alt="logo" width={120} height={40} />
+    <>
+      <nav className="navbar navbar-expand-lg">
+        <div className="container-fluid justify-content-around">
+          <Link className="navbar-brand" href="/">
+            <Image src={logo} alt="logo" />
           </Link>
-        </div>
-
-        {/* Search Bar */}
-        <div className="search">
-          <input type="search" placeholder="Enter a website, business, or keyword" />
-        </div>
-
-        {/* Navigation Links */}
-        <ul className="nav-links">
-          {/* Categories with Dropdown */}
-          <li
-            className="dropdown"
-            onMouseEnter={() => setShowDropdown(true)}
-            onMouseLeave={() => setShowDropdown(false)}
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
           >
-            <p>Categories <i className="bi bi-chevron-compact-down"></i></p>
-            {showDropdown && (
-              <div className="dropdown-menu">
-                <p className="dropdown-title">Categories <Link href="/categories">View all categories →</Link></p>
-                <ul className="dropdown-list">
-                  <li> Art & Design</li>
-                  <li className="active"> Autos & Vehicles</li>
-                  <li> Baby & Kids</li>
-                </ul>
-              </div>
-            )}
-          </li>
+            <span className="navbar-toggler-icon">☰</span>
+          </button>
+          <div
+            className="collapse navbar-collapse"
+            id="navbarSupportedContent"
+            ref={navbarCollapseRef}
+          >
+            <ul className="navbar-nav mb-2 mb-lg-0">
+              <li className="nav-item">
+                <input type="text" className="form-control me-2" placeholder="Enter a website, business, or keyword" />
 
-          <li><Link href="/resources"><p>Resources</p></Link></li>
-          <li><Link href="/about"><p>About Us</p></Link></li>
-        </ul>
-
-        {/* Login Section */}
-        <div className="login-sec">
-          <ul>
-            <li><Link href="/business"><p>For Business</p></Link></li>
-            <li><Link href="/review"><p>Write a Review</p></Link></li>
-            <li><button className="blue-btn">Log in</button></li>
-          </ul>
+              </li>
+              <li className="nav-item">
+                <Link
+                  className="nav-link"
+                  href="/about"
+                  onClick={() => {
+                    if (navbarCollapseRef.current) {
+                      new window.bootstrap.Collapse(navbarCollapseRef.current, {
+                        toggle: false,
+                      }).hide();
+                    }
+                  }}
+                >
+                  About Us
+                </Link>
+              </li>
+              <li
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleRemoveSetService}
+                className={`nav-item webdesign ${services ? "active" : ""}`}
+              >
+                <Link className="nav-link" href="#" onClick={handleDropdownClick}>
+                  Category <i className="bi bi-chevron-down"></i>
+                </Link>
+                <div className="dropMain">
+                  <div className="container py-2">
+                    <div className="row">
+                      <p><b>Categories</b></p>
+                      {categories.map((service, index) => (
+                        <div key={index} className="col-lg-4 col-md-3 col-sm-4 col-4">
+                          <div className="service">
+                            <Link
+                              href={service.link}
+                              onClick={() => {
+                                if (navbarCollapseRef.current) {
+                                  new window.bootstrap.Collapse(navbarCollapseRef.current, {
+                                    toggle: false,
+                                  }).hide();
+                                }
+                                handleRemoveSetService();
+                              }}
+                            >
+                              {/* <img src={service.image} alt={service.name} /> */}
+                              <br />
+                              <h6>{service.name}</h6>
+                            </Link>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li className="nav-item">
+                <Link
+                  className="nav-link"
+                  href="/dlt"
+                  onClick={() => {
+                    if (navbarCollapseRef.current) {
+                      new window.bootstrap.Collapse(navbarCollapseRef.current, {
+                        toggle: false,
+                      }).hide();
+                    }
+                  }}
+                >
+                  Resources
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  className="nav-link"
+                  href="/contact-us"
+                  onClick={() => {
+                    if (navbarCollapseRef.current) {
+                      new window.bootstrap.Collapse(navbarCollapseRef.current, {
+                        toggle: false,
+                      }).hide();
+                    }
+                  }}
+                >
+                  About Us
+                </Link>
+              </li>
+            </ul>
+            <div className="d-flex align-items-center">
+              {/* Buttons */}
+              <Link href="#" className="register-btn me-2">Register</Link>
+              <Link href="#" className="login-btn">Login</Link>
+            </div>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </>
   );
 };
 
-export default Navbar;
+export default Header;
