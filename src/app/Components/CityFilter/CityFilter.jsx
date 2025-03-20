@@ -10,7 +10,7 @@ import delhi from "../../Images/delhi.jpg";
 import haryana from "../../Images/haryana.avif";
 import jaipur from "../../Images/jaipur.webp";
 import kolkata from "../../Images/kolkata.webp";
-import mumbai from "../../Images/mumbai.jpg"; 
+import mumbai from "../../Images/mumbai.jpg";
 import kerala from "../../Images/kerala.jpg";
 import karnataka from "../../Images/karnataka.jpg";
 import Image from "next/image";
@@ -49,7 +49,7 @@ const cityData = [
     id: 5,
     name: "DELHI",
     country: "INDIA",
-    image:  delhi,
+    image: delhi,
     color: "#ff4500",
   }, // Orange
   {
@@ -81,15 +81,14 @@ export default function CityCards() {
   return (
     <>
 
-    <Heading title="Top Cities" subtitle="Businesses by city"/>
+      <Heading title="Top Cities" subtitle="Businesses by city" />
       <div className="container-fluid">
         <div className="row g-4">
           {cityData.map((city) => (
             <div key={city.id} className="col-sm-4 col-6 col-md-3">
               <div
-                className={`cityCard ${
-                  hoveredCard === city.id ? "hovered" : ""
-                }`}
+                className={`cityCard ${hoveredCard === city.id ? "hovered" : ""
+                  }`}
                 onMouseEnter={() => setHoveredCard(city.id)}
                 onMouseLeave={() => setHoveredCard(null)}
                 style={{ "--card-color": city.color }}
@@ -111,6 +110,7 @@ export default function CityCards() {
                   <div className="cardFooter">
                     <Link href="#">
                       <button className="exploreButton">
+                        <i className="bi bi-geo-alt"></i>
                         {/* <MapPin size={16} /> */}
                         <span>Explore</span>
                       </button>

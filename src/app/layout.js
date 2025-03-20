@@ -1,6 +1,7 @@
 import "./globals.css";
 import Navbar from "./Components/Navbar/Navbar";
 import Script from "next/script";
+import Footer from "./Components/Footer/Footer";
 
 export default function RootLayout({ children }) {
   return (
@@ -13,11 +14,12 @@ export default function RootLayout({ children }) {
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
           crossOrigin="anonymous"
         />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"></link>
       </head>
       <body>
         <Navbar />
         {children}
-
+        <Footer />
         {/* Bootstrap JS */}
         <Script
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
