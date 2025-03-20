@@ -18,4 +18,5 @@
 .heading-subtitle {
   font-size: 1.2rem;
   color: var(--black);
+  max-width: 200px;
 }

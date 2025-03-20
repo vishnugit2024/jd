@@ -18,13 +18,6 @@ body {
   --black: #000;
 }
 
-/* 2️⃣ Layout & Containers */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 16px;
-}
-
 /* 4️⃣ Buttons */
 .blue-btn {
   padding: 8px 15px;
