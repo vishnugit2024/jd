@@ -1,0 +1,21 @@
+.heading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.heading-title {
+  color: var(--blue);
+  letter-spacing: 1px;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.heading-subtitle {
+  font-size: 1.2rem;
+  color: var(--black);
+}

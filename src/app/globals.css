@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Inter", sans-serif;
+  background-color: #f8f9fa;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --blue: #007bff;
+  --black: #000;
+}
+
+/* 2️⃣ Layout & Containers */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* 4️⃣ Buttons */
+.blue-btn {
+  padding: 8px 15px;
+  border: none;
+  background: #007bff;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.blue-btn:hover {
+  background: #0056b3;
+}
+
+.black-btn {
+  padding: 8px 15px;
+  border: none;
+  background: #343131;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.black-btn:hover {
+  background: #000000;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 12px;
+  }
+}
