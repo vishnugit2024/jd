@@ -1,22 +1,19 @@
-import React from 'react';
-import BussinessCategory from './Components/BussinessCate/BussinessCategory';
-import CityCards from './Components/CityFilter/CityFilter';
-import Blogs from './Components/Blogs/Blogs';
-export default function Home() {
-  return (
-    <>
-    {/* <BussinessCategory/> */}
-    <CityCards/>
-    <Blogs />
 import React from "react";
-import BussinessCategory from "./Components/BussinessCate/BussinessCategory";
 import CityCards from "./Components/CityFilter/CityFilter";
-
+import BussinessCategory from "./Components/BussinessCate/BussinessCategory";
+import TrustPilot from "./Components/TrustPilot/TrustPilot";
+import HomeCategorySlider from "./Components/HomeCategorySlider/HomeCategorySlider ";
+import ServicesCategories from "./Components/ServicesCategories/ServicesCategories";
+import TestimonialSection from "./Components/Testimonial/Testimonial";
 export default function Home() {
   return (
     <>
-      <BussinessCategory />
+    <HomeCategorySlider/>
+      <BussinessCategory/>
+      <ServicesCategories/>
       <CityCards />
+      <TrustPilot/>
+      <TestimonialSection/>
     </>
   );
 }
