@@ -2,7 +2,7 @@ import React from "react";
 import "./BussinessCategory.css";
 import Heading from "../Heading/SecHeading";
 import Image from "next/image";
-import rocket from "../../Images/rocket.gif";
+import rocket from "../../Images/rocket.gif"; // Or use "/rocket.gif" from public folder
 
 const categories = [
   { id: 1, title: "Web Development", icon: rocket },
@@ -22,15 +22,23 @@ const categories = [
 const BussinessCategory = () => {
   return (
     <>
-      <Heading title="Top Business Categories" subtitle="Businesses by category" />
+      <Heading
+        title="Top Business Categories"
+        subtitle="Businesses by category"
+      />
 
       <div className="container">
         <div className="row">
           {categories.map((category) => (
-            <div key={category.id} className="col-md-2 col-sm-3 col-4">
-              <div className="bussiness-category-card">
-                <Image src={category.icon} alt={category.title} />
-                <h6>{category.title}</h6>
+            <div key={category.id} className="col-lg-2 col-md-3 col-sm-4 col-4">
+              <div className="bussiness-category-card text-center p-3">
+                <Image
+                  src={category.icon}
+                  alt={category.title}
+                  width={50}
+                  height={50}
+                />
+                <h6 className="mt-2">{category.title}</h6>
               </div>
             </div>
           ))}
