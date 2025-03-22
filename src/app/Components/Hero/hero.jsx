@@ -24,7 +24,7 @@ const Hero = () => {
                             </p>
                             <div className='hero-buttons'>
                                 <Link href="#" className="herobutton1">View All Categories</Link>
-                                <Link href="#" className="herobutton2">Book a Free Consultation</Link>
+                                <Link href="#" className="herobutton2">List Your Business</Link>
                             </div>
                         </div>
                     </div>

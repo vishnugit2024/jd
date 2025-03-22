@@ -19,7 +19,6 @@ export default function Home() {
       <HomeCategorySlider />
       <ServicesCategories />
       <CityCards />
-     
       <TrustPilot />
       <Blogs />
       <TestimonialSection />

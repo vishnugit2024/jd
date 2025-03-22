@@ -96,6 +96,7 @@ const HomeCategorySlider = () => {
           </div>
         </div>
       </div>
+      </div>
     </>
   );
 };
