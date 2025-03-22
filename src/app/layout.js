@@ -18,7 +18,9 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <Navbar />
+        <div className="childrens">
         {children}
+          </div>
         <Footer />
         {/* Bootstrap JS */}
         <Script

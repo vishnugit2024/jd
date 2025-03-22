@@ -4,11 +4,13 @@ import "./navbar.css";
 import Link from "next/link";
 import logo from "../../Images/logo.jpg";
 import Image from "next/image";
+import '../../Pages/login/page';
+
 const Header = () => {
   const navbarCollapseRef = useRef(null);
 
   useEffect(() => {
-    const handleDropdownClose = (event) => {
+    const handleClickOutside = (event) => {
       if (
         navbarCollapseRef.current &&
         !navbarCollapseRef.current.contains(event.target)
@@ -23,35 +25,17 @@ const Header = () => {
       }
     };
 
-    document.addEventListener("click", handleDropdownClose);
+    document.addEventListener("click", handleClickOutside);
 
-    // Cleanup event listener on component unmount
     return () => {
-      document.removeEventListener("click", handleDropdownClose);
+      document.removeEventListener("click", handleClickOutside);
     };
   }, []);
 
-  const handleDropdownClick = (event) => {
-    event.stopPropagation(); // Prevents the click event from closing the dropdown immediately
-  };
-
   const [services, setServices] = useState(false);
-  const [webdesign, setWebdesign] = useState(false);
 
-  const handleMouseEnter = () => {
-    setServices(true);
-  };
-
-  const handleRemoveSetService = () => {
-    setServices(false);
-  };
-
-  const WebDesignhandleMouseEnter = () => {
-    setWebdesign(true);
-  };
-
-  const handleRemovesetWebdesign = () => {
-    setWebdesign(false);
+  const toggleServices = () => {
+    setServices((prev) => !prev);
   };
 
   const categories = [
@@ -78,7 +62,7 @@ const Header = () => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon"></span>
+            <span><i className="bi bi-list text-white"></i></span>
           </button>
           <div
             className="collapse navbar-collapse"
@@ -87,8 +71,11 @@ const Header = () => {
           >
             <ul className="navbar-nav mb-2 mb-lg-0">
               <li className="nav-item">
-                <input type="text" className="form-control me-2" placeholder="Enter a website, business, or keyword" />
-
+                <input
+                  type="text"
+                  className="form-control me-2"
+                  placeholder="Enter a website, business, or keyword"
+                />
               </li>
               <li className="nav-item">
                 <Link
@@ -106,41 +93,41 @@ const Header = () => {
                 </Link>
               </li>
               <li
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleRemoveSetService}
                 className={`nav-item webdesign ${services ? "active" : ""}`}
               >
-                <Link className="nav-link" href="#" onClick={handleDropdownClick}>
+                <Link
+                  className="nav-link"
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    toggleServices();
+                  }}
+                >
                   Category <i className="bi bi-chevron-down"></i>
                 </Link>
-                <div className="dropMain">
-                  <div className="container py-2">
-                    <div className="row">
-                      <p><b>Categories</b></p>
-                      {categories.map((service, index) => (
-                        <div key={index} className="col-lg-4 col-md-3 col-sm-4 col-4">
-                          <div className="service">
-                            <Link
-                              href={service.link}
-                              onClick={() => {
-                                if (navbarCollapseRef.current) {
-                                  new window.bootstrap.Collapse(navbarCollapseRef.current, {
-                                    toggle: false,
-                                  }).hide();
-                                }
-                                handleRemoveSetService();
-                              }}
-                            >
-                              {/* <img src={service.image} alt={service.name} /> */}
-                              <br />
-                              <h6>{service.name}</h6>
-                            </Link>
+                {services && (
+                  <div className="dropMain">
+                    <div className="container py-2">
+                      <div className="row">
+                        <p><b>Categories</b></p>
+                        {categories.map((service, index) => (
+                          <div key={index} className="col-lg-4 col-md-3 col-sm-4 col-6">
+                            <div className="service">
+                              <Link
+                                href={service.link}
+                                onClick={() => {
+                                  setServices(false);
+                                }}
+                              >
+                                <h6>{service.name}</h6>
+                              </Link>
+                            </div>
                           </div>
-                        </div>
-                      ))}
+                        ))}
+                      </div>
                     </div>
                   </div>
-                </div>
+                )}
               </li>
               <li className="nav-item">
                 <Link
@@ -169,14 +156,14 @@ const Header = () => {
                     }
                   }}
                 >
-                  About Us
+                  Contact Us
                 </Link>
               </li>
             </ul>
             <div className="d-flex align-items-center">
-              {/* Buttons */}
-              <Link href="#" className="register-btn me-2">Register</Link>
-              <Link href="#" className="login-btn">Login</Link>
+              <Link href="../../Pages/login" className="register-btn me-2">
+                Register
+              </Link>
             </div>
           </div>
         </div>
