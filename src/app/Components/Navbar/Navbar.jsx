@@ -4,21 +4,6 @@ import "./navbar.css";
 import Link from "next/link";
 import logo from "../../Images/logo.jpg";
 import Image from "next/image";
-// import service1 from "../../images/service1.png";
-// import service2 from "../../images/service2.png";
-// import service3 from "../../images/service3.png";
-// import service4 from "../../images/service4.png";
-// import service6 from "../../images/service6.png";
-// import service7 from "../../images/service7.png";
-// import service9 from "../../images/service9.png";
-// import service10 from "../../images/service10.png";
-// import ivrService from "../../images/ivrServices.png";
-// import voicecall from "../../images/voicecall.png";
-// import whatsappSMS from "../../images/whatsappSMS.png";
-// import seo from "../../images/seo.png";
-// import { Link } from "react-router-dom";
-// import logo from "../../images/logo.png";
-
 const Header = () => {
   const navbarCollapseRef = useRef(null);
 
@@ -80,7 +65,7 @@ const Header = () => {
   return (
     <>
       <nav className="navbar navbar-expand-lg">
-        <div className="container-fluid justify-content-around">
+        <div className="container">
           <Link className="navbar-brand" href="/">
             <Image src={logo} alt="logo" />
           </Link>
@@ -93,7 +78,7 @@ const Header = () => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon">☰</span>
+            <span className="navbar-toggler-icon"></span>
           </button>
           <div
             className="collapse navbar-collapse"
