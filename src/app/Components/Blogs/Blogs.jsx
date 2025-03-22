@@ -50,6 +50,8 @@ const Blogs = () => {
   ];
 
   return (
+    <>
+    <section className="blog-main">
     <div className="container">
       <Heading title="Blogs" subtitle="Here is our latest blogs" />
       <Swiper
@@ -79,6 +81,8 @@ const Blogs = () => {
         ))}
       </Swiper>
     </div>
+    </section>
+    </>
   );
 };
 

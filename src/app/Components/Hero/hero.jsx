@@ -36,13 +36,13 @@ const Hero = () => {
                                 src={heroimage2}
                                 alt="Hero Illustration"
                                 layout="intrinsic"
-                                className='hero-animated-image'
+                                className='hero-background-shape'
                             />
                             <Image
                                 src={blueImage}
                                 alt="Background Shape"
                                 layout="intrinsic"
-                                className='hero-background-shape'
+                                className='hero-animated-image'
                             />
                         </div>
                     </div>

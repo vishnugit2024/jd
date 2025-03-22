@@ -27,7 +27,7 @@
 .nav-link {
   font-size: 16px;
   font-weight: 500;
-  color: black;
+  color: var(--black);
   text-transform: camelcase;
   transition: all 0.3s ease;
 }
@@ -97,11 +97,8 @@
 
 
 .navbar-toggler {
-  background: linear-gradient(to right,
-      #673ab7 0,
-      #e91e63 36%,
-      #e91e63 65%,
-      #673ab7 100%);
+  background-color: var(--blue) !important;
+  color: white; 
 }
 
 .nav-tabs {
@@ -123,7 +120,7 @@
 }
 
 .webdesign {
-  color: black;
+  color: var(--black);
 }
 
 .navbar-collapse {
@@ -155,7 +152,9 @@
     background-color: white;
     padding: 1rem 1rem;
     width: 100%;
+    display: grid;
   }
+
 
   .service img {
     height: 100%;

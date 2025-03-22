@@ -33,6 +33,7 @@ const HomeCategorySlider = () => {
     <>
       <Heading title="Top Business Solutions" />
       <div className="container">
+      <div className="container my-2">
         <div className="row justify-content-center">
           {/* First Slider */}
           <div className="col-lg-6 col-md-8 col-sm-10 mb-3">

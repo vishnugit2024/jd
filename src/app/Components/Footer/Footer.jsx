@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="container">
         <div className="row">
           {/* Logo & Social Media */}
-          <div className="col-lg-3 col-md-6 footer-section">
+          <div className="col-lg-3 col-md-6 col-6 footer-section">
             <Image src={logo} className="footer-logo" alt="Biziffy Logo" />
             <p className="footer-description">
               Your trusted partner in digital solutions.
@@ -24,7 +24,7 @@ const Footer = () => {
           </div>
 
           {/* Navigation Links */}
-          <div className="col-lg-2 col-md-6 footer-section">
+          <div className="col-lg-2 col-md-6 col-6 footer-section">
             <h5>Company</h5>
             <ul>
               <li><Link href="#">About Us</Link></li>
@@ -35,7 +35,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="col-lg-2 col-md-6 footer-section">
+          <div className="col-lg-2 col-md-6 col-6 footer-section">
             <h5>Services</h5>
             <ul>
               <li><Link href="#">Digital Marketing</Link></li>
@@ -45,7 +45,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="col-lg-2 col-md-6 footer-section">
+          <div className="col-lg-2 col-md-6 col-6 footer-section">
             <h5>Resources</h5>
             <ul>
               <li><Link href="#">SEO FAQ</Link></li>
