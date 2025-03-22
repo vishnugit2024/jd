@@ -9,7 +9,9 @@
 
 .trustpilot-section {
   background-color: #f8e2cb;
-  padding: 40px 0;
+  padding-bottom: 30px;
+  padding-top: 10px;
+  margin: 2rem 0;
   border-radius: 1rem;
 }
 

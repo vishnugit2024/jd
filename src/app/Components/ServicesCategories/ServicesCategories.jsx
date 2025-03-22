@@ -6,6 +6,7 @@ import s1 from "../../Images/s1.jpg";
 import Link from "next/link";
 import Heading from "../Heading/SecHeading";
 
+
 const ServicesCategories = () => {
   const categories = [
     {
@@ -88,7 +89,7 @@ const ServicesCategories = () => {
                     <div key={itemIndex} className="col-4">
                       <div className="sc-service-item">
                         <Link href="#">
-                          <div className="sc-image-container position-relative">
+                          <div className="sc-image-container">
                             <Image
                               src={item.image}
                               alt={item.alt}
