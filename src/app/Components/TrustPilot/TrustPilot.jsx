@@ -8,9 +8,10 @@ import "swiper/css/pagination";
 import "./TrustPilot.css";
 import Link from "next/link";
 import Image from "next/image";
-import slide1 from "../../Images/slide1.webp";
-import slide2 from "../../Images/slide2.webp";
-import slide3 from "../../Images/slide3.webp";
+import Choice1 from "../../Images/choice1.png";
+import Choice2 from "../../Images/choice2.png";
+import Choice3 from "../../Images/choice3.png";
+import Choice4 from "../../Images/choice4.png";
 import Heading from "../Heading/SecHeading";
 
 const TrustPilot = () => {
@@ -69,21 +70,21 @@ const TrustPilot = () => {
             >
               <SwiperSlide>
                 <Image
-                  src={slide1}
+                  src={Choice1}
                   className="d-block rounded-4"
                   alt="Trustpilot review"
                 />
               </SwiperSlide>
               <SwiperSlide>
                 <Image
-                  src={slide2}
+                  src={Choice2}
                   className="d-block rounded-4"
                   alt="Trustpilot review"
                 />
               </SwiperSlide>
               <SwiperSlide>
                 <Image
-                  src={slide3}
+                  src={Choice3}
                   className="d-block rounded-4"
                   alt="Trustpilot review"
                 />
@@ -104,21 +105,21 @@ const TrustPilot = () => {
             >
               <SwiperSlide>
                 <Image
-                  src={slide1}
+                  src={Choice4}
                   className="d-block rounded-4"
                   alt="Trustpilot review"
                 />
               </SwiperSlide>
               <SwiperSlide>
                 <Image
-                  src={slide2}
+                  src={Choice3}
                   className="d-block rounded-4"
                   alt="Trustpilot review"
                 />
               </SwiperSlide>
               <SwiperSlide>
                 <Image
-                  src={slide3}
+                  src={Choice1}
                   className="d-block rounded-4"
                   alt="Trustpilot review"
                 />
