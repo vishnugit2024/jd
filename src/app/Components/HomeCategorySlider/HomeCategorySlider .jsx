@@ -41,7 +41,7 @@ const HomeCategorySlider = () => {
 
   return (
     <>
-      <div className="container-fluid my-2">
+      <div className="container my-2">
         <div className="row justify-content-center">
           {/* First Slider */}
           <div className="col-md-6">

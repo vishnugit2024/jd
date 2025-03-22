@@ -27,7 +27,7 @@
   .nav-link {
     font-size: 16px;
     font-weight: 500;
-    color: black;
+    color: var(--black);
     text-transform: camelcase;
     transition: all 0.3s ease;
   }
@@ -96,23 +96,10 @@
   }
   
   
-  .navbar-toggler {
-    background: linear-gradient(to right,
-        #673ab7 0,
-        #e91e63 36%,
-        #e91e63 65%,
-        #673ab7 100%);
-  }
-  
   .nav-tabs {
     border-bottom: 0;
   }
-  
-  .navbar-toggler-icon {
-    color: white;
-    display: contents;
-  }
-  
+
   .service a {
     color: rgba(0, 0, 0, 0.671);
     display: ruby;
@@ -123,7 +110,7 @@
   }
   
   .webdesign {
-    color: black;
+    color: var(--black);
   }
   
   .navbar-collapse {
