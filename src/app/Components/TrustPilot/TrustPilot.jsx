@@ -18,8 +18,8 @@ const TrustPilot = () => {
 
     <>
 
-    <Heading title="Millions User Trust" subtitle="Customer Reviews" />
  <section className="trustpilot-section">
+    <Heading title="Millions User Trust" subtitle="Customer Reviews" />
       <div className="container">
         <div className="row align-items-center">
           {/* Left Content */}
