@@ -64,7 +64,12 @@ const HomeCategorySlider = () => {
             ))}
           </Swiper>
         </div>
+
       </section>
+
+      </div>
+      </div>
+
     </>
   );
 };

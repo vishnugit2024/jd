@@ -7,6 +7,7 @@ import heroimage2 from "../../Images/heroimage2.png";
 import "./hero.css";
 
 const Hero = () => {
+
   const placeholderTexts = [
     "Search for plumbers...",
     "Find the best tutors...",
@@ -92,6 +93,48 @@ const Hero = () => {
                     placeholder={animatedText}
                   />
                   <button className="hero-search-btn"><i className="bi bi-search"></i></button>
+
+    return (
+        <section className='hero-main'>
+
+            <div className="container">
+                <div className="row align-items-center">
+                    {/* Left Content */}
+                    <div className="col-lg-7 col-md-12">
+                        <div className="hero-content">
+                            <h1 className='hero-title'>
+                                Complete <span>Web Design</span> & Development
+                            </h1>
+                            <p className='hero-text'>
+                                Say goodbye to sleepless nights over counterproductive 
+                                communications between service providers. No more overbilling 
+                                nightmares for services you’re not sure you need but have to pay for.
+                            </p>
+                            <div className='hero-buttons'>
+                                <Link href="#" className="herobutton1">View All Categories</Link>
+                                <Link href="#" className="herobutton2">List Your Business</Link>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    {/* Right Image */}
+                    <div className="col-lg-5 col-md-12 d-flex justify-content-center position-relative">
+                        <div className='hero-image-container'>
+                            <Image
+                                src={heroimage2}
+                                alt="Hero Illustration"
+                                layout="intrinsic"
+                                className='hero-background-shape'
+                            />
+                            <Image
+                                src={blueImage}
+                                alt="Background Shape"
+                                layout="intrinsic"
+                                className='hero-animated-image'
+                            />
+                        </div>
+                    </div>
+
                 </div>
               </div>
               <div className="hero-buttons">

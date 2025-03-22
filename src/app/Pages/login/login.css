@@ -1,0 +1,96 @@
+/* Global Bootstrap Overrides */
+.auth-section {
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-card {
+  background-color: white;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.auth-card h4 {
+  font-size: 40px;
+  font-weight: 800;
+  color: var(--black);
+  margin: 0;
+}
+
+.auth-card p {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--black);
+}
+
+.login-input {
+  border: 2px solid var(--blue);
+  border-radius: 30px;
+  width: 100%;
+  padding: 10px 20px;
+}
+
+.auth-card input:focus {
+  box-shadow: none;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+
+.login-welcome-content {
+  background-color: var(--black);
+  height: 100%;
+  width: 100%;
+  clip-path: polygon(0% 0%, 75% 0%, 100% 46%, 75% 100%, 0% 100%);
+  position: relative;
+}
+
+.login-welcome-image {
+  position: absolute;
+  top: 25%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.login-welcome-text {
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  color: white;
+  max-width: 80%;
+}
+
+@media only screen and (max-width:768px) {
+  .login-welcome-text {
+    position: relative;
+  }
+
+  .login-welcome-content{
+    clip-path: polygon(50% 0%, 100% 0, 100% 48%, 100% 100%, 52% 80%, 0 100%, 0% 43%, 0 0);
+    height: 200px;
+    text-align: center;
+  }
+
+  .auth-section {
+    min-height: max-content;
+  }
+
+  .login-welcome-text p {
+    display: none;
+  }
+  
+  .login-welcome-image , .login-welcome-text{
+    left: 50%;
+  }
+  
+
+}

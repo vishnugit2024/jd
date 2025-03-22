@@ -1,5 +1,5 @@
 .navbar {
-  position: sticky;
+  position: fixed !important;
   top: 0;
   left: 0;
   z-index: 100;
@@ -99,6 +99,7 @@
 .navbar-toggler {
   background-color: var(--blue) !important;
   color: white; 
+  padding: 5px 7px !important;
 }
 
 .nav-tabs {
@@ -110,13 +111,22 @@
   display: contents;
 }
 
+.navbar-toggler:focus{
+  box-shadow: none;
+}
+
 .service a {
   color: rgba(0, 0, 0, 0.671);
   display: ruby;
   font-size: 16px;
 }
 .service a h6{
-  font-size: 14px;
+  font-size: 11px;
+  margin: 0;
+}
+
+.service{
+  padding: 5px 10px;
 }
 
 .webdesign {
@@ -148,6 +158,11 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .dropMain {
+    width: 90%;
+    position: unset;
+    margin: 0;
+  }
   .navbar-collapse {
     background-color: white;
     padding: 1rem 1rem;
@@ -171,10 +186,9 @@
 
 /* Fixing the logo size */
 .navbar-brand img {
-  width: 100%;
-  /* Set a fixed width for the logo */
-  height: auto;
-  /* Maintain aspect ratio */
+  width: 120px;
+  height: 45px;
+  object-fit: contain;
 }
 
 @media (max-width: 768px) {

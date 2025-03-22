@@ -20,15 +20,20 @@ body {
   --black: #000000e0;
 }
 
+.childrens{
+  margin-top: 70px;
+}
+
 /* 4️⃣ Buttons */
 .blue-btn {
   padding: 5px 10px;
   border: none;
   background: #007bff;
   color: white;
-  border-radius: 5px;
+  border-radius: 20px;
   cursor: pointer;
   transition: 0.3s;
+  font-weight: 600;
   text-decoration: none;
 }
 
