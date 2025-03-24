@@ -48,14 +48,14 @@ const HomeCategorySlider = () => {
             {cards.map((card) => (
               <SwiperSlide key={card.id}>
                 <Link href={card.link} className="text-decoration-none">
-                  <div className="home-category-card card">
+                  <div className="home-category-card">
                     <Image
                       src={card.image}
                       alt={card.title}
                       priority
                       className="home-category-card-image"
                     />
-                    <div className="card-body py-2">
+                    <div className="card-body pt-2">
                       <h5 className="home-category-card-title">{card.title}</h5>
                     </div>
                   </div>
@@ -66,10 +66,6 @@ const HomeCategorySlider = () => {
         </div>
 
       </section>
-
-      </div>
-      </div>
-
     </>
   );
 };

@@ -70,17 +70,17 @@ const Header = () => {
             ref={navbarCollapseRef}
           >
             <ul className="navbar-nav mb-2 mb-lg-0">
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <input
                   type="text"
                   className="form-control me-2"
                   placeholder="Enter a website, business, or keyword"
                 />
-              </li>
+              </li> */}
               <li className="nav-item">
                 <Link
                   className="nav-link"
-                  href="/about"
+                  href="/earn-with-us"
                   onClick={() => {
                     if (navbarCollapseRef.current) {
                       new window.bootstrap.Collapse(navbarCollapseRef.current, {
@@ -89,10 +89,10 @@ const Header = () => {
                     }
                   }}
                 >
-                  About Us
+                  Earn With Us
                 </Link>
               </li>
-              <li
+              {/* <li
                 className={`nav-item webdesign ${services ? "active" : ""}`}
               >
                 <Link
@@ -128,11 +128,11 @@ const Header = () => {
                     </div>
                   </div>
                 )}
-              </li>
+              </li> */}
               <li className="nav-item">
                 <Link
                   className="nav-link"
-                  href="/dlt"
+                  href="/corporate-advertise"
                   onClick={() => {
                     if (navbarCollapseRef.current) {
                       new window.bootstrap.Collapse(navbarCollapseRef.current, {
@@ -141,13 +141,13 @@ const Header = () => {
                     }
                   }}
                 >
-                  Resources
+                  Corporate Advertise
                 </Link>
               </li>
               <li className="nav-item">
                 <Link
                   className="nav-link"
-                  href="/contact-us"
+                  href="/free-listing"
                   onClick={() => {
                     if (navbarCollapseRef.current) {
                       new window.bootstrap.Collapse(navbarCollapseRef.current, {
@@ -156,13 +156,28 @@ const Header = () => {
                     }
                   }}
                 >
-                  Contact Us
+                  Free Listing
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  className="nav-link"
+                  href="/my-business"
+                  onClick={() => {
+                    if (navbarCollapseRef.current) {
+                      new window.bootstrap.Collapse(navbarCollapseRef.current, {
+                        toggle: false,
+                      }).hide();
+                    }
+                  }}
+                >
+                  My Business
                 </Link>
               </li>
             </ul>
             <div className="d-flex align-items-center">
-              <Link href="../../Pages/login" className="register-btn me-2">
-                Register
+              <Link href="../../Pages/login" className="login-btn me-2">
+                SignIn / Signup
               </Link>
             </div>
           </div>

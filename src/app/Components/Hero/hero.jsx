@@ -7,7 +7,6 @@ import heroimage2 from "../../Images/heroimage2.png";
 import "./hero.css";
 
 const Hero = () => {
-
   const placeholderTexts = [
     "Search for plumbers...",
     "Find the best tutors...",
@@ -42,21 +41,22 @@ const Hero = () => {
   };
 
   return (
-    <section className="hero-main">
+    <section>
       <div className="container">
-        <div className="row align-items-center">
+        <div className="hero-main">
+        <div className="row">
           {/* Left Content */}
-          <div className="col-lg-7 col-md-12">
+          <div className="col-md-12">
             <div className="hero-content">
               <h1 className="hero-title">
-                Complete <span>Web Design</span> & Development
+              We Are Connecting! <span>Stay Hold</span> Your Success is Near.
               </h1>
-              <p className="hero-text">
+              {/* <p className="hero-text">
                 Say goodbye to sleepless nights over counterproductive
                 communications between service providers. No more overbilling
                 nightmares for services you’re not sure you need but have to pay
                 for.
-              </p>
+              </p> */}
               <div className="hero-search-bar">
                 <div className="hero-search-container">
                   {/* Location Picker */}
@@ -92,64 +92,25 @@ const Hero = () => {
                     className="hero-search-input"
                     placeholder={animatedText}
                   />
-                  <button className="hero-search-btn"><i className="bi bi-search"></i></button>
-
-    return (
-        <section className='hero-main'>
-
-            <div className="container">
-                <div className="row align-items-center">
-                    {/* Left Content */}
-                    <div className="col-lg-7 col-md-12">
-                        <div className="hero-content">
-                            <h1 className='hero-title'>
-                                Complete <span>Web Design</span> & Development
-                            </h1>
-                            <p className='hero-text'>
-                                Say goodbye to sleepless nights over counterproductive 
-                                communications between service providers. No more overbilling 
-                                nightmares for services you’re not sure you need but have to pay for.
-                            </p>
-                            <div className='hero-buttons'>
-                                <Link href="#" className="herobutton1">View All Categories</Link>
-                                <Link href="#" className="herobutton2">List Your Business</Link>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    {/* Right Image */}
-                    <div className="col-lg-5 col-md-12 d-flex justify-content-center position-relative">
-                        <div className='hero-image-container'>
-                            <Image
-                                src={heroimage2}
-                                alt="Hero Illustration"
-                                layout="intrinsic"
-                                className='hero-background-shape'
-                            />
-                            <Image
-                                src={blueImage}
-                                alt="Background Shape"
-                                layout="intrinsic"
-                                className='hero-animated-image'
-                            />
-                        </div>
-                    </div>
-
+                  <button className="hero-search-btn">
+                    <i className="bi bi-search"></i>
+                  </button>
                 </div>
               </div>
+
               <div className="hero-buttons">
                 <Link href="#" className="herobutton1">
-                  View All Categories
+                  Submit Website
                 </Link>
                 <Link href="#" className="herobutton2">
-                  Book a Free Consultation
+                  List Your Business
                 </Link>
               </div>
             </div>
           </div>
 
           {/* Right Image */}
-          <div className="col-lg-5 col-md-12 d-flex justify-content-center position-relative">
+          {/* <div className="col-lg-5 col-md-12 d-flex justify-content-center position-relative">
             <div className="hero-image-container">
               <Image
                 src={heroimage2}
@@ -164,7 +125,8 @@ const Hero = () => {
                 className="hero-animated-image"
               />
             </div>
-          </div>
+          </div> */}
+        </div>
         </div>
       </div>
     </section>
