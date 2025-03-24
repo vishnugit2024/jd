@@ -127,7 +127,7 @@ const TestimonialSection = () => {
             </div>
 
             <div className="col-lg-6">
-              <Swiper
+              {/* <Swiper
                 modules={[Navigation, Autoplay]}
                 spaceBetween={20}
                 slidesPerView={1}
@@ -158,7 +158,7 @@ const TestimonialSection = () => {
                     </div>
                   </SwiperSlide>
                 ))}
-              </Swiper>
+              </Swiper> */}
             </div>
           </div>
         </div>

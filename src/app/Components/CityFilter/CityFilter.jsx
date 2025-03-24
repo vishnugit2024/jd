@@ -82,7 +82,7 @@ export default function CityCards() {
     <>
 
       <Heading title="Top Cities" subtitle="Businesses by city" />
-      <div className="container-fluid">
+      <div className="container">
         <div className="row g-4">
           {cityData.map((city) => (
             <div key={city.id} className="col-sm-4 col-6 col-md-3">

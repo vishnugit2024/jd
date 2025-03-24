@@ -12,9 +12,8 @@ const AuthSection = () => {
 
   return (
     <>
-
       <div className="container py-3">
-        <div className="row">
+        <div className="row align-items-center">
           <div className="col-md-6 p-0">
             <div className='login-welcome-content'>
               <div className='login-welcome-image'>

@@ -28,10 +28,9 @@ const Footer = () => {
             <h5>Company</h5>
             <ul>
               <li><Link href="#">About Us</Link></li>
-              <li><Link href="../../Pages/contactUs">Contact Us</Link></li>
-              <li><Link href="#">Careers</Link></li>
-              <li><Link href="#">Reviews</Link></li>
-              <li><Link href="#">Privacy Policy</Link></li>
+              <li><Link href="../../Pages/contact-us">Contact Us</Link></li>
+              <li><Link href="../../Pages/privacy-policy">Privacy Policy</Link></li>
+              <li><Link href="../../Pages/term-and-conditions">Term & Conditions</Link></li>
             </ul>
           </div>
 
@@ -58,8 +57,8 @@ const Footer = () => {
           <div className="col-lg-3 col-md-6 footer-section">
             <h5>Biziffy Members</h5>
             <div className="footer-buttons">
-              <Link href="#" className="footer-login-btn">Log In</Link>
-              <Link href="#" className="btn btn-primary">Sign Up</Link>
+              <Link href="../../Pages/login" className="footer-login-btn">Log In</Link>
+              <Link href="../../Pages/login" className="btn btn-primary">Sign Up</Link>
             </div>
             <p>Find and connect with businesses near you.</p>
             <Link href="#" className="btn btn-secondary">Find a Business</Link>

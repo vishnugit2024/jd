@@ -74,7 +74,7 @@ const Blogs = () => {
               <div className="card-body">
                 <h5 className="card-title">{blog.title}</h5>
                 <p className="card-text">{blog.description}</p>
-                <Link href={`../../Pages/blog/${blog.id}`} className="btn btn-primary">Read More</Link>
+                <Link href={`../../Pages/blog/${blog.id}`} className="login-btn">Read More</Link>
               </div>
             </div>
           </SwiperSlide>
