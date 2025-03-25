@@ -1,12 +1,52 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './businessListing.css';
 import gourav from '../../Images/gourav.jpg';
 import gourav2 from '../../Images/gourav2.jpg';
 import gourav3 from '../../Images/gourav3.jpg';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Page = () => {
+    const [isOpen, setIsOpen] = useState(false);
+    const [showAllHours, setShowAllHours] = useState(false);
+
+    const hours = [
+        { day: 'Monday', open: '09:00 AM', close: '07:00 PM' },
+        { day: 'Tuesday', open: '09:00 AM', close: '07:00 PM' },
+        { day: 'Wednesday', open: '09:00 AM', close: '07:00 PM' },
+        { day: 'Thursday', open: '09:00 AM', close: '07:00 PM' },
+        { day: 'Friday', open: '09:00 AM', close: '07:00 PM' },
+        { day: 'Saturday', open: '10:00 AM', close: '05:00 PM' },
+        { day: 'Sunday', open: 'Closed', close: 'Closed' },
+    ];
+
+    const getCurrentDay = () => {
+        const today = new Date().getDay();
+        return today === 0 ? 6 : today - 1; // Adjust for Sunday
+    };
+
+    const isCurrentlyOpen = (openTime, closeTime) => {
+        if (openTime === 'Closed') return false;
+        const now = new Date();
+        const current = now.getHours() * 60 + now.getMinutes();
+        const [openHours, openMinutes] = openTime.split(/[: ]/);
+        const [closeHours, closeMinutes] = closeTime.split(/[: ]/);
+
+        const open = (parseInt(openHours) % 12 + (openTime.includes('PM') ? 12 : 0)) * 60 + parseInt(openMinutes);
+        const close = (parseInt(closeHours) % 12 + (closeTime.includes('PM') ? 12 : 0)) * 60 + parseInt(closeMinutes);
+
+        return current >= open && current <= close;
+    };
+
+    useEffect(() => {
+        const today = getCurrentDay();
+        const { open, close } = hours[today];
+        setIsOpen(isCurrentlyOpen(open, close));
+    }, []);
+
+    const today = getCurrentDay();
+
     const businesses = [
         {
             id: 1,
@@ -16,7 +56,12 @@ const Page = () => {
             address: 'Shop 20, C S C II, Sector XIII, Rohini, Delhi',
             phone: '+91 9810000000',
             description: 'Very polite and extremely knowledgeable doctor.',
-            image: gourav
+            image: gourav,
+            services: ['General Check-up', 'Vaccination', 'Health Consultation'],
+            reviewsData: [
+                { author: 'John Doe', comment: 'Excellent service and very polite staff.' },
+                { author: 'Jane Smith', comment: 'The doctor is very knowledgeable and kind.' }
+            ]
         },
         {
             id: 2,
@@ -26,7 +71,12 @@ const Page = () => {
             address: 'Pkt 4, Ground Floor, Rohini, Delhi',
             phone: '+91 9810000122',
             description: 'On-site services with excellent care.',
-            image: gourav2
+            image: gourav2,
+            services: ['Holistic Health Services', 'Yoga and Meditation', 'Nutritional Advice'],
+            reviewsData: [
+                { author: 'Emily Brown', comment: 'Amazing care and holistic approach!' },
+                { author: 'Chris Wilson', comment: 'Best place for holistic health services.' }
+            ]
         },
         {
             id: 3,
@@ -36,28 +86,22 @@ const Page = () => {
             address: '226 Ground Floor, Rohini, Delhi',
             phone: '+91 981004598',
             description: 'The doctor is very attentive and professional.',
-            image: gourav3
+            image: gourav3,
+            services: ['Pediatrics', 'General Surgery', 'Orthopedics'],
+            reviewsData: [
+                { author: 'Mark Lee', comment: 'Highly professional and caring staff.' },
+                { author: 'Sarah Johnson', comment: 'Would recommend to everyone!' }
+            ]
         }
     ];
-
-    const obfuscateAddress = (address) => {
-        const [firstWord, secondWord, ...rest] = address.split(' ');
-        return `${firstWord} ${secondWord} **********`;
-    };
-    const obfuscatemobile = (address) => {
-        const [firstWord, ...rest] = address.split(' ');
-        return `${firstWord} **********`;
-    };
-
-
+    const [activeTab, setActiveTab] = useState('service');
     const [selected, setSelected] = useState(businesses[0]);
-
     return (
         <section className='business-listing-page'>
             <div className='container'>
-            <nav aria-label="breadcrumb" className="breadcrumb-container">
+                <nav aria-label="breadcrumb" className="breadcrumb-container">
                     <ol className="breadcrumb">
-                        <li className="breadcrumb-item"><a href="/">Home</a></li>
+                        <li className="breadcrumb-item"><Link href="/">Home</Link></li>
                         <li className="breadcrumb-item active" aria-current="page">Business Listings</li>
                     </ol>
                 </nav>
@@ -67,42 +111,147 @@ const Page = () => {
                         Business Category Name
                     </h5>
                     <div className="row">
-                        <div className="col-md-3 left-panel">
-                            {businesses.map((biz) => (
-                                <div
-                                    key={biz.id}
-                                    className={`business-card ${selected.id === biz.id ? 'active' : ''}`}
-                                    onClick={() => setSelected(biz)}
-                                >
-                                    <Image src={biz.image} alt={biz.name} className="listing-image mb-2" />
-                                    <h5>{biz.name}</h5>
-                                    <p className='m-0'>Address: {obfuscateAddress(biz.address)}</p>
-                                    <p>
-                                        Phone: {obfuscatemobile(biz.phone)}
-                                    </p>
-                                    <p>{biz.rating} <i className="bi bi-star-fill"></i> ({biz.reviews} reviews)</p>
-                                </div>
-                            ))}
+    <div className="col-md-5 left-panel">
+        {businesses.map((biz) => (
+            <div
+                key={biz.id}
+                className={`business-card d-flex align-items-center gap-3 ${selected.id === biz.id ? 'active' : ''}`}
+                onClick={() => setSelected(biz)}
+            >
+                <div>
+                    <Image src={biz.image} alt={biz.name} className="listing-image mb-2" />
+                </div>
+                <div>
+                    <h5>{biz.name}</h5>
+                    <div className='d-flex gap-2 align-items-center'>
+                        <p>{biz.rating} <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> {biz.reviews}</p>
+                        <span>|</span>
+                        <p>Web Designer</p>
+                    </div>
+                    <div className='d-flex gap-2 align-items-center'>
+                        <p>7 years in business</p>
+                        <span>|</span>
+                        <p>Karnal, Haryana</p>
+                    </div>
+                    <div className='d-flex gap-2 align-items-center'>
+                        <div className="opening-hours-container">
+                            <p onClick={() => setShowAllHours(!showAllHours)} className={`status ${isOpen ? 'open' : 'closed'}`}>{isOpen ? 'Open Now' : 'Closed Now'}</p>
+                            {showAllHours && (
+                                <ul className="opening-hours-list">
+                                    {hours.map((item, index) => (
+                                        <li key={index} className={today === index ? 'today' : ''}>
+                                            <span>{item.day}</span>
+                                            <span>{item.open} - {item.close}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
                         </div>
+                        <span>|</span>
+                        <p>Phone: {biz.phone}</p>
+                    </div>
+                    <div className='d-flex gap-2 align-items-center'>
+                        <p>On Site Services</p>
+                        <span>|</span>
+                        <p>Online Appointment</p>
+                    </div>
+                </div>
+            </div>
+        ))}
+    </div>
 
-                        <div className="col-md-6 right-panel">
-                            <div className="details-card">
-                                <Image src={selected.image} alt={selected.name} className="business-detail-image mb-3" />
-                                <h3>{selected.name}</h3>
-                                <p>Rating: {selected.rating} <i className="bi bi-star-fill"></i> ({selected.reviews} reviews)</p>
-                                <p>Address: {selected.address}</p>
-                                <p>Description: {selected.description}</p>
-                                <div className='d-flex gap-2 align-items-center'>
-                                <a className='detail-card-number' href={`tell:${selected.phone}`}>
-                                    <i className="bi bi-telephone-outbound"></i> {selected.phone}
-                                </a>
-                                <a className='detail-card-whatsapp' href={`https://wa.me/${selected.phone}`} target="_blank" rel="noopener noreferrer">
-                                    <i className="bi bi-whatsapp"></i> WhatsApp
-                                </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-3 enquiry-panel">
+    <div className="col-md-7 right-panel">
+        <div className="details-card">
+            <h3>{selected.name}</h3>
+            <Image src={selected.image} alt={selected.name} className="business-detail-image mb-3" />
+            
+            {/* <p><b>Rating :</b> {selected.rating} <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> ({selected.reviews} reviews)</p>
+            <p><b>Address :</b> {selected.address}</p>
+            <p><b>Year Of Business :</b> 19 years</p>
+            <p><b>Description:</b> {selected.description}</p> */}
+
+            {/* Data from col-md-5 added here */}
+            {/* <h5>{selected.name}</h5> */}
+            <div className='d-flex gap-2 align-items-center'>
+                <p>{selected.rating} <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> {selected.reviews}</p>
+                <span>|</span>
+                <p>Web Designer</p>
+            </div>
+            <div className='d-flex gap-2 align-items-center'>
+                <p>7 years in business</p>
+                <span>|</span>
+                <p>Karnal, Haryana</p>
+            </div>
+            <div className='d-flex gap-2 align-items-center'>
+                <div className="opening-hours-container">
+                    <p onClick={() => setShowAllHours(!showAllHours)} className={`status ${isOpen ? 'open' : 'closed'}`}>{isOpen ? 'Open Now' : 'Closed Now'}</p>
+                    {showAllHours && (
+                        <ul className="opening-hours-list">
+                            {hours.map((item, index) => (
+                                <li key={index} className={today === index ? 'today' : ''}>
+                                    <span>{item.day}</span>
+                                    <span>{item.open} - {item.close}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    )}
+                </div>
+                <span>|</span>
+                <p>Phone: {selected.phone}</p>
+            </div>
+            <div className='d-flex gap-2 align-items-center'>
+                <p>On Site Services</p>
+                <span>|</span>
+                <p>Online Appointment</p>
+            </div>
+            {/* End of copied data */}
+
+            <ul className="nav nav-tabs mb-3">
+                <li className="nav-item">
+                    <button className={`nav-link ${activeTab === 'service' ? 'active' : ''}`} onClick={() => setActiveTab('service')}>
+                        Service
+                    </button>
+                </li>
+                <li className="nav-item">
+                    <button className={`nav-link ${activeTab === 'review' ? 'active' : ''}`} onClick={() => setActiveTab('review')}>
+                        Review
+                    </button>
+                </li>
+            </ul>
+
+            <div className="tab-content">
+                <div className={`tab-pane fade ${activeTab === 'service' ? 'show active' : ''}`}>
+                    <ul className="service-list">
+                        {selected.services?.map((service, index) => (
+                            <li key={index}>{service}</li>
+                        ))}
+                    </ul>
+                </div>
+
+                <div className={`tab-pane fade ${activeTab === 'review' ? 'show active' : ''}`}>
+                    <ul className="review-list">
+                        {selected.reviewsData?.map((review, index) => (
+                            <li key={index}>
+                                <strong>{review.author}:</strong> {review.comment}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </div>
+
+            <div className='d-flex gap-2 align-items-center'>
+                <Link className='detail-card-number' href={`tel:${selected.phone}`}>
+                    <i className="bi bi-telephone-outbound"></i> {selected.phone}
+                </Link>
+                <Link className='detail-card-whatsapp' href={`https://wa.me/${selected.phone}`} target="_blank" rel="noopener noreferrer">
+                    <i className="bi bi-whatsapp"></i> WhatsApp
+                </Link>
+            </div>
+        </div>
+    </div>
+</div>
+
+                        {/* <div className="col-md-3 enquiry-panel">
                             <div className='enquiry-card text-center'>
                                 <p>
                                     Get more list of businesses
@@ -114,8 +263,7 @@ const Page = () => {
                                     <button className="enquiry-btn">Submit Enquiry <i className="bi bi-chevron-double-right"></i></button>
                                 </form>
                             </div>
-                        </div>
-                    </div>
+                        </div> */}
                 </div>
             </div>
         </section>
