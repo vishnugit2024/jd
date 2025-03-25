@@ -2,12 +2,15 @@ import React from "react";
 import "./aboutus.css";
 import Image from "next/image";
 import biziffyaboutus from "../../Images/AboutImg.jpg";
+import biziffyaboutus1 from "../../Images/AboutImg1.jpg";
 import countbgImage from "../../Images/aboutbgImage.png";
 import count1 from "../../Images/linechart.gif";
 import count2 from "../../Images/socialcare.gif";
 import count3 from "../../Images/socialmedia.gif";
 import count4 from "../../Images/target.gif";
 import count5 from "../../Images/handshake.gif";
+import Link from "next/link";
+import diveImage from "../../Images/aboutImg2.png";
 const page = () => {
   const countData = [
     { id: 1, image: count1, count: "100%", label: "Growth" },
@@ -33,7 +36,7 @@ const page = () => {
                   <b>
                     Bizi<span style={{ color: "var(--blue)" }}>ff</span>y
                   </b>{" "}
-                  is a reviews platform by everyday people, for everyday people.
+                  is a Bulk Advertisement & Business Listing services Platform.
                 </p>
               </div>
             </div>
@@ -56,23 +59,27 @@ const page = () => {
             <div className="col-md-7">
               <div className="biziffy-about-content">
                 <h1 className="biziffy-about-title">
-                  We are a platform that connects smart buyers with trustworthy
-                  businesses.
+                  We are a Bizi<span style={{ color: "var(--blue)" }}>ff</span>y
+                  that connects smart buyers with trustworthy businesses.
                 </h1>
                 <p className="biziffy-about-text">
-                  Are you looking to expand your business reach and gain maximum
-                  visibility? Biziffy.com offers Bulk Advertisement & Business
-                  Listing services, providing the perfect solution for promoting
-                  your brand across Biziffy platforms and ensuring that your
-                  business gets the attention it deserves.
+                  Biziffy.com is designed to help businesses of all sizes expand
+                  their reach and attract more customers. Whether you are a
+                  small startup or a well-established enterprise, our platform
+                  provides a seamless way to list your business, showcase your
+                  services, and connect with potential clients. With a
+                  user-friendly interface and advanced features, Biziffy ensures
+                  that your business stands out in the competitive market.
                 </p>
                 <p className="biziffy-about-text">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Eligendi excepturi rerum explicabo praesentium corrupti minima
-                  nam totam similique! Minima dolorum possimus commodi facere
-                  fugit harum cupiditate voluptas nobis. Blanditiis ducimus,
-                  magni officia eum soluta amet eveniet commodi repudiandae
-                  quibusdam sit!
+                  By leveraging our Bulk Advertisement & Business Listing
+                  services, you can increase your brand visibility across
+                  multiple categories, making it easier for customers to find
+                  and engage with your business. Our platform allows you to
+                  highlight essential details such as contact information,
+                  working hours, and service offerings, ensuring that your
+                  potential customers have all the information they need at
+                  their fingertips.
                 </p>
               </div>
             </div>
@@ -88,12 +95,6 @@ const page = () => {
                 <h1 className="about-page-count-title">
                   Why Bizi<span style={{ color: "var(--blue)" }}>ff</span>y?
                 </h1>
-                <p className="about-page-count-text m-0">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
-                  quibusdam necessitatibus repudiandae et suscipit id beatae
-                  sunt unde nesciunt, iure cupiditate magni. Illum, tempore
-                  enim? Reprehenderit perspiciatis eveniet ratione minus.
-                </p>
               </div>
 
               <div className="about-page-count-data">
@@ -122,7 +123,85 @@ const page = () => {
         </div>
       </section>
 
-      <section></section>
+      <section className="my-4">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-7">
+              <div className="biziffy-about-content">
+                <h1 className="biziffy-about-title">
+                  Maximize Your Business Visibility with Flexible Listing
+                  Options with Bizi
+                  <span style={{ color: "var(--blue)" }}>ff</span>y.
+                </h1>
+                <p className="biziffy-about-text">
+                  Additionally, Biziffy offers both free and premium listing
+                  options, giving businesses the flexibility to choose the level
+                  of exposure that suits their needs. With premium listings, you
+                  get enhanced visibility, priority placement in search results,
+                  and access to exclusive promotional tools that help drive more
+                  traffic to your business profile.
+                </p>
+                <p className="biziffy-about-text">
+                  Our goal at Biziffy is to provide a hassle-free advertising
+                  solution that maximizes your online presence and helps you
+                  reach a broader audience. Whether you're looking to grow
+                  locally or expand nationally, Biziffy’s powerful platform is
+                  the ultimate tool to elevate your brand and drive business
+                  growth.
+                </p>
+              </div>
+            </div>
+            <div className="col-md-5">
+              <div className="biziffy-about-image-div">
+                <Image
+                  src={biziffyaboutus1}
+                  alt="Biziffy about us"
+                  className="biziffy-about-image"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="about-section my-4">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12">
+              <div className="about-dive-data-link position-relative">
+                {/* Background Image in JSX */}
+                <div className="about-dive-bg position-absolute w-100 h-100">
+                  <Image src={diveImage} alt="Dive Image" />
+                </div>
+
+                <div className="dive-title">
+                  <h4>
+                    Dive into Bizi
+                    <span style={{ color: "var(--blue)" }}>ff</span>y.{" "}
+                    <span style={{ color: "var(--blue)" }}>
+                      <i className="bi bi-stars"></i>
+                    </span>
+                  </h4>
+                </div>
+                <div className="button-group position-absolute top-50 start-50 translate-middle d-flex gap-5">
+                  <Link href="#">
+                    <button>SignIn/SignUp</button>
+                  </Link>
+                  <Link href="#">
+                    <button>Free Listing</button>
+                  </Link>
+                  <Link href="#">
+                    <button>Free Listing</button>
+                  </Link>
+                  <Link href="#">
+                    <button>Free Listing</button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 };
