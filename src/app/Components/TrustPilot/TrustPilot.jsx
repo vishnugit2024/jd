@@ -36,7 +36,7 @@ const TrustPilot = () => {
                   <div className="d-flex  login-function align-items-center flex-wrap">
                     <Link href="#">
                       <button className="btn btn-dark rounded-pill px-4 py-2 me-3">
-                        Login or sign up
+                        SignIn/SignUp
                       </button>
                     </Link>
 
