@@ -80,7 +80,7 @@ const Header = () => {
               <li className="nav-item">
                 <Link
                   className="nav-link"
-                  href="/earn-with-us"
+                  href="../../Pages/earn-with-us"
                   onClick={() => {
                     if (navbarCollapseRef.current) {
                       new window.bootstrap.Collapse(navbarCollapseRef.current, {
@@ -132,7 +132,7 @@ const Header = () => {
               <li className="nav-item">
                 <Link
                   className="nav-link"
-                  href="/corporate-advertise"
+                  href="../../Pages/corporate-advertise"
                   onClick={() => {
                     if (navbarCollapseRef.current) {
                       new window.bootstrap.Collapse(navbarCollapseRef.current, {
@@ -147,7 +147,7 @@ const Header = () => {
               <li className="nav-item">
                 <Link
                   className="nav-link"
-                  href="/free-listing"
+                  href="../../Pages/free-listing"
                   onClick={() => {
                     if (navbarCollapseRef.current) {
                       new window.bootstrap.Collapse(navbarCollapseRef.current, {
@@ -162,7 +162,7 @@ const Header = () => {
               <li className="nav-item">
                 <Link
                   className="nav-link"
-                  href="/my-business"
+                  href="../../Pages/my-business"
                   onClick={() => {
                     if (navbarCollapseRef.current) {
                       new window.bootstrap.Collapse(navbarCollapseRef.current, {
