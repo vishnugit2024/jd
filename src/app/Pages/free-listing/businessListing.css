@@ -1,0 +1,218 @@
+.business-listing-container {
+    padding: 20px;
+    /* background-color: var(--black); */
+    min-height: 100vh;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.left-panel {
+    padding-right: 15px;
+}
+
+.business-card {
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 0px 2px rgba(0, 0, 0, 0.3);
+}
+
+.business-listing-page .breadcrumb{
+    margin: 0;
+    padding: 20px 30px 0;
+}
+
+.business-card h5 {
+    margin-bottom: 5px;
+    color: var(--black);
+}
+
+.bi-star-fill {
+    color: gold;
+}
+
+.business-card p {
+    color: var(--black);
+    margin: 0;
+}
+
+.business-card:hover {
+    border: 1px solid var(--blue);
+    transform: scale(1.02);
+}
+
+.business-card.active {
+    /* background-color: var(--blue); */
+    color: white;
+}
+
+.right-panel {
+    padding-left: 15px;
+}
+
+.details-card {
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 0px 2px rgba(0, 0, 0, 0.3);
+    color: var(--black);
+    position: sticky;
+    top: 80px;
+}
+
+.details-card h3 {
+    margin-bottom: 10px;
+    color: var(--black);
+}
+
+.details-card p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.listing-image {
+    width: 100%;
+    color: transparent;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    aspect-ratio: 4 / 3;
+}
+
+.business-detail-image {
+    width: 100%;
+    color: transparent;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    aspect-ratio: 4 / 3;
+
+}
+
+.enquiry-card {
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 0px 2px rgba(0, 0, 0, 0.3);
+    color: var(--black);
+    position: sticky;
+    top: 80px;
+    left: 0;
+}
+
+.enquiry-card form input {
+    width: 100%;
+    border: 1px solid var(--blue);
+    border-radius: 30px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+
+
+.detail-card-number{
+    background-color: green;
+    color: white;
+    padding: 8px 6px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.detail-card-whatsapp{
+    background-color: transparent;
+    border: 2px solid green;
+    color: var(--black);
+    padding: 8px 6px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.detail-card-whatsapp i{
+    color: white;
+    background-color: green;
+    padding: 3px 6px;
+    border-radius: 50%;
+}
+
+.detail-card-number i{
+    background-color: white;
+    color: green;
+    padding: 3px 6px;
+    border-radius: 50%;
+}
+
+.enquiry-btn,
+.enquiry-btn *,
+.enquiry-btn :after,
+.enquiry-btn :before,
+.enquiry-btn:after,
+.enquiry-btn:before {
+    border: 0 solid;
+    box-sizing: border-box;
+}
+
+.enquiry-btn {
+    -webkit-tap-highlight-color:transparent;
+    -webkit-appearance: button;
+    background-color: var(--blue);
+    background-image: none;
+    color:white;
+    /* border: 2px solid var(--black); */
+    cursor: pointer;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+        Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    font-size: 100%;
+    line-height: 1.5;
+    margin: 0;
+    -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+    padding: 0;
+}
+
+.enquiry-btn:disabled {
+    cursor: default;
+}
+
+.enquiry-btn:-moz-focusring {
+    outline: auto;
+}
+
+.enquiry-btn svg {
+    display: block;
+    vertical-align: middle;
+}
+
+.enquiry-btn [hidden] {
+    display: none;
+}
+
+.enquiry-btn {
+    -webkit-animation: pulse 2s infinite;
+    animation: pulse 2s infinite;
+    border-radius: 999px;
+    box-shadow: 0 0 0 1em transparent;
+    box-sizing: border-box;
+    display: block;
+    font-weight: 600;
+    -webkit-mask-image: none;
+    overflow: hidden;
+    padding: 10px 20px;
+    width: 100%;
+    position: relative;
+    text-transform: camelcase;
+
+}
+
+@-webkit-keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 var(--black);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 var(--blue);
+    }
+}
