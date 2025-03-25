@@ -1,8 +1,8 @@
-
 /* FAQ Box */
 .testimonil-faq-box {
   border-left: 4px solid var(--blue);
   transition: all 0.3s ease;
+  background: #d3d3d342;
 }
 
 .testimonil-faq-box:hover {
@@ -20,7 +20,8 @@
   width: 100%;
 }
 
-.testimonil-faq-btn:focus , .testimonil-faq-btn:active{
+.testimonil-faq-btn:focus,
+.testimonil-faq-btn:active {
   outline: none !important;
   border: none !important;
 }
@@ -61,4 +62,3 @@
   margin: 0 auto;
   text-align: center;
 }
-

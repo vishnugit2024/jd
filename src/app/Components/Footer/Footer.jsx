@@ -16,10 +16,18 @@ const Footer = () => {
               Your trusted partner in digital solutions.
             </p>
             <div className="social-icons">
-              <Link href="#"><i className="bi bi-twitter"></i></Link>
-              <Link href="#"><i className="bi bi-facebook"></i></Link>
-              <Link href="#"><i className="bi bi-linkedin"></i></Link>
-              <Link href="#"><i className="bi bi-instagram"></i></Link>
+              <Link href="#">
+                <i className="bi bi-twitter"></i>
+              </Link>
+              <Link href="#">
+                <i className="bi bi-facebook"></i>
+              </Link>
+              <Link href="#">
+                <i className="bi bi-linkedin"></i>
+              </Link>
+              <Link href="#">
+                <i className="bi bi-instagram"></i>
+              </Link>
             </div>
           </div>
 
@@ -27,29 +35,53 @@ const Footer = () => {
           <div className="col-lg-2 col-md-6 col-6 footer-section">
             <h5>Company</h5>
             <ul>
-              <li><Link href="#">About Us</Link></li>
-              <li><Link href="../../Pages/contact-us">Contact Us</Link></li>
-              <li><Link href="../../Pages/privacy-policy">Privacy Policy</Link></li>
-              <li><Link href="../../Pages/term-and-conditions">Term & Conditions</Link></li>
+              <li>
+                <Link href="../../Pages/aboutus">About Us</Link>
+              </li>
+              <li>
+                <Link href="../../Pages/contact-us">Contact Us</Link>
+              </li>
+              <li>
+                <Link href="../../Pages/privacy-policy">Privacy Policy</Link>
+              </li>
+              <li>
+                <Link href="../../Pages/term-and-conditions">
+                  Term & Conditions
+                </Link>
+              </li>
             </ul>
           </div>
 
           <div className="col-lg-2 col-md-6 col-6 footer-section">
             <h5>Services</h5>
             <ul>
-              <li><Link href="#">Digital Marketing</Link></li>
-              <li><Link href="#">SEO Services</Link></li>
-              <li><Link href="#">PPC Consulting</Link></li>
-              <li><Link href="#">Free SEO Test</Link></li>
+              <li>
+                <Link href="#">Digital Marketing</Link>
+              </li>
+              <li>
+                <Link href="#">SEO Services</Link>
+              </li>
+              <li>
+                <Link href="#">PPC Consulting</Link>
+              </li>
+              <li>
+                <Link href="#">Free SEO Test</Link>
+              </li>
             </ul>
           </div>
 
           <div className="col-lg-2 col-md-6 col-6 footer-section">
             <h5>Resources</h5>
             <ul>
-              <li><Link href="#">SEO FAQ</Link></li>
-              <li><Link href="#">Ecommerce SEO Guide</Link></li>
-              <li><Link href="#">Construction SEO Guide</Link></li>
+              <li>
+                <Link href="#">SEO FAQ</Link>
+              </li>
+              <li>
+                <Link href="#">Ecommerce SEO Guide</Link>
+              </li>
+              <li>
+                <Link href="#">Construction SEO Guide</Link>
+              </li>
             </ul>
           </div>
 
@@ -57,11 +89,17 @@ const Footer = () => {
           <div className="col-lg-3 col-md-6 footer-section">
             <h5>Biziffy Members</h5>
             <div className="footer-buttons">
-              <Link href="../../Pages/login" className="footer-login-btn">Log In</Link>
-              <Link href="../../Pages/login" className="btn btn-primary">Sign Up</Link>
+              <Link href="../../Pages/login" className="footer-login-btn">
+                Log In
+              </Link>
+              <Link href="../../Pages/login" className="btn btn-primary">
+                Sign Up
+              </Link>
             </div>
             <p>Find and connect with businesses near you.</p>
-            <Link href="#" className="btn btn-secondary">Find a Business</Link>
+            <Link href="#" className="btn btn-secondary">
+              Find a Business
+            </Link>
           </div>
         </div>
 
