@@ -20,7 +20,7 @@
     box-shadow: 0 0px 2px rgba(0, 0, 0, 0.3);
 }
 
-.business-listing-page .breadcrumb{
+.business-listing-page .breadcrumb {
     margin: 0;
     padding: 20px 30px 0;
 }
@@ -28,7 +28,9 @@
 .business-card h5 {
     margin-bottom: 5px;
     color: var(--black);
+    font-size: 18px;
 }
+
 
 .bi-star-fill {
     color: gold;
@@ -37,6 +39,7 @@
 .business-card p {
     color: var(--black);
     margin: 0;
+    font-size: 14px;
 }
 
 .business-card:hover {
@@ -44,9 +47,12 @@
     transform: scale(1.02);
 }
 
+span{
+    color: var(--black);
+}
+
 .business-card.active {
-    /* background-color: var(--blue); */
-    color: white;
+    border: 1px solid var(--black);
 }
 
 .right-panel {
@@ -73,7 +79,7 @@
 }
 
 .listing-image {
-    width: 100%;
+    width: 150px;
     color: transparent;
     height: 150px;
     object-fit: cover;
@@ -110,7 +116,7 @@
 }
 
 
-.detail-card-number{
+.detail-card-number {
     background-color: green;
     color: white;
     padding: 8px 6px;
@@ -119,7 +125,7 @@
     font-size: 14px;
 }
 
-.detail-card-whatsapp{
+.detail-card-whatsapp {
     background-color: transparent;
     border: 2px solid green;
     color: var(--black);
@@ -129,14 +135,14 @@
     font-size: 14px;
 }
 
-.detail-card-whatsapp i{
+.detail-card-whatsapp i {
     color: white;
     background-color: green;
     padding: 3px 6px;
     border-radius: 50%;
 }
 
-.detail-card-number i{
+.detail-card-number i {
     background-color: white;
     color: green;
     padding: 3px 6px;
@@ -154,11 +160,11 @@
 }
 
 .enquiry-btn {
-    -webkit-tap-highlight-color:transparent;
+    -webkit-tap-highlight-color: transparent;
     -webkit-appearance: button;
     background-color: var(--blue);
     background-image: none;
-    color:white;
+    color: white;
     /* border: 2px solid var(--black); */
     cursor: pointer;
     font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
@@ -215,4 +221,51 @@
     0% {
         box-shadow: 0 0 0 0 var(--blue);
     }
+}
+
+
+.opening-hours-container {
+    width: fit-content;
+    position: relative;
+}
+
+
+
+
+
+.opening-hours-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.opening-hours-list {
+    list-style: none;
+    padding: 0;
+    height: 100px;
+    overflow-y: scroll;
+}
+
+.opening-hours-list li {
+    padding: 10px 0;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    font-size: 10px;
+}
+
+.opening-hours-list li.today {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.status {}
+
+.status.open {
+    color: green;
+}
+
+.status.closed {
+    color: red;
 }
