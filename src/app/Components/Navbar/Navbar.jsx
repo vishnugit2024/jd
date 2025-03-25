@@ -4,7 +4,7 @@ import "./navbar.css";
 import Link from "next/link";
 import logo from "../../Images/logo.jpg";
 import Image from "next/image";
-import '../../Pages/login/page';
+import "../../Pages/login/page";
 
 const Header = () => {
   const navbarCollapseRef = useRef(null);
@@ -62,7 +62,9 @@ const Header = () => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span><i className="bi bi-list text-white"></i></span>
+            <span>
+              <i className="bi bi-list text-white"></i>
+            </span>
           </button>
           <div
             className="collapse navbar-collapse"
