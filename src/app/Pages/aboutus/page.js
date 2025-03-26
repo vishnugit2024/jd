@@ -17,7 +17,7 @@ const page = () => {
     { id: 2, image: count2, count: "1M+", label: "Sellers" },
     { id: 3, image: count3, count: "50k+", label: "Wider Audience" },
     { id: 4, image: count4, count: "100%", label: "Targeted Marketing " },
-    { id: 5, image: count5, count: "99.9%", label: "Satisfaction" },
+    { id: 5, image: count5, count: "99.9%", label: "Satisfactions" },
   ];
 
   return (
