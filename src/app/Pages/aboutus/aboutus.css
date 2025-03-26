@@ -23,6 +23,8 @@
   color: var(--black);
   margin-top: 15px;
   line-height: 1.7;
+  text-transform: capitalize;
+
 }
 
 .biziffy-about-image-div {
