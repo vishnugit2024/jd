@@ -167,36 +167,34 @@ const page = () => {
       <section className="about-section my-4">
         <div className="container">
           <div className="row">
-            <div className="col-md-12">
-              <div className="about-dive-data-link position-relative">
-                {/* Background Image in JSX */}
-                <div className="about-dive-bg position-absolute w-100 h-100">
-                  <Image src={diveImage} alt="Dive Image" />
-                </div>
+            <div className="about-dive-data-link position-relative">
+              {/* Background Image in JSX */}
+              <div className="about-dive-bg position-absolute w-100 h-100">
+                <Image src={diveImage} alt="Dive Image" />
+              </div>
 
-                <div className="dive-title">
-                  <h4>
-                    Dive into Bizi
-                    <span style={{ color: "var(--blue)" }}>ff</span>y.{" "}
-                    <span style={{ color: "var(--blue)" }}>
-                      <i className="bi bi-stars"></i>
-                    </span>
-                  </h4>
-                </div>
-                <div className="button-group position-absolute top-50 start-50 translate-middle d-flex gap-5">
-                  <Link href="#">
-                    <button>SignIn/SignUp</button>
-                  </Link>
-                  <Link href="#">
-                    <button>Free Listing</button>
-                  </Link>
-                  <Link href="#">
-                    <button>Free Listing</button>
-                  </Link>
-                  <Link href="#">
-                    <button>Free Listing</button>
-                  </Link>
-                </div>
+              <div className="dive-title">
+                <h4>
+                  Dive into Bizi
+                  <span style={{ color: "var(--blue)" }}>ff</span>y.{" "}
+                  <span style={{ color: "var(--blue)" }}>
+                    <i className="bi bi-stars"></i>
+                  </span>
+                </h4>
+              </div>
+              <div className="button-group">
+                <Link href="#">
+                  <button>SignIn/SignUp</button>
+                </Link>
+                <Link href="#">
+                  <button>Free Listing</button>
+                </Link>
+                <Link href="#">
+                  <button>Free Listing</button>
+                </Link>
+                <Link href="#">
+                  <button>Free Listing</button>
+                </Link>
               </div>
             </div>
           </div>
