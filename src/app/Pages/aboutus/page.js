@@ -17,7 +17,7 @@ const page = () => {
     { id: 2, image: count2, count: "1M+", label: "Sellers" },
     { id: 3, image: count3, count: "50k+", label: "Wider Audience" },
     { id: 4, image: count4, count: "100%", label: "Targeted Marketing " },
-    { id: 5, image: count5, count: "99.9%", label: "Satisfaction" },
+    { id: 5, image: count5, count: "99.9%", label: "Satisfactions" },
   ];
 
   return (
@@ -65,21 +65,22 @@ const page = () => {
                 <p className="biziffy-about-text">
                   Biziffy.com is designed to help businesses of all sizes expand
                   their reach and attract more customers. Whether you are a
-                  small startup or a well-established enterprise, our platform
-                  provides a seamless way to list your business, showcase your
-                  services, and connect with potential clients. With a
-                  user-friendly interface and advanced features, Biziffy ensures
-                  that your business stands out in the competitive market.
+                  small startup or a well-established enterprise&lsquo; our
+                  platform provides a seamless way to list your business&lsquo;
+                  showcase your services&lsquo; and connect with potential
+                  clients. With a user-friendly interface and advanced
+                  features&lsquo; Biziffy ensures that your business stands out
+                  in the competitive market.
                 </p>
                 <p className="biziffy-about-text">
                   By leveraging our Bulk Advertisement & Business Listing
-                  services, you can increase your brand visibility across
-                  multiple categories, making it easier for customers to find
-                  and engage with your business. Our platform allows you to
-                  highlight essential details such as contact information,
-                  working hours, and service offerings, ensuring that your
-                  potential customers have all the information they need at
-                  their fingertips.
+                  services&lsquo; you can increase your brand visibility across
+                  multiple categories&lsquo; making it easier for customers to
+                  find and engage with your business. Our platform allows you to
+                  highlight essential details such as contact information&lsquo;
+                  working hours&lsquo; and service offerings&lsquo; ensuring
+                  that your potential customers have all the information they
+                  need at their fingertips.
                 </p>
               </div>
             </div>
@@ -134,20 +135,21 @@ const page = () => {
                   <span style={{ color: "var(--blue)" }}>ff</span>y.
                 </h1>
                 <p className="biziffy-about-text">
-                  Additionally, Biziffy offers both free and premium listing
-                  options, giving businesses the flexibility to choose the level
-                  of exposure that suits their needs. With premium listings, you
-                  get enhanced visibility, priority placement in search results,
-                  and access to exclusive promotional tools that help drive more
-                  traffic to your business profile.
+                  Additionally&lsquo; Biziffy offers both free and premium
+                  listing options&lsquo; giving businesses the flexibility to
+                  choose the level of exposure that suits their needs. With
+                  premium listings&lsquo; you get enhanced visibility&lsquo;
+                  priority placement in search results&lsquo; and access to
+                  exclusive promotional tools that help drive more traffic to
+                  your business profile.
                 </p>
                 <p className="biziffy-about-text">
                   Our goal at Biziffy is to provide a hassle-free advertising
                   solution that maximizes your online presence and helps you
-                  reach a broader audience. Whether you're looking to grow
-                  locally or expand nationally, Biziffy’s powerful platform is
-                  the ultimate tool to elevate your brand and drive business
-                  growth.
+                  reach a broader audience. Whether you&apos;re looking to grow
+                  locally or expand nationally&lsquo; Biziffy&apos;s powerful
+                  platform is the ultimate tool to elevate your brand and drive
+                  business growth.
                 </p>
               </div>
             </div>
