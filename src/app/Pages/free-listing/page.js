@@ -12,7 +12,7 @@ const Page = () => {
     const [showAllHours, setShowAllHours] = useState(false);
 
     const hours = [
-        { day: 'Monday', open: '09:00 AM', close: '07:00 PM' },
+        { day: 'Monday', open: '09:00 AM', close: '10.00 AM' },
         { day: 'Tuesday', open: '09:00 AM', close: '07:00 PM' },
         { day: 'Wednesday', open: '09:00 AM', close: '07:00 PM' },
         { day: 'Thursday', open: '09:00 AM', close: '07:00 PM' },
@@ -94,7 +94,7 @@ const Page = () => {
             ]
         }
     ];
-    const [activeTab, setActiveTab] = useState('service');
+    const [activeTab, setActiveTab] = useState('overview');
     const [selected, setSelected] = useState(businesses[0]);
     return (
         <section className='business-listing-page'>
@@ -111,159 +111,150 @@ const Page = () => {
                         Business Category Name
                     </h5>
                     <div className="row">
-    <div className="col-md-5 left-panel">
-        {businesses.map((biz) => (
-            <div
-                key={biz.id}
-                className={`business-card d-flex align-items-center gap-3 ${selected.id === biz.id ? 'active' : ''}`}
-                onClick={() => setSelected(biz)}
-            >
-                <div>
-                    <Image src={biz.image} alt={biz.name} className="listing-image mb-2" />
-                </div>
-                <div>
-                    <h5>{biz.name}</h5>
-                    <div className='d-flex gap-2 align-items-center'>
-                        <p>{biz.rating} <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> {biz.reviews}</p>
-                        <span>|</span>
-                        <p>Web Designer</p>
-                    </div>
-                    <div className='d-flex gap-2 align-items-center'>
-                        <p>7 years in business</p>
-                        <span>|</span>
-                        <p>Karnal, Haryana</p>
-                    </div>
-                    <div className='d-flex gap-2 align-items-center'>
-                        <div className="opening-hours-container">
-                            <p onClick={() => setShowAllHours(!showAllHours)} className={`status ${isOpen ? 'open' : 'closed'}`}>{isOpen ? 'Open Now' : 'Closed Now'}</p>
-                            {showAllHours && (
-                                <ul className="opening-hours-list">
-                                    {hours.map((item, index) => (
-                                        <li key={index} className={today === index ? 'today' : ''}>
-                                            <span>{item.day}</span>
-                                            <span>{item.open} - {item.close}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            )}
-                        </div>
-                        <span>|</span>
-                        <p>Phone: {biz.phone}</p>
-                    </div>
-                    <div className='d-flex gap-2 align-items-center'>
-                        <p>On Site Services</p>
-                        <span>|</span>
-                        <p>Online Appointment</p>
-                    </div>
-                </div>
-            </div>
-        ))}
-    </div>
-
-    <div className="col-md-7 right-panel">
-        <div className="details-card">
-            <h3>{selected.name}</h3>
-            <Image src={selected.image} alt={selected.name} className="business-detail-image mb-3" />
-            
-            {/* <p><b>Rating :</b> {selected.rating} <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> ({selected.reviews} reviews)</p>
-            <p><b>Address :</b> {selected.address}</p>
-            <p><b>Year Of Business :</b> 19 years</p>
-            <p><b>Description:</b> {selected.description}</p> */}
-
-            {/* Data from col-md-5 added here */}
-            {/* <h5>{selected.name}</h5> */}
-            <div className='d-flex gap-2 align-items-center'>
-                <p>{selected.rating} <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> {selected.reviews}</p>
-                <span>|</span>
-                <p>Web Designer</p>
-            </div>
-            <div className='d-flex gap-2 align-items-center'>
-                <p>7 years in business</p>
-                <span>|</span>
-                <p>Karnal, Haryana</p>
-            </div>
-            <div className='d-flex gap-2 align-items-center'>
-                <div className="opening-hours-container">
-                    <p onClick={() => setShowAllHours(!showAllHours)} className={`status ${isOpen ? 'open' : 'closed'}`}>{isOpen ? 'Open Now' : 'Closed Now'}</p>
-                    {showAllHours && (
-                        <ul className="opening-hours-list">
-                            {hours.map((item, index) => (
-                                <li key={index} className={today === index ? 'today' : ''}>
-                                    <span>{item.day}</span>
-                                    <span>{item.open} - {item.close}</span>
-                                </li>
+                        <div className="col-md-5 left-panel">
+                            {businesses.map((biz) => (
+                                <div
+                                    key={biz.id}
+                                    className={`business-card d-flex align-items-center gap-3 ${selected.id === biz.id ? 'active' : ''}`}
+                                    onClick={() => setSelected(biz)}>
+                                    <div>
+                                        <Image src={biz.image} alt={biz.name} className="listing-image mb-2" />
+                                    </div>
+                                    <div>
+                                        <h5>{biz.name}</h5>
+                                        <div className='d-flex gap-2 align-items-center'>
+                                            <p>{biz.rating} <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> {biz.reviews}</p>
+                                            <span>|</span>
+                                            <p>Web Designer</p>
+                                        </div>
+                                        <div className='d-flex gap-2 align-items-center'>
+                                            <p>7 years in business</p>
+                                            <span>|</span>
+                                            <p>Karnal, Haryana</p>
+                                        </div>
+                                        <div className='d-flex gap-2 align-items-center'>
+                                            <div className="opening-hours-container">
+                                                <p className={`status ${isOpen ? 'open' : 'closed'}`}>{isOpen ? 'Open Now' : 'Closed Now'}</p>
+                                            </div>
+                                            <span>|</span>
+                                            <p>Phone: {biz.phone}</p>
+                                        </div>
+                                        <div className='d-flex gap-2 align-items-center'>
+                                            <p>On Site Services</p>
+                                            <span>|</span>
+                                            <p>Online Appointment</p>
+                                        </div>
+                                    </div>
+                                </div>
                             ))}
-                        </ul>
-                    )}
-                </div>
-                <span>|</span>
-                <p>Phone: {selected.phone}</p>
-            </div>
-            <div className='d-flex gap-2 align-items-center'>
-                <p>On Site Services</p>
-                <span>|</span>
-                <p>Online Appointment</p>
-            </div>
-            {/* End of copied data */}
+                        </div>
 
-            <ul className="nav nav-tabs mb-3">
-                <li className="nav-item">
-                    <button className={`nav-link ${activeTab === 'service' ? 'active' : ''}`} onClick={() => setActiveTab('service')}>
-                        Service
-                    </button>
-                </li>
-                <li className="nav-item">
-                    <button className={`nav-link ${activeTab === 'review' ? 'active' : ''}`} onClick={() => setActiveTab('review')}>
-                        Review
-                    </button>
-                </li>
-            </ul>
+                        <div className="col-md-7 right-panel">
+                            <div className="details-card">
+                                <h3>{selected.name}</h3>
+                                <Image src={selected.image} alt={selected.name} className="business-detail-image mb-3" />
+                                <div className='d-flex gap-2 align-items-center'>
+                                    <p>{selected.rating} <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> {selected.reviews}</p>
+                                    <span>|</span>
+                                    <p>Web Designer</p>
+                                </div>
+                                <div className='d-flex gap-2 align-items-center'>
+                                    <p>7 years in business</p>
+                                    <span>|</span>
+                                    <p>Karnal, Haryana</p>
+                                </div>
+                                {/* End of copied data */}
+                                <ul className="nav nav-tabs mt-3">
+                                    <li className="nav-item">
+                                        <button className={`nav-link listing-tabs-btn ${activeTab === 'overview' ? 'active' : ''}`} onClick={() => setActiveTab('overview')}>
+                                            Overview
+                                        </button>
+                                    </li>
+                                    <li className="nav-item">
+                                        <button className={`nav-link ${activeTab === 'service' ? 'active' : ''}`} onClick={() => setActiveTab('service')}>
+                                            Service
+                                        </button>
+                                    </li>
+                                    <li className="nav-item">
+                                        <button className={`nav-link ${activeTab === 'review' ? 'active' : ''}`} onClick={() => setActiveTab('review')}>
+                                            Review
+                                        </button>
+                                    </li>
+                                </ul>
 
-            <div className="tab-content">
-                <div className={`tab-pane fade ${activeTab === 'service' ? 'show active' : ''}`}>
-                    <ul className="service-list">
-                        {selected.services?.map((service, index) => (
-                            <li key={index}>{service}</li>
-                        ))}
-                    </ul>
-                </div>
+                                <div className="tab-content mt-3">
+                                    <div className={`tab-pane fade ${activeTab === 'overview' ? 'show active' : ''}`}>
+                                        <div className='d-flex gap-2'>
+                                            <div className="opening-hours-container">
+                                                <p onClick={() => setShowAllHours(!showAllHours)} className={`status ${isOpen ? 'open' : 'closed'}`}>{isOpen ? 'Open Now' : 'Closed Now'} <i className="bi bi-chevron-down"></i></p>
+                                                {showAllHours && (
+                                                    <ul className="opening-hours-list">
+                                                        {hours.map((item, index) => (
+                                                            <li key={index} className={today === index ? 'today' : ''}>
+                                                                <span>{item.day}</span>
+                                                                <span>{item.open} - {item.close}</span>
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                )}
+                                            </div>
+                                            <span>|</span>
+                                            <p>Phone: {selected.phone}</p>
+                                        </div>
+                                        <div className='d-flex gap-2 align-items-center'>
+                                            <p>On Site Services</p>
+                                            <span>|</span>
+                                            <p>Online Appointment</p>
+                                        </div>
+                                        <div>
+                                            <hr />
+                                            <h6>
+                                                <b>Profile</b>
+                                            </h6>
+                                            <div className="social-icons">
+                                                <Link href="#">
+                                                    <i className="bi bi-twitter"></i>
+                                                </Link>
+                                                <Link href="#">
+                                                    <i className="bi bi-facebook"></i>
+                                                </Link>
+                                                <Link href="#">
+                                                    <i className="bi bi-linkedin"></i>
+                                                </Link>
+                                                <Link href="#">
+                                                    <i className="bi bi-instagram"></i>
+                                                </Link>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className={`tab-pane fade ${activeTab === 'service' ? 'show active' : ''}`}>
+                                        <ul className="service-list">
+                                            {selected.services?.map((service, index) => (
+                                                <li key={index}>{service}</li>
+                                            ))}
+                                        </ul>
+                                    </div>
 
-                <div className={`tab-pane fade ${activeTab === 'review' ? 'show active' : ''}`}>
-                    <ul className="review-list">
-                        {selected.reviewsData?.map((review, index) => (
-                            <li key={index}>
-                                <strong>{review.author}:</strong> {review.comment}
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            </div>
-
-            <div className='d-flex gap-2 align-items-center'>
-                <Link className='detail-card-number' href={`tel:${selected.phone}`}>
-                    <i className="bi bi-telephone-outbound"></i> {selected.phone}
-                </Link>
-                <Link className='detail-card-whatsapp' href={`https://wa.me/${selected.phone}`} target="_blank" rel="noopener noreferrer">
-                    <i className="bi bi-whatsapp"></i> WhatsApp
-                </Link>
-            </div>
-        </div>
-    </div>
-</div>
-
-                        {/* <div className="col-md-3 enquiry-panel">
-                            <div className='enquiry-card text-center'>
-                                <p>
-                                    Get more list of businesses
-                                </p>
-                                <form>
-                                    <input type="text" placeholder="Enter your name" className="mb-3" />
-                                    <input type="number" placeholder="+91 0000 000 000" className="mb-3" />
-                                    <input type="email" placeholder="Enter your email" className="mb-3" />
-                                    <button className="enquiry-btn">Submit Enquiry <i className="bi bi-chevron-double-right"></i></button>
-                                </form>
+                                    <div className={`tab-pane fade ${activeTab === 'review' ? 'show active' : ''}`}>
+                                        <ul className="review-list">
+                                            {selected.reviewsData?.map((review, index) => (
+                                                <li key={index}>
+                                                    <span className='review-name'>
+                                                        {review.author.charAt(0)}
+                                                    </span>
+                                                    <div>
+                                                    <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i>
+                                                    </div>
+                                                    
+                                                    {`"${review.comment}"`} {" "}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
-                        </div> */}
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

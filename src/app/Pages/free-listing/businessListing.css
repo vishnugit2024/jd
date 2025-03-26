@@ -47,7 +47,7 @@
     transform: scale(1.02);
 }
 
-span{
+span {
     color: var(--black);
 }
 
@@ -74,8 +74,9 @@ span{
 }
 
 .details-card p {
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     line-height: 1.6;
+    margin: 0;
 }
 
 .listing-image {
@@ -97,23 +98,6 @@ span{
 
 }
 
-.enquiry-card {
-    padding: 10px;
-    border-radius: 15px;
-    box-shadow: 0 0px 2px rgba(0, 0, 0, 0.3);
-    color: var(--black);
-    position: sticky;
-    top: 80px;
-    left: 0;
-}
-
-.enquiry-card form input {
-    width: 100%;
-    border: 1px solid var(--blue);
-    border-radius: 30px;
-    padding: 5px 10px;
-    margin-bottom: 10px;
-}
 
 
 .detail-card-number {
@@ -149,89 +133,10 @@ span{
     border-radius: 50%;
 }
 
-.enquiry-btn,
-.enquiry-btn *,
-.enquiry-btn :after,
-.enquiry-btn :before,
-.enquiry-btn:after,
-.enquiry-btn:before {
-    border: 0 solid;
-    box-sizing: border-box;
-}
-
-.enquiry-btn {
-    -webkit-tap-highlight-color: transparent;
-    -webkit-appearance: button;
-    background-color: var(--blue);
-    background-image: none;
-    color: white;
-    /* border: 2px solid var(--black); */
-    cursor: pointer;
-    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-        Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
-        Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-    font-size: 100%;
-    line-height: 1.5;
-    margin: 0;
-    -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
-    padding: 0;
-}
-
-.enquiry-btn:disabled {
-    cursor: default;
-}
-
-.enquiry-btn:-moz-focusring {
-    outline: auto;
-}
-
-.enquiry-btn svg {
-    display: block;
-    vertical-align: middle;
-}
-
-.enquiry-btn [hidden] {
-    display: none;
-}
-
-.enquiry-btn {
-    -webkit-animation: pulse 2s infinite;
-    animation: pulse 2s infinite;
-    border-radius: 999px;
-    box-shadow: 0 0 0 1em transparent;
-    box-sizing: border-box;
-    display: block;
-    font-weight: 600;
-    -webkit-mask-image: none;
-    overflow: hidden;
-    padding: 10px 20px;
-    width: 100%;
-    position: relative;
-    text-transform: camelcase;
-
-}
-
-@-webkit-keyframes pulse {
-    0% {
-        box-shadow: 0 0 0 0 var(--black);
-    }
-}
-
-@keyframes pulse {
-    0% {
-        box-shadow: 0 0 0 0 var(--blue);
-    }
-}
-
-
 .opening-hours-container {
     width: fit-content;
     position: relative;
 }
-
-
-
-
 
 .opening-hours-title {
     font-size: 1.5rem;
@@ -240,10 +145,8 @@ span{
 }
 
 .opening-hours-list {
-    list-style: none;
-    padding: 0;
-    height: 100px;
-    overflow-y: scroll;
+    padding: 0px;
+    width: 220px;
 }
 
 .opening-hours-list li {
@@ -260,12 +163,33 @@ span{
     font-weight: bold;
 }
 
-.status {}
-
 .status.open {
     color: green;
+    cursor: pointer;
 }
 
 .status.closed {
     color: red;
+    cursor: pointer;
+}
+
+.review-list{
+    padding: 0;
+}
+
+.review-list li{
+    list-style-type: none;
+    margin-bottom: 10px;
+}
+
+.review-name{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    display: inline-flex;
+    border: 1px solid lightgray;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    align-items: center;
 }
