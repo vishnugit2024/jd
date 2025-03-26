@@ -10,7 +10,7 @@
 
 body {
   background-color: rgb(255, 3, 3);
-  scroll-behavior: smooth;  
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -57,6 +57,49 @@ body {
 .black-btn:hover {
   background: #000000;
 }
+.all-breadcrumb {
+  position: relative;
+  height: 350px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.bread-overlay {
+  height: 350px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.815); /* Semi-transparent black */
+  position: absolute; /* Make it sit on top */
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.bread-content {
+  position: relative;
+  z-index: 3; /* Ensure it sits above the overlay */
+  max-width: 50%;
+  text-align: center;
+  margin: auto;
+  color: white; /* Ensure text is visible */
+  top: 100px;
+}
+
+.bread-content ol {
+  display: flex;
+  gap: 5px;
+  list-style: none;
+  padding: 0;
+  justify-content: center;
+}
+
+.bread-content ol li a{
+color: white;
+text-decoration: none;
+}
+
 
 @media (max-width: 768px) {
   .container {

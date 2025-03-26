@@ -17,6 +17,9 @@
 
 .navbar-nav {
   gap: 12px;
+  display: flex;
+  justify-content: center;
+  width: 85%;
 }
 
 .navbar.on-scroll {

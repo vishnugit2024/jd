@@ -96,6 +96,24 @@ const Page = () => {
     ];
     const [activeTab, setActiveTab] = useState('overview');
     const [selected, setSelected] = useState(businesses[0]);
+
+    const [newReview, setNewReview] = useState({ author: '', comment: '' });
+    const [showForm, setShowForm] = useState(false);
+
+    const handleAddReview = () => {
+        if (newReview.author.trim() && newReview.comment.trim()) {
+            const updatedReviews = [
+                ...selected.reviewsData,
+                { author: newReview.author, comment: newReview.comment },
+            ];
+            setSelected({ ...selected, reviewsData: updatedReviews });
+            setNewReview({ author: '', comment: '' });
+            setShowForm(false);
+        } else {
+            alert('Please fill in both fields.');
+        }
+    };
+
     return (
         <section className='business-listing-page'>
             <div className='container'>
@@ -243,14 +261,43 @@ const Page = () => {
                                                         {review.author.charAt(0)}
                                                     </span>
                                                     <div>
-                                                    <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i>
+                                                        <div className='review-comment-star'>
+                                                            <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i>
+                                                        </div>
+                                                        {`"${review.comment}"`} {" "}
                                                     </div>
-                                                    
-                                                    {`"${review.comment}"`} {" "}
                                                 </li>
                                             ))}
                                         </ul>
+
+                                        <div className='text-center'>
+                                        <button className="login-btn mb-2" onClick={() => setShowForm(!showForm)}>
+                                            {showForm ? 'Hide Review Form' : 'Write a Review'} <i className="bi bi-pencil"></i>
+                                        </button>
+
+                                        {showForm && (
+                                            <div className="add-review">
+                                                <h4>Add a Review </h4>
+                                                <input
+                                                    type="text"
+                                                    placeholder="Your Name"
+                                                    className="login-input mb-2"
+                                                    value={newReview.author}
+                                                    onChange={(e) => setNewReview({ ...newReview, author: e.target.value })}
+                                                />
+                                                <textarea
+                                                    placeholder="Your Comment"
+                                                    className="login-input mb-2"
+                                                    value={newReview.comment}
+                                                    onChange={(e) => setNewReview({ ...newReview, comment: e.target.value })}
+                                                ></textarea>
+                                                <button className="btn btn-primary" onClick={handleAddReview}>Submit</button>
+                                            </div>
+                                        )}
+
+                                        </div>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
