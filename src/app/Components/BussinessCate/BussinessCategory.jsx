@@ -79,6 +79,8 @@ const categories = [
   },
 ];
 
+
+
 const BussinessCategory = () => {
   return (
     <>
@@ -109,8 +111,7 @@ const BussinessCategory = () => {
             </div>
           ))}
           <div className="d-flex justify-content-center mt-3">
-            <Link href="/BussinessCategories">
-              <button className="login-btn">View All</button>
+            <Link className="login-btn" href="../../Pages/all-categories">View All
             </Link>
           </div>
         </div>
