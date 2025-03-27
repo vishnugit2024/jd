@@ -295,7 +295,7 @@ function page() {
                 </div>
                 <div className="col-md-8">
                   <div className="coprate-why-choose-img-data">
-                    <h5>5. Fast & Efficient Service</h5>
+                    <h5>5. Fast & Efficient Services</h5>
 
                     <h4>
                       <i className="bi bi-lightning"></i> Quick Turnaround
