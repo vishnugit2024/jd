@@ -101,7 +101,6 @@ const Page = () => {
                                         onChange={handleCaptchaChange}
                                     />
                                 </div>
-
                                 <div className="form-submit">
                                     <button type="submit" className="submit-button" disabled={!captchaVerified}>Send Message</button>
                                 </div>

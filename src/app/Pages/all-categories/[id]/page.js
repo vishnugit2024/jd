@@ -145,7 +145,7 @@ const page = () => {
                 <div className='container'>
                     <div className="business-listing-container">
                         <h5 className='text-dark'>
-                            Business Category Name
+                            Business 
                         </h5>
                         <div className="row">
                             <div className="col-md-5 left-panel">
@@ -179,7 +179,7 @@ const page = () => {
                                             <div className='d-flex gap-2 align-items-center'>
                                                 <p>On Site Services</p>
                                                 <span>|</span>
-                                                <p>Online Appointment</p>
+                                                <p>Online Appointments</p>
                                             </div>
                                         </div>
                                     </div>
