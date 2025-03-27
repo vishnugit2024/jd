@@ -125,7 +125,7 @@ function page() {
                   Advertising?
                 </h1>
               </div>
-              <div className="row coprate-why-choose-us-data align-items-center">
+              <div className="row coprate-why-choose-us-data">
                 <div className="col-md-4">
                   <div className="coprate-why-choose-div">
                     <Image
@@ -161,7 +161,7 @@ function page() {
                   </div>
                 </div>
               </div>
-              <div className="row coprate-why-choose-us-data align-items-center">
+              <div className="row coprate-why-choose-us-data">
                 <div className="col-md-8">
                   <div className="coprate-why-choose-img-data">
                     <h5>2. Cost-Effective Solutions</h5>
@@ -198,7 +198,7 @@ function page() {
                   </div>
                 </div>
               </div>
-              <div className="row coprate-why-choose-us-data align-items-center">
+              <div className="row coprate-why-choose-us-data">
                 <div className="col-md-4">
                   <div className="coprate-why-choose-div">
                     <Image
@@ -240,7 +240,7 @@ function page() {
                   </div>
                 </div>
               </div>
-              <div className="row coprate-why-choose-us-data align-items-center">
+              <div className="row coprate-why-choose-us-data">
                 <div className="col-md-8">
                   <div className="coprate-why-choose-img-data">
                     <h5>4. Targeted Marketing</h5>
@@ -283,7 +283,7 @@ function page() {
                   </div>
                 </div>
               </div>
-              <div className="row coprate-why-choose-us-data align-items-center">
+              <div className="row coprate-why-choose-us-data">
                 <div className="col-md-4">
                   <div className="coprate-why-choose-div">
                     <Image

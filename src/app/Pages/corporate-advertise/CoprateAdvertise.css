@@ -71,7 +71,8 @@
 }
 
 .coprate-why-choose-us-data {
-  margin-top: 2rem;
+  margin-top: 2rem !important;
+  align-items: center;
 }
 
 .coprate-why-choose-div {
