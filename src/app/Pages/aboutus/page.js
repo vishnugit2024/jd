@@ -1,8 +1,10 @@
+"use client";
 import React from "react";
 import "./aboutus.css";
 import Image from "next/image";
 import biziffyaboutus from "../../Images/AboutImg.jpg";
 import biziffyaboutus1 from "../../Images/AboutImg1.jpg";
+import { motion } from "framer-motion";
 import countbgImage from "../../Images/aboutbgImage.png";
 import count1 from "../../Images/linechart.gif";
 import count2 from "../../Images/socialcare.gif";
@@ -22,22 +24,35 @@ const page = () => {
 
   return (
     <>
-      <section className="about-page-hero-bg">
+      <section className="some-page-hero-bg">
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <div className="about-page-hero-content">
-                <h1 className="about-page-hero-title">
-                  Connecting
-                  <span style={{ color: "var(--blue)" }}> smart buyers </span>
-                  and trustworthy businesses
-                </h1>
-                <p className="about-page-hero-subtitle">
+              <div className="some-page-hero-content">
+                {/* Animated Heading */}
+                <motion.h1
+                  className="some-page-hero-title"
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1.5, ease: "easeOut" }}
+                >
+                  Connecting{" "}
+                  <span style={{ color: "var(--blue)" }}>smart buyers</span> and
+                  trustworthy businesses
+                </motion.h1>
+
+                {/* Animated Subtitle */}
+                <motion.p
+                  className="some-page-hero-subtitle"
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 2, ease: "easeOut", delay: 0.3 }}
+                >
                   <b>
                     Bizi<span style={{ color: "var(--blue)" }}>ff</span>y
                   </b>{" "}
                   is a Bulk Advertisement & Business Listing services Platform.
-                </p>
+                </motion.p>
               </div>
             </div>
           </div>
@@ -62,7 +77,13 @@ const page = () => {
                   We are a Bizi<span style={{ color: "var(--blue)" }}>ff</span>y
                   that connects smart buyers with trustworthy businesses.
                 </h1>
-                <p className="biziffy-about-text">
+                <motion.p
+                  className="biziffy-about-text"
+                  initial={{ opacity: 0, x: -50 }} // Slide in from the right
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }} // Delay to make it smoother
+                  viewport={{ once: true, amount: 0.2 }}
+                >
                   Biziffy.com is designed to help businesses of all sizes expand
                   their reach and attract more customers. Whether you are a
                   small startup or a well-established enterprise&lsquo; our
@@ -71,8 +92,14 @@ const page = () => {
                   clients. With a user-friendly interface and advanced
                   features&lsquo; Biziffy ensures that your business stands out
                   in the competitive market.
-                </p>
-                <p className="biziffy-about-text">
+                </motion.p>
+                <motion.p
+                  className="biziffy-about-text"
+                  initial={{ opacity: 0, y: 50 }} // Slide in from the right
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }} // Delay to make it smoother
+                  viewport={{ once: true, amount: 0.2 }}
+                >
                   By leveraging our Bulk Advertisement & Business Listing
                   services&lsquo; you can increase your brand visibility across
                   multiple categories&lsquo; making it easier for customers to
@@ -81,7 +108,7 @@ const page = () => {
                   working hours&lsquo; and service offerings&lsquo; ensuring
                   that your potential customers have all the information they
                   need at their fingertips.
-                </p>
+                </motion.p>
               </div>
             </div>
           </div>
@@ -134,7 +161,13 @@ const page = () => {
                   Options with Bizi
                   <span style={{ color: "var(--blue)" }}>ff</span>y.
                 </h1>
-                <p className="biziffy-about-text">
+                <motion.p
+                  className="biziffy-about-text"
+                  initial={{ opacity: 0, y: 50 }} // Slide in from the right
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }} // Delay to make it smoother
+                  viewport={{ once: true, amount: 0.2 }}
+                >
                   Additionally&lsquo; Biziffy offers both free and premium
                   listing options&lsquo; giving businesses the flexibility to
                   choose the level of exposure that suits their needs. With
@@ -142,15 +175,21 @@ const page = () => {
                   priority placement in search results&lsquo; and access to
                   exclusive promotional tools that help drive more traffic to
                   your business profile.
-                </p>
-                <p className="biziffy-about-text">
+                </motion.p>
+                <motion.p
+                  className="biziffy-about-text"
+                  initial={{ opacity: 0, y: 50 }} // Slide in from the right
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }} // Delay to make it smoother
+                  viewport={{ once: true, amount: 0.2 }}
+                >
                   Our goal at Biziffy is to provide a hassle-free advertising
                   solution that maximizes your online presence and helps you
                   reach a broader audience. Whether you&apos;re looking to grow
                   locally or expand nationally&lsquo; Biziffy&apos;s powerful
                   platform is the ultimate tool to elevate your brand and drive
                   business growth.
-                </p>
+                </motion.p>
               </div>
             </div>
             <div className="col-md-5">

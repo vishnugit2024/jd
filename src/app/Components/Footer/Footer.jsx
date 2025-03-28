@@ -36,18 +36,16 @@ const Footer = () => {
             <h5>Company</h5>
             <ul>
               <li>
-                <Link href="../../Pages/aboutus">About Us</Link>
+                <Link href="/Pages/aboutus">About Us</Link>
               </li>
               <li>
-                <Link href="../../Pages/contact-us">Contact Us</Link>
+                <Link href="/Pages/contact-us">Contact Us</Link>
               </li>
               <li>
-                <Link href="../../Pages/privacy-policy">Privacy Policy</Link>
+                <Link href="/Pages/privacy-policy">Privacy Policy</Link>
               </li>
               <li>
-                <Link href="../../Pages/term-and-conditions">
-                  Term & Conditions
-                </Link>
+                <Link href="/Pages/term-and-conditions">Term & Conditions</Link>
               </li>
             </ul>
           </div>
@@ -89,15 +87,15 @@ const Footer = () => {
           <div className="col-lg-3 col-md-6 footer-section">
             <h5>Biziffy Members</h5>
             <div className="footer-buttons">
-              <Link href="../../Pages/login" className="footer-login-btn">
+              <Link href="/Pages/login" className="footer-login-btn">
                 Log In
               </Link>
-              <Link href="../../Pages/login" className="btn btn-primary">
+              <Link href="/Pages/login" className="btn btn-primary">
                 Sign Up
               </Link>
             </div>
             <p>Find and connect with businesses near you.</p>
-            <Link href="#" className="btn btn-secondary">
+            <Link href="/Pages/bus" className="btn btn-secondary">
               Find a Business
             </Link>
           </div>

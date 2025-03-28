@@ -100,8 +100,53 @@ color: white;
 text-decoration: none;
 }
 
+/* ====== Page Heading ================== */
+
+.some-page-hero-bg {
+  background-image: linear-gradient(to top, #fff 40%, #a6c0eede 100%);
+}
+
+.some-page-hero-content {
+  padding: 6rem 0;
+  text-align: center;
+  max-width: 60%;
+  margin: auto;
+}
+
+.some-page-hero-title {
+  font-size: 42px;
+  font-weight: 800;
+  text-transform: capitalize;
+  line-height: 1.3;
+  color: var(--black);
+  text-align: center;
+}
+
+.some-page-hero-subtitle {
+  font-size: 18px;
+  color: var(--black);
+  margin-top: 15px;
+  line-height: 1.7;
+  text-transform: capitalize;
+}
+
+
 
 @media (max-width: 768px) {
+
+  .some-page-hero-content {
+    padding: 4rem 0;
+    max-width: 90%;
+  }
+
+  .some-page-hero-title {
+    font-size: 32px;
+  }
+
+  .some-page-hero-subtitle {
+    font-size: 16px;
+  }
+  
   .container {
     padding: 0 12px;
   }

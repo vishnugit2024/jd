@@ -1,30 +1,3 @@
-.coprate-page-hero-bg {
-  background-image: linear-gradient(to top, #fff 50%, #a6c0eede 100%);
-}
-
-.coprate-page-hero-content {
-  padding: 6rem 0;
-  text-align: center;
-  max-width: 60%;
-  margin: auto;
-}
-
-.coprate-page-hero-title {
-  font-size: 42px;
-  font-weight: 800;
-  text-transform: capitalize;
-  line-height: 1.3;
-  color: var(--black);
-  text-align: center;
-}
-
-.coprate-page-hero-subtitle {
-  font-size: 18px;
-  color: var(--black);
-  margin-top: 15px;
-  line-height: 1.7;
-  text-transform: capitalize;
-}
 
 .biziffy-coprate-image-div {
   width: 100%;
@@ -120,7 +93,6 @@
 .coprate-why-choose-img-data p {
   font-size: 16px;
   color: var(--black);
-  margin: 0;
 }
 
 /* ============= Industries  Slider ================= */
@@ -197,19 +169,7 @@
 }
 
 @media (max-width: 768px) {
-  .coprate-page-hero-content {
-    padding: 4rem 0;
-    max-width: 90%;
-  }
-
-  .coprate-page-hero-title {
-    font-size: 32px;
-  }
-
-  .coprate-page-hero-subtitle {
-    font-size: 16px;
-  }
-
+ 
   .biziffy-coprate-content .biziffy-coprate-title {
     font-size: 24px;
   }
