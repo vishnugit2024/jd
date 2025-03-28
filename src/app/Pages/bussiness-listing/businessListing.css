@@ -1,0 +1,202 @@
+.business-listing-container {
+    padding: 20px;
+    /* background-color: var(--black); */
+    min-height: 100vh;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.left-panel {
+    padding-right: 15px;
+}
+
+.business-card {
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 0px 2px rgba(0, 0, 0, 0.3);
+}
+
+.business-listing-page .breadcrumb {
+    margin: 0;
+    padding: 20px 30px 0;
+}
+
+.business-card h5 {
+    margin-bottom: 5px;
+    color: var(--black);
+    font-size: 18px;
+}
+
+
+.bi-star-fill {
+    color: gold;
+}
+
+.business-card p {
+    color: var(--black);
+    margin: 0;
+    font-size: 14px;
+}
+
+.business-card:hover {
+    border: 1px solid var(--blue);
+    transform: scale(1.02);
+}
+
+span {
+    color: var(--black);
+}
+
+.business-card.active {
+    border: 1px solid var(--black);
+}
+
+.right-panel {
+    padding-left: 15px;
+}
+
+.details-card {
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 0px 2px rgba(0, 0, 0, 0.3);
+    color: var(--black);
+    position: sticky;
+    top: 80px;
+}
+
+.details-card h3 {
+    margin-bottom: 10px;
+    color: var(--black);
+}
+
+.details-card p {
+    /* margin-bottom: 10px; */
+    line-height: 1.6;
+    margin: 0;
+}
+
+.listing-image {
+    width: 150px;
+    color: transparent;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    aspect-ratio: 4 / 3;
+}
+
+.business-detail-image {
+    width: 100%;
+    color: transparent;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    aspect-ratio: 4 / 3;
+
+}
+
+
+
+.detail-card-number {
+    background-color: green;
+    color: white;
+    padding: 8px 6px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.detail-card-whatsapp {
+    background-color: transparent;
+    border: 2px solid green;
+    color: var(--black);
+    padding: 8px 6px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.detail-card-whatsapp i {
+    color: white;
+    background-color: green;
+    padding: 3px 6px;
+    border-radius: 50%;
+}
+
+.detail-card-number i {
+    background-color: white;
+    color: green;
+    padding: 3px 6px;
+    border-radius: 50%;
+}
+
+.opening-hours-container {
+    width: fit-content;
+    position: relative;
+}
+
+.opening-hours-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.opening-hours-list {
+    padding: 0px;
+    width: 220px;
+}
+
+.opening-hours-list li {
+    padding: 10px 0;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    font-size: 10px;
+}
+
+.opening-hours-list li.today {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.status.open {
+    color: green;
+    cursor: pointer;
+}
+
+.status.closed {
+    color: red;
+    cursor: pointer;
+}
+
+.review-list {
+    padding: 0;
+}
+
+.review-list li {
+    list-style-type: none;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.review-name {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: inline-flex;
+    border: 1px solid lightgray;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    align-items: center;
+}
+
+.review-comment-star i {
+    font-size: 12px;
+}

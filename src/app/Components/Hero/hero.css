@@ -6,10 +6,8 @@
   position: relative;
 }
 
-
-
 .hero-content {
-  max-width: 60%;
+  max-width: 70%;
   margin: auto;
 }
 
@@ -111,7 +109,8 @@
 .hero-search-container {
   display: flex;
   align-items: center;
-  background: white;
+  background: aliceblue;
+  border: 1px solid #ddd;
   padding: 5px 10px;
   border-radius: 50px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -142,7 +141,7 @@
   position: absolute;
   top: 40px;
   left: -10px;
-  background: white;
+  background: aliceblue;
   color: black;
   border-radius: 5px;
   list-style: none;
@@ -160,6 +159,7 @@
 .hero-search-input {
   border: none;
   padding: 10px;
+  background: aliceblue;
   width: 100%;
   font-size: 16px;
   outline: none;
@@ -173,9 +173,7 @@
   border-radius: 50px;
   cursor: pointer;
   font-size: 16px;
-
 }
-
 
 /* 📱 Responsive Design */
 @media (max-width: 1000px) {
@@ -193,6 +191,10 @@
 }
 
 @media (max-width: 768px) {
+  .hero-content {
+    max-width: 90%;
+  }
+
   .hero-image-container {
     display: none;
   }
@@ -212,8 +214,6 @@
 
   .hero-search-container {
     justify-content: center;
-
-    width: 95%;
   }
 }
 

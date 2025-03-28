@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { useEffect, useState } from 'react';
 import './page.css';
 import gourav from '../../../Images/gourav.jpg';
@@ -8,7 +8,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import breadbg from "../../../Images/bread.jpg"
 
-const page = () => {
+const Page = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [showAllHours, setShowAllHours] = useState(false);
 
@@ -328,4 +328,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page
