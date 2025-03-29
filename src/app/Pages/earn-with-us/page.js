@@ -110,7 +110,8 @@ const page = () => {
                   Revenue Share with Partner
                 </h1>
                 <p className="earn-with-us-section-subtitle text-dark ">
-                  As a partner&ldquo; you can earn through the following channels:
+                  As a partner&ldquo; you can earn through the following
+                  channels:
                 </p>
               </div>
               <ul className="earn-revenue-list">
@@ -133,7 +134,8 @@ const page = () => {
                 </li>
                 <li> Rs. 50 for website listing in business listing.</li>
                 <li>
-                  Up to Rs. 1&ldquo;00&ldquo;000&ldquo;00 Corporate advertisement on Biziffy.
+                  Up to Rs. 1&ldquo;00&ldquo;000&ldquo;00 Corporate
+                  advertisement on Biziffy.
                 </li>
               </ul>
             </div>
@@ -162,8 +164,8 @@ const page = () => {
                 </li>
                 <li>
                   <span>Carry Forward Policy: </span> If earnings do not reach
-                  Rs. 15&ldquo;000 in a cycle&ldquo; they will be carried forward to the
-                  next cycle.
+                  Rs. 15&ldquo;000 in a cycle&ldquo; they will be carried
+                  forward to the next cycle.
                 </li>
                 <li>
                   <span>Payment Release Date:</span> Payments will be processed
@@ -191,8 +193,9 @@ const page = () => {
                   <p>
                     To become a Sales Partner&ldquo; you must first create a{" "}
                     <strong>Premium Business Listing</strong> for your own
-                    business. Once done&ldquo; click <strong>&quot;Apply Now&quot;</strong> to
-                    submit your application.
+                    business. Once done&ldquo; click{" "}
+                    <strong>&quot;Apply Now&quot;</strong> to submit your
+                    application.
                   </p>
                 </div>
 
@@ -212,18 +215,19 @@ const page = () => {
                     If selected&ldquo; you must{" "}
                     <strong>renew your own business listing annually</strong> to
                     maintain your Sales Partner status. Failure to renew will
-                    result in automatic termination of your partnership&ldquo; and you
-                    will no longer earn from client renewals.
+                    result in automatic termination of your partnership&ldquo;
+                    and you will no longer earn from client renewals.
                   </p>
                 </div>
 
                 <div className="sales-partner-item-bg sales-partner-item">
                   <span className="step-number">4.</span>
                   <p>
-                    As a Sales Partner&ldquo; you are responsible for ensuring that
-                    all business listings you create comply with{" "}
-                    <strong>legal and ethical guidelines</strong>. No duplicate&ldquo;
-                    copyrighted&ldquo; illegal&ldquo; or infringing content is allowed.
+                    As a Sales Partner&ldquo; you are responsible for ensuring
+                    that all business listings you create comply with{" "}
+                    <strong>legal and ethical guidelines</strong>. No
+                    duplicate&ldquo; copyrighted&ldquo; illegal&ldquo; or
+                    infringing content is allowed.
                   </p>
                 </div>
 
