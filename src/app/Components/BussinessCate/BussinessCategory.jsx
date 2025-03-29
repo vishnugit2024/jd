@@ -2,84 +2,129 @@ import React from "react";
 import "./BussinessCategory.css";
 import Heading from "../Heading/SecHeading";
 import Image from "next/image";
-import rocket from "../../Images/rocket.gif"; // Or use "/rocket.gif" from public folder
+import HOMEBEAUTY from "../../Images/HOMEBEAUTY.jpg";
+import HOMEBED from "../../Images/HOMEBED.jpg";
+import HOMEBOY from "../../Images/HOMEBOY.png";
+import HOMEBRAIN from "../../Images/HOMEBRAIN.webp";
+import HOMECAR from "../../Images/HOMECAR.png";
+import HOMECELEBRATIONS from "../../Images/HOMECELEBRATIONS.png";
+import HOMEDENTAL from "../../Images/HOMEDENTAL.png";
+import HOMEEDUCATION from "../../Images/HOMEEDUCATION.png";
+import HOMEFURNITURE from "../../Images/HOMEFURNITURE.png";
+import HOMEGYM from "../../Images/HomeGYM.png";
+import HOMEHOSPITAL from "../../Images/HOMEHOSPITAL.png";
+import HOMEKEY from "../../Images/HOMEKEY.WEBP";
+import HOMEMONEY from "../../Images/HOMEMONEY.png";
+import HOMEPETS from "../../Images/HOMEPETS.png";
+import HOMERESTURANT from "../../Images/HOMERESTURANT.jpg";
+import HOMETRUCK from "../../Images/HOMETRUCK.png";
+import HOMEWORK from "../../Images/HOMEWORK.png";
+
 import Link from "next/link";
 const categories = [
   {
     id: 1,
-    title: "Web Development",
-    icon: rocket,
+    title: "Beauty & Spa",
+    icon: HOMEBEAUTY,
     link: "/WebDevelopment",
   },
   {
     id: 2,
-    title: "Graphic Design",
-    icon: rocket,
+    title: "PG/Hotels",
+    icon: HOMEBED,
     link: "/Graphic design",
   },
   {
     id: 3,
-    title: "Digital Marketing",
-    icon: rocket,
+    title: "Courier Services",
+    icon: HOMEBOY,
     link: "/WebDevelopment",
   },
   {
     id: 4,
     title: "Content Writing",
-    icon: rocket,
+    icon: HOMEBRAIN,
     link: "/WebDevelopment",
   },
   {
     id: 5,
-    title: "SEO Optimization",
-    icon: rocket,
+    title: "Driving Services",
+    icon: HOMECAR,
     link: "/WebDevelopment",
   },
   {
     id: 6,
-    title: "App Development",
-    icon: rocket,
+    title: "Event Organizers",
+    icon: HOMECELEBRATIONS,
     link: "/WebDevelopment",
   },
   {
     id: 7,
-    title: "Video Editing",
-    icon: rocket,
+    title: "Dentists",
+    icon: HOMEDENTAL,
     link: "/WebDevelopment",
   },
   {
     id: 8,
-    title: "Cyber Security",
-    icon: rocket,
+    title: "Education",
+    icon: HOMEEDUCATION,
     link: "/WebDevelopment",
   },
   {
     id: 9,
-    title: "Cloud Computing",
-    icon: rocket,
+    title: "Furniture",
+    icon: HOMEFURNITURE,
     link: "/WebDevelopment",
   },
   {
     id: 10,
-    title: "AI & ML Services",
-    icon: rocket,
+    title: "Hospital",
+    icon: HOMEHOSPITAL,
     link: "/WebDevelopment",
   },
   {
     id: 11,
-    title: "E-commerce Solutions",
-    icon: rocket,
+    title: "Gym",
+    icon: HOMEGYM,
     link: "/WebDevelopment",
   },
   {
     id: 12,
-    title: "Tech Consulting",
-    icon: rocket,
+    title: "Rent & Hire",
+    icon: HOMEKEY,
+    link: "/WebDevelopment",
+  },
+  {
+    id: 13,
+    title: "Loans",
+    icon: HOMEMONEY,
+    link: "/WebDevelopment",
+  },
+  {
+    id: 14,
+    title: "Pet Shops",
+    icon: HOMEPETS,
+    link: "/WebDevelopment",
+  },
+  {
+    id: 15,
+    title: "Resturants",
+    icon: HOMERESTURANT,
+    link: "/WebDevelopment",
+  },
+  {
+    id: 16,
+    title: "Delivery Services",
+    icon: HOMETRUCK,
+    link: "/WebDevelopment",
+  },
+  {
+    id: 17,
+    title: "Contractors",
+    icon: HOMEWORK,
     link: "/WebDevelopment",
   },
 ];
-
-
 
 const BussinessCategory = () => {
   return (
@@ -111,7 +156,8 @@ const BussinessCategory = () => {
             </div>
           ))}
           <div className="d-flex justify-content-center mt-3">
-            <Link className="login-btn" href="../../Pages/all-categories">View All
+            <Link className="login-btn" href="../../Pages/all-categories">
+              View All
             </Link>
           </div>
         </div>

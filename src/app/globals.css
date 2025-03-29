@@ -70,7 +70,7 @@ body {
 .bread-overlay {
   height: 350px;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.815); /* Semi-transparent black */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
   position: absolute; /* Make it sit on top */
   top: 0;
   left: 0;
