@@ -1,5 +1,5 @@
 import React from "react";
-import breadbg from "../../Images/bread.jpg";
+import breadbg from "../../Images/HeroBanner.jpg";
 import Image from "next/image";
 import Link from "next/link";
 import "./earnWithUs.css";
@@ -10,7 +10,7 @@ const page = () => {
   const Earnperson = [
     {
       id: 1,
-      name: "Web Designer",
+      name: "Digital Marketing Agencies",
       image: EarnWithUs,
     },
     {

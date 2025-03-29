@@ -224,17 +224,17 @@ const page = () => {
                 </h4>
               </div>
               <div className="button-group">
-                <Link href="#">
+                <Link href="/Pages/login">
                   <button>SignIn/SignUp</button>
                 </Link>
-                <Link href="#">
-                  <button>Free Listing</button>
+                <Link href="/Pages/blogs">
+                  <button>Blogs</button>
                 </Link>
-                <Link href="#">
-                  <button>Free Listing</button>
+                <Link href="/Pages/all-categories">
+                  <button>Categories</button>
                 </Link>
-                <Link href="#">
-                  <button>Free Listing</button>
+                <Link href="/contact-us">
+                  <button>Contact Us</button>
                 </Link>
               </div>
             </div>

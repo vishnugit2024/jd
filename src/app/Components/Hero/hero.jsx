@@ -39,7 +39,7 @@ const Hero = () => {
   };
 
   return (
-    <section>
+    <section className="some-page-hero-bg">
       <div className="container">
         <div className="hero-main">
           <div className="row">
