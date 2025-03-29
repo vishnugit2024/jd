@@ -250,7 +250,7 @@ const page = () => {
         </div>
       </section>
 
-      <section>
+      <section id="Paidlisting my-4">
         <div className="container">
           <div className="row">
             <div className="col-md-5">
@@ -325,7 +325,7 @@ const page = () => {
         </div>
       </section>
 
-      <section>
+      <section className="py-3">
         <div className="container">
           <div className="row">
             <div className="free-listing-sec-heading">
