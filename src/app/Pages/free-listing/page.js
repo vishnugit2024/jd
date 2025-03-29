@@ -1,311 +1,411 @@
-'use client';
-import { useEffect, useState } from 'react';
-import './businessListing.css';
-import gourav from '../../Images/gourav.jpg';
-import gourav2 from '../../Images/gourav2.jpg';
-import gourav3 from '../../Images/gourav3.jpg';
-import Image from 'next/image';
-import Link from 'next/link';
+"use client";
+import React from "react";
+import "./freeListing.css";
+import { motion } from "framer-motion";
+import ListingImage from "../../Images/Listing.jpg";
+import Image from "next/image";
+import Link from "next/link";
+import paidlisting from "../../Images/paidlisting.jpg";
+import Visibility from "../../Images/Visibility.jpg";
+import Credibility from "../../Images/Credibility.jpg";
+import Access from "../../Images/Access.jpg";
+import EffectiveMarketing from "../../Images/EffectiveMarketing.jpg";
 
-const Page = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    const [showAllHours, setShowAllHours] = useState(false);
+const page = () => {
+  // ====== Card ================
+  const cardData = [
+    {
+      title: "Increased Visibility",
+      description:
+        "Listing a business online enhances its visibility by making it accessible to a larger audience. Being present in search engine results and online directories allows the business to be discovered by more potential customers, both locally and pan India, ensuring 24/7 accessibility and increasing the chances of attracting new clients.",
+      image: Visibility,
+    },
+    {
+      title: "Cost-Effective Marketing",
+      description:
+        "Bizzify provide a cost-effective marketing strategy, allowing businesses to reach a broad audience without incurring advertising costs. By leveraging the platform's reach and SEO benefits, businesses can maximize their exposure and achieve a high return on investment, all while staying within budget.",
+      image: EffectiveMarketing,
+    },
+    {
+      title: "Easy Access",
+      description:
+        "Online listings at Bizzify make it easy for potential customers to find businesses through search engines and directories. With intuitive navigation and mobile-friendly designs, customers can quickly access business details, contact information, and services, enhancing convenience and user experience.",
+      image: Access,
+    },
+    {
+      title: "Enhanced Credibility",
+      description:
+        "Being listed on Bizzify boosts your business's credibility and trustworthiness. Your Business can gain confidence through verified information and reviews, leading to increased trust and a positive perception. This credibility encourages potential customers to choose the business over competitors.",
+      image: Credibility,
+    },
+  ];
 
-    const hours = [
-        { day: 'Monday', open: '09:00 AM', close: '10.00 AM' },
-        { day: 'Tuesday', open: '09:00 AM', close: '07:00 PM' },
-        { day: 'Wednesday', open: '09:00 AM', close: '07:00 PM' },
-        { day: 'Thursday', open: '09:00 AM', close: '07:00 PM' },
-        { day: 'Friday', open: '09:00 AM', close: '07:00 PM' },
-        { day: 'Saturday', open: '10:00 AM', close: '05:00 PM' },
-        { day: 'Sunday', open: 'Closed', close: 'Closed' },
-    ];
+  // ============ Paid Listing Planes =====================
 
-    const getCurrentDay = () => {
-        const today = new Date().getDay();
-        return today === 0 ? 6 : today - 1; // Adjust for Sunday
-    };
+  const pricingPlans = [
+    {
+      name: "Basic Plan",
+      price: "₹2,999/year",
+      features: [
+        "Featured Business Listing",
+        "Business Description & Contact Details",
+        "5 Product/Service Listings",
+        "Social Media Links",
+        "Inquiry Form Integration",
+      ],
+    },
+    {
+      name: "Standard Plan",
+      price: "₹5,999/year",
+      features: [
+        "All Basic Plan Features",
+        "10 Product/Service Listings",
+        "Google Map Integration",
+        "Business Logo & Cover Image",
+        "Priority Search Ranking",
+      ],
+    },
+    {
+      name: "Premium Plan",
+      price: "₹9,999/year",
+      features: [
+        "All Standard Plan Features",
+        "20 Product/Service Listings",
+        "Photo & Video Gallery",
+        "Customer Reviews & Ratings",
+        "Featured in Category Page",
+      ],
+    },
+    {
+      name: "Ultimate Plan",
+      price: "₹14,999/year",
+      features: [
+        "All Premium Plan Features",
+        "30 Product/Service Listings",
+        "Dedicated Business Page",
+        "SEO-Optimized Content",
+        "Social Media Promotions",
+      ],
+    },
+  ];
 
-    const isCurrentlyOpen = (openTime, closeTime) => {
-        if (openTime === 'Closed') return false;
-        const now = new Date();
-        const current = now.getHours() * 60 + now.getMinutes();
-        const [openHours, openMinutes] = openTime.split(/[: ]/);
-        const [closeHours, closeMinutes] = closeTime.split(/[: ]/);
+  // ======== Free Listing Process ===================
 
-        const open = (parseInt(openHours) % 12 + (openTime.includes('PM') ? 12 : 0)) * 60 + parseInt(openMinutes);
-        const close = (parseInt(closeHours) % 12 + (closeTime.includes('PM') ? 12 : 0)) * 60 + parseInt(closeMinutes);
+  const steps = [
+    {
+      id: 1,
+      icon: "bi-person",
+      title: "Simple Registration",
+      description:
+        "Businesses can sign up quickly using just their mobile number, bypassing lengthy forms and complicated procedures. This streamlined process allows them to join the platform and start listing their services in just a few clicks, making it fast and easy to get started.",
+    },
+    {
+      id: 2,
+      icon: "bi-pie-chart",
+      title: "Profile Creation",
+      description:
+        "After registration, businesses can quickly create a detailed profile by providing essential information such as name, address, contact details, and business category. This user-friendly process ensures that the profile accurately represents the business, helping potential customers find the information they need.",
+    },
+    {
+      id: 3,
+      icon: "bi-images",
+      title: "Visual Showcase",
+      description:
+        "Businesses can enhance their listings by uploading photos and videos, which are essential for showcasing products and services visually. High-quality images and engaging videos help attract more attention and give potential customers a better understanding of what the business offers, helping them stand out from competitors.",
+    },
+    {
+      id: 4,
+      icon: "bi-arrow-repeat",
+      title: "Instant Updates",
+      description:
+        "Businesses can update their listings anytime to keep information accurate and relevant. This feature allows them to adjust contact details, addresses, or services as needed, ensuring their listings reflect the latest developments and promotions, thereby maintaining customer trust and engagement.",
+    },
+  ];
+  return (
+    <>
+      <section className="some-page-hero-bg">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12">
+              <div className="some-page-hero-content">
+                {/* Animated Heading */}
+                <motion.h1
+                  className="some-page-hero-title"
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1.5, ease: "easeOut" }}
+                >
+                  Connecting{" "}
+                  <span style={{ color: "var(--blue)" }}>smart buyers</span> and
+                  trustworthy businesses
+                </motion.h1>
 
-        return current >= open && current <= close;
-    };
-
-    useEffect(() => {
-        const today = getCurrentDay();
-        const { open, close } = hours[today];
-        setIsOpen(isCurrentlyOpen(open, close));
-    }, []);
-
-    const today = getCurrentDay();
-
-    const businesses = [
-        {
-            id: 1,
-            name: 'Pasricha Clinic',
-            rating: 3.4,
-            reviews: 5,
-            address: 'Shop 20, C S C II, Sector XIII, Rohini, Delhi',
-            phone: '+91 9810000000',
-            description: 'Very polite and extremely knowledgeable doctor.',
-            image: gourav,
-            services: ['General Check-up', 'Vaccination', 'Health Consultation'],
-            reviewsData: [
-                { author: 'John Doe', comment: 'Excellent service and very polite staff.' },
-                { author: 'Jane Smith', comment: 'The doctor is very knowledgeable and kind.' }
-            ]
-        },
-        {
-            id: 2,
-            name: 'The Holistic Clinic',
-            rating: 5.0,
-            reviews: 86,
-            address: 'Pkt 4, Ground Floor, Rohini, Delhi',
-            phone: '+91 9810000122',
-            description: 'On-site services with excellent care.',
-            image: gourav2,
-            services: ['Holistic Health Services', 'Yoga and Meditation', 'Nutritional Advice'],
-            reviewsData: [
-                { author: 'Emily Brown', comment: 'Amazing care and holistic approach!' },
-                { author: 'Chris Wilson', comment: 'Best place for holistic health services.' }
-            ]
-        },
-        {
-            id: 3,
-            name: 'Sharva Clinic',
-            rating: 5.0,
-            reviews: 75,
-            address: '226 Ground Floor, Rohini, Delhi',
-            phone: '+91 981004598',
-            description: 'The doctor is very attentive and professional.',
-            image: gourav3,
-            services: ['Pediatrics', 'General Surgery', 'Orthopedics'],
-            reviewsData: [
-                { author: 'Mark Lee', comment: 'Highly professional and caring staff.' },
-                { author: 'Sarah Johnson', comment: 'Would recommend to everyone!' }
-            ]
-        }
-    ];
-    const [activeTab, setActiveTab] = useState('overview');
-    const [selected, setSelected] = useState(businesses[0]);
-
-    const [newReview, setNewReview] = useState({ author: '', comment: '' });
-    const [showForm, setShowForm] = useState(false);
-
-    const handleAddReview = () => {
-        if (newReview.author.trim() && newReview.comment.trim()) {
-            const updatedReviews = [
-                ...selected.reviewsData,
-                { author: newReview.author, comment: newReview.comment },
-            ];
-            setSelected({ ...selected, reviewsData: updatedReviews });
-            setNewReview({ author: '', comment: '' });
-            setShowForm(false);
-        } else {
-            alert('Please fill in both fields.');
-        }
-    };
-
-    return (
-        <section className='business-listing-page'>
-            <div className='container'>
-                <nav aria-label="breadcrumb" className="breadcrumb-container">
-                    <ol className="breadcrumb">
-                        <li className="breadcrumb-item"><Link href="/">Home</Link></li>
-                        <li className="breadcrumb-item active" aria-current="page">Business Listings</li>
-                    </ol>
-                </nav>
-                <hr />
-                <div className="business-listing-container">
-                    <h5 className='text-dark'>
-                        Business Category Name
-                    </h5>
-                    <div className="row">
-                        <div className="col-md-5 left-panel">
-                            {businesses.map((biz) => (
-                                <div
-                                    key={biz.id}
-                                    className={`business-card d-flex align-items-center gap-3 ${selected.id === biz.id ? 'active' : ''}`}
-                                    onClick={() => setSelected(biz)}>
-                                    <div>
-                                        <Image src={biz.image} alt={biz.name} className="listing-image mb-2" />
-                                    </div>
-                                    <div>
-                                        <h5>{biz.name}</h5>
-                                        <div className='d-flex gap-2 align-items-center'>
-                                            <p>{biz.rating} <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> {biz.reviews}</p>
-                                            <span>|</span>
-                                            <p>Web Designer</p>
-                                        </div>
-                                        <div className='d-flex gap-2 align-items-center'>
-                                            <p>7 years in business</p>
-                                            <span>|</span>
-                                            <p>Karnal, Haryana</p>
-                                        </div>
-                                        <div className='d-flex gap-2 align-items-center'>
-                                            <div className="opening-hours-container">
-                                                <p className={`status ${isOpen ? 'open' : 'closed'}`}>{isOpen ? 'Open Now' : 'Closed Now'}</p>
-                                            </div>
-                                            <span>|</span>
-                                            <p>Phone: {biz.phone}</p>
-                                        </div>
-                                        <div className='d-flex gap-2 align-items-center'>
-                                            <p>On Site Services</p>
-                                            <span>|</span>
-                                            <p>Online Appointment</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-
-                        <div className="col-md-7 right-panel">
-                            <div className="details-card">
-                                <h3>{selected.name}</h3>
-                                <Image src={selected.image} alt={selected.name} className="business-detail-image mb-3" />
-                                <div className='d-flex gap-2 align-items-center'>
-                                    <p>{selected.rating} <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> {selected.reviews}</p>
-                                    <span>|</span>
-                                    <p>Web Designer</p>
-                                </div>
-                                <div className='d-flex gap-2 align-items-center'>
-                                    <p>7 years in business</p>
-                                    <span>|</span>
-                                    <p>Karnal, Haryana</p>
-                                </div>
-                                {/* End of copied data */}
-                                <ul className="nav nav-tabs mt-3">
-                                    <li className="nav-item">
-                                        <button className={`nav-link listing-tabs-btn ${activeTab === 'overview' ? 'active' : ''}`} onClick={() => setActiveTab('overview')}>
-                                            Overview
-                                        </button>
-                                    </li>
-                                    <li className="nav-item">
-                                        <button className={`nav-link ${activeTab === 'service' ? 'active' : ''}`} onClick={() => setActiveTab('service')}>
-                                            Service
-                                        </button>
-                                    </li>
-                                    <li className="nav-item">
-                                        <button className={`nav-link ${activeTab === 'review' ? 'active' : ''}`} onClick={() => setActiveTab('review')}>
-                                            Review
-                                        </button>
-                                    </li>
-                                </ul>
-
-                                <div className="tab-content mt-3">
-                                    <div className={`tab-pane fade ${activeTab === 'overview' ? 'show active' : ''}`}>
-                                        <div className='d-flex gap-2'>
-                                            <div className="opening-hours-container">
-                                                <p onClick={() => setShowAllHours(!showAllHours)} className={`status ${isOpen ? 'open' : 'closed'}`}>{isOpen ? 'Open Now' : 'Closed Now'} <i className="bi bi-chevron-down"></i></p>
-                                                {showAllHours && (
-                                                    <ul className="opening-hours-list">
-                                                        {hours.map((item, index) => (
-                                                            <li key={index} className={today === index ? 'today' : ''}>
-                                                                <span>{item.day}</span>
-                                                                <span>{item.open} - {item.close}</span>
-                                                            </li>
-                                                        ))}
-                                                    </ul>
-                                                )}
-                                            </div>
-                                            <span>|</span>
-                                            <p>Phone: {selected.phone}</p>
-                                        </div>
-                                        <div className='d-flex gap-2 align-items-center'>
-                                            <p>On Site Services</p>
-                                            <span>|</span>
-                                            <p>Online Appointment</p>
-                                        </div>
-                                        <div>
-                                            <hr />
-                                            <h6>
-                                                <b>Profile</b>
-                                            </h6>
-                                            <div className="social-icons">
-                                                <Link href="#">
-                                                    <i className="bi bi-twitter"></i>
-                                                </Link>
-                                                <Link href="#">
-                                                    <i className="bi bi-facebook"></i>
-                                                </Link>
-                                                <Link href="#">
-                                                    <i className="bi bi-linkedin"></i>
-                                                </Link>
-                                                <Link href="#">
-                                                    <i className="bi bi-instagram"></i>
-                                                </Link>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className={`tab-pane fade ${activeTab === 'service' ? 'show active' : ''}`}>
-                                        <ul className="service-list">
-                                            {selected.services?.map((service, index) => (
-                                                <li key={index}>{service}</li>
-                                            ))}
-                                        </ul>
-                                    </div>
-
-                                    <div className={`tab-pane fade ${activeTab === 'review' ? 'show active' : ''}`}>
-                                        <ul className="review-list">
-                                            {selected.reviewsData?.map((review, index) => (
-                                                <li key={index}>
-                                                    <span className='review-name'>
-                                                        {review.author.charAt(0)}
-                                                    </span>
-                                                    <div>
-                                                        <div className='review-comment-star'>
-                                                            <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i>
-                                                        </div>
-                                                        {`"${review.comment}"`} {" "}
-                                                    </div>
-                                                </li>
-                                            ))}
-                                        </ul>
-
-                                        <div className='text-center'>
-                                        <button className="login-btn mb-2" onClick={() => setShowForm(!showForm)}>
-                                            {showForm ? 'Hide Review Form' : 'Write a Review'} <i className="bi bi-pencil"></i>
-                                        </button>
-
-                                        {showForm && (
-                                            <div className="add-review">
-                                                <h4>Add a Review </h4>
-                                                <input
-                                                    type="text"
-                                                    placeholder="Your Name"
-                                                    className="login-input mb-2"
-                                                    value={newReview.author}
-                                                    onChange={(e) => setNewReview({ ...newReview, author: e.target.value })}
-                                                />
-                                                <textarea
-                                                    placeholder="Your Comment"
-                                                    className="login-input mb-2"
-                                                    value={newReview.comment}
-                                                    onChange={(e) => setNewReview({ ...newReview, comment: e.target.value })}
-                                                ></textarea>
-                                                <button className="btn btn-primary" onClick={handleAddReview}>Submit</button>
-                                            </div>
-                                        )}
-
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {/* Animated Subtitle */}
+                <motion.p
+                  className="some-page-hero-subtitle"
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 2, ease: "easeOut", delay: 0.3 }}
+                >
+                  <b>
+                    Bizi<span style={{ color: "var(--blue)" }}>ff</span>y
+                  </b>{" "}
+                  is a Bulk Advertisement & Business Listing services Platform.
+                </motion.p>
+              </div>
             </div>
-        </section>
-    );
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="container">
+          <div className="row">
+            <div className="col-md-5">
+              <div className="biziffy-listing-image-div">
+                <Image
+                  src={ListingImage}
+                  alt="Biziffy listing us"
+                  className="biziffy-listing-image"
+                />
+              </div>
+            </div>
+            <div className="col-md-7">
+              <div className="biziffy-listing-content">
+                <h1 className="biziffy-listing-title">
+                  Get YOUR{" "}
+                  <span style={{ color: "var(--blue)" }}>BUSINESS LISTED</span>{" "}
+                  FOR FREE
+                </h1>
+                <motion.p
+                  className="biziffy-listing-text"
+                  initial={{ opacity: 0, x: -50 }} // Slide in from the right
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }} // Delay to make it smoother
+                  viewport={{ once: true, amount: 0.2 }}
+                >
+                  Reach thousands of potential customers at no cost.
+                </motion.p>
+                <motion.p
+                  className="biziffy-listing-text"
+                  initial={{ opacity: 0, y: 50 }} // Slide in from the right
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }} // Delay to make it smoother
+                  viewport={{ once: true, amount: 0.2 }}
+                >
+                  At Biziffy&lsquo; we offer businesses a simple and effective
+                  way to connect with thousands of potential customers. Our
+                  platform is designed to help you reach your target audience
+                  and grow your business. Whether you are a small business or a
+                  large corporation&lsquo; Biziffy can help you expand your
+                  reach and attract more customers. With our easy-to-use
+                  platform&lsquo; you can list your business&lsquo; showcase
+                  your services&lsquo; and connect with potential customers.
+                  Whether you choose our free listing option or upgrade to a
+                  premium paid listing&lsquo; we make it easy for you to
+                  showcase your business. our free listing allow you to create a
+                  detailed profile&lsquo; showcase your services&lsquo; upload
+                  photos and videos&lsquo; and reach a broad audience at no
+                  cost. For those looking to boost visibility and access
+                  additional features&lsquo; our paid listing provide top
+                  placement&lsquo; enhanced profile options&lsquo; and exclusive
+                  promotional opportunities.
+                </motion.p>
+
+                <Link href="/Pages/contact-us">
+                  <button className="login-btn">Start Now</button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="container">
+          <div className="row">
+            <div className="free-listing-sec-heading">
+              <h1 className="free-listing-sec-title">
+                Benefits OF{" "}
+                <span style={{ color: "var(--blue)" }}> Online </span> Listing
+              </h1>
+            </div>
+
+            {cardData.map((data, index) => (
+              <div key={index} className="col-md-3 col-sm-4 py-4 mb-3">
+                <div className="listing-business-card shadow-sm">
+                  <div className="listing-card-img-top">
+                    <Image src={data.image} alt={data.title} />
+                  </div>
+                  <div className="listing-card-body">
+                    <h5 className="listing-card-title">{data.title}</h5>
+                    <p className="listing-card-text text-dark">
+                      {data.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="Paidlisting my-4">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-5">
+              <div className="biziffy-listing-image-div">
+                <Image
+                  src={paidlisting}
+                  alt="Biziffy listing us"
+                  className="biziffy-listing-image"
+                />
+              </div>
+            </div>
+            <div className="col-md-7">
+              <div className="biziffy-listing-content">
+                <h1 className="biziffy-listing-title mt-1">
+                  paid listing features at Bizi
+                  <span style={{ color: "var(--blue)" }}>ff</span>y
+                </h1>
+
+                <motion.p
+                  className="biziffy-listing-text"
+                  initial={{ opacity: 0, y: 50 }} // Slide in from the right
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }} // Delay to make it smoother
+                  viewport={{ once: true, amount: 0.2 }}
+                >
+                  Upgrade to a paid listing to enhance your business visibiliy
+                  and attract more customers. With a paid listing&lsquo; you
+                  will enjoy top placement in search results&lsquo; additional
+                  features for your profile&lsquo; priority support&lsquo;
+                  advaned analytics&lsquo; and exclusive promotional
+                  opportunitie. Take advantage of these benefits to make your
+                  business stand out. Upgrade now to get started.
+                </motion.p>
+
+                <ul className="biziffy-listing-ul">
+                  <li>
+                    <span>
+                      <i className="bi bi-arrow-bar-right"></i>
+                    </span>{" "}
+                    Get featured at the top of search results.
+                  </li>
+
+                  <li>
+                    <span>
+                      <i className="bi bi-arrow-bar-right"></i>
+                    </span>{" "}
+                    include more photos&lsquo; and videos&lsquo; and detailed
+                    information.
+                  </li>
+                  <li>
+                    <span>
+                      <i className="bi bi-arrow-bar-right"></i>
+                    </span>{" "}
+                    Receive faster and dedicated customers support.
+                  </li>
+                  <li>
+                    <span>
+                      <i className="bi bi-arrow-bar-right"></i>
+                    </span>{" "}
+                    Access detailed insights on customers interactions.
+                  </li>
+                  <li>
+                    <span>
+                      <i className="bi bi-arrow-bar-right"></i>
+                    </span>{" "}
+                    Benefit from special advertising opportunities.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-3">
+        <div className="container">
+          <div className="row">
+            <div className="free-listing-sec-heading">
+              <h1 className="free-listing-sec-title">
+                Premium <span style={{ color: "var(--blue)" }}> Business </span>{" "}
+                Listing Packages
+              </h1>
+            </div>
+            <div className="custom-table-wrapper">
+              <table className="table table-bordered text-center shadow-lg">
+                <thead className="bg-dark text-white">
+                  <tr>
+                    <th>Plan</th>
+                    <th>Price</th>
+                    <th>Features</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {pricingPlans.map((plan, index) => (
+                    <tr key={index} className="table-light">
+                      <td className="fw-bold ">{plan.name}</td>
+                      <td className="fw-bold text-primary">{plan.price}</td>
+                      <td>
+                        <ul className="list-unstyled text-start">
+                          {plan.features.map((feature, idx) => (
+                            <li key={idx} className="mb-1">
+                              ✅ {feature}
+                            </li>
+                          ))}
+                        </ul>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="alert alert-info text-center mt-4 fw-bold col-md-6">
+              📢 Special Offer: Get 10% OFF on annual renewals!
+            </div>
+            <div className="alert alert-success text-center mt-4 fw-bold col-md-6">
+              Ready to Grow Your Business? 🚀
+            </div>
+            <Link href="/Pages/login" className="text-decoration-none">
+              <div className="alert alert-primary text-center mt-1 fw-bold">
+                👉 Sign Up Now & Get Listed!
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="mb-4">
+        <div className="container">
+          <div className="row">
+            <div className="free-listing-sec-heading">
+              <h1 className="free-listing-sec-title">
+                How To Do Free Listing at Bizi
+                <span style={{ color: "var(--blue)" }}>ff</span>y.
+              </h1>
+            </div>
+
+            <div className="listing-timeline">
+            {steps.map((step, index) => (
+              <div key={step.id} className={`step ${index % 2 === 0 ? "left" : "right"}`}>
+                <div className="listing-step-icon">
+                  <i className={`bi ${step.icon}`}></i>
+                </div>
+                <div className="listing-step-content">
+                  <h3 className="listing-step-title">{step.title}</h3>
+                  <p className="listing-step-description">{step.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
 };
 
-export default Page;
+export default page;

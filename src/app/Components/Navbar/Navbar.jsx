@@ -82,7 +82,7 @@ const Header = () => {
               <li className="nav-item">
                 <Link
                   className="nav-link"
-                  href="../../Pages/earn-with-us"
+                  href="/Pages/earn-with-us"
                   onClick={() => {
                     if (navbarCollapseRef.current) {
                       new window.bootstrap.Collapse(navbarCollapseRef.current, {
@@ -134,7 +134,7 @@ const Header = () => {
               <li className="nav-item">
                 <Link
                   className="nav-link"
-                  href="../../Pages/corporate-advertise"
+                  href="/Pages/corporate-advertise"
                   onClick={() => {
                     if (navbarCollapseRef.current) {
                       new window.bootstrap.Collapse(navbarCollapseRef.current, {
@@ -149,7 +149,7 @@ const Header = () => {
               <li className="nav-item">
                 <Link
                   className="nav-link"
-                  href="../../Pages/free-listing"
+                  href="/Pages/free-listing"
                   onClick={() => {
                     if (navbarCollapseRef.current) {
                       new window.bootstrap.Collapse(navbarCollapseRef.current, {
@@ -164,7 +164,7 @@ const Header = () => {
               <li className="nav-item">
                 <Link
                   className="nav-link"
-                  href="../../Pages/my-business"
+                  href="/Pages/bussiness-listing"
                   onClick={() => {
                     if (navbarCollapseRef.current) {
                       new window.bootstrap.Collapse(navbarCollapseRef.current, {
@@ -178,7 +178,7 @@ const Header = () => {
               </li>
             </ul>
             <div className="d-flex align-items-center">
-              <Link href="../../Pages/login" className="login-btn me-2">
+              <Link href="/Pages/login" className="login-btn me-2">
                 SignIn / Signup
               </Link>
             </div>
