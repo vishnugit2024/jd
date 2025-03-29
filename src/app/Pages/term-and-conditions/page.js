@@ -5,7 +5,7 @@ import './terms.css'; // Add this import for custom CSS file
 const Terms = () => {
     return (
         <>
-            <div className='py-5 terms-container'>
+            <div className='py-3 terms-container'>
                 <div className="container">
                     <h1 className="mb-4 terms-heading">Terms and Conditions for Bizi<span style={{ color: 'var(--blue)' }}>ff</span>y</h1>
                     <p className="terms-date"><strong>Effective Date : </strong> 25-11-2024</p>

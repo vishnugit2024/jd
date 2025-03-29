@@ -11,6 +11,8 @@
 }
 
 .business-card {
+    display: flex;
+    align-items: center;
     background-color: transparent;
     padding: 10px;
     border-radius: 10px;
@@ -199,4 +201,30 @@ span {
 
 .review-comment-star i {
     font-size: 12px;
+}
+
+@media only screen and (max-width:768px) {
+    .listing-tabs-btn{
+        font-size: 12px;
+    }
+
+    .business-card p {
+        font-size: 10px;
+    }
+    .business-card h5 {
+     font-size: 14px;
+    }
+    .listing-image {
+        width: 100px;
+        height: 100px;
+    }
+    .details-card p{
+        font-size: 12px;
+    }
+    .opening-hours-list {
+        width: 170px;
+    }
+    .business-listing-container{
+        padding: 0;
+    }
 }

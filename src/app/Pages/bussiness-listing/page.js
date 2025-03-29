@@ -133,7 +133,7 @@ const Page = () => {
                             {businesses.map((biz) => (
                                 <div
                                     key={biz.id}
-                                    className={`business-card d-flex align-items-center gap-3 ${selected.id === biz.id ? 'active' : ''}`}
+                                    className={`business-card gap-3 ${selected.id === biz.id ? 'active' : ''}`}
                                     onClick={() => setSelected(biz)}>
                                     <div>
                                         <Image src={biz.image} alt={biz.name} className="listing-image mb-2" />
