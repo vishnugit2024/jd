@@ -108,7 +108,7 @@ export default function CityCards() {
                     <p className="countryName">{city.country}</p>
                   </div>
                   <div className="cardFooter">
-                    <Link href="#">
+                    <Link href="/Pages/citytourismGuide">
                       <button className="exploreButton">
                         <i className="bi bi-geo-alt me-1"></i>
                         {/* <MapPin size={16} /> */}
