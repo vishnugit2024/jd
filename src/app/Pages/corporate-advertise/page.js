@@ -20,10 +20,9 @@ import costeffective from "../../Images/CostEffective.jpg";
 import customize from "../../Images/CustomizePlanes.jpg";
 import target from "../../Images/TargetAduince.jpg";
 import moveintime from "../../Images/MoveInTime.jpg";
-import Heading from "@/app/Components/Heading/SecHeading";
-import HowItWorks from "@/app/Components/RoadMap/RoadMap";
+import RoadMap from "@/app/Components/RoadMap/RoadMap";
 
-function page() {
+function Page() {
   const cards = [
     { id: 1, title: "Automobile ", image: Automobile, link: "/Automobile" },
     { id: 2, title: "Education ", image: Education, link: "/Education" },
@@ -93,7 +92,7 @@ function page() {
                   customers? Biziffy provides Bulk Advertisement & Business
                   Listing services that help you reach a wider audience&lsquo;
                   improve visibility&lsquo; and establish credibility in your
-                  industry. Whether you're a startup or an established
+                  industry. Whether you are a startup or an established
                   business&lsquo; our platform ensures that your brand gets the
                   recognition it deserves.
                 </p>
@@ -183,7 +182,7 @@ function page() {
                     <p>Affordable solutions tailored to your business needs.</p>
 
                     <h4>
-                      <i className="bi bi-globe2"></i> Wide Visibility, Low Cost
+                      <i className="bi bi-globe2"></i> Wide Visibility&lsquo; Low Cost
                     </h4>
                     <p>Expand your audience without overspending.</p>
                   </div>
@@ -261,7 +260,7 @@ function page() {
                       <i className="bi bi-bar-chart"></i> Demographic Focus
                     </h4>
                     <p>
-                      Promote your business to the right age, gender, and
+                      Promote your business to the right age&lsquo; gender&lsquo; and
                       audience groups.
                     </p>
 
@@ -316,7 +315,7 @@ function page() {
                       <i className="bi bi-clock"></i> Time-Saving Solutions
                     </h4>
                     <p>
-                      We handle everything efficiently, so you can focus on
+                      We handle everything efficiently&lsquo; so you can focus on
                       business growth.
                     </p>
 
@@ -324,7 +323,7 @@ function page() {
                       <i className="bi bi-rocket"></i> Instant Visibility
                     </h4>
                     <p>
-                      Boost your brand's exposure quickly with our optimized
+                      Boost your brands exposure quickly with our optimized
                       services.
                     </p>
                   </div>
@@ -385,7 +384,7 @@ function page() {
             How<span style={{ color: "var(--blue)" }}> It </span>Works
           </h1>
         </div>
-        <HowItWorks />
+        <RoadMap />
       </section>
 
       <section>
@@ -507,4 +506,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

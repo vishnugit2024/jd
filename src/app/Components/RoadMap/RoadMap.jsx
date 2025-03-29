@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import curvedDottedLine from "../../Images/aboutbgImage.png";
 
-const HowItWorks = () => {
+const RoadMap = () => {
   return (
     <section>
       <div className="container text-center">
@@ -59,4 +59,4 @@ const HowItWorks = () => {
   );
 };
 
-export default HowItWorks;
+export default RoadMap;
