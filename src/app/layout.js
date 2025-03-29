@@ -2,6 +2,7 @@ import "./globals.css";
 import Navbar from "./Components/Navbar/Navbar";
 import Script from "next/script";
 import Footer from "./Components/Footer/Footer";
+import Enquiryform from "./Components/Enquiryform/Enquiryform";
 
 export default function RootLayout({ children }) {
   return (
@@ -19,6 +20,7 @@ export default function RootLayout({ children }) {
       <body>
         <Navbar />
         <div className="childrens">
+          <Enquiryform />
         {children}
           </div>
         <Footer />

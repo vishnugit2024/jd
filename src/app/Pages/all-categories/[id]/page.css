@@ -11,6 +11,8 @@
 }
 
 .business-card {
+    display: flex;
+    align-items: center;
     background-color: transparent;
     padding: 10px;
     border-radius: 10px;

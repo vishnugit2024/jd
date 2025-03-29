@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../Pages/term-and-conditions/terms.css'
 const page = () => {
     return (
-        <div className='py-5 terms-container'>
+        <div className='py-3 terms-container'>
             <div className="container">
                 <h1 className='terms-heading mb-4'>Privacy Policy for Bizi<span style={{ color: 'var(--blue)' }}>ff</span>y</h1>
                 <p className='m-0'><strong>Effective Date : </strong> 25-11-2024</p>
