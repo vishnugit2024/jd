@@ -19,20 +19,14 @@
 }
 
 @media (max-width: 768px) {
-  .heading-title {
-    font-size: 1.5rem;
+  .heading-container {
+    align-items: center;
+    justify-content: center;
+    text-align: start;
   }
-
-  .heading-subtitle {
-    font-size: 1rem;
-    color: var(--black);
-    max-width: 400px;
-  }
-}
-
-@media (max-width: 768px) {
+  
   .heading-title {
-    font-size: 1.1rem;
+    font-size: 24px;
   }
 
   .heading-subtitle {

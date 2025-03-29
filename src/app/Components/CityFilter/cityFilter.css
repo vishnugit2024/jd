@@ -156,4 +156,7 @@
   .cityName {
     font-size: 1.2rem;
   }
+  .exploreButton {
+    font-size: 12px;
+  }
 }

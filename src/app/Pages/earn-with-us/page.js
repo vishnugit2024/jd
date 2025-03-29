@@ -71,7 +71,7 @@ const page = () => {
         </div>
       </section>
 
-      <section className="my-4">
+      <section className="my-3">
         <div className="container">
           <div className="row">
             <div className="col-md-12">
@@ -82,7 +82,7 @@ const page = () => {
                 </h1>
               </div>
 
-              <div className="row py-4">
+              <div className="row pt-4">
                 {Earnperson.map((person, index) => (
                   <div key={index} className="col-lg-3 col-md-4 col-sm-6 col-6">
                     <div className="who-can-earn-data text-center">

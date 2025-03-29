@@ -1,6 +1,5 @@
 /* 🔥 Hero Section */
 .hero-main {
-  /* background: white; */
   padding: 8rem 0;
   color: #fff;
   position: relative;
@@ -175,77 +174,6 @@
   font-size: 16px;
 }
 
-/* 📱 Responsive Design */
-@media (max-width: 1000px) {
-  .hero-image-container {
-    display: none;
-  }
-
-  .hero-title {
-    font-size: 42px;
-  }
-
-  .hero-text {
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-content {
-    max-width: 90%;
-  }
-
-  .hero-image-container {
-    display: none;
-  }
-
-  .hero-main {
-    text-align: center;
-  }
-
-  .hero-buttons {
-    justify-content: center;
-  }
-
-  .hero-search-bar {
-    display: flex;
-    justify-content: center;
-  }
-
-  .hero-search-container {
-    justify-content: center;
-  }
-}
-
-@media (max-width: 576px) {
-  .hero-title {
-    font-size: 36px;
-  }
-
-  .hero-text {
-    font-size: 14px;
-  }
-
-  .herobutton1,
-  .herobutton2 {
-    padding: 12px 20px;
-    font-size: 14px;
-  }
-
-  .hero-title {
-    font-size: 36px;
-  }
-
-  .hero-text {
-    font-size: 14px;
-  }
-
-  .herobutton1,
-  .herobutton2 {
-    padding: 10px 16px;
-    font-size: 12px;
-  }
-}
 
 /* 🎬 Floating Animation */
 @keyframes floatAnimation {
@@ -259,5 +187,67 @@
 
   100% {
     transform: translateY(0);
+  }
+}
+
+
+/* 📱 Responsive Design */
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 20px;
+  }
+
+  .hero-main {
+    padding: 2rem 0;
+    color: #fff;
+    position: relative;
+  }
+
+  .hero-content {
+    max-width: 90%;
+  }
+
+  .hero-image-container {
+    display: none;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-search-bar {
+    display: flex;
+    justify-content: center;
+  }
+
+  
+.hero-search-container {
+  padding: 0px 0px 0px 10px;
+}
+
+  .hero-text {
+    font-size: 14px;
+  }
+  .herobutton1,
+  .herobutton2 {
+    padding: 10px 16px;
+    font-weight: 500;
+    font-size: 12px;
+  }
+}
+
+
+@media (min-width: 768px) and (max-width: 1000px) {
+  .hero-image-container {
+    display: none;
+  }
+
+  .hero-title {
+    font-size: 42px;
+  }
+
+  .hero-text {
+    font-size: 16px;
   }
 }

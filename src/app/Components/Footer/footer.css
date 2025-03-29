@@ -76,3 +76,10 @@ flex-wrap: wrap;
   .footer-bottom{
     margin-top:2rem;
   }
+
+  @media only screen and (max-width:768px) {
+    .social-icons a {
+      font-size: 14px;
+      padding: 1px 5px;
+    }
+  }
