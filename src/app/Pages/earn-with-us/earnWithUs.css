@@ -102,18 +102,33 @@
 }
 
 @media (max-width: 768px) {
+  .earn-revenue-list li{
+    font-weight: 500;
+  }
+  .earn-with-us-section-title {
+    font-size: 20px;
+  }
+  .who-can-earn-data
+  {
+    margin-bottom: 1rem;
+  }
+
+  .earn-with-us-section-heading {
+    margin-top: 0;
+  }
   .earn-img {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
   }
 
   .earn-name {
-    font-size: 16px;
+    font-size: 12px;
   }
 
   .earn-revenue-list li,
   .payment-info-list li {
     font-size: 20px;
+   
     padding: 10px;
   }
 
@@ -130,11 +145,13 @@
 @media (max-width: 500px) {
   .earn-revenue-list li,
   .payment-info-list li {
-    font-size: 16px;
+    font-size: 12px;
     padding: 10px;
+    font-weight: 500;
   }
 
   .payment-info-list li span {
-    font-size: 18px;
+    font-size: 13px;
+    font-weight: 600;
   }
 }

@@ -135,12 +135,12 @@ text-decoration: none;
 @media (max-width: 768px) {
 
   .some-page-hero-content {
-    padding: 4rem 0;
+    padding: 2rem 0px 0px;
     max-width: 90%;
   }
 
   .some-page-hero-title {
-    font-size: 32px;
+    font-size: 20px;
   }
 
   .some-page-hero-subtitle {
@@ -149,5 +149,15 @@ text-decoration: none;
   
   .container {
     padding: 0 12px;
+  }
+  .bread-content {
+    max-width: 100%;
+    top: 30px;
+  }
+  .bread-overlay{
+    height: 220px;
+  }
+  .all-breadcrumb{
+    height: 220px;
   }
 }
