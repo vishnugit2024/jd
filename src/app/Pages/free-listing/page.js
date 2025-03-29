@@ -12,6 +12,7 @@ import Access from "../../Images/Access.jpg";
 import EffectiveMarketing from "../../Images/EffectiveMarketing.jpg";
 
 const page = () => {
+
   // ====== Card ================
   const cardData = [
     {
@@ -232,7 +233,7 @@ const page = () => {
             </div>
 
             {cardData.map((data, index) => (
-              <div key={index} className="col-md-3 col-sm-4 py-4 mb-3">
+              <div key={index} className="col-md-3 col-sm-4 py-3 mb-2">
                 <div className="listing-business-card shadow-sm">
                   <div className="listing-card-img-top">
                     <Image src={data.image} alt={data.title} />
@@ -325,56 +326,37 @@ const page = () => {
         </div>
       </section>
 
-      <section className="py-3">
+      <section>
         <div className="container">
+          <div className="free-listing-sec-heading"><h1 className="free-listing-sec-title">Premium <span style={{color: "var(--blue)"}}> Business </span> Listing Packages</h1></div>
           <div className="row">
-            <div className="free-listing-sec-heading">
-              <h1 className="free-listing-sec-title">
-                Premium <span style={{ color: "var(--blue)" }}> Business </span>{" "}
-                Listing Packages
-              </h1>
-            </div>
-            <div className="custom-table-wrapper">
-              <table className="table table-bordered text-center shadow-lg">
-                <thead className="bg-dark text-white">
-                  <tr>
-                    <th>Plan</th>
-                    <th>Price</th>
-                    <th>Features</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {pricingPlans.map((plan, index) => (
-                    <tr key={index} className="table-light">
-                      <td className="fw-bold ">{plan.name}</td>
-                      <td className="fw-bold text-primary">{plan.price}</td>
-                      <td>
-                        <ul className="list-unstyled text-start">
-                          {plan.features.map((feature, idx) => (
-                            <li key={idx} className="mb-1">
-                              ✅ {feature}
-                            </li>
-                          ))}
-                        </ul>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-
-            <div className="alert alert-info text-center mt-4 fw-bold col-md-6">
-              📢 Special Offer: Get 10% OFF on annual renewals!
-            </div>
-            <div className="alert alert-success text-center mt-4 fw-bold col-md-6">
-              Ready to Grow Your Business? 🚀
-            </div>
-            <Link href="/Pages/login" className="text-decoration-none">
-              <div className="alert alert-primary text-center mt-1 fw-bold">
-                👉 Sign Up Now & Get Listed!
+            {pricingPlans.map((plan, index) => (
+              <div className="col-md-3" key={index}>
+                <div className="plans-card">
+                  <div className="plan-head">
+                    <h3>{plan.name}</h3>
+                    <p>{plan.price}</p>
+                  </div>
+                  <hr />
+                  <div className="plan-content">
+                    <ul>
+                      {plan.features.map((feature, idx) => (
+                        <li key={idx}>
+                          <i className="bi bi-check-all"></i> {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="d-flex justify-content-center">
+                    <button className="login-btn">
+                      Buy Plan
+                    </button>
+                  </div>
+                </div>
               </div>
-            </Link>
+            ))}
           </div>
+
         </div>
       </section>
 
@@ -389,18 +371,18 @@ const page = () => {
             </div>
 
             <div className="listing-timeline">
-            {steps.map((step, index) => (
-              <div key={step.id} className={`step ${index % 2 === 0 ? "left" : "right"}`}>
-                <div className="listing-step-icon">
-                  <i className={`bi ${step.icon}`}></i>
+              {steps.map((step, index) => (
+                <div key={step.id} className={`step ${index % 2 === 0 ? "left" : "right"}`}>
+                  <div className="listing-step-icon">
+                    <i className={`bi ${step.icon}`}></i>
+                  </div>
+                  <div className="listing-step-content">
+                    <h3 className="listing-step-title">{step.title}</h3>
+                    <p className="listing-step-description">{step.description}</p>
+                  </div>
                 </div>
-                <div className="listing-step-content">
-                  <h3 className="listing-step-title">{step.title}</h3>
-                  <p className="listing-step-description">{step.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

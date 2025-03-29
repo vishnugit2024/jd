@@ -93,6 +93,8 @@
     max-width: 100%;
     text-align: center;
     margin: 0 auto;
+  padding: 0px 10px;
+
   }
 
   .login-function {
@@ -112,27 +114,28 @@
  
 
   .trustpilot-swiper {
-    max-width: 250px;
+    max-width: 150px;
     height: 300px;
   }
 
   .trustpilot-swiper img {
-    height: 300px;
+    height: 150px;
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .trustpilot-section {
     padding: 40px 0;
+    margin: 0;
   }
 
   .trustpilot-swiper {
     max-width: 200px;
-    height: 250px;
+    height: 150px;
   }
 
   .trustpilot-swiper img {
-    max-height: 250px;
+    max-height: 150px;
     object-fit: fill;
   }
 }

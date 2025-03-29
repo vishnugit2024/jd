@@ -32,6 +32,7 @@
 
 .free-listing-sec-heading {
   margin-top: 2rem !important;
+  margin-bottom: 2rem !important;
   text-align: center;
 }
 
@@ -74,6 +75,7 @@
   margin-top: 0.8rem;
   text-align: left;
 }
+
 .listing-card-title {
   font-weight: bold;
   color: var(--black);
@@ -90,7 +92,8 @@
 }
 
 .custom-table-wrapper {
-  overflow-x: auto; /* Enable horizontal scroll */
+  overflow-x: auto;
+  /* Enable horizontal scroll */
 }
 
 .listing-timeline {
@@ -139,7 +142,80 @@
   color: #555;
 }
 
+.plans-card {
+  border-top: 5px solid var(--black);
+  border-bottom: 5px solid var(--black);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 2rem;
+}
+
+.plan-content ul {
+  padding: 0;
+}
+
+.plan-content ul li i {
+  background-color: #007bff38;
+  color: var(--blue);
+  padding: 1px 5px;
+  border-radius: 50%;
+  font-weight: 800;
+}
+
+.plans-card{
+  height: 90%;
+}
+
+.plan-head h3 {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 0;
+}
+.plan-head p {
+  font-size: 18px;
+  margin: 0;
+  font-weight: 700;
+  color: var(--blue);
+}
+
+.plan-content ul li {
+  list-style-type: none;
+  font-size: 14px;
+  margin-bottom: 1rem;
+}
+
+
+
 @media (max-width: 768px) {
+  .free-listing-sec-title {
+    font-size: 20px;
+  }
+
+  .biziffy-listing-ul {
+    line-height: 2.1rem;
+  }
+
+  .biziffy-listing-ul li {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 1rem;
+  }
+
+  .listing-business-card {
+    padding: 10px;
+  }
+
+  .biziffy-listing-content .biziffy-listing-text {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .biziffy-listing-content .biziffy-listing-title {
+    font-size: 20px;
+  }
+
   .step {
     flex-direction: column;
     text-align: center;
@@ -156,8 +232,10 @@
     display: block;
     white-space: nowrap;
   }
+
   table {
-    min-width: 600px; /* Prevents table from shrinking */
+    min-width: 600px;
+    /* Prevents table from shrinking */
   }
 }
 

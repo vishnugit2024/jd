@@ -90,7 +90,7 @@ const Footer = () => {
               <Link href="/Pages/login" className="footer-login-btn">
                 Log In
               </Link>
-              <Link href="/Pages/login" className="btn btn-primary">
+              <Link href="/Pages/signup" className="btn btn-primary">
                 Sign Up
               </Link>
             </div>

@@ -145,6 +145,7 @@
 
 /* Responsive Design */
 @media (max-width: 1024px) {
+
   .coprate-category-card-image {
     height: 150px;
   }
@@ -169,9 +170,14 @@
 }
 
 @media (max-width: 768px) {
+
+  .coprate-page-count-title {
+    font-size: 22px;
+
+  }
  
   .biziffy-coprate-content .biziffy-coprate-title {
-    font-size: 24px;
+    font-size: 14px;
   }
 
   .biziffy-coprate-content .biziffy-coprate-text {
