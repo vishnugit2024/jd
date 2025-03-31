@@ -177,7 +177,7 @@ const Header = () => {
                 </Link>
               </li>
             </ul>
-            <div className="d-flex align-items-center">
+            <div className="d-flex align-items-center ">
               <Link href="/Pages/login" className="login-btn me-2">
                 SignIn / Signup
               </Link>
@@ -185,6 +185,13 @@ const Header = () => {
               <i className="bi bi-person-circle"></i>
               </Link>
             </div>
+
+            {/* ========== This is Profile code show after login please ========== */}
+            {/* <div className="d-flex align-items-center ">
+              <Link href="/Pages/login" className="login-btn me-2">
+               My Profile
+              </Link>
+            </div> */}
           </div>
         </div>
       </nav>

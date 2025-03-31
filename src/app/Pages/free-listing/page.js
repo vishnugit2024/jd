@@ -12,7 +12,6 @@ import Access from "../../Images/Access.jpg";
 import EffectiveMarketing from "../../Images/EffectiveMarketing.jpg";
 
 const page = () => {
-
   // ====== Card ================
   const cardData = [
     {
@@ -96,28 +95,28 @@ const page = () => {
     {
       id: 1,
       icon: "bi-person",
-      title: "Simple Registration",
+      title: "1.Simple Registration",
       description:
         "Businesses can sign up quickly using just their mobile number, bypassing lengthy forms and complicated procedures. This streamlined process allows them to join the platform and start listing their services in just a few clicks, making it fast and easy to get started.",
     },
     {
       id: 2,
       icon: "bi-pie-chart",
-      title: "Profile Creation",
+      title: "2.Profile Creation",
       description:
         "After registration, businesses can quickly create a detailed profile by providing essential information such as name, address, contact details, and business category. This user-friendly process ensures that the profile accurately represents the business, helping potential customers find the information they need.",
     },
     {
       id: 3,
       icon: "bi-images",
-      title: "Visual Showcase",
+      title: "3.Visual Showcase",
       description:
         "Businesses can enhance their listings by uploading photos and videos, which are essential for showcasing products and services visually. High-quality images and engaging videos help attract more attention and give potential customers a better understanding of what the business offers, helping them stand out from competitors.",
     },
     {
       id: 4,
       icon: "bi-arrow-repeat",
-      title: "Instant Updates",
+      title: "4.Instant Updates",
       description:
         "Businesses can update their listings anytime to keep information accurate and relevant. This feature allows them to adjust contact details, addresses, or services as needed, ensuring their listings reflect the latest developments and promotions, thereby maintaining customer trust and engagement.",
     },
@@ -328,7 +327,12 @@ const page = () => {
 
       <section>
         <div className="container">
-          <div className="free-listing-sec-heading"><h1 className="free-listing-sec-title">Premium <span style={{color: "var(--blue)"}}> Business </span> Listing Packages</h1></div>
+          <div className="free-listing-sec-heading">
+            <h1 className="free-listing-sec-title">
+              Premium <span style={{ color: "var(--blue)" }}> Business </span>{" "}
+              Listing Packages
+            </h1>
+          </div>
           <div className="row">
             {pricingPlans.map((plan, index) => (
               <div className="col-md-3" key={index}>
@@ -348,15 +352,12 @@ const page = () => {
                     </ul>
                   </div>
                   <div className="d-flex justify-content-center">
-                    <button className="login-btn">
-                      Buy Plan
-                    </button>
+                    <button className="login-btn">Buy Plan</button>
                   </div>
                 </div>
               </div>
             ))}
           </div>
-
         </div>
       </section>
 
@@ -372,13 +373,18 @@ const page = () => {
 
             <div className="listing-timeline">
               {steps.map((step, index) => (
-                <div key={step.id} className={`step ${index % 2 === 0 ? "left" : "right"}`}>
+                <div
+                  key={step.id}
+                  className={`step ${index % 2 === 0 ? "left" : "right"}`}
+                >
                   <div className="listing-step-icon">
                     <i className={`bi ${step.icon}`}></i>
                   </div>
                   <div className="listing-step-content">
                     <h3 className="listing-step-title">{step.title}</h3>
-                    <p className="listing-step-description">{step.description}</p>
+                    <p className="listing-step-description">
+                      {step.description}
+                    </p>
                   </div>
                 </div>
               ))}
