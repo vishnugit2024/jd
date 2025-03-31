@@ -34,13 +34,13 @@ const TrustPilot = () => {
                     difference.
                   </p>
                   <div className="d-flex  login-function align-items-center flex-wrap">
-                    <Link href="#">
+                    <Link href="/Pages/login">
                       <button className="btn btn-dark rounded-pill px-4 py-2 me-3">
-                        SignIn/SignUp
+                        SignIn / SignUp
                       </button>
                     </Link>
 
-                    <div className="social-login login-function d-flex">
+                    {/* <div className="social-login login-function d-flex">
                       <Link href="#" className="social-icon google me-2">
                         <i className="bi bi-google"></i>
                       </Link>
@@ -50,7 +50,7 @@ const TrustPilot = () => {
                       <Link href="#" className="social-icon apple">
                         <i className="bi bi-apple"></i>
                       </Link>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
