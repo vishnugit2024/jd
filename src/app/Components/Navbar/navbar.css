@@ -150,16 +150,6 @@
   text-decoration: none;
 }
 
-.login-btn{
-  background-color: white;
-  color: white;
-  border: 2px solid var(--blue);
-  padding: 8px 15px;
-  border-radius: 30px;
-  color: var(--blue);
-  text-decoration: none;
-}
-
 @media only screen and (max-width: 768px) {
   .login-btn{
     font-size: 12px;
