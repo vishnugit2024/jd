@@ -10,7 +10,7 @@ const Enquiryform = () => {
     useEffect(() => {
         const isSubmitted = localStorage.getItem("contactFormSubmitted");
         if (!isSubmitted) {
-            const timer = setTimeout(() => setShow(true), 1000); // Auto-open after 3 seconds
+            const timer = setTimeout(() => setShow(true), 5000); // Auto-open after 3 seconds
             return () => clearTimeout(timer);
         }
     }, []);

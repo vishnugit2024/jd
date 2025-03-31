@@ -35,7 +35,7 @@
 
 
 .bi-star-fill {
-    color: gold;
+    color: green;
 }
 
 .business-card p {
@@ -94,10 +94,15 @@ span {
     width: 100%;
     color: transparent;
     height: 300px;
-    object-fit: cover;
+    /* object-fit: cover; */
     border-radius: 10px;
-    aspect-ratio: 4 / 3;
+    /* aspect-ratio: 4 / 3; */
+}
 
+.plus-overlay {
+    align-items: center;
+    display: flex;
+    cursor: pointer;
 }
 
 
@@ -203,28 +208,116 @@ span {
     font-size: 12px;
 }
 
-@media only screen and (max-width:768px) {
-    .listing-tabs-btn{
-        font-size: 12px;
+.socialmedia-details {
+    display: flex;
+    margin-bottom: 1rem;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.gallery-img {
+    width: 150px;
+    cursor: pointer;
+    height: 120px;
+    border-radius: 10px;
+    /* object-fit: cover; */
+}
+
+
+
+.lightbox-overlay.fullscreen {
+    position: fixed;
+    top: 5%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #00000094;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.fullscreen-image-wrapper {
+    max-width: 100vw;
+    max-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-overlay {
+    position: relative;
+}
+
+.lightbox-overlay .close-btn {
+    top: 7%;
+
+    padding: 3px 10px;
+    border: none;
+    background-color: var(--blue);
+    color: white;
+    position: absolute;
+    right: 5px;
+    z-index: 9999;
+    border-radius: 50%;
+}
+
+.lightbox-img {
+    max-width: 500px;
+    max-height: 400px;
+    /* object-fit: contain; */
+    border-radius: 20px !important;
+}
+
+
+@media(max-width:768px) {
+    .lightbox-overlay.fullscreen{
+        height: 56%;
+    }
+    .lightbox-img {
+        max-width: 300px;
+        max-height: 250px;
+    }
+    .socialmedia-details {
+        display: block;
+        /* margin-bottom: 1rem; */
+    }
+
+    .details-card .nav-link{
+        font-size: 14px;
+    }
+
+    .socialmedia-details .social-icons{
+        margin-bottom: 10px;
+    }
+
+    .listing-tabs-btn {
+        font-size: 12px !important;
     }
 
     .business-card p {
         font-size: 10px;
     }
+
     .business-card h5 {
-     font-size: 14px;
+        font-size: 14px;
     }
+
     .listing-image {
         width: 100px;
         height: 100px;
     }
-    .details-card p{
+
+    .details-card p {
         font-size: 12px;
     }
+
     .opening-hours-list {
         width: 170px;
     }
-    .business-listing-container{
+
+    .business-listing-container {
         padding: 0;
     }
 }

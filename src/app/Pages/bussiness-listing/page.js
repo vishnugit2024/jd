@@ -6,6 +6,10 @@ import gourav2 from '../../Images/gourav2.jpg';
 import gourav3 from '../../Images/gourav3.jpg';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Keyboard } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 const Page = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -113,6 +117,23 @@ const Page = () => {
             alert('Please fill in both fields.');
         }
     };
+    const staticPhotos = [gourav, gourav2, gourav3, gourav, gourav2, gourav3];
+    const [lightbox, setLightbox] = useState(false);
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [showAll, setShowAll] = useState(false);
+
+    const openLightbox = (index) => {
+        setCurrentIndex(index);
+        setLightbox(true);
+    };
+
+    const closeLightbox = (event) => {
+        if (event.target.classList.contains('lightbox-overlay') || event.target.classList.contains('close-btn')) {
+            setLightbox(false);
+        }
+    };
+
+    const visiblePhotos = showAll ? staticPhotos : staticPhotos.slice(0, 4);
 
     return (
         <section className='business-listing-page'>
@@ -136,7 +157,7 @@ const Page = () => {
                                     className={`business-card gap-3 ${selected.id === biz.id ? 'active' : ''}`}
                                     onClick={() => setSelected(biz)}>
                                     <div>
-                                        <Image src={biz.image} alt={biz.name} className="listing-image mb-2" />
+                                        <Image src={biz.image} alt={biz.name} className="listing-image" />
                                     </div>
                                     <div>
                                         <h5>{biz.name}</h5>
@@ -157,11 +178,11 @@ const Page = () => {
                                             <span>|</span>
                                             <p>Phone: {biz.phone}</p>
                                         </div>
-                                        <div className='d-flex gap-2 align-items-center'>
+                                        {/* <div className='d-flex gap-2 align-items-center'>
                                             <p>On Site Services</p>
                                             <span>|</span>
                                             <p>Online Appointment</p>
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </div>
                             ))}
@@ -169,12 +190,25 @@ const Page = () => {
 
                         <div className="col-md-7 right-panel">
                             <div className="details-card">
-                                <h3>{selected.name}</h3>
-                                <Image src={selected.image} alt={selected.name} className="business-detail-image mb-3" />
-                                <div className='d-flex gap-2 align-items-center'>
+                                <h3 className='m-0'>{selected.name}</h3>
+                                <div className='d-flex gap-2 align-items-center mb-3'>
                                     <p>{selected.rating} <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> <i className="bi bi-star-fill"></i> {selected.reviews}</p>
                                     <span>|</span>
                                     <p>Web Designer</p>
+                                </div>
+                                <Image src={selected.image} alt={selected.name} className="business-detail-image mb-3" />
+                                <div className='d-flex justify-content-center mb-3 gap-2'>
+                                    <Link href={'#'} className='login-btn'>
+                                        <i className="bi bi-crosshair"></i> Direction
+                                    </Link>
+                                    <Link href={'#'} className='login-btn'>
+                                        <i className="bi bi-share"></i> Share
+                                    </Link>
+                                    <Link href={'#'} className='login-btn'>
+                                        <i className="bi bi-telephone-outbound"></i> Call
+                                    </Link>
+                                    <Link href={'#'} className='login-btn'>
+                                        <i className="bi bi-globe"></i>                                                 </Link>
                                 </div>
                                 <div className='d-flex gap-2 align-items-center'>
                                     <p>7 years in business</p>
@@ -198,13 +232,37 @@ const Page = () => {
                                             Review
                                         </button>
                                     </li>
+                                    <li className="nav-item">
+                                        <button className={`nav-link ${activeTab === 'photos' ? 'active' : ''}`} onClick={() => setActiveTab('photos')}>
+                                            Photos
+                                        </button>
+                                    </li>
+                                    <li className="nav-item">
+                                        <button className={`nav-link ${activeTab === 'social' ? 'active' : ''}`} onClick={() => setActiveTab('social')}>
+                                            Social Media
+                                        </button>
+                                    </li>
                                 </ul>
 
                                 <div className="tab-content mt-3">
                                     <div className={`tab-pane fade ${activeTab === 'overview' ? 'show active' : ''}`}>
+                                        <div>
+                                            <p>
+                                                <b>About Us : </b> Digi India Solution Rohini Sec 24
+                                                Digi India Solution Rohini Sec 24
+
+                                                Digi India Solution Rohini Sec 24
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <p>
+                                                <b>Address : </b> Digi India Solution Rohini Sec 24
+                                            </p>
+                                        </div>
                                         <div className='d-flex gap-2'>
                                             <div className="opening-hours-container">
-                                                <p onClick={() => setShowAllHours(!showAllHours)} className={`status ${isOpen ? 'open' : 'closed'}`}>{isOpen ? 'Open Now' : 'Closed Now'} <i className="bi bi-chevron-down"></i></p>
+
+                                                <p onClick={() => setShowAllHours(!showAllHours)} className={`status ${isOpen ? 'open' : 'closed'}`}><b className='text-dark'>Hours : </b> {isOpen ? 'Open' : 'Closed'} <i className="bi bi-chevron-down"></i></p>
                                                 {showAllHours && (
                                                     <ul className="opening-hours-list">
                                                         {hours.map((item, index) => (
@@ -216,34 +274,11 @@ const Page = () => {
                                                     </ul>
                                                 )}
                                             </div>
-                                            <span>|</span>
-                                            <p>Phone: {selected.phone}</p>
                                         </div>
-                                        <div className='d-flex gap-2 align-items-center'>
-                                            <p>On Site Services</p>
-                                            <span>|</span>
-                                            <p>Online Appointment</p>
-                                        </div>
-                                        <div>
-                                            <hr />
-                                            <h6>
-                                                <b>Profile</b>
-                                            </h6>
-                                            <div className="social-icons">
-                                                <Link href="#">
-                                                    <i className="bi bi-twitter"></i>
-                                                </Link>
-                                                <Link href="#">
-                                                    <i className="bi bi-facebook"></i>
-                                                </Link>
-                                                <Link href="#">
-                                                    <i className="bi bi-linkedin"></i>
-                                                </Link>
-                                                <Link href="#">
-                                                    <i className="bi bi-instagram"></i>
-                                                </Link>
-                                            </div>
-                                        </div>
+                                        <p><b>Phone : </b> {selected.phone}</p>
+                                        {/* <p><b>About Us : </b> {selected.phone}</p> */}
+
+                                        <hr />
                                     </div>
                                     <div className={`tab-pane fade ${activeTab === 'service' ? 'show active' : ''}`}>
                                         <ul className="service-list">
@@ -271,33 +306,89 @@ const Page = () => {
                                         </ul>
 
                                         <div className='text-center'>
-                                        <button className="login-btn mb-2" onClick={() => setShowForm(!showForm)}>
-                                            {showForm ? 'Hide Review Form' : 'Write a Review'} <i className="bi bi-pencil"></i>
-                                        </button>
+                                            <button className="login-btn mb-2" onClick={() => setShowForm(!showForm)}>
+                                                {showForm ? 'Hide Review Form' : 'Write a Review'} <i className="bi bi-pencil"></i>
+                                            </button>
 
-                                        {showForm && (
-                                            <div className="add-review">
-                                                <h4>Add a Review </h4>
-                                                <input
-                                                    type="text"
-                                                    placeholder="Your Name"
-                                                    className="login-input mb-2"
-                                                    value={newReview.author}
-                                                    onChange={(e) => setNewReview({ ...newReview, author: e.target.value })}
-                                                />
-                                                <textarea
-                                                    placeholder="Your Comment"
-                                                    className="login-input mb-2"
-                                                    value={newReview.comment}
-                                                    onChange={(e) => setNewReview({ ...newReview, comment: e.target.value })}
-                                                ></textarea>
-                                                <button className="btn btn-primary" onClick={handleAddReview}>Submit</button>
-                                            </div>
-                                        )}
+                                            {showForm && (
+                                                <div className="add-review">
+                                                    <h4>Add a Review </h4>
+                                                    <input
+                                                        type="text"
+                                                        placeholder="Your Name"
+                                                        className="login-input mb-2"
+                                                        value={newReview.author}
+                                                        onChange={(e) => setNewReview({ ...newReview, author: e.target.value })}
+                                                    />
+                                                    <textarea
+                                                        placeholder="Your Comment"
+                                                        className="login-input mb-2"
+                                                        value={newReview.comment}
+                                                        onChange={(e) => setNewReview({ ...newReview, comment: e.target.value })}
+                                                    ></textarea>
+                                                    <button className="btn btn-primary" onClick={handleAddReview}>Submit</button>
+                                                </div>
+                                            )}
 
                                         </div>
                                     </div>
 
+                                    <div className={`tab-pane fade ${activeTab === 'photos' ? 'show active' : ''}`}>
+                                        <h4>Photos</h4>
+                                        <div className="photo-gallery d-flex flex-wrap gap-2">
+                                            {visiblePhotos.map((photo, index) => (
+                                                <Image key={index} src={photo} alt={`Photo ${index + 1}`} className="gallery-img" onClick={() => openLightbox(index)} />
+                                            ))}
+                                            {!showAll && staticPhotos.length > 4 && (
+                                                <div className="plus-overlay" onClick={() => setShowAll(true)}>
+                                                    +{staticPhotos.length - 4}
+                                                </div>
+                                            )}
+                                        </div>
+                                    </div>
+                                    <div className={`tab-pane fade ${activeTab === 'social' ? 'show active' : ''}`}>
+                                        <h4>Social Media</h4>
+                                        <div className='socialmedia-details'>
+                                            <div>
+                                                <div className="social-icons">
+                                                    <Link href="#">
+                                                        <i className="bi bi-twitter"></i>
+                                                    </Link>
+                                                    <Link href="#">
+                                                        <i className="bi bi-facebook"></i>
+                                                    </Link>
+                                                    <Link href="#">
+                                                        <i className="bi bi-linkedin"></i>
+                                                    </Link>
+                                                    <Link href="#">
+                                                        <i className="bi bi-instagram"></i>
+                                                    </Link>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {lightbox && (
+                                        <div className="lightbox-overlay fullscreen" onClick={closeLightbox}>
+                                            <button className="close-btn" onClick={closeLightbox}>&times;</button>
+                                            <Swiper
+                                                initialSlide={currentIndex}
+                                                navigation
+                                                keyboard={{ enabled: true }}
+                                                modules={[Navigation, Keyboard]}
+                                                className="lightbox-slider"
+                                                onSwiper={(swiper) => swiper.slideTo(currentIndex, 0)}
+                                            >
+                                                {staticPhotos.map((photo, index) => (
+                                                    <SwiperSlide key={index}>
+                                                        <div className="fullscreen-image-wrapper">
+                                                            <Image src={photo} alt={`Slide ${index}`} className="lightbox-img" />
+                                                        </div>
+                                                    </SwiperSlide>
+                                                ))}
+                                            </Swiper>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </div>
