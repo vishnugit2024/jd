@@ -24,8 +24,10 @@ export default function RootLayout({ children }) {
         <Navbar />
         <div className="childrens">
           {/* <Enquiryform /> */}
+
           {children}
         </div>
+     
         <Footer />
         {/* Bootstrap JS */}
         <Script

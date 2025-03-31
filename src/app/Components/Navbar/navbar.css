@@ -161,6 +161,10 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .login-btn{
+    font-size: 12px;
+  }
+
   .dropMain {
     width: 90%;
     position: unset;

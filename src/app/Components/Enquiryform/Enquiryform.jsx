@@ -6,14 +6,14 @@ import "../../Pages/contact-us/contactus.css";
 const Enquiryform = () => {
   const [show, setShow] = useState(false);
 
-  // Check if form was already submitted
-  useEffect(() => {
-    const isSubmitted = localStorage.getItem("contactFormSubmitted");
-    if (!isSubmitted) {
-      const timer = setTimeout(() => setShow(true), 1000);
-      return () => clearTimeout(timer);
-    }
-  }, []);
+    // Check if form was already submitted
+    useEffect(() => {
+        const isSubmitted = localStorage.getItem("contactFormSubmitted");
+        if (!isSubmitted) {
+            const timer = setTimeout(() => setShow(true), 5000); // Auto-open after 3 seconds
+            return () => clearTimeout(timer);
+        }
+    }, []);
 
   // Handle form submission
   const handleSubmit = (e) => {
