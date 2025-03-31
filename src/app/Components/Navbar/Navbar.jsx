@@ -181,6 +181,9 @@ const Header = () => {
               <Link href="/Pages/login" className="login-btn me-2">
                 SignIn / Signup
               </Link>
+              <Link href="/Pages/Profile" className="">
+              <i className="bi bi-person-circle"></i>
+              </Link>
             </div>
 
             {/* ========== This is Profile code show after login please ========== */}

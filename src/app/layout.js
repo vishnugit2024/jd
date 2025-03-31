@@ -3,7 +3,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import Script from "next/script";
 import Footer from "./Components/Footer/Footer";
 import Enquiryform from "./Components/Enquiryform/Enquiryform";
-
+import './Components/Heading/heading.css'
 export default function RootLayout({ children }) {
   return (
     <html lang="en">

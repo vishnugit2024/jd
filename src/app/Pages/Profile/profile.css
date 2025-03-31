@@ -1,0 +1,142 @@
+.profile-img{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: 10px solid whitesmoke;
+}
+
+.profile-section{
+    padding: 5px 30px 30px;
+    background-color: var(--black);
+}
+
+.profile-image-main , .profile-details , .profile-social-media , .profile-plan-table{
+    border: 2px solid var(--blue);
+    border-radius: 20px;
+    padding: 20px;
+    color: white;
+}
+
+.profile-image-main h3{
+    margin-top: 1rem;
+    font-size: 24px;
+    color: white;
+}
+
+.profile-details span{
+    color: rgba(255, 255, 255, 0.568);
+}
+
+.social-media-urls {
+    display: flex;
+    gap: 10px;
+}
+
+.social-media-urls i {
+    color: white;
+    padding: 6px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+}
+
+.social-media-urls a{
+    text-decoration: none;
+}
+
+/* Facebook */
+.social-media-urls .bi-facebook {
+    background-color: #1877F2;
+}
+
+/* WhatsApp */
+.social-media-urls .bi-whatsapp {
+    background-color: #25D366;
+}
+
+/* Instagram */
+.social-media-urls .bi-instagram {
+    background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+}
+
+/* YouTube */
+.social-media-urls .bi-youtube {
+    background-color: #FF0000;
+}
+
+.profile-head-plan{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-head-plan h3{
+    margin: 0;
+    font-size: 20px;
+}
+.profile-head-plan h1{
+    margin: 0;
+    font-size: 24px;
+    
+}
+
+.plan-status{
+    margin-top: 1rem;
+    display: flex;
+    /* gap: 10px; */
+    justify-content: space-between;
+    /* align-items: center; */
+}
+
+.plan-status p{
+    margin: 0;
+}
+
+.plan-status p i {
+    background-color: green;
+    color: white;
+    border-radius: 50%;
+    padding: 6px;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Add hover effect */
+.plan-status p i:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.plan-status h5{
+    margin: 0;
+}
+
+.plan-status-active ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.plan-status-active li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+.plan-status-active li i {
+    color: green;
+    font-size: 16px;
+}
+
