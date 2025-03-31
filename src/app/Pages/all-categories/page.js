@@ -13,7 +13,7 @@ import HOMEFURNITURE from "../../Images/HOMEFURNITURE.png";
 import breadbg from "../../Images/HeroBanner.jpg";
 import HOMEGYM from "../../Images/HomeGYM.png";
 import HOMEHOSPITAL from "../../Images/HOMEHOSPITAL.png";
-import HOMEKEY from "../../Images/HOMEKEY.WEBP";
+import HOMEKEY from "../../Images/HOMEKEY.webp";
 import HOMEMONEY from "../../Images/HOMEMONEY.png";
 import HOMEPETS from "../../Images/HOMEPETS.png";
 import HOMERESTURANT from "../../Images/HOMERESTURANT.jpg";

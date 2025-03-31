@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
       <body>
         <Navbar />
         <div className="childrens">
-          <Enquiryform />
+          {/* <Enquiryform /> */}
         {children}
           </div>
         <Footer />

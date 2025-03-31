@@ -147,13 +147,13 @@ const page = () => {
               <div className="city-about-content">
                 <h1 className="city-about-title">About Mumbai</h1>
                 <p className="city-about-text">
-                  Mumbai is the <b>City of Dreams</b>, a vibrant metropolis
+                  Mumbai is the <b>City of Dreams</b>&lsquo; a vibrant metropolis
                   where Bollywood glitz collides with historical charm. Explore
-                  iconic landmarks like the Gateway of India, get lost in the
-                  labyrinthine lanes of Crawford Market, or marvel at the
+                  iconic landmarks like the Gateway of India&lsquo; get lost in the
+                  labyrinthine lanes of Crawford Market&lsquo; or marvel at the
                   efficiency of the Dabbawala lunchbox delivery system. Foodies
-                  will love the street food scene, while history buffs can delve
-                  into Mumbai's colonial past at the Chhatrapati Shivaji Maharaj
+                  will love the street food scene&lsquo; while history buffs can delve
+                  into Mumbai&apos;s colonial past at the Chhatrapati Shivaji Maharaj
                   Vastu Sangrahalaya museum.
                 </p>
               </div>
