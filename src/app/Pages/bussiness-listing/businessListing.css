@@ -6,13 +6,6 @@
   font-family: Arial, sans-serif;
 }
 
-.col-5-scroll-css {
-  height: 1500px;
-  overflow-y: scroll;
-  padding: 0;
-  margin: 0;
-}
-
 .business-card {
   display: flex;
   align-items: center;

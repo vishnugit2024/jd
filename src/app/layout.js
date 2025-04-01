@@ -1,10 +1,14 @@
+"use client";
 import "./globals.css";
-import Navbar from "./Components/Navbar/Navbar";
 import Script from "next/script";
 import Footer from "./Components/Footer/Footer";
 import Enquiryform from "./Components/Enquiryform/Enquiryform";
+import { usePathname } from "next/navigation";
+import BusinessNavbar from "./Components/BusinessNavbar/BusinessNavbar";
+import Header from "./Components/Navbar/Navbar";
 
 export default function RootLayout({ children }) {
+  const pathname = usePathname();
   return (
     <html lang="en">
       <head>
@@ -21,13 +25,18 @@ export default function RootLayout({ children }) {
         ></link>
       </head>
       <body>
-        <Navbar />
+        {pathname === "/Pages/bussiness-listing" ? (
+          <BusinessNavbar />
+        ) : (
+          <Header />
+        )}
+
         <div className="childrens">
           {/* <Enquiryform /> */}
 
           {children}
         </div>
-     
+
         <Footer />
         {/* Bootstrap JS */}
         <Script

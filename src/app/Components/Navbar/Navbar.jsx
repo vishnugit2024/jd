@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect } from "react";
 import "./navbar.css";
 import Link from "next/link";
 import logo from "../../Images/logo.jpg";
@@ -31,20 +31,6 @@ const Header = () => {
       document.removeEventListener("click", handleClickOutside);
     };
   }, []);
-
-  const [services, setServices] = useState(false);
-
-  const toggleServices = () => {
-    setServices((prev) => !prev);
-  };
-
-  const categories = [
-    { name: "Art & Design", link: "/bulk-sms-promotion" },
-    { name: "Digital Marketing", link: "/digital-marketing" },
-    { name: "Web Development", link: "/web-development" },
-    { name: "Graphic Design", link: "/graphic-design" },
-    { name: "Content Writing", link: "/content-writing" },
-  ];
 
   return (
     <>

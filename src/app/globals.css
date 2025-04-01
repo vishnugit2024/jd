@@ -148,6 +148,17 @@ body {
   width: 90%;
   margin: auto;
 }
+.business-navbar-search-container {
+  display: flex;
+  align-items: center;
+  background: aliceblue;
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  border-radius: 50px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 60%;
+  margin: auto;
+}
 
 .hero-location-picker {
   position: relative;
