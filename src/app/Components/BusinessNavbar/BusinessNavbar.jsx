@@ -5,6 +5,7 @@ import Link from "next/link";
 import logo from "../../Images/logo.jpg";
 import Image from "next/image";
 import "../../Pages/login/page";
+import './businessNavbar.css'
 
 const BusinessNavbar = () => {
   const navbarCollapseRef = useRef(null);
@@ -59,11 +60,23 @@ const BusinessNavbar = () => {
   }, [placeholderIndex]);
   return (
     <>
+    <section className="business-navbar">
       <nav className="navbar navbar-expand-lg">
-        <div className="container">
+        <div className="container-fluid">
           <Link className="navbar-brand" href="/">
             <Image src={logo} alt="logo" />
           </Link>
+          <div className="business-navbar-search-container">
+            {/* Search Input */}
+            <input
+              type="text"
+              className="hero-search-input"
+              placeholder={animatedText}
+            />
+            <button className="hero-search-btn">
+            <i className="bi bi-search"></i> 
+            </button>
+          </div>
           <button
             className="navbar-toggler"
             type="button"
@@ -78,28 +91,15 @@ const BusinessNavbar = () => {
             </span>
           </button>
           <div
-            className="collapse navbar-collapse"
+            className="collapse navbar-collapse justify-content-end"
             id="navbarSupportedContent"
             ref={navbarCollapseRef}
           >
-            <div className="business-navbar-search-container">
-              {/* Search Input */}
-              <input
-                type="text"
-                className="hero-search-input"
-                placeholder={animatedText}
-              />
-              <button className="hero-search-btn">
-                <i className="bi bi-search"></i>
-              </button>
-            </div>
-
-            <div className="d-flex align-items-center ">
+            <div className="d-flex align-items-center justify-content-end">
               <Link href="/Pages/login" className="login-btn me-2">
                 SignIn / Signup
               </Link>
             </div>
-
             {/* ========== This is Profile code show after login please ========== */}
             {/* <div className="d-flex align-items-center ">
               <Link href="/Pages/login" className="login-btn me-2">
@@ -109,6 +109,7 @@ const BusinessNavbar = () => {
           </div>
         </div>
       </nav>
+    </section>
     </>
   );
 };
