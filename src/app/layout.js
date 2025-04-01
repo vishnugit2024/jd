@@ -3,14 +3,11 @@ import "./globals.css";
 import Script from "next/script";
 import Footer from "./Components/Footer/Footer";
 import Enquiryform from "./Components/Enquiryform/Enquiryform";
-<<<<<<< HEAD
 import { usePathname } from "next/navigation";
 import BusinessNavbar from "./Components/BusinessNavbar/BusinessNavbar";
 import Header from "./Components/Navbar/Navbar";
 
-=======
 import './Components/Heading/heading.css'
->>>>>>> d8e6a20cc45d18c5072284a347d5add892c1aa27
 export default function RootLayout({ children }) {
   const pathname = usePathname();
   return (

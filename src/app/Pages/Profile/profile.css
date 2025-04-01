@@ -1,20 +1,18 @@
 .profile-img{
-    height: 200px;
-    width: 200px;
+    height: 170px;
+    width: 170px;
     border-radius: 50%;
     border: 10px solid #007bff62;
-    margin-bottom: 1rem;
+    margin: 0rem auto 1rem;
+    object-fit: cover;
 }
 
 .profile-section{
-    padding: 5px 30px 30px;
-    /* background-color: var(--black); */
+    padding: 0px 30px;
 }
 
 .profile-image-main , .profile-details , .profile-social-media , .profile-plan-table{
-    border: 2px solid var(--blue);
-    border-radius: 20px;
-    padding: 20px;
+    /* padding: 20px; */
     color: black;
 }
 
@@ -134,7 +132,51 @@
     padding: 0;
 }
 
+
+.sidebar {
+    background: var(--black);
+    padding: 20px;
+    height: 100%;
+    /* border-radius: 10px; */
+}
+
+.sidebar-tab {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    background: transparent;
+    color: var(--blue);
+    border: 1px solid var(--blue);
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+}
+
+.sidebar-tab i {
+    font-size: 18px;
+}
+
+.sidebar-tab:hover, .sidebar-tab.active {
+    background: var(--blue);
+    color: white;
+    transform: scale(1.01);
+}
+
+.sidebar-tab:focus {
+    outline: none;
+    box-shadow: 0 0 5px var(--blue);
+}
+
 @media only screen and (max-width:768px) {
+    .profile-img{
+        height: 120px;
+        width: 120px;
+    }
+
     .profile-section{
         padding: 0px 0px 20px;
     }

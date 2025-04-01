@@ -93,11 +93,10 @@ span {
 .business-detail-image {
     width: 100%;
     color: transparent;
-    height: 400px;
+    height: 300px;
     object-fit: cover;
     border-radius: 10px;
-    aspect-ratio: 4 / 3;
-
+    /* aspect-ratio: 4 / 3; */
 }
 
 

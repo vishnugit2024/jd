@@ -148,18 +148,6 @@ body {
   width: 90%;
   margin: auto;
 }
-.business-navbar-search-container {
-  display: flex;
-  align-items: center;
-  background: aliceblue;
-  border: 1px solid #ddd;
-  padding: 5px 10px;
-  border-radius: 50px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  width: 60%;
-  margin: auto;
-}
-
 .hero-location-picker {
   position: relative;
   border-right: 1px solid #ddd;
@@ -201,7 +189,7 @@ body {
 
 .hero-search-input {
   border: none;
-  padding: 10px;
+  padding: 0px;
   background: aliceblue;
   width: 100%;
   font-size: 16px;
@@ -216,6 +204,9 @@ body {
   border-radius: 50px;
   cursor: pointer;
   font-size: 16px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 
 @media (max-width: 768px) {
@@ -253,6 +244,8 @@ body {
 
   .hero-search-container {
     padding: 0px 0px 0px 10px;
+    width: 100%;
+    gap: 10px;
   }
 
   .black-btn {
