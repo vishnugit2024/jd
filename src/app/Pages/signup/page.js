@@ -72,7 +72,7 @@ const Page = () => {
                                     </p>
                                 </div>
 
-                                <button className="blue-btn w-100 mb-3">Get Started</button>
+                                <button className="login-btn w-100 mb-3">Get Started</button>
 
                                 <p className="text-center">
                                     Already have an account? <Link href="../../Pages/login" className="text-primary">Login</Link>

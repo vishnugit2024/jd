@@ -61,7 +61,7 @@ const Login = () => {
                   <Link href="../../Pages/forgot-password" className="text-decoration-none">Forgot Password?</Link>
                 </div>
 
-                <button className="blue-btn w-100">Login</button>
+                <button className="login-btn w-100">Login</button>
 
                 <p className="text-center">
                   Don’t have an account? <Link href="../../Pages/signup" className="text-primary">Register</Link>

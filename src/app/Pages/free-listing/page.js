@@ -211,10 +211,13 @@ const page = () => {
                   placement&lsquo; enhanced profile options&lsquo; and exclusive
                   promotional opportunities.
                 </motion.p>
-
-                <Link href="/Pages/contact-us">
-                  <button className="login-btn">Start Now</button>
-                </Link>
+                <div className="w-100">
+                  <Link href="/Pages/freelistingform">
+                    <button className="alert alert-primary w-100 fw-bold">
+                      Start Now
+                    </button>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

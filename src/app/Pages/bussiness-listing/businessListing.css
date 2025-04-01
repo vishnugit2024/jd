@@ -6,16 +6,13 @@
   font-family: Arial, sans-serif;
 }
 
-<<<<<<< HEAD
-=======
 .col-5-scroll-css {
-  height: 100%;
+  /* height: 100%; */
   /* overflow-y: scroll; */
   padding: 0;
   margin: 0;
 }
 
->>>>>>> d8e6a20cc45d18c5072284a347d5add892c1aa27
 .business-card {
   display: flex;
   align-items: center;
@@ -300,7 +297,7 @@ span {
 
 @media (max-width: 768px) {
 
-  .expanded-content .nav-link{
+  .expanded-content .nav-link {
     padding: 2px 5px !important;
     font-size: 10px !important;
     font-weight: 300 !important;

@@ -359,7 +359,6 @@ const Page = () => {
             <h5 className="text-dark">Business Category Name</h5>
             <div className="row">
               <div className="col-md-5 left-panel">
-<<<<<<< HEAD
                 {businesses.map((biz) => (
                   <div
                     key={biz.id}
@@ -889,7 +888,6 @@ const Page = () => {
                     );
                   })}
                 </div>
->>>>>>> d8e6a20cc45d18c5072284a347d5add892c1aa27
               </div>
 
               <div className="col-md-7 right-panel">
