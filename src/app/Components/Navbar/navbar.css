@@ -205,6 +205,10 @@
 }
 
 @media (max-width: 768px) {
+  .navbar .container{
+    width: 98%;
+  }
+
   .navbar-brand img {
     width: 100px;
     /* Slightly smaller for mobile */

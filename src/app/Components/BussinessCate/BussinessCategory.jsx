@@ -157,7 +157,7 @@ const BussinessCategory = () => {
           ))}
           <div className="d-flex justify-content-center mt-3">
             <Link className="login-btn" href="../../Pages/all-categories">
-              View All
+              View All <i className="bi bi-eye"></i>
             </Link>
           </div>
         </div>

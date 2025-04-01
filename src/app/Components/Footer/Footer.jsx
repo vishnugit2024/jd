@@ -39,6 +39,9 @@ const Footer = () => {
                 <Link href="/Pages/aboutus">About Us</Link>
               </li>
               <li>
+                <Link href="/Pages/Profile">Profile</Link>
+              </li>
+              <li>
                 <Link href="/Pages/contact-us">Contact Us</Link>
               </li>
               <li>
