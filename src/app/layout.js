@@ -6,7 +6,6 @@ import Enquiryform from "./Components/Enquiryform/Enquiryform";
 import { usePathname } from "next/navigation";
 import BusinessNavbar from "./Components/BusinessNavbar/BusinessNavbar";
 import Header from "./Components/Navbar/Navbar";
-
 import './Components/Heading/heading.css'
 export default function RootLayout({ children }) {
   const pathname = usePathname();
