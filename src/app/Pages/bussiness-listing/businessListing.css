@@ -6,6 +6,8 @@
   font-family: Arial, sans-serif;
 }
 
+<<<<<<< HEAD
+=======
 .col-5-scroll-css {
   height: 100%;
   /* overflow-y: scroll; */
@@ -13,6 +15,7 @@
   margin: 0;
 }
 
+>>>>>>> d8e6a20cc45d18c5072284a347d5add892c1aa27
 .business-card {
   display: flex;
   align-items: center;

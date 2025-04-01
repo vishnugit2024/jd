@@ -312,7 +312,7 @@ const Page = () => {
   };
   return (
     <>
-      <section>
+      {/* <section>
         <div className="all-breadcrumb">
           <Image
             src={breadbg}
@@ -321,7 +321,6 @@ const Page = () => {
             objectFit="cover"
           />
           <div className="bread-overlay"></div>{" "}
-          {/* Overlay should be separate */}
           <div className="container">
             <div className="bread-content">
               <h1>Connecting Customers with the Best Businesses</h1>
@@ -352,7 +351,7 @@ const Page = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="business-listing-page my-3">
         <div className="container">
@@ -360,6 +359,58 @@ const Page = () => {
             <h5 className="text-dark">Business Category Name</h5>
             <div className="row">
               <div className="col-md-5 left-panel">
+<<<<<<< HEAD
+                {businesses.map((biz) => (
+                  <div
+                    key={biz.id}
+                    className={`business-card gap-3 ${
+                      selected.id === biz.id ? "active" : ""
+                    }`}
+                    onClick={() => setSelected(biz)}
+                  >
+                    <div>
+                      <Image
+                        src={biz.image}
+                        alt={biz.name}
+                        className="listing-image"
+                      />
+                    </div>
+                    <div>
+                      <h5>{biz.name}</h5>
+                      <div className="d-flex gap-2 align-items-center">
+                        <p>
+                          {biz.rating} <i className="bi bi-star-fill"></i>{" "}
+                          <i className="bi bi-star-fill"></i>{" "}
+                          <i className="bi bi-star-fill"></i>{" "}
+                          <i className="bi bi-star-fill"></i>{" "}
+                          <i className="bi bi-star-fill"></i> {biz.reviews}
+                        </p>
+                        <span>|</span>
+                        <p>Web Designer</p>
+                      </div>
+                      <div className="d-flex gap-2 align-items-center">
+                        <p>7 years in business</p>
+                        <span>|</span>
+                        <p>Karnal, Haryana</p>
+                      </div>
+                      <div className="d-flex gap-2 align-items-center">
+                        <div className="opening-hours-container">
+                          <p className={`status ${isOpen ? "open" : "closed"}`}>
+                            {isOpen ? "Open Now" : "Closed Now"}
+                          </p>
+                        </div>
+                        <span>|</span>
+                        <p>Phone: {biz.phone}</p>
+                      </div>
+                      {/* <div className='d-flex gap-2 align-items-center'>
+                                            <p>On Site Services</p>
+                                            <span>|</span>
+                                            <p>Online Appointment</p>
+                                        </div> */}
+                    </div>
+                  </div>
+                ))}
+=======
                 <div className="col-5-scroll-css">
                   {businesses.map((biz) => {
                     const isOpen = true; // Isko actual logic ke sath replace karein
@@ -838,6 +889,7 @@ const Page = () => {
                     );
                   })}
                 </div>
+>>>>>>> d8e6a20cc45d18c5072284a347d5add892c1aa27
               </div>
 
               <div className="col-md-7 right-panel">
