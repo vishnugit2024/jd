@@ -420,7 +420,7 @@ function Page() {
               </div>
               <div className="coprate-form-btn">
                 <button className="login-btn mb-3" onClick={handleFormToggle}>
-                  {showForm ? "Hide Form" : "Get Started Now"}
+                  {showForm ? "Hide Form" : "Get Started Now"} <i className="bi bi-arrow-right-circle"></i>
                 </button>
               </div>
 

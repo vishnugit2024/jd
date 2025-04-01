@@ -7,8 +7,8 @@
 }
 
 .col-5-scroll-css {
-  height: 1500px;
-  overflow-y: scroll;
+  height: 100%;
+  /* overflow-y: scroll; */
   padding: 0;
   margin: 0;
 }
@@ -48,7 +48,7 @@
 
 .business-card:hover {
   border: 1px solid var(--blue);
-  transform: scale(1.02);
+  transform: scale(1.01);
 }
 
 span {
@@ -198,7 +198,7 @@ span {
   width: 40px;
   border-radius: 50%;
   display: inline-flex;
-  border: 1px solid lightgray;
+  /* border: 1px solid lightgray; */
   justify-content: center;
   background-color: black;
   color: white;
@@ -210,10 +210,10 @@ span {
 }
 
 .rating-selection {
- display: flex;
- justify-content: space-between;
- align-items: center;
- margin-top: -10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -10px;
 }
 
 .rating-selection i {
@@ -233,7 +233,6 @@ span {
   cursor: pointer;
   height: 120px;
   border-radius: 10px;
-  /* object-fit: cover; */
 }
 
 .lightbox-overlay.fullscreen {
@@ -281,29 +280,69 @@ span {
   border-radius: 20px !important;
 }
 
+.expanded-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 0;
+  background: #f8f9fa;
+  padding: 0 15px;
+}
+
+.expanded-content.show {
+  max-height: 100%;
+  opacity: 1;
+  padding: 10px 15px;
+}
+
 @media (max-width: 768px) {
+
+  .expanded-content .nav-link{
+    padding: 2px 5px !important;
+    font-size: 10px !important;
+    font-weight: 300 !important;
+  }
+
+  .business-card:hover {
+    border: 1px solid var(--blue);
+    transform: none;
+  }
+
+  .gallery-img {
+    width: 160px;
+    height: 130px;
+  }
+
+  .expanded-content.show {
+    padding: 0;
+  }
+
+  .right-panel {
+    display: none;
+  }
+
   .lightbox-overlay.fullscreen {
     height: 56%;
   }
+
   .lightbox-img {
     max-width: 300px;
     max-height: 250px;
   }
+
   .socialmedia-details {
     display: block;
     /* margin-bottom: 1rem; */
   }
 
-  .details-card .nav-link {
-    font-size: 14px;
+  .details-card {
+    border-radius: 10px;
+    box-shadow: none;
+    height: 100%;
   }
 
   .socialmedia-details .social-icons {
     margin-bottom: 10px;
-  }
-
-  .listing-tabs-btn {
-    font-size: 12px !important;
   }
 
   .business-card p {
@@ -334,5 +373,5 @@ span {
   .business-detail-image {
     height: 250px;
   }
-  
+
 }

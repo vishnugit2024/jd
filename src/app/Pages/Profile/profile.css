@@ -2,25 +2,20 @@
     height: 200px;
     width: 200px;
     border-radius: 50%;
-    border: 10px solid whitesmoke;
+    border: 10px solid #007bff62;
+    margin-bottom: 1rem;
 }
 
 .profile-section{
     padding: 5px 30px 30px;
-    background-color: var(--black);
+    /* background-color: var(--black); */
 }
 
 .profile-image-main , .profile-details , .profile-social-media , .profile-plan-table{
     border: 2px solid var(--blue);
     border-radius: 20px;
     padding: 20px;
-    color: white;
-}
-
-.profile-image-main h3{
-    margin-top: 1rem;
-    font-size: 24px;
-    color: white;
+    color: black;
 }
 
 .profile-details span{
@@ -33,7 +28,7 @@
 }
 
 .social-media-urls i {
-    color: white;
+    color: black;
     padding: 6px;
     border-radius: 50%;
     display: flex;
@@ -98,7 +93,7 @@
 
 .plan-status p i {
     background-color: green;
-    color: white;
+    color: black;
     border-radius: 50%;
     padding: 6px;
     font-size: 14px;
@@ -121,12 +116,6 @@
     margin: 0;
 }
 
-.plan-status-active ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
 .plan-status-active li {
     display: flex;
     align-items: center;
@@ -140,3 +129,30 @@
     font-size: 16px;
 }
 
+.plan-list{
+    list-style-type: none;
+    padding: 0;
+}
+
+@media only screen and (max-width:768px) {
+    .profile-section{
+        padding: 0px 0px 20px;
+    }
+    
+.profile-plan-table h3{
+    font-size: 16px;
+    margin: 0;
+}
+
+.profile-plan-table h1{
+    font-size: 20px;
+    margin: 0;
+}
+
+.profile-image-main h3{
+    margin-top: 1rem;
+    font-size: 24px;
+    color: black;
+}
+
+}

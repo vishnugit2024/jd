@@ -87,7 +87,7 @@ const Blogs = () => {
                       href={`../../Pages/blog/[id]${blog.id}`}
                       className="login-btn"
                     >
-                      Read More
+                      Read More <i className="bi bi-arrow-right-circle"></i>
                     </Link>
                   </div>
                 </div>
@@ -96,7 +96,7 @@ const Blogs = () => {
           </Swiper>
           <div className="text-center mt-4">
             <Link href="/Pages/blog">
-              <button className="login-btn">View All</button>
+              <button className="login-btn">View All <i className="bi bi-eye"></i></button>
             </Link>
           </div>
         </div>
