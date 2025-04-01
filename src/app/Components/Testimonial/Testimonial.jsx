@@ -125,7 +125,7 @@ const TestimonialSection = () => {
               {/* View More / View Less Button */}
               <div className="d-flex justify-content-center mt-2">
                 <button
-                  className="btn text-primary text-decoration-underline"
+                  className="login-btn"
                   onClick={() => setShowAll(!showAll)}
                 >
                   {showAll ? "View Less" : "View More"}{" "}

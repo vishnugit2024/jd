@@ -35,7 +35,7 @@ const Header = () => {
   return (
     <>
       <nav className="navbar navbar-expand-lg">
-        <div className="container">
+        <div className="container p-0">
           <Link className="navbar-brand" href="/">
             <Image src={logo} alt="logo" />
           </Link>

@@ -97,7 +97,7 @@ const page = () => {
                       href={`../../Pages/blog/${blog.id}`}
                       className="login-btn"
                     >
-                      Read More
+                      Read More <i className="bi bi-arrow-right-circle "></i>
                     </Link>
                   </div>
                 </div>

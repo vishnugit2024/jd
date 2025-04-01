@@ -420,7 +420,7 @@ function Page() {
               </div>
               <div className="coprate-form-btn">
                 <button className="login-btn mb-3" onClick={handleFormToggle}>
-                  {showForm ? "Hide Form" : "Get Started Now"}
+                  {showForm ? "Hide Form" : "Get Started Now"} <i className="bi bi-arrow-right-circle"></i>
                 </button>
               </div>
 
@@ -439,7 +439,7 @@ function Page() {
                       <div className="col-md-6 mb-3">
                         <input
                           type="text"
-                          className="form-control"
+                          className="login-input"
                           placeholder="First Name"
                         />
                       </div>
@@ -447,7 +447,7 @@ function Page() {
                       <div className="col-md-6 mb-3">
                         <input
                           type="text"
-                          className="form-control"
+                          className="login-input"
                           placeholder="Last Name"
                         />
                       </div>
@@ -457,7 +457,7 @@ function Page() {
                       <div className="mb-3 col-md-6">
                         <input
                           type="text"
-                          className="form-control"
+                          className="login-input"
                           placeholder="Business Name"
                         />
                       </div>
@@ -465,7 +465,7 @@ function Page() {
                       <div className="mb-3 col-md-6">
                         <input
                           type="text"
-                          className="form-control"
+                          className="login-input"
                           placeholder="Brand Name"
                         />
                       </div>
@@ -475,7 +475,7 @@ function Page() {
                       <div className="mb-3 col-md-6">
                         <input
                           type="text"
-                          className="form-control"
+                          className="login-input"
                           placeholder="Phone Number"
                         />
                       </div>
@@ -483,7 +483,7 @@ function Page() {
                       <div className="mb-3 col-md-6">
                         <input
                           type="email"
-                          className="form-control"
+                          className="login-input"
                           placeholder="Email"
                         />
                       </div>
@@ -491,12 +491,12 @@ function Page() {
 
                     <div className="mb-3">
                       <label>Upload File</label>
-                      <input type="file" className="form-control" />
+                      <input type="file" className="login-input" />
                     </div>
 
                     <div className="mb-3">
                       <textarea
-                        className="form-control"
+                        className="login-input"
                         rows="4"
                         placeholder="Type your message"
                       ></textarea>
@@ -505,12 +505,12 @@ function Page() {
                     <div className="mb-3">
                       <input
                         type="text"
-                        className="form-control"
+                        className="login-input"
                         placeholder="Enter Captcha"
                       />
                     </div>
                     <div className="coprate-form-btn">
-                      <button type="submit" className="btn btn-success w-30">
+                      <button type="submit" className="login-btn">
                         Submit
                       </button>
                     </div>
