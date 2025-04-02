@@ -4,6 +4,8 @@ import profileImage from '../../Images/gourav.jpg';
 import Image from 'next/image';
 import Link from 'next/link';
 import './profile.css';
+import EditProfile from './edit-profile/page';
+import { toast, ToastContainer } from 'react-toastify';
 
 const ProfilePage = () => {
     const [activeTab, setActiveTab] = useState('overview');
@@ -26,16 +28,36 @@ const ProfilePage = () => {
         ],
     };
 
-    const listings = [
+    const [listings, setListings] = useState([
         {
             id: 1,
             title: 'Awesome Cafe',
-            businessName: 'Coffee Delight',
-            description: 'A cozy place for coffee lovers.',
+            address: 'Bawana Delhi 110039',
             image: profileImage
         }
-    ];
+    ]);
+    const handleDelete = (id) => {
+        toast.info(
+            <div>
+                <p>Are you sure you want to delete this listing?</p>
+                <button onClick={() => confirmDelete(id)} className="btn btn-danger me-2">Yes</button>
+                <button onClick={toast.dismiss} className="btn btn-secondary">No</button>
+            </div>,
+            {
+                width: 300,
+                position: "top-center",
+                autoClose: false, // Prevent auto-close
+                closeOnClick: false,
+                draggable: false,
+            }
+        );
+    };
 
+    const confirmDelete = (id) => {
+        setListings((prevListings) => prevListings.filter((listing) => listing.id !== id));
+        toast.dismiss(); // Close the toast after clicking Yes
+        toast.success("Listing deleted successfully!", { position: "top-right", autoClose: 3000 });
+    };
 
     return (
         <section className='profile-section'>
@@ -130,10 +152,14 @@ const ProfilePage = () => {
                             </div>
                         )}
 
+
                         {activeTab === 'listing' && (
                             <div className='profile-plan-table'>
-                                <h3>My Listing</h3>
+                                <div className='d-flex justify-content-between align-items-center'>
+                                    <h3>My Listing</h3>
+                                </div>
                                 <hr />
+                                <ToastContainer />
                                 {listings.length > 0 ? (
                                     listings.map((listing) => (
                                         <div className='profile-listing' key={listing.id}>
@@ -143,9 +169,13 @@ const ProfilePage = () => {
                                                 </div>
                                                 <div className='col-md-9'>
                                                     <h4 className='text-primary'>{listing.title}</h4>
-                                                    <p className='text-success'>{listing.businessName}</p>
+                                                    <p className='text-success'>{listing.address}</p>
                                                     <Link href='/Pages/free-listing#paidlisting' className='login-btn me-2'>Advertise Now</Link>
-                                                    <Link href='/Pages/Profile/edit-profile' className='black-btn'>Edit Business</Link>
+                                                    <button href='/Pages/Profile/edit-profile' className={`black-btn ${activeTab === 'edit-business' ? 'active' : ''}`} onClick={() => setActiveTab('edit-business')}>Edit Business</button>
+
+                                                    <button className='btn btn-danger' onClick={() => handleDelete(listing.id)}>
+                                                        <i className='bi bi-trash'></i>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -154,6 +184,12 @@ const ProfilePage = () => {
                                     <p className='no-listing'>You have no listings. Please go to the listing page.</p>
                                 )}
                             </div>
+                        )}
+
+                        {activeTab === 'edit-business' && (
+                            <>
+                                <EditProfile />
+                            </>
                         )}
                     </div>
                 </div>
