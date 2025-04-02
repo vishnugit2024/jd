@@ -70,7 +70,7 @@ const ContactPerson = ({ setKey }) => {
       <div className="mb-3">
         <label className="form-label">Contact Number<sup>*</sup></label>
         <input
-          type="text"
+          type="tel"
           className="form-control"
           name="contactNumber"
           onChange={handleChange}
@@ -81,7 +81,7 @@ const ContactPerson = ({ setKey }) => {
       {formData.alternateNumbers.map((num, index) => (
         <div className="mb-3" key={index}>
           <input
-            type="text"
+            type="tel"
             className="form-control"
             placeholder="Alternate Number"
             value={num}
@@ -103,7 +103,7 @@ const ContactPerson = ({ setKey }) => {
           WhatsApp Number <span style={{ color: "red" }}>(Optional)</span>
         </label>
         <input
-          type="text"
+          type="tel"
           className="form-control"
           name="whatsappNumber"
           onChange={handleChange}
