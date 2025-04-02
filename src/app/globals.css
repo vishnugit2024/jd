@@ -34,6 +34,7 @@ body {
   border-radius: 30px;
   color: var(--blue);
   text-decoration: none;
+  transition: 0.5s  ;
 }
 
 .black-btn {
@@ -43,7 +44,20 @@ body {
   padding: 8px 15px;
   border-radius: 30px;
   color: var(--black);
+  transition: 0.5s  ;
   text-decoration: none;
+}
+
+
+.login-btn:hover{
+  background-color: var(--blue);
+  color: white;
+  border: none;
+}
+.black-btn:hover {
+  background-color: var(--black);
+  color: white;
+  border: none;
 }
 
 .all-breadcrumb {
@@ -253,4 +267,8 @@ body {
     border: 1px solid var(--black);
     padding: 5px 10px;
   }
+  .login-btn{
+    font-size: 12px;
+  }
+
 }

@@ -328,7 +328,7 @@ const page = () => {
         </div>
       </section>
 
-      <section>
+      <section id="paidlisting">
         <div className="container">
           <div className="free-listing-sec-heading">
             <h1 className="free-listing-sec-title">
