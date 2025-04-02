@@ -253,7 +253,7 @@ const page = () => {
         </div>
       </section>
 
-      <section id="Paidlisting my-4">
+      <section id="paidlisting my-4">
         <div className="container">
           <div className="row">
             <div className="col-md-5">

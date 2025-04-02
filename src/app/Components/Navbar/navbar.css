@@ -115,7 +115,7 @@
 }
 
 .navbar-toggler:focus{
-  box-shadow: none;
+  box-shadow: none !important;
 }
 
 .service a {
