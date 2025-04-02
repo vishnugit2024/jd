@@ -11,6 +11,8 @@ const BusinessDetails = ({ setKey }) => {
     landmark: "",
     city: "",
     state: "",
+    direction: "",
+    website: "",
   });
 
   const handleChange = (e) => {
@@ -27,7 +29,6 @@ const BusinessDetails = ({ setKey }) => {
       <div className="mb-3">
         <label className="form-label">
           Business Name<sup>*</sup>
-         
         </label>
         <input
           type="text"
@@ -41,10 +42,9 @@ const BusinessDetails = ({ setKey }) => {
         <div className="col-md-6 mb-3">
           <label className="form-label">
             Pin Code<sup>*</sup>
-           
           </label>
           <input
-            type="text"
+            type="number"
             className="form-control"
             name="pinCode"
             onChange={handleChange}
@@ -54,7 +54,6 @@ const BusinessDetails = ({ setKey }) => {
         <div className="col-md-6 mb-3">
           <label className="form-label">
             Building/Block No<sup>*</sup>
-           
           </label>
           <input
             type="text"
@@ -65,30 +64,33 @@ const BusinessDetails = ({ setKey }) => {
           />
         </div>
       </div>
-      <div className="mb-3">
-        <label className="form-label">
-          Street/Colony Name<sup>*</sup>
-        </label>
-        <input
-          type="text"
-          className="form-control"
-          name="street"
-          onChange={handleChange}
-          required
-        />
+      <div className="row">
+        <div className="col-md-6 mb-3">
+          <label className="form-label">
+            Street/Colony Name<sup>*</sup>
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            name="street"
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="col-md-6 mb-3">
+          <label className="form-label">
+            Area<sup>*</sup>
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            name="area"
+            onChange={handleChange}
+            required
+          />
+        </div>
       </div>
-      <div className="mb-3">
-        <label className="form-label">
-          Area<sup>*</sup>
-        </label>
-        <input
-          type="text"
-          className="form-control"
-          name="area"
-          onChange={handleChange}
-          required
-        />
-      </div>
+
       <div className="mb-3">
         <label className="form-label">
           Landmark<sup>*</sup>
@@ -123,6 +125,26 @@ const BusinessDetails = ({ setKey }) => {
             name="state"
             onChange={handleChange}
             required
+          />
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-md-6 mb-3">
+          <label className="form-label">Google Map URL</label>
+          <input
+            type="url"
+            className="form-control"
+            name="direction"
+            onChange={handleChange}
+          />
+        </div>
+        <div className="col-md-6 mb-3">
+          <label className="form-label">Business Website URL</label>
+          <input
+            type="url"
+            className="form-control"
+            name="website"
+            onChange={handleChange}
           />
         </div>
       </div>
