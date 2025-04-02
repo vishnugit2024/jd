@@ -1,5 +1,5 @@
 .freelistingform-page-css {
-  margin: 8rem 0rem !important;
+  margin: 8rem 0rem 4rem !important;
 }
 
 sup {
@@ -7,18 +7,13 @@ sup {
   font-size: 18px !important;
 }
 
-.tab-stlye {
-  padding: 0 !important;
-}
-
-
 .fixed-listing-image {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
-  overflow: hidden; /* Prevents image overflow */
+  overflow: hidden;
 }
 
 .fixed-image {
@@ -31,11 +26,19 @@ sup {
   padding: 2rem;
 }
 
+.tab-changes-form {
+  display: flex;
+  flex-direction: row !important;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .tab-form-title {
   text-align: center;
   margin-bottom: 1rem;
   font-weight: 700;
-  color: black; 
+  color: black;
 }
 
 .section-title {
@@ -142,24 +145,11 @@ sup {
      📱 Responsive Design
      ======================= */
 @media (max-width: 768px) {
-  .col-md-6.d-none {
+  .freelisting-side-image {
     display: none !important;
   }
 
-  .container {
-    max-width: 100%;
-    padding: 20px;
-  }
-
-  .nav-tabs {
-    flex-direction: column;
-  }
-
-  .nav-tabs .nav-item {
-    flex: none;
-  }
-
-  .btn {
-    font-size: 14px;
+  .free-listing-multitab {
+    padding: 1rem;
   }
 }

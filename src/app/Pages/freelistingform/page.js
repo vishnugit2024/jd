@@ -10,7 +10,7 @@ import ContactPerson from "@/app/Components/FreeListingform/ContactPerson";
 import BusinessTiming from "@/app/Components/FreeListingform/BusinessTiming";
 import BusinessCategory from "@/app/Components/FreeListingform/BusinessCategory";
 
-const page = () => {
+const Page = () => {
   const [key, setKey] = useState("business");
 
   return (
@@ -19,7 +19,7 @@ const page = () => {
         <div className="container">
           <div className="row">
             {/* Fixed Image Section */}
-            <div className="col-md-6 d-none d-md-block">
+            <div className="col-md-6 freelisting-side-image d-md-block">
               <div className="fixed-listing-image">
                 <Image src={testImage} alt="Business" className="fixed-image" />
               </div>
@@ -34,18 +34,30 @@ const page = () => {
                 <Tabs
                   activeKey={key}
                   onSelect={(k) => setKey(k)}
-                  className="mb-3 "
+                  className="mb-3 tab-changes-form"
                 >
-                  <Tab eventKey="business" title="Business Details" className="tab-stlye">
+                  <Tab eventKey="business" title="Business Details">
                     <BusinessDetails setKey={setKey} />
                   </Tab>
-                  <Tab eventKey="contact" title="Contact Person" className="tab-stlye">
+                  <Tab
+                    eventKey="contact"
+                    title="Contact Person"
+                    className="tab-stlye"
+                  >
                     <ContactPerson setKey={setKey} />
                   </Tab>
-                  <Tab eventKey="timing" title="Business Timing" className="tab-stlye">
+                  <Tab
+                    eventKey="timing"
+                    title="Business Timing"
+                    className="tab-stlye"
+                  >
                     <BusinessTiming setKey={setKey} />
                   </Tab>
-                  <Tab eventKey="category" title="Business Category" className="tab-stlye">
+                  <Tab
+                    eventKey="category"
+                    title="Business Category"
+                    className="tab-stlye"
+                  >
                     <BusinessCategory setKey={setKey} />
                   </Tab>
                 </Tabs>
@@ -58,4 +70,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
