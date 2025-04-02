@@ -26,16 +26,21 @@ const ProfilePage = () => {
         ],
     };
 
+    const listings = [
+        {
+            id: 1,
+            title: 'Awesome Cafe',
+            businessName: 'Coffee Delight',
+            description: 'A cozy place for coffee lovers.',
+            image: profileImage
+        }
+    ];
+
+
     return (
         <section className='profile-section'>
-            {/* <div className='container text-center py-2'>
-                <h3 className='heading-title'>Profile</h3>
-                <p className='text-center m-0'>View All Your Profile Details Here.</p>
-            </div>
-            <hr /> */}
             <div className='container'>
                 <div className='row'>
-                    {/* Sidebar with Tabs */}
                     <div className='col-md-3 p-0'>
                         <div className='sidebar'>
                             <div className='d-grid justify-content-center text-center'>
@@ -45,7 +50,7 @@ const ProfilePage = () => {
                             </div>
                             <hr className='text-white' />
                             <button className={`sidebar-tab ${activeTab === 'overview' ? 'active' : ''}`} onClick={() => setActiveTab('overview')}>
-                                <i className='bi bi-person-circle'></i> Overview
+                                <i className='bi bi-person-circle'></i> Basic Info
                             </button>
                             <button className={`sidebar-tab ${activeTab === 'edit' ? 'active' : ''}`} onClick={() => setActiveTab('edit')}>
                                 <i className='bi bi-pencil-square'></i> Edit Profile
@@ -53,13 +58,11 @@ const ProfilePage = () => {
                             <button className={`sidebar-tab ${activeTab === 'plan' ? 'active' : ''}`} onClick={() => setActiveTab('plan')}>
                                 <i className='bi bi-list-check'></i> My Plan
                             </button>
-                            <button className={`sidebar-tab ${activeTab === 'plan' ? 'active' : ''}`} onClick={() => setActiveTab('plan')}>
+                            <button className={`sidebar-tab ${activeTab === 'listing' ? 'active' : ''}`} onClick={() => setActiveTab('listing')}>
                                 <i className='bi bi-list-check'></i> Listing
                             </button>
                         </div>
                     </div>
-
-                    {/* Main Content Area */}
                     <div className='col-md-9 p-3'>
                         {activeTab === 'overview' && (
                             <div className='profile-overview'>
@@ -79,7 +82,6 @@ const ProfilePage = () => {
                                 </div>
                             </div>
                         )}
-
                         {activeTab === 'edit' && (
                             <div className='profile-edit'>
                                 <h3>Edit Profile</h3>
@@ -125,6 +127,32 @@ const ProfilePage = () => {
                                     <h5 className='m-0'>Plan Status:</h5>
                                     <p className='text-success m-0'>Active <i className='bi bi-check-circle'></i></p>
                                 </div>
+                            </div>
+                        )}
+
+                        {activeTab === 'listing' && (
+                            <div className='profile-plan-table'>
+                                <h3>My Listing</h3>
+                                <hr />
+                                {listings.length > 0 ? (
+                                    listings.map((listing) => (
+                                        <div className='profile-listing' key={listing.id}>
+                                            <div className='row listing-item'>
+                                                <div className='col-md-3'>
+                                                    <Image src={listing.image} alt={listing.title} className='listing-img' width={150} height={150} />
+                                                </div>
+                                                <div className='col-md-9'>
+                                                    <h4 className='text-primary'>{listing.title}</h4>
+                                                    <p className='text-success'>{listing.businessName}</p>
+                                                    <Link href='/Pages/free-listing#paidlisting' className='login-btn me-2'>Advertise Now</Link>
+                                                    <Link href='/Pages/Profile/edit-profile' className='black-btn'>Edit Business</Link>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ))
+                                ) : (
+                                    <p className='no-listing'>You have no listings. Please go to the listing page.</p>
+                                )}
                             </div>
                         )}
                     </div>

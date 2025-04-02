@@ -10,7 +10,7 @@ import ContactPerson from "@/app/Components/FreeListingform/ContactPerson";
 import BusinessTiming from "@/app/Components/FreeListingform/BusinessTiming";
 import BusinessCategory from "@/app/Components/FreeListingform/BusinessCategory";
 
-const page = () => {
+const Page = () => {
   const [key, setKey] = useState("business");
 
   return (
@@ -58,4 +58,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
