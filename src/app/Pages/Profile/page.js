@@ -75,7 +75,7 @@ const ProfilePage = () => {
                             <hr className='text-white' />
                             <div className='sidebar-button-main'>
                                 <button className={`sidebar-tab ${activeTab === 'overview' ? 'active' : ''}`} onClick={() => setActiveTab('overview')}>
-                                    <i className='bi bi-person-circle'></i> Basic Info
+                                    <i className='bi bi-person-circle'></i> Contact Info
                                 </button>
                                 <button className={`sidebar-tab ${activeTab === 'edit' ? 'active' : ''}`} onClick={() => setActiveTab('edit')}>
                                     <i className='bi bi-pencil-square'></i> Edit Profile

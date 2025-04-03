@@ -10,6 +10,7 @@
     border-radius: 15px;
     transition: all 0.3s ease-in-out;
     border-left: 5px solid #007bff;
+    margin-bottom: 1rem;
 }
 
 .enquiry-card:hover {
