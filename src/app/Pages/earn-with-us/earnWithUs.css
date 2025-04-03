@@ -17,14 +17,14 @@
 }
 
 .earn-img {
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   object-fit: cover;
   margin-bottom: 15px;
 }
 
 .earn-name {
-  font-size: 25px;
+  font-size: 18px;
   font-weight: 700;
   letter-spacing: 1px;
   color: var(--black);
@@ -38,7 +38,7 @@
 }
 
 .earn-revenue-list li {
-  font-size: 22px;
+  font-size: 18px;
   color: var(--black);
   background: #fff;
   font-weight: 700;

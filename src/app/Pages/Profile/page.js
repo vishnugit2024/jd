@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import './profile.css';
 import EditProfile from './edit-profile/page';
+import AllEnquiry from './all-enquiry/page';
 import { toast, ToastContainer } from 'react-toastify';
 
 const ProfilePage = () => {
@@ -64,6 +65,7 @@ const ProfilePage = () => {
             <div className='container'>
                 <div className='row'>
                     <div className='col-md-3 p-0'>
+
                         <div className='sidebar'>
                             <div className='d-grid justify-content-center text-center'>
                                 <Image src={profileImage} alt='Profile' className='profile-img' />
@@ -71,39 +73,85 @@ const ProfilePage = () => {
                                 <p className='text-success m-0'>{userProfile.userType}</p>
                             </div>
                             <hr className='text-white' />
-                            <button className={`sidebar-tab ${activeTab === 'overview' ? 'active' : ''}`} onClick={() => setActiveTab('overview')}>
-                                <i className='bi bi-person-circle'></i> Basic Info
-                            </button>
-                            <button className={`sidebar-tab ${activeTab === 'edit' ? 'active' : ''}`} onClick={() => setActiveTab('edit')}>
-                                <i className='bi bi-pencil-square'></i> Edit Profile
-                            </button>
-                            <button className={`sidebar-tab ${activeTab === 'plan' ? 'active' : ''}`} onClick={() => setActiveTab('plan')}>
-                                <i className='bi bi-list-check'></i> My Plan
-                            </button>
-                            <button className={`sidebar-tab ${activeTab === 'listing' ? 'active' : ''}`} onClick={() => setActiveTab('listing')}>
-                                <i className='bi bi-list-check'></i> Listing
-                            </button>
+                            <div className='sidebar-button-main'>
+                                <button className={`sidebar-tab ${activeTab === 'overview' ? 'active' : ''}`} onClick={() => setActiveTab('overview')}>
+                                    <i className='bi bi-person-circle'></i> Basic Info
+                                </button>
+                                <button className={`sidebar-tab ${activeTab === 'edit' ? 'active' : ''}`} onClick={() => setActiveTab('edit')}>
+                                    <i className='bi bi-pencil-square'></i> Edit Profile
+                                </button>
+                                <button className={`sidebar-tab ${activeTab === 'plan' ? 'active' : ''}`} onClick={() => setActiveTab('plan')}>
+                                    <i className="bi bi-pentagon-half"></i> My Plan
+                                </button>
+                                <button className={`sidebar-tab ${activeTab === 'listing' ? 'active' : ''}`} onClick={() => setActiveTab('listing')}>
+                                    <i className="bi bi-list-task"></i> Listing
+                                </button>
+                                <button className={`sidebar-tab ${activeTab === 'all-enquiry' ? 'active' : ''}`} onClick={() => setActiveTab('all-enquiry')}>
+                                    <i className="bi bi-info-circle"></i> All Enquiry
+                                </button>
+
+                            </div>
                         </div>
                     </div>
-                    <div className='col-md-9 p-3'>
+                    <div className='col-md-9 pt-3'>
                         {activeTab === 'overview' && (
-                            <div className='profile-overview'>
-                                <h3>Bio & Other Details:</h3>
-                                <hr />
-                                <div className='row mt-3'>
-                                    <div className='col-sm-6'>
-                                        <p><strong>Name:</strong> {userProfile.name}</p>
-                                        <p><strong>Email:</strong> {userProfile.email}</p>
-                                        <p><strong>Mobile No.:</strong> {userProfile.mobile}</p>
-                                        <p><strong>Address:</strong> {userProfile.address}</p>
+                            <div className="profile-overview card border-0 rounded-4">
+                                <div className="d-flex align-items-center">
+                                    <div className="profile-overview-main avatar bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3">
+                                        {userProfile.name.charAt(0)}
                                     </div>
-                                    <div className='col-sm-6'>
-                                        <p><strong>City:</strong> {userProfile.city}</p>
-                                        <p><strong>State:</strong> {userProfile.state}</p>
+                                    <div>
+                                        <h5 className="mb-1 text-dark fw-bold">{userProfile.name}</h5>
+                                        <p className="text-muted m-0">{userProfile.email}</p>
+                                    </div>
+                                </div>
+
+                                <hr className="my-4" />
+
+                                <div className="row g-3">
+                                    <div className="col-md-6">
+                                        <div className="d-flex align-items-center p-3 bg-light rounded">
+                                            <i className="bi bi-phone fs-4 text-primary me-3"></i>
+                                            <div>
+                                                <small className="text-muted">Mobile</small>
+                                                <p className="fw-semibold mb-0">{userProfile.mobile}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="col-md-6">
+                                        <div className="d-flex align-items-center p-3 bg-light rounded">
+                                            <i className="bi bi-geo-alt fs-4 text-danger me-3"></i>
+                                            <div>
+                                                <small className="text-muted">Address</small>
+                                                <p className="fw-semibold mb-0">{userProfile.address}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="col-md-6">
+                                        <div className="d-flex align-items-center p-3 bg-light rounded">
+                                            <i className="bi bi-buildings fs-4 text-info me-3"></i>
+                                            <div>
+                                                <small className="text-muted">City</small>
+                                                <p className="fw-semibold mb-0">{userProfile.city}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="col-md-6">
+                                        <div className="d-flex align-items-center p-3 bg-light rounded">
+                                            <i className="bi bi-map fs-4 text-success me-3"></i>
+                                            <div>
+                                                <small className="text-muted">State</small>
+                                                <p className="fw-semibold mb-0">{userProfile.state}</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         )}
+
                         {activeTab === 'edit' && (
                             <div className='profile-edit'>
                                 <h3>Edit Profile</h3>
@@ -189,6 +237,11 @@ const ProfilePage = () => {
                         {activeTab === 'edit-business' && (
                             <>
                                 <EditProfile />
+                            </>
+                        )}
+                        {activeTab === 'all-enquiry' && (
+                            <>
+                                <AllEnquiry />
                             </>
                         )}
                     </div>

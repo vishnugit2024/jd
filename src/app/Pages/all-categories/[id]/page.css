@@ -201,3 +201,7 @@ span {
 .review-comment-star i {
     font-size: 12px;
 }
+
+@media only screen and (max-width:768px) {
+  
+}

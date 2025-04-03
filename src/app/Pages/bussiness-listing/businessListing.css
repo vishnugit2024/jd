@@ -68,6 +68,7 @@ span {
   border-radius: 15px;
   box-shadow: 0 0px 2px rgba(0, 0, 0, 0.3);
   color: var(--black);
+
 }
 
 .details-card h3 {
@@ -293,9 +294,10 @@ span {
 
 @media (max-width: 768px) {
 
-  .col-5-scroll-css{
+  .col-5-scroll-css {
     height: 100%;
   }
+
   .expanded-content .nav-link {
     padding: 2px 5px !important;
     font-size: 10px !important;
@@ -308,7 +310,7 @@ span {
   }
 
   .gallery-img {
-    width: 160px;
+    width: 150px;
     height: 130px;
   }
 
@@ -335,9 +337,14 @@ span {
   }
 
   .details-card {
+    padding: 0;
     border-radius: 10px;
     box-shadow: none;
     height: 100%;
+  }
+
+  .left-panel {
+    padding: 0px;
   }
 
   .socialmedia-details .social-icons {
@@ -362,7 +369,7 @@ span {
   }
 
   .opening-hours-list {
-    width: 170px;
+    width: 250px;
   }
 
   .business-listing-container {

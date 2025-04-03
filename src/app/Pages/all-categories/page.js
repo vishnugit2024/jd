@@ -169,7 +169,7 @@ const page = () => {
                 className="col-lg-2 col-md-3 col-sm-4 col-4"
               >
                 <Link
-                  href={category.link}
+                  href={"/Pages/bussiness-listing"}
                   alt={category.title}
                   className="text-decoration-none"
                 >
