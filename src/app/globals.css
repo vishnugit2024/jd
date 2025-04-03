@@ -223,6 +223,10 @@ body {
   align-items: center;
 }
 
+.btn-primary{
+  margin: 0 !important;
+}
+
 @media (max-width: 768px) {
   .some-page-hero-content {
     padding: 2rem 0px 0px;

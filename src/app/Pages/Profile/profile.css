@@ -173,7 +173,13 @@
 
 .sidebar-tab:focus {
     outline: none;
-    box-shadow: 0 0 5px var(--blue);
+    box-shadow: none;
+}
+
+.profile-overview-main{
+    width: 70px;
+    height: 70px;
+    font-size: 2rem;
 }
 
 .listing-img {
@@ -233,7 +239,30 @@
     font-size: 14px;
 }
 
+
 @media only screen and (max-width:768px) {
+    .profile-overview-main{
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
+    }
+    
+    .sidebar-tab {
+        display: grid;
+        align-items: center;
+        gap: 5px;
+        width: fit-content;
+        padding: 6px;
+        font-size: 8px;
+        font-weight: 500;
+        height: 70px;
+        width: 70px;
+    }
+
+    .sidebar-button-main{
+        display: flex;
+        gap: 5px;
+    }
     .profile-img {
         height: 120px;
         width: 120px;
