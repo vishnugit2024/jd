@@ -222,7 +222,7 @@ body {
   align-items: center;
 }
 
-.btn-primary{
+.btn-primary {
   margin: 0 !important;
 }
 
@@ -230,6 +230,10 @@ body {
   .some-page-hero-content {
     padding: 2rem 0px 0px;
     max-width: 90%;
+  }
+
+  .hero-search-input {
+    padding-inline: 0px;
   }
 
   .some-page-hero-title {
