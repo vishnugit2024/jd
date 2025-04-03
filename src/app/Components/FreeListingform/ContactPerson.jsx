@@ -32,21 +32,29 @@ const ContactPerson = ({ setKey }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setKey("timing");
+    setKey("business");
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="row mb-3">
-        <div className="col-md-2">
-          <label className="form-label">Title<sup>*</sup></label>
+    <h5 className="section-title">
+        Fill Your Contact Details<sup>*</sup>
+      </h5>
+
+      <div className="row">
+        <div className="col-md-2 mb-3">
+          <label className="form-label">
+            Title<sup>*</sup>
+          </label>
           <select className="form-control" name="title" onChange={handleChange}>
             <option>Mr</option>
             <option>Ms</option>
           </select>
         </div>
-        <div className="col-md-5">
-          <label className="form-label">First Name<sup>*</sup></label>
+        <div className="col-md-5 mb-3">
+          <label className="form-label">
+            First Name<sup>*</sup>
+          </label>
           <input
             type="text"
             className="form-control"
@@ -55,8 +63,10 @@ const ContactPerson = ({ setKey }) => {
             required
           />
         </div>
-        <div className="col-md-5">
-          <label className="form-label">Last Name<sup>*</sup></label>
+        <div className="col-md-5 mb-3">
+          <label className="form-label">
+            Last Name<sup>*</sup>
+          </label>
           <input
             type="text"
             className="form-control"
@@ -68,7 +78,9 @@ const ContactPerson = ({ setKey }) => {
       </div>
 
       <div className="mb-3">
-        <label className="form-label">Contact Number<sup>*</sup></label>
+        <label className="form-label">
+          Contact Number<sup>*</sup>
+        </label>
         <input
           type="tel"
           className="form-control"
@@ -111,7 +123,9 @@ const ContactPerson = ({ setKey }) => {
       </div>
 
       <div className="mb-3">
-        <label className="form-label">Email<sup>*</sup></label>
+        <label className="form-label">
+          Email<sup>*</sup>
+        </label>
         <input
           type="email"
           className="form-control"
@@ -121,7 +135,7 @@ const ContactPerson = ({ setKey }) => {
         />
       </div>
 
-      <button type="submit" className="btn btn-primary w-100">
+      <button type="submit" className="btn btn-primary w-100 py-3">
         Next
       </button>
     </form>
