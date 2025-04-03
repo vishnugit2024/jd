@@ -26,7 +26,7 @@ const BusinessDetails = ({ setKey }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-    <h5 className="section-title">
+      <h5 className="section-title">
         Fill Business Details<sup>*</sup>
       </h5>
 
@@ -42,57 +42,53 @@ const BusinessDetails = ({ setKey }) => {
           required
         />
       </div>
-      <div className="row">
-        <div className="col-md-6 mb-3">
-          <label className="form-label">
-            Pin Code<sup>*</sup>
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            name="pinCode"
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="col-md-6 mb-3">
-          <label className="form-label">
-            Building/Block No<sup>*</sup>
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            name="building"
-            onChange={handleChange}
-            required
-          />
-        </div>
+      <div className="mb-3">
+        <label className="form-label">
+          Pin Code<sup>*</sup>
+        </label>
+        <input
+          type="text"
+          className="form-control"
+          name="pinCode"
+          onChange={handleChange}
+          required
+        />
       </div>
-      <div className="row">
-        <div className="col-md-6 mb-3">
-          <label className="form-label">
-            Street/Colony Name<sup>*</sup>
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            name="street"
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="col-md-6 mb-3">
-          <label className="form-label">
-            Area<sup>*</sup>
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            name="area"
-            onChange={handleChange}
-            required
-          />
-        </div>
+      <div className="mb-3">
+        <label className="form-label">
+          Building/Block No<sup>*</sup>
+        </label>
+        <input
+          type="text"
+          className="form-control"
+          name="building"
+          onChange={handleChange}
+          required
+        />
+      </div>
+      <div className="mb-3">
+        <label className="form-label">
+          Street/Colony Name<sup>*</sup>
+        </label>
+        <input
+          type="text"
+          className="form-control"
+          name="street"
+          onChange={handleChange}
+          required
+        />
+      </div>
+      <div className="mb-3">
+        <label className="form-label">
+          Area<sup>*</sup>
+        </label>
+        <input
+          type="text"
+          className="form-control"
+          name="area"
+          onChange={handleChange}
+          required
+        />
       </div>
 
       <div className="mb-3">
@@ -106,33 +102,31 @@ const BusinessDetails = ({ setKey }) => {
           onChange={handleChange}
         />
       </div>
-      <div className="row">
-        <div className="col-md-6 mb-3">
-          <label className="form-label">
-            City<sup>*</sup>
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            name="city"
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="col-md-6 mb-3">
-          <label className="form-label">
-            State<sup>*</sup>
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            name="state"
-            onChange={handleChange}
-            required
-          />
-        </div>
+      <div className="mb-3">
+        <label className="form-label">
+          City<sup>*</sup>
+        </label>
+        <input
+          type="text"
+          className="form-control"
+          name="city"
+          onChange={handleChange}
+          required
+        />
       </div>
-     
+      <div className="mb-3">
+        <label className="form-label">
+          State<sup>*</sup>
+        </label>
+        <input
+          type="text"
+          className="form-control"
+          name="state"
+          onChange={handleChange}
+          required
+        />
+      </div>
+
       <button type="submit" className="btn btn-primary w-100 py-3">
         Next
       </button>

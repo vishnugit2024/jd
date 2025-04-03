@@ -37,44 +37,42 @@ const ContactPerson = ({ setKey }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-    <h5 className="section-title">
+      <h5 className="section-title">
         Fill Your Contact Details<sup>*</sup>
       </h5>
 
-      <div className="row">
-        <div className="col-md-2 mb-3">
-          <label className="form-label">
-            Title<sup>*</sup>
-          </label>
-          <select className="form-control" name="title" onChange={handleChange}>
-            <option>Mr</option>
-            <option>Ms</option>
-          </select>
-        </div>
-        <div className="col-md-5 mb-3">
-          <label className="form-label">
-            First Name<sup>*</sup>
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            name="firstName"
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="col-md-5 mb-3">
-          <label className="form-label">
-            Last Name<sup>*</sup>
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            name="lastName"
-            onChange={handleChange}
-            required
-          />
-        </div>
+      <div className="mb-3">
+        <label className="form-label">
+          Title<sup>*</sup>
+        </label>
+        <select className="form-control" name="title" onChange={handleChange}>
+          <option>Mr</option>
+          <option>Ms</option>
+        </select>
+      </div>
+      <div className="mb-3">
+        <label className="form-label">
+          First Name<sup>*</sup>
+        </label>
+        <input
+          type="text"
+          className="form-control"
+          name="firstName"
+          onChange={handleChange}
+          required
+        />
+      </div>
+      <div className="mb-3">
+        <label className="form-label">
+          Last Name<sup>*</sup>
+        </label>
+        <input
+          type="text"
+          className="form-control"
+          name="lastName"
+          onChange={handleChange}
+          required
+        />
       </div>
 
       <div className="mb-3">

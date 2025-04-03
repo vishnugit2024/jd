@@ -88,7 +88,7 @@ const Page = () => {
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
                                     />
-                                    <button className="blue-btn w-100" type="submit">Send OTP</button>
+                                    <button className="login-btn w-100" type="submit">Send OTP</button>
                                 </form>
                             )}
 
@@ -101,7 +101,7 @@ const Page = () => {
                                         value={otp}
                                         onChange={(e) => setOtp(e.target.value)}
                                     />
-                                    <button className="blue-btn w-100" type="submit">Verify OTP</button>
+                                    <button className="login-btn w-100" type="submit">Verify OTP</button>
                                 </form>
                             )}
 
@@ -141,7 +141,7 @@ const Page = () => {
                                         </p>
                                     </div>
 
-                                    <button className="blue-btn w-100" type="submit">Reset Password</button>
+                                    <button className="login-btn w-100" type="submit">Reset Password</button>
                                 </form>
                             )}
 

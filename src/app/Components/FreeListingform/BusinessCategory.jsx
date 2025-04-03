@@ -40,7 +40,7 @@ const BusinessCategory = ({ setKey }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-    <h5 className="section-title">
+      <h5 className="section-title">
         Select Business Category<sup>*</sup>
       </h5>
 
@@ -48,8 +48,27 @@ const BusinessCategory = ({ setKey }) => {
         <label className="form-label">
           Select Business Category <sup>*</sup>
         </label>
-        <select className="form-control" required onChange={handleSelectChange}>
+        <select className="form-control" required>
           <option value="">Select Your Category</option>
+          <option value="Construction">Construction</option>
+          <option value="Real Estate">Real Estate</option>
+          <option value="Education">Education</option>
+          <option value="Retail">Retail</option>
+          <option value="Healthcare">Healthcare</option>
+          <option value="Technology">Technology</option>
+          <option value="Finance">Finance</option>
+          <option value="Hospitality">Hospitality</option>
+          <option value="Automotive">Automotive</option>
+          <option value="Manufacturing">Manufacturing</option>
+        </select>
+      </div>
+
+      <div className="mb-3">
+        <label className="form-label">
+          Select Business SubCategory <sup>*</sup>
+        </label>
+        <select className="form-control" required onChange={handleSelectChange}>
+          <option value="">Select Your SubCategory</option>
           <option value="Construction">Construction</option>
           <option value="Real Estate">Real Estate</option>
           <option value="Education">Education</option>
@@ -74,20 +93,6 @@ const BusinessCategory = ({ setKey }) => {
             </span>
           ))}
         </div>
-      </div>
-
-      <div className="mb-3">
-        <label className="form-label">
-          Business SubCategory<sup>*</sup>
-        </label>
-        <input
-          type="text"
-          className="form-control mb-2"
-          placeholder="Enter Business SubCategory"
-          value={services}
-          onChange={(e) => setServices(e.target.value)}
-          required
-        />
       </div>
 
       <div className="mb-3">
