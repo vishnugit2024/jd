@@ -28,4 +28,6 @@
 
 .premium-plan li::before {
   content: "✔";
+  color: blue;
+  font-size: 20px;
 }

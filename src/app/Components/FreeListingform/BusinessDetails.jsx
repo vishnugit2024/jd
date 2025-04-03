@@ -21,11 +21,15 @@ const BusinessDetails = ({ setKey }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setKey("contact");
+    setKey("category");
   };
 
   return (
     <form onSubmit={handleSubmit}>
+    <h5 className="section-title">
+        Fill Business Details<sup>*</sup>
+      </h5>
+
       <div className="mb-3">
         <label className="form-label">
           Business Name<sup>*</sup>
@@ -44,7 +48,7 @@ const BusinessDetails = ({ setKey }) => {
             Pin Code<sup>*</sup>
           </label>
           <input
-            type="number"
+            type="text"
             className="form-control"
             name="pinCode"
             onChange={handleChange}
@@ -128,27 +132,8 @@ const BusinessDetails = ({ setKey }) => {
           />
         </div>
       </div>
-      <div className="row">
-        <div className="col-md-6 mb-3">
-          <label className="form-label">Google Map URL</label>
-          <input
-            type="url"
-            className="form-control"
-            name="direction"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="col-md-6 mb-3">
-          <label className="form-label">Business Website URL</label>
-          <input
-            type="url"
-            className="form-control"
-            name="website"
-            onChange={handleChange}
-          />
-        </div>
-      </div>
-      <button type="submit" className="btn btn-primary w-100">
+     
+      <button type="submit" className="btn btn-primary w-100 py-3">
         Next
       </button>
     </form>

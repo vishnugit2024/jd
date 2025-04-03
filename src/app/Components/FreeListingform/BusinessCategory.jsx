@@ -1,19 +1,12 @@
 "use client";
 import React, { useState } from "react";
 import "../../Pages/freelistingform/freelistingform.css";
-import Link from "next/link";
 
-const BusinessCategory = () => {
+const BusinessCategory = ({ setKey }) => {
   const [category, setCategory] = useState([]);
   const [businessImages, setBusinessImages] = useState([]);
   const [services, setServices] = useState("");
   const [about, setAbout] = useState("");
-  const [socialLinks, setSocialLinks] = useState({
-    facebook: "",
-    instagram: "",
-    linkedin: "",
-    twitter: "",
-  });
 
   const handleSelectChange = (e) => {
     const selectedValues = Array.from(
@@ -39,26 +32,18 @@ const BusinessCategory = () => {
     setBusinessImages((prevImages) => prevImages.filter((_, i) => i !== index));
   };
 
-  const handleSocialLinkChange = (e) => {
-    const { name, value } = e.target;
-    setSocialLinks((prevLinks) => ({ ...prevLinks, [name]: value }));
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    const formData = {
-      category,
-      services,
-      about,
-      socialLinks,
-      businessImages,
-    };
-    console.log("Submitted Data:", formData);
-    alert("Form Submitted Successfully!");
+
+    setKey("timing");
   };
 
   return (
     <form onSubmit={handleSubmit}>
+    <h5 className="section-title">
+        Select Business Category<sup>*</sup>
+      </h5>
+
       <div className="mb-3">
         <label className="form-label">
           Select Business Category <sup>*</sup>
@@ -93,12 +78,12 @@ const BusinessCategory = () => {
 
       <div className="mb-3">
         <label className="form-label">
-          Services Provide <sup>*</sup>
+          Business SubCategory<sup>*</sup>
         </label>
         <input
           type="text"
           className="form-control mb-2"
-          placeholder="Services You Provide"
+          placeholder="Enter Business SubCategory"
           value={services}
           onChange={(e) => setServices(e.target.value)}
           required
@@ -117,25 +102,6 @@ const BusinessCategory = () => {
           onChange={(e) => setAbout(e.target.value)}
           required
         />
-      </div>
-
-      <div className="mb-3">
-        <label className="form-label">
-          Social Media Links <span style={{ color: "red" }}>(Optional)</span>
-        </label>
-        {Object.keys(socialLinks).map((platform) => (
-          <input
-            key={platform}
-            type="url"
-            className="form-control mb-2"
-            name={platform}
-            placeholder={`${
-              platform.charAt(0).toUpperCase() + platform.slice(1)
-            } Profile Link`}
-            value={socialLinks[platform]}
-            onChange={handleSocialLinkChange}
-          />
-        ))}
       </div>
 
       <div className="mb-3">
@@ -160,7 +126,6 @@ const BusinessCategory = () => {
                 src={img}
                 alt={`Preview ${index}`}
                 className="img-thumbnail"
-                style={{ width: "100px", height: "100px" }}
               />
               <button
                 type="button"
@@ -172,12 +137,10 @@ const BusinessCategory = () => {
           ))}
         </div>
       </div>
-<Link href="/Pages/freelistingform/freelistingformsuccess">
-<button type="submit" className="btn btn-success w-100">
-        Submit
+      <button type="submit" className="btn btn-primary w-100 py-3">
+        {" "}
+        Next
       </button>
-</Link>
-    
     </form>
   );
 };

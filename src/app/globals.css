@@ -34,7 +34,7 @@ body {
   border-radius: 30px;
   color: var(--blue);
   text-decoration: none;
-  transition: 0.5s  ;
+  transition: 0.5s;
 }
 
 .black-btn {
@@ -44,12 +44,11 @@ body {
   padding: 8px 15px;
   border-radius: 30px;
   color: var(--black);
-  transition: 0.5s  ;
+  transition: 0.5s;
   text-decoration: none;
 }
 
-
-.login-btn:hover{
+.login-btn:hover {
   background-color: var(--blue);
   color: white;
   border: none;
@@ -203,7 +202,7 @@ body {
 
 .hero-search-input {
   border: none;
-  padding: 0px;
+  padding-inline: 20px;
   background: aliceblue;
   width: 100%;
   font-size: 16px;
@@ -271,8 +270,7 @@ body {
     border: 1px solid var(--black);
     padding: 5px 10px;
   }
-  .login-btn{
+  .login-btn {
     font-size: 12px;
   }
-
 }

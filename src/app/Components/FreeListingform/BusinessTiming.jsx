@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import "../../Pages/freelistingform/freelistingform.css";
+import Link from "next/link";
 
 const BusinessTiming = ({ setKey }) => {
   const [timing, setTiming] = useState([
@@ -55,12 +56,14 @@ const BusinessTiming = ({ setKey }) => {
   // Form Submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    setKey("category");
+    setKey("upgrade");
   };
 
   return (
     <form onSubmit={handleSubmit} className="business-timing-container">
-      <h5 className="section-title">Select Business Days & Timings</h5>
+      <h5 className="section-title">
+        Select Business Days & Timing<sup>*</sup>
+      </h5>
 
       {/* Select All Button */}
       <div className="select-all-container">
@@ -74,22 +77,35 @@ const BusinessTiming = ({ setKey }) => {
 
       {/* Opening and Closing Time for All */}
       <div className="all-days-time">
-        <input
-          type="time"
-          className="form-control"
-          value={allDaysTime.openTime}
-          onChange={(e) =>
-            setAllDaysTime({ ...allDaysTime, openTime: e.target.value })
-          }
-        />
-        <input
-          type="time"
-          className="form-control"
-          value={allDaysTime.closeTime}
-          onChange={(e) =>
-            setAllDaysTime({ ...allDaysTime, closeTime: e.target.value })
-          }
-        />
+        {/* Open Time */}
+        <div className="time-selection-div">
+          <label>Open Time</label>
+          <input
+            type="time"
+            className="form-control"
+            required
+            value={allDaysTime.openTime}
+            onChange={(e) =>
+              setAllDaysTime({ ...allDaysTime, openTime: e.target.value })
+            }
+          />
+        </div>
+
+        {/* Close Time */}
+        <div className="time-selection-div">
+          <label>Close Time</label>
+          <input
+            type="time"
+            className="form-control"
+            value={allDaysTime.closeTime}
+            required
+            onChange={(e) =>
+              setAllDaysTime({ ...allDaysTime, closeTime: e.target.value })
+            }
+          />
+        </div>
+
+        {/* Apply to All Button */}
         <button
           type="button"
           className="btn btn-outline-primary apply-time-btn"
@@ -133,7 +149,7 @@ const BusinessTiming = ({ setKey }) => {
         </div>
       ))}
 
-      <button type="submit" className="btn btn-primary w-100">
+      <button type="submit" className="btn btn-primary  w-100 py-3">
         Next
       </button>
     </form>
