@@ -50,7 +50,7 @@ const Page = () => {
                 <form onSubmit={handleSubmit}>
                     <div className='row align-items-center'>
                         <div className='heading'>
-                            <h5>Basic Business Detail :-</h5>
+                            <h5>Contact Information :-</h5>
                         </div>
                         <div className='col-md-3'>
                             <div className="edit-profile-field">
@@ -66,7 +66,7 @@ const Page = () => {
                         </div>
                         <div className='col-md-3'>
                             <div className="edit-profile-field">
-                                <label>Thumbnail Image</label>
+                                <label>Main Image</label>
                                 <input type="file" name="image" onChange={handleFileChange} />
                             </div>
                         </div>
@@ -106,13 +106,13 @@ const Page = () => {
                         </div>
                         <hr />
                         <div className='heading'>
-                            <h5>Basic Contact Information :-</h5>
+                            <h5>Business Detail :-</h5>
                         </div>
                         
-                        <div className='col-md-3'>
+                        <div className='col-md-12'>
                             <div className="edit-profile-field">
                                 <label>About</label>
-                                <textarea name="about" rows={1} value={formData.about} onChange={handleChange}></textarea>
+                                <textarea name="about" rows={3} value={formData.about} onChange={handleChange}></textarea>
                             </div>
                         </div>
                         <div className='col-md-3'>
@@ -135,7 +135,7 @@ const Page = () => {
                         </div>
                         <div className='col-md-3'>
                             <div className="edit-profile-field">
-                                <label>Experience (Years)</label>
+                                <label>Years In Business</label>
                                 <input type="text" name="experience" value={formData.experience} onChange={handleChange} />
                             </div>
                         </div>
