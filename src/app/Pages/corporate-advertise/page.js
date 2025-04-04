@@ -420,7 +420,8 @@ function Page() {
               </div>
               <div className="coprate-form-btn">
                 <button className="login-btn mb-3" onClick={handleFormToggle}>
-                  {showForm ? "Hide Form" : "Get Started Now"} <i className="bi bi-arrow-right-circle"></i>
+                  {showForm ? "Hide Form" : "Get Started Now"}{" "}
+                  <i className="bi bi-arrow-right-circle"></i>
                 </button>
               </div>
 
@@ -502,13 +503,13 @@ function Page() {
                       ></textarea>
                     </div>
 
-                    <div className="mb-3">
+                    {/* <div className="mb-3">
                       <input
                         type="text"
                         className="login-input"
                         placeholder="Enter Captcha"
                       />
-                    </div>
+                    </div> */}
                     <div className="coprate-form-btn">
                       <button type="submit" className="login-btn">
                         Submit
