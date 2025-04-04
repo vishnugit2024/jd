@@ -11,7 +11,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Keyboard } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-
+import PaidListing from "../paid-listing/page";
 const Page = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showAllHours, setShowAllHours] = useState(false);
@@ -325,12 +325,11 @@ const Page = () => {
 
                     return (
                       <div key={biz.id}>
-                        <div
-                          className={`business-card gap-3 ${
+                        <div>
+                          <Link className={`business-card gap-3 ${
                             selected?.id === biz.id ? "active" : ""
                           }`}
-                          onClick={() => handleExpand(biz)}
-                        >
+                          onClick={() => handleExpand(biz)} href="#sidebar">
                           <div>
                             <Image
                               src={biz.image}
@@ -371,15 +370,16 @@ const Page = () => {
                               <p>Phone: {biz.phone}</p>
                             </div>
                           </div>
+                          </Link>
                         </div>
 
                         {/* Expanded Content */}
-                        <div
+                        <div id="#sidebar"
                           className={`expanded-content d-block d-md-none ${
                             isExpanded ? "show" : ""
                           }`}
                         >
-                          <div className="details-card">
+                          <div  className="details-card">
                             <h3 className="m-0">{selected.name}</h3>
                             <div className="d-flex gap-2 align-items-center mb-3">
                               <p>
@@ -840,6 +840,7 @@ const Page = () => {
                       </div>
                     );
                   })}
+                  <PaidListing />
                 </div>
               </div>
 
@@ -1017,7 +1018,7 @@ const Page = () => {
                         </ul>
                       </div>
                       <hr />
-
+                        <div className="d-flex justify-content-center">
                       <button
                         onClick={() => setShowMore(!showMore)}
                         className="login-btn"
@@ -1025,9 +1026,11 @@ const Page = () => {
                         {showMore ? "View Less" : "View More"}
                       </button>
 
+                        </div>
+
                       {showMore && (
                         <>
-                          <div className="tab-pane">
+                          <div className="tab-pane mt-3">
                             <ul className="review-list">
                               {selected.reviewsData?.map((review, index) => (
                                 <li key={index}>
