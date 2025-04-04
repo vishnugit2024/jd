@@ -3,24 +3,43 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import "./enquiryform.css";
 import "../../Pages/contact-us/contactus.css";
+
 const Enquiryform = () => {
   const [show, setShow] = useState(false);
 
-    // Check if form was already submitted
-    useEffect(() => {
-        const isSubmitted = localStorage.getItem("contactFormSubmitted");
-        if (!isSubmitted) {
-            const timer = setTimeout(() => setShow(true), 5000); // Auto-open after 3 seconds
-            return () => clearTimeout(timer);
-        }
-    }, []);
+  useEffect(() => {
+    const isSubmitted = localStorage.getItem("contactFormSubmitted");
+    const lastClosed = localStorage.getItem("contactFormClosed");
+    let attemptCount = parseInt(localStorage.getItem("formAttemptCount")) || 0;
 
-  // Handle form submission
+    if (!isSubmitted) {
+      let delay;
+
+      // Delay logic based on attempts
+      if (attemptCount === 0) delay = 5000; // First attempt: 5s
+      else if (attemptCount === 1) delay = 15000; // Second attempt: 15s
+      else delay = 30000; // Third attempt onwards: 30s
+
+      // Ensure correct delay if user has closed the form before
+      if (!lastClosed || Date.now() - lastClosed > delay) {
+        const timer = setTimeout(() => setShow(true), delay);
+        return () => clearTimeout(timer);
+      }
+    }
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     localStorage.setItem("contactFormSubmitted", "true");
     setShow(false);
     alert("Thank you for contacting us!");
+  };
+
+  const handleClose = () => {
+    let attemptCount = parseInt(localStorage.getItem("formAttemptCount")) || 0;
+    localStorage.setItem("contactFormClosed", Date.now());
+    localStorage.setItem("formAttemptCount", attemptCount + 1); // Increase attempt count
+    setShow(false);
   };
 
   return (
@@ -39,13 +58,13 @@ const Enquiryform = () => {
               <div>
                 <h5 className="modal-title">Enquiry Form</h5>
                 <p className="m-0">
-                  Fill this form and get chance to increase your business.
+                  Fill this form and get a chance to increase your business.
                 </p>
               </div>
               <button
                 type="button"
                 className="btn-close-modal"
-                onClick={() => setShow(false)}
+                onClick={handleClose}
               >
                 <i className="bi bi-x-octagon"></i>
               </button>
