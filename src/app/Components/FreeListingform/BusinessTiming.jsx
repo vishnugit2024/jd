@@ -239,24 +239,24 @@ const BusinessTiming = ({ setKey }) => {
             onChange={() => handleToggleOpen(index)}
           />
           <label className="day-label">{item.day}</label>
-         <div className="seprate-day-time">
-         {item.isOpen && (
-            <>
-              <select
-                className="form-control time-input"
-                value={item.openTime}
-                onChange={(e) =>
-                  handleChange(index, "openTime", e.target.value)
-                }
-              >
-                <option value="">Select Time</option>
-                {availableTimes.map((time) => (
-                  <option key={time} value={time}>
-                    {time}
-                  </option>
-                ))}
-              </select>
-              {/* <select
+          <div className="seprate-day-time">
+            {item.isOpen && (
+              <>
+                <select
+                  className="form-control time-input"
+                  value={item.openTime}
+                  onChange={(e) =>
+                    handleChange(index, "openTime", e.target.value)
+                  }
+                >
+                  <option value="">Select Time</option>
+                  {availableTimes.map((time) => (
+                    <option key={time} value={time}>
+                      {time}
+                    </option>
+                  ))}
+                </select>
+                {/* <select
                 className="form-control time-input"
                 value={item.openPeriod}
                 onChange={(e) =>
@@ -270,21 +270,21 @@ const BusinessTiming = ({ setKey }) => {
                 ))}
               </select> */}
 
-              <select
-                className="form-control time-input"
-                value={item.closeTime}
-                onChange={(e) =>
-                  handleChange(index, "closeTime", e.target.value)
-                }
-              >
-                <option value="">Select Time</option>
-                {availableTimes.map((time) => (
-                  <option key={time} value={time}>
-                    {time}
-                  </option>
-                ))}
-              </select>
-              {/* <select
+                <select
+                  className="form-control time-input"
+                  value={item.closeTime}
+                  onChange={(e) =>
+                    handleChange(index, "closeTime", e.target.value)
+                  }
+                >
+                  <option value="">Select Time</option>
+                  {availableTimes.map((time) => (
+                    <option key={time} value={time}>
+                      {time}
+                    </option>
+                  ))}
+                </select>
+                {/* <select
                 className="form-control time-input"
                 value={item.closePeriod}
                 onChange={(e) =>
@@ -297,9 +297,9 @@ const BusinessTiming = ({ setKey }) => {
                   </option>
                 ))}
               </select> */}
-            </>
-          )}
-         </div>
+              </>
+            )}
+          </div>
         </div>
       ))}
 

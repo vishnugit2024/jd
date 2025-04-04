@@ -5,7 +5,6 @@ import gourav from "../../Images/gourav.jpg";
 import gourav2 from "../../Images/gourav2.jpg";
 import gourav3 from "../../Images/gourav3.jpg";
 import Image from "next/image";
-import breadbg from "../../Images/HeroBanner.jpg";
 
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -305,6 +304,7 @@ const Page = () => {
 
   // const [selected, setSelected] = useState(null);
   const [expandedId, setExpandedId] = useState(null);
+  const [showMore, setShowMore] = useState(false);
 
   const handleExpand = (biz) => {
     setSelected(biz);
@@ -326,11 +326,17 @@ const Page = () => {
                     return (
                       <div key={biz.id}>
                         <div
-                          className={`business-card gap-3 ${selected?.id === biz.id ? "active" : ""}`}
+                          className={`business-card gap-3 ${
+                            selected?.id === biz.id ? "active" : ""
+                          }`}
                           onClick={() => handleExpand(biz)}
                         >
                           <div>
-                            <Image src={biz.image} alt={biz.name} className="listing-image" />
+                            <Image
+                              src={biz.image}
+                              alt={biz.name}
+                              className="listing-image"
+                            />
                           </div>
                           <div>
                             <h5>{biz.name}</h5>
@@ -340,7 +346,8 @@ const Page = () => {
                                 <i className="bi bi-star-fill"></i>{" "}
                                 <i className="bi bi-star-fill"></i>{" "}
                                 <i className="bi bi-star-fill"></i>{" "}
-                                <i className="bi bi-star-fill"></i> {biz.reviews}
+                                <i className="bi bi-star-fill"></i>{" "}
+                                {biz.reviews}
                               </p>
                               <span>|</span>
                               <p>Web Designer</p>
@@ -352,7 +359,11 @@ const Page = () => {
                             </div>
                             <div className="d-flex gap-2 align-items-center">
                               <div className="opening-hours-container">
-                                <p className={`status ${isOpen ? "open" : "closed"}`}>
+                                <p
+                                  className={`status ${
+                                    isOpen ? "open" : "closed"
+                                  }`}
+                                >
                                   {isOpen ? "Open Now" : "Closed Now"}
                                 </p>
                               </div>
@@ -364,17 +375,21 @@ const Page = () => {
 
                         {/* Expanded Content */}
                         <div
-                          className={`expanded-content d-block d-md-none ${isExpanded ? "show" : ""}`}
+                          className={`expanded-content d-block d-md-none ${
+                            isExpanded ? "show" : ""
+                          }`}
                         >
                           <div className="details-card">
                             <h3 className="m-0">{selected.name}</h3>
                             <div className="d-flex gap-2 align-items-center mb-3">
                               <p>
-                                {selected.rating} <i className="bi bi-star-fill"></i>{" "}
+                                {selected.rating}{" "}
                                 <i className="bi bi-star-fill"></i>{" "}
                                 <i className="bi bi-star-fill"></i>{" "}
                                 <i className="bi bi-star-fill"></i>{" "}
-                                <i className="bi bi-star-fill"></i> {selected.reviews}
+                                <i className="bi bi-star-fill"></i>{" "}
+                                <i className="bi bi-star-fill"></i>{" "}
+                                {selected.reviews}
                               </p>
                               <span>|</span>
                               <p>Web Designer</p>
@@ -392,7 +407,8 @@ const Page = () => {
                                 <i className="bi bi-share"></i> Share
                               </Link>
                               <Link href={"#"} className="black-btn">
-                                <i className="bi bi-telephone-outbound"></i> Call
+                                <i className="bi bi-telephone-outbound"></i>{" "}
+                                Call
                               </Link>
                               <Link href={"#"} className="black-btn">
                                 <i className="bi bi-globe"></i> Website
@@ -407,8 +423,9 @@ const Page = () => {
                             <ul className="nav nav-tabs mt-3">
                               <li className="nav-item">
                                 <button
-                                  className={`nav-link listing-tabs-btn ${activeTab === "overview" ? "active" : ""
-                                    }`}
+                                  className={`nav-link listing-tabs-btn ${
+                                    activeTab === "overview" ? "active" : ""
+                                  }`}
                                   onClick={() => setActiveTab("overview")}
                                 >
                                   Overview
@@ -416,8 +433,9 @@ const Page = () => {
                               </li>
                               <li className="nav-item">
                                 <button
-                                  className={`nav-link ${activeTab === "service" ? "active" : ""
-                                    }`}
+                                  className={`nav-link ${
+                                    activeTab === "service" ? "active" : ""
+                                  }`}
                                   onClick={() => setActiveTab("service")}
                                 >
                                   Service
@@ -425,8 +443,9 @@ const Page = () => {
                               </li>
                               <li className="nav-item">
                                 <button
-                                  className={`nav-link ${activeTab === "review" ? "active" : ""
-                                    }`}
+                                  className={`nav-link ${
+                                    activeTab === "review" ? "active" : ""
+                                  }`}
                                   onClick={() => setActiveTab("review")}
                                 >
                                   Review
@@ -434,8 +453,9 @@ const Page = () => {
                               </li>
                               <li className="nav-item">
                                 <button
-                                  className={`nav-link ${activeTab === "photos" ? "active" : ""
-                                    }`}
+                                  className={`nav-link ${
+                                    activeTab === "photos" ? "active" : ""
+                                  }`}
                                   onClick={() => setActiveTab("photos")}
                                 >
                                   Photos
@@ -443,8 +463,9 @@ const Page = () => {
                               </li>
                               <li className="nav-item">
                                 <button
-                                  className={`nav-link ${activeTab === "social" ? "active" : ""
-                                    }`}
+                                  className={`nav-link ${
+                                    activeTab === "social" ? "active" : ""
+                                  }`}
                                   onClick={() => setActiveTab("social")}
                                 >
                                   Social Media
@@ -454,8 +475,9 @@ const Page = () => {
 
                             <div className="tab-content mt-3">
                               <div
-                                className={`tab-pane fade ${activeTab === "overview" ? "show active" : ""
-                                  }`}
+                                className={`tab-pane fade ${
+                                  activeTab === "overview" ? "show active" : ""
+                                }`}
                               >
                                 <div>
                                   <p>
@@ -463,7 +485,7 @@ const Page = () => {
                                     {expanded
                                       ? fullText
                                       : words.slice(0, wordLimit).join(" ") +
-                                      (isLongText ? "..." : "")}
+                                        (isLongText ? "..." : "")}
                                   </p>
                                   {isLongText && (
                                     <button
@@ -475,7 +497,8 @@ const Page = () => {
                                         cursor: "pointer",
                                       }}
                                     >
-                                      {expanded ? "Read Less" : "Read More"} <i className="bi bi-arrow-right-circle"></i>
+                                      {expanded ? "Read Less" : "Read More"}{" "}
+                                      <i className="bi bi-arrow-right-circle"></i>
                                     </button>
                                   )}
                                 </div>
@@ -484,14 +507,19 @@ const Page = () => {
 
                                 <div>
                                   <p>
-                                    <b>Address : </b> Digi India Solution Rohini Sec 24
+                                    <b>Address : </b> Digi India Solution Rohini
+                                    Sec 24
                                   </p>
                                 </div>
                                 <div className="d-flex gap-2">
                                   <div className="opening-hours-container">
                                     <p
-                                      onClick={() => setShowAllHours(!showAllHours)}
-                                      className={`status ${isOpen ? "open" : "closed"}`}
+                                      onClick={() =>
+                                        setShowAllHours(!showAllHours)
+                                      }
+                                      className={`status ${
+                                        isOpen ? "open" : "closed"
+                                      }`}
                                     >
                                       <b className="text-dark">Hours : </b>{" "}
                                       {isOpen ? "Open" : "Closed"}{" "}
@@ -502,7 +530,9 @@ const Page = () => {
                                         {hours.map((item, index) => (
                                           <li
                                             key={index}
-                                            className={today === index ? "today" : ""}
+                                            className={
+                                              today === index ? "today" : ""
+                                            }
                                           >
                                             <span>{item.day}</span>
                                             <span>
@@ -526,31 +556,35 @@ const Page = () => {
                                     <b>Services</b>
                                   </p>
                                   <ul className="service-list">
-                                    {selected.services?.map((service, index) => (
-                                      <li key={index}>{service}</li>
-                                    ))}
+                                    {selected.services?.map(
+                                      (service, index) => (
+                                        <li key={index}>{service}</li>
+                                      )
+                                    )}
                                   </ul>
                                 </div>
                                 <hr />
                                 <div className="tab-pane">
                                   <ul className="review-list">
-                                    {selected.reviewsData?.map((review, index) => (
-                                      <li key={index}>
-                                        <span className="review-name">
-                                          {review.author.charAt(0)}
-                                        </span>
-                                        <div>
-                                          <div className="review-comment-star">
-                                            <i className="bi bi-star-fill"></i>{" "}
-                                            <i className="bi bi-star-fill"></i>{" "}
-                                            <i className="bi bi-star-fill"></i>{" "}
-                                            <i className="bi bi-star-fill"></i>{" "}
-                                            <i className="bi bi-star-fill"></i>
+                                    {selected.reviewsData?.map(
+                                      (review, index) => (
+                                        <li key={index}>
+                                          <span className="review-name">
+                                            {review.author.charAt(0)}
+                                          </span>
+                                          <div>
+                                            <div className="review-comment-star">
+                                              <i className="bi bi-star-fill"></i>{" "}
+                                              <i className="bi bi-star-fill"></i>{" "}
+                                              <i className="bi bi-star-fill"></i>{" "}
+                                              <i className="bi bi-star-fill"></i>{" "}
+                                              <i className="bi bi-star-fill"></i>
+                                            </div>
+                                            {`"${review.comment}"`}{" "}
                                           </div>
-                                          {`"${review.comment}"`}{" "}
-                                        </div>
-                                      </li>
-                                    ))}
+                                        </li>
+                                      )
+                                    )}
                                   </ul>
                                 </div>
                                 <hr />
@@ -601,8 +635,9 @@ const Page = () => {
                               </div>
 
                               <div
-                                className={`tab-pane fade ${activeTab === "service" ? "show active" : ""
-                                  }`}
+                                className={`tab-pane fade ${
+                                  activeTab === "service" ? "show active" : ""
+                                }`}
                               >
                                 <ul className="service-list">
                                   {selected.services?.map((service, index) => (
@@ -612,8 +647,9 @@ const Page = () => {
                               </div>
 
                               <div
-                                className={`tab-pane fade ${activeTab === "review" ? "show active" : ""
-                                  }`}
+                                className={`tab-pane fade ${
+                                  activeTab === "review" ? "show active" : ""
+                                }`}
                               >
                                 <ul className="review-list">
                                   {reviews.map((review, index) => (
@@ -645,7 +681,9 @@ const Page = () => {
                                     className="login-btn mb-2"
                                     onClick={() => setShowForm(!showForm)}
                                   >
-                                    {showForm ? "Hide Review Form" : "Write a Review"}{" "}
+                                    {showForm
+                                      ? "Hide Review Form"
+                                      : "Write a Review"}{" "}
                                     <i className="bi bi-pencil"></i>
                                   </button>
 
@@ -710,8 +748,9 @@ const Page = () => {
                               </div>
 
                               <div
-                                className={`tab-pane fade ${activeTab === "photos" ? "show active" : ""
-                                  }`}
+                                className={`tab-pane fade ${
+                                  activeTab === "photos" ? "show active" : ""
+                                }`}
                               >
                                 <h4>Photos</h4>
                                 <div className="photo-gallery d-flex flex-wrap gap-2">
@@ -735,8 +774,9 @@ const Page = () => {
                                 </div>
                               </div>
                               <div
-                                className={`tab-pane fade ${activeTab === "social" ? "show active" : ""
-                                  }`}
+                                className={`tab-pane fade ${
+                                  activeTab === "social" ? "show active" : ""
+                                }`}
                               >
                                 <h4>Social Media</h4>
                                 <div className="socialmedia-details">
@@ -764,7 +804,10 @@ const Page = () => {
                                   className="lightbox-overlay fullscreen"
                                   onClick={closeLightbox}
                                 >
-                                  <button className="close-btn" onClick={closeLightbox}>
+                                  <button
+                                    className="close-btn"
+                                    onClick={closeLightbox}
+                                  >
                                     &times;
                                   </button>
                                   <Swiper
@@ -773,7 +816,9 @@ const Page = () => {
                                     keyboard={{ enabled: true }}
                                     modules={[Navigation, Keyboard]}
                                     className="lightbox-slider"
-                                    onSwiper={(swiper) => swiper.slideTo(currentIndex, 0)}
+                                    onSwiper={(swiper) =>
+                                      swiper.slideTo(currentIndex, 0)
+                                    }
                                   >
                                     {staticPhotos.map((photo, index) => (
                                       <SwiperSlide key={index}>
@@ -840,8 +885,9 @@ const Page = () => {
                   <ul className="nav nav-tabs mt-3">
                     <li className="nav-item">
                       <button
-                        className={`nav-link listing-tabs-btn ${activeTab === "overview" ? "active" : ""
-                          }`}
+                        className={`nav-link listing-tabs-btn ${
+                          activeTab === "overview" ? "active" : ""
+                        }`}
                         onClick={() => setActiveTab("overview")}
                       >
                         Overview
@@ -849,8 +895,9 @@ const Page = () => {
                     </li>
                     <li className="nav-item">
                       <button
-                        className={`nav-link ${activeTab === "service" ? "active" : ""
-                          }`}
+                        className={`nav-link ${
+                          activeTab === "service" ? "active" : ""
+                        }`}
                         onClick={() => setActiveTab("service")}
                       >
                         Service
@@ -858,8 +905,9 @@ const Page = () => {
                     </li>
                     <li className="nav-item">
                       <button
-                        className={`nav-link ${activeTab === "review" ? "active" : ""
-                          }`}
+                        className={`nav-link ${
+                          activeTab === "review" ? "active" : ""
+                        }`}
                         onClick={() => setActiveTab("review")}
                       >
                         Review
@@ -867,8 +915,9 @@ const Page = () => {
                     </li>
                     <li className="nav-item">
                       <button
-                        className={`nav-link ${activeTab === "photos" ? "active" : ""
-                          }`}
+                        className={`nav-link ${
+                          activeTab === "photos" ? "active" : ""
+                        }`}
                         onClick={() => setActiveTab("photos")}
                       >
                         Photos
@@ -876,8 +925,9 @@ const Page = () => {
                     </li>
                     <li className="nav-item">
                       <button
-                        className={`nav-link ${activeTab === "social" ? "active" : ""
-                          }`}
+                        className={`nav-link ${
+                          activeTab === "social" ? "active" : ""
+                        }`}
                         onClick={() => setActiveTab("social")}
                       >
                         Social Media
@@ -887,8 +937,9 @@ const Page = () => {
 
                   <div className="tab-content mt-3">
                     <div
-                      className={`tab-pane fade ${activeTab === "overview" ? "show active" : ""
-                        }`}
+                      className={`tab-pane fade ${
+                        activeTab === "overview" ? "show active" : ""
+                      }`}
                     >
                       <div>
                         <p>
@@ -896,7 +947,7 @@ const Page = () => {
                           {expanded
                             ? fullText
                             : words.slice(0, wordLimit).join(" ") +
-                            (isLongText ? "..." : "")}
+                              (isLongText ? "..." : "")}
                         </p>
                         {isLongText && (
                           <button
@@ -908,7 +959,8 @@ const Page = () => {
                               cursor: "pointer",
                             }}
                           >
-                            {expanded ? "Read Less" : "Read More"} <i className="bi bi-arrow-right-circle"></i>
+                            {expanded ? "Read Less" : "Read More"}{" "}
+                            <i className="bi bi-arrow-right-circle"></i>
                           </button>
                         )}
                       </div>
@@ -965,77 +1017,90 @@ const Page = () => {
                         </ul>
                       </div>
                       <hr />
-                      <div className="tab-pane">
-                        <ul className="review-list">
-                          {selected.reviewsData?.map((review, index) => (
-                            <li key={index}>
-                              <span className="review-name">
-                                {review.author.charAt(0)}
-                              </span>
-                              <div>
-                                <div className="review-comment-star">
-                                  <i className="bi bi-star-fill"></i>{" "}
-                                  <i className="bi bi-star-fill"></i>{" "}
-                                  <i className="bi bi-star-fill"></i>{" "}
-                                  <i className="bi bi-star-fill"></i>{" "}
-                                  <i className="bi bi-star-fill"></i>
+
+                      <button
+                        onClick={() => setShowMore(!showMore)}
+                        className="login-btn"
+                      >
+                        {showMore ? "View Less" : "View More"}
+                      </button>
+
+                      {showMore && (
+                        <>
+                          <div className="tab-pane">
+                            <ul className="review-list">
+                              {selected.reviewsData?.map((review, index) => (
+                                <li key={index}>
+                                  <span className="review-name">
+                                    {review.author.charAt(0)}
+                                  </span>
+                                  <div>
+                                    <div className="review-comment-star">
+                                      <i className="bi bi-star-fill"></i>{" "}
+                                      <i className="bi bi-star-fill"></i>{" "}
+                                      <i className="bi bi-star-fill"></i>{" "}
+                                      <i className="bi bi-star-fill"></i>{" "}
+                                      <i className="bi bi-star-fill"></i>
+                                    </div>
+                                    {`"${review.comment}"`}{" "}
+                                  </div>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                          <hr />
+                          <div className="tab-pane">
+                            <h4>Photos</h4>
+                            <div className="photo-gallery d-flex flex-wrap gap-2">
+                              {visiblePhotos.map((photo, index) => (
+                                <Image
+                                  key={index}
+                                  src={photo}
+                                  alt={`Photo ${index + 1}`}
+                                  className="gallery-img"
+                                  onClick={() => openLightbox(index)}
+                                />
+                              ))}
+                              {!showAll && staticPhotos.length > 4 && (
+                                <div
+                                  className="plus-overlay"
+                                  onClick={() => setShowAll(true)}
+                                >
+                                  +{staticPhotos.length - 4}
                                 </div>
-                                {`"${review.comment}"`}{" "}
-                              </div>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      <hr />
-                      <div className="tab-pane">
-                        <h4>Photos</h4>
-                        <div className="photo-gallery d-flex flex-wrap gap-2">
-                          {visiblePhotos.map((photo, index) => (
-                            <Image
-                              key={index}
-                              src={photo}
-                              alt={`Photo ${index + 1}`}
-                              className="gallery-img"
-                              onClick={() => openLightbox(index)}
-                            />
-                          ))}
-                          {!showAll && staticPhotos.length > 4 && (
-                            <div
-                              className="plus-overlay"
-                              onClick={() => setShowAll(true)}
-                            >
-                              +{staticPhotos.length - 4}
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                      <hr />
-                      <div className="tab-pane">
-                        <h4>Social Media</h4>
-                        <div className="socialmedia-details">
-                          <div>
-                            <div className="social-icons">
-                              <Link href="#">
-                                <i className="bi bi-twitter"></i>
-                              </Link>
-                              <Link href="#">
-                                <i className="bi bi-facebook"></i>
-                              </Link>
-                              <Link href="#">
-                                <i className="bi bi-linkedin"></i>
-                              </Link>
-                              <Link href="#">
-                                <i className="bi bi-instagram"></i>
-                              </Link>
+                              )}
                             </div>
                           </div>
-                        </div>
-                      </div>
+                          <hr />
+                          <div className="tab-pane">
+                            <h4>Social Media</h4>
+                            <div className="socialmedia-details">
+                              <div>
+                                <div className="social-icons">
+                                  <Link href="#">
+                                    <i className="bi bi-twitter"></i>
+                                  </Link>
+                                  <Link href="#">
+                                    <i className="bi bi-facebook"></i>
+                                  </Link>
+                                  <Link href="#">
+                                    <i className="bi bi-linkedin"></i>
+                                  </Link>
+                                  <Link href="#">
+                                    <i className="bi bi-instagram"></i>
+                                  </Link>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </>
+                      )}
                     </div>
 
                     <div
-                      className={`tab-pane fade ${activeTab === "service" ? "show active" : ""
-                        }`}
+                      className={`tab-pane fade ${
+                        activeTab === "service" ? "show active" : ""
+                      }`}
                     >
                       <ul className="service-list">
                         {selected.services?.map((service, index) => (
@@ -1045,8 +1110,9 @@ const Page = () => {
                     </div>
 
                     <div
-                      className={`tab-pane fade ${activeTab === "review" ? "show active" : ""
-                        }`}
+                      className={`tab-pane fade ${
+                        activeTab === "review" ? "show active" : ""
+                      }`}
                     >
                       <ul className="review-list">
                         {reviews.map((review, index) => (
@@ -1143,8 +1209,9 @@ const Page = () => {
                     </div>
 
                     <div
-                      className={`tab-pane fade ${activeTab === "photos" ? "show active" : ""
-                        }`}
+                      className={`tab-pane fade ${
+                        activeTab === "photos" ? "show active" : ""
+                      }`}
                     >
                       <h4>Photos</h4>
                       <div className="photo-gallery d-flex flex-wrap gap-2">
@@ -1168,8 +1235,9 @@ const Page = () => {
                       </div>
                     </div>
                     <div
-                      className={`tab-pane fade ${activeTab === "social" ? "show active" : ""
-                        }`}
+                      className={`tab-pane fade ${
+                        activeTab === "social" ? "show active" : ""
+                      }`}
                     >
                       <h4>Social Media</h4>
                       <div className="socialmedia-details">

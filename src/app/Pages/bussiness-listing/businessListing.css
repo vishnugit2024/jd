@@ -7,7 +7,7 @@
 }
 
 .col-5-scroll-css {
-  height: 600px;
+  height: 1000px;
   overflow-y: scroll;
   overflow-x: hidden;
   padding: 5px;
@@ -33,7 +33,8 @@
 .business-card h5 {
   margin-bottom: 5px;
   color: var(--black);
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 .bi-star-fill {
@@ -43,7 +44,8 @@
 .business-card p {
   color: var(--black);
   margin: 0;
-  font-size: 14px;
+  font-size: 13px;
+  font-weight: 600;
 }
 
 .business-card:hover {
@@ -68,7 +70,6 @@ span {
   border-radius: 15px;
   box-shadow: 0 0px 2px rgba(0, 0, 0, 0.3);
   color: var(--black);
-
 }
 
 .details-card h3 {
@@ -77,15 +78,15 @@ span {
 }
 
 .details-card p {
-  /* margin-bottom: 10px; */
   line-height: 1.6;
+  font-size: 15px;
   margin: 0;
 }
 
 .listing-image {
-  width: 150px;
+  width: 110px;
   color: transparent;
-  height: 150px;
+  height: 110px;
   object-fit: cover;
   border-radius: 10px;
   aspect-ratio: 4 / 3;
@@ -94,7 +95,7 @@ span {
 .business-detail-image {
   width: 100%;
   color: transparent;
-  height: 300px;
+  height: 250px;
   object-fit: cover;
   border-radius: 10px;
   /* aspect-ratio: 4 / 3; */
@@ -293,7 +294,6 @@ span {
 }
 
 @media (max-width: 768px) {
-
   .col-5-scroll-css {
     height: 100%;
   }
@@ -360,8 +360,8 @@ span {
   }
 
   .listing-image {
-    width: 100px;
-    height: 100px;
+    width: 78px;
+    height: 78px;
   }
 
   .details-card p {
@@ -379,5 +379,4 @@ span {
   .business-detail-image {
     height: 250px;
   }
-
 }
