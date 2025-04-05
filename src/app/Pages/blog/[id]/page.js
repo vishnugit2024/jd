@@ -3,10 +3,41 @@ import Image from "next/image";
 import Link from "next/link";
 import "./blogdetails.css";
 import breadbg from "../../../Images/bread.jpg";
+import Head from "next/head";
 
 const page = () => {
   return (
+
+    
     <>
+
+<Head>
+        <title>Biziffy Blog - Business Growth, SEO, Marketing & Digital Tips</title>
+        <meta
+          name="description"
+          content="Read expert blogs on business growth, digital marketing, SEO strategies, lead generation, and success stories. Stay updated with Biziffy insights."
+        />
+        <meta
+          name="keywords"
+          content="Biziffy blog, business blog, digital marketing tips, SEO blog, online business growth, lead generation strategies, content marketing, small business blog, B2B marketing, business visibility, local business growth, listing strategies, free business promotion, social media tips, search engine optimization, ranking on Google, online advertising, blog for startups, blogging for entrepreneurs, business strategy blog, customer acquisition, business tips India, how to get leads online, increase website traffic, business automation, CRM, sales funnel, business branding, lead capture, marketing tools, digital business solutions, startup advice, online business directory, business blog India, marketing growth hacks, web presence, business awareness blog, bizify articles, entrepreneur success blog"
+        />
+        <meta property="og:title" content="Biziffy Blog - Business & Marketing Insights" />
+        <meta
+          property="og:description"
+          content="Explore expert articles from Biziffy on how to grow your business, improve online visibility, and generate leads effectively."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://biziffy.com/blog" />
+        <meta property="og:site_name" content="Biziffy Blog" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Biziffy Blog - Boost Your Business with Expert Tips" />
+        <meta
+          name="twitter:description"
+          content="Stay updated with Biziffy’s blog on business tips, SEO, lead generation, and marketing strategies."
+        />
+        <meta name="twitter:creator" content="@biziffy" />
+      </Head>
       <section>
         <div className="all-breadcrumb">
           <Image

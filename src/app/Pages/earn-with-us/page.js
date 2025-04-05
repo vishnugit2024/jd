@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import "./earnWithUs.css";
 import EarnWithUs from "../../Images/EarnWithUs.png";
+import Head from "next/head";
+
 const page = () => {
   // ======= Who Can Earn Array =======================
 
@@ -32,6 +34,39 @@ const page = () => {
 
   return (
     <>
+
+<Head>
+        <title>Earn With Us | Become a Partner & Grow with Biziffy</title>
+        <meta
+          name="description"
+          content="Partner with Biziffy and earn by referring businesses, promoting listings, or becoming a sales associate. Start your earning journey with zero investment!"
+        />
+        <meta
+          name="keywords"
+          content="earn with Biziffy, Biziffy partner program, business partnership, referral program, sales associate opportunity, make money online, zero investment earning, earn by listing businesses, affiliate program India, passive income ideas, local business promotion, become a reseller, earn extra income, business collaboration, marketing partnership, grow with Biziffy, work from home opportunity, business opportunity India, side hustle online, digital partnership, earn from home, income from referrals, self-employment platform"
+        />
+
+        {/* Open Graph Tags */}
+        <meta property="og:title" content="Earn With Us | Business Partnership & Earning Opportunities - Biziffy" />
+        <meta
+          property="og:description"
+          content="Join Biziffy’s partner network to earn by listing businesses, referring clients, or becoming a digital associate. Start today!"
+        />
+        <meta property="og:url" content="https://biziffy.com/earn-with-us" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Biziffy" />
+
+        {/* Twitter Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Earn With Us | Partner & Earn Digitally with Biziffy" />
+        <meta
+          name="twitter:description"
+          content="Explore Biziffy’s earning opportunities — from referrals to business promotion. Work flexibly and earn smart."
+        />
+        <meta name="twitter:creator" content="@biziffy" />
+      </Head>
+
+
       <section>
         <div className="all-breadcrumb">
           <Image

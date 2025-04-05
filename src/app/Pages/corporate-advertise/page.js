@@ -14,6 +14,7 @@ import Healthcare from "../../Images/Healthcare.jpg";
 import Retail from "../../Images/LocalShops.webp";
 import Estate from "../../Images/RealEstate.jpg";
 import { motion } from "framer-motion";
+import Head from "next/head";
 
 import HomeServices from "../../Images/HomeServices.png";
 import coprateAdvertise from "../../Images/CoprateAdversite.jpg";
@@ -189,6 +190,49 @@ function Page() {
 
   return (
     <>
+      <Head>
+        <title>
+          Corporate Advertising | Premium Plans & Free Business Listing -
+          Biziffy
+        </title>
+        <meta
+          name="description"
+          content="Promote your business with Biziffy’s premium membership plans or get started with our free business listing. Reach local customers and grow digitally with corporate advertising options."
+        />
+        <meta
+          name="keywords"
+          content="corporate advertising, advertise with Biziffy, business listing plans, premium membership, free business listing, business promotion plans, local business marketing, small business ads, online business listing, advertise business online, Biziffy plans, grow your business, digital promotion, business directory listing, paid business listing, affordable advertising, business exposure, premium leads, featured listing, verified listing Biziffy, business visibility online, business plans India, marketing membership, corporate branding, Biziffy advertising services"
+        />
+
+        {/* Open Graph Tags */}
+        <meta
+          property="og:title"
+          content="Advertise with Biziffy | Premium Plans & Business Listing"
+        />
+        <meta
+          property="og:description"
+          content="Boost your online visibility with Biziffy’s premium advertising options. Choose free or paid plans to grow your local business digitally."
+        />
+        <meta
+          property="og:url"
+          content="https://biziffy.com/corporate-advertise"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Biziffy" />
+
+        {/* Twitter Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Corporate Advertising | Biziffy Premium Plans"
+        />
+        <meta
+          name="twitter:description"
+          content="Get listed and advertise with Biziffy. Choose from premium membership or free business listing to expand your business reach."
+        />
+        <meta name="twitter:creator" content="@biziffy" />
+      </Head>
+
       <section className="some-page-hero-bg">
         <div className="container">
           <div className="row">
