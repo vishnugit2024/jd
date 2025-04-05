@@ -8,10 +8,13 @@ import Image from "next/image";
 
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Keyboard } from "swiper/modules";
+import { Navigation, Keyboard, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import PaidListing from "../paid-listing/page";
+import banner1 from "../../Images/slide1.webp";
+import banner2 from "../../Images/slide2.webp";
+import banner3 from "../../Images/slide3.webp";
 const Page = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showAllHours, setShowAllHours] = useState(false);
@@ -247,6 +250,42 @@ const Page = () => {
         { author: "Sarah Johnson", comment: "Would recommend to everyone!" },
       ],
     },
+    {
+      id: 11,
+      name: "deepak pandit",
+      rating: 5.0,
+      reviews: 75,
+      address: "226 Ground Floor, Rohini, Delhi",
+      phone: "+91 981004598",
+      description: "The doctor is very attentive and professional.",
+      image: gourav3,
+      services: ["Pediatrics", "General Surgery", "Orthopedics"],
+      reviewsData: [
+        {
+          author: "Mark Lee",
+          comment: "Highly professional and caring staff.",
+        },
+        { author: "Sarah Johnson", comment: "Would recommend to everyone!" },
+      ],
+    },
+    {
+      id: 12,
+      name: "deepak pandit",
+      rating: 5.0,
+      reviews: 75,
+      address: "226 Ground Floor, Rohini, Delhi",
+      phone: "+91 981004598",
+      description: "The doctor is very attentive and professional.",
+      image: gourav3,
+      services: ["Pediatrics", "General Surgery", "Orthopedics"],
+      reviewsData: [
+        {
+          author: "Mark Lee",
+          comment: "Highly professional and caring staff.",
+        },
+        { author: "Sarah Johnson", comment: "Would recommend to everyone!" },
+      ],
+    },
   ];
   const [activeTab, setActiveTab] = useState("overview");
   const [selected, setSelected] = useState(businesses[0]);
@@ -272,6 +311,7 @@ const Page = () => {
   const [lightbox, setLightbox] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showAll, setShowAll] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(3);
 
   const openLightbox = (index) => {
     setCurrentIndex(index);
@@ -310,78 +350,107 @@ const Page = () => {
     setSelected(biz);
     setExpandedId(expandedId === biz.id ? null : biz.id);
   };
+  const handleToggleView = () => {
+    if (visibleCount >= businesses.length) {
+      setVisibleCount(3); // Reset to 4
+    } else {
+      setVisibleCount(visibleCount + 3); // Show next 4
+    }
+  };
+
+  const visibleBusinesses = businesses.slice(0, visibleCount);
+  const bannerImages = [
+    banner1,
+    banner2,
+    banner3,
+  ];
   return (
     <>
       <section className="business-listing-page">
+        <div className="listing-banner">
+          <Swiper
+            modules={[Autoplay]}
+            autoplay={{ delay: 3000, disableOnInteraction: false }}
+            loop={true}
+            slidesPerView={1}
+          >
+            {bannerImages.map((img, index) => (
+              <SwiperSlide key={index}>
+                <Image src={img} alt={`Banner ${index}`} className="business-listing-image" />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+
         <div className="container">
           <div className="business-listing-container">
-            <h5 className="text-dark">Business Category Name</h5>
+            <h5 className="text-dark m-0">Business Category Name</h5>
             <div className="row">
-              <div className="col-md-5 left-panel">
+              <div className="col-md-5 left-panel scroll-hidden">
                 <div className="col-5-scroll-css">
-                  {businesses.map((biz) => {
+                  {visibleBusinesses.map((biz) => {
                     const isOpen = true; // Isko actual logic ke sath replace karein
                     const isExpanded = expandedId === biz.id;
-
                     return (
                       <div key={biz.id}>
                         <div>
-                          <Link className={`business-card gap-3 ${
-                            selected?.id === biz.id ? "active" : ""
-                          }`}
-                          onClick={() => handleExpand(biz)} href="#sidebar">
-                          <div>
-                            <Image
-                              src={biz.image}
-                              alt={biz.name}
-                              className="listing-image"
-                            />
-                          </div>
-                          <div>
-                            <h5>{biz.name}</h5>
-                            <div className="d-flex gap-2 align-items-center">
-                              <p>
-                                {biz.rating} <i className="bi bi-star-fill"></i>{" "}
-                                <i className="bi bi-star-fill"></i>{" "}
-                                <i className="bi bi-star-fill"></i>{" "}
-                                <i className="bi bi-star-fill"></i>{" "}
-                                <i className="bi bi-star-fill"></i>{" "}
-                                {biz.reviews}
-                              </p>
-                              <span>|</span>
-                              <p>Web Designer</p>
+                          <Link className={`business-card gap-3 ${selected?.id === biz.id ? "active" : ""
+                            }`}
+                            onClick={() => handleExpand(biz)} href="#sidebar">
+                            <div>
+                              <Image
+                                src={biz.image}
+                                alt={biz.name}
+                                className="listing-image"
+                              />
                             </div>
-                            <div className="d-flex gap-2 align-items-center">
-                              <p>7 years in business</p>
-                              <span>|</span>
-                              <p>Karnal, Haryana</p>
-                            </div>
-                            <div className="d-flex gap-2 align-items-center">
-                              <div className="opening-hours-container">
-                                <p
-                                  className={`status ${
-                                    isOpen ? "open" : "closed"
-                                  }`}
-                                >
-                                  {isOpen ? "Open Now" : "Closed Now"}
-                                </p>
+                            <div>
+                              <div className="d-flex gap-2 mb-2 align-items-center">
+                                <h5>{biz.name}</h5>
+                                <span className='verified-text'><i className="bi bi-check-all"></i> Biziffy Verified</span>
                               </div>
-                              <span>|</span>
-                              <p>Phone: {biz.phone}</p>
+
+                              <div className="d-flex gap-2 align-items-center">
+                                <p>
+                                  {biz.rating} <i className="bi bi-star-fill"></i>{" "}
+                                  <i className="bi bi-star-fill"></i>{" "}
+                                  <i className="bi bi-star-fill"></i>{" "}
+                                  <i className="bi bi-star-fill"></i>{" "}
+                                  <i className="bi bi-star-fill"></i>{" "}
+                                  {biz.reviews}
+                                </p>
+                                <span>|</span>
+                                <p>Web Designer</p>
+                              </div>
+                              <div className="d-flex gap-2 align-items-center">
+                                <p>7 years in business</p>
+                                <span>|</span>
+                                <p>Karnal, Haryana</p>
+                              </div>
+                              <div className="d-flex gap-2 align-items-center">
+                                <div className="opening-hours-container">
+                                  <p
+                                    className={`status ${isOpen ? "open" : "closed"
+                                      }`}
+                                  >
+                                    {isOpen ? "Open Now" : "Closed Now"}
+                                  </p>
+                                </div>
+                                <span>|</span>
+                                <p>Phone: {biz.phone}</p>
+                              </div>
                             </div>
-                          </div>
                           </Link>
                         </div>
 
                         {/* Expanded Content */}
                         <div id="#sidebar"
-                          className={`expanded-content d-block d-md-none ${
-                            isExpanded ? "show" : ""
-                          }`}
+                          className={`expanded-content d-block d-md-none ${isExpanded ? "show" : ""
+                            }`}
                         >
-                          <div  className="details-card">
+                          <div className="details-card">
                             <h3 className="m-0">{selected.name}</h3>
-                            <div className="d-flex gap-2 align-items-center mb-3">
+                            <div className="d-flex gap-2 align-items-center mb-2">
                               <p>
                                 {selected.rating}{" "}
                                 <i className="bi bi-star-fill"></i>{" "}
@@ -400,17 +469,17 @@ const Page = () => {
                               className="business-detail-image mb-3"
                             />
                             <div className="d-flex justify-content-left flex-wrap mb-3 gap-2">
-                              <Link href={"#"} className="black-btn">
+                              <Link href={"#"} className="business-listing-black-btn">
                                 <i className="bi bi-crosshair"></i> Direction
                               </Link>
-                              <Link href={"#"} className="black-btn">
+                              <Link href={"#"} className="business-listing-black-btn">
                                 <i className="bi bi-share"></i> Share
                               </Link>
-                              <Link href={"#"} className="black-btn">
+                              <Link href={"#"} className="business-listing-black-btn">
                                 <i className="bi bi-telephone-outbound"></i>{" "}
                                 Call
                               </Link>
-                              <Link href={"#"} className="black-btn">
+                              <Link href={"#"} className="business-listing-black-btn">
                                 <i className="bi bi-globe"></i> Website
                               </Link>
                             </div>
@@ -423,9 +492,8 @@ const Page = () => {
                             <ul className="nav nav-tabs mt-3">
                               <li className="nav-item">
                                 <button
-                                  className={`nav-link listing-tabs-btn ${
-                                    activeTab === "overview" ? "active" : ""
-                                  }`}
+                                  className={`nav-link listing-tabs-btn ${activeTab === "overview" ? "active" : ""
+                                    }`}
                                   onClick={() => setActiveTab("overview")}
                                 >
                                   Overview
@@ -433,9 +501,8 @@ const Page = () => {
                               </li>
                               <li className="nav-item">
                                 <button
-                                  className={`nav-link ${
-                                    activeTab === "service" ? "active" : ""
-                                  }`}
+                                  className={`nav-link ${activeTab === "service" ? "active" : ""
+                                    }`}
                                   onClick={() => setActiveTab("service")}
                                 >
                                   Service
@@ -443,9 +510,8 @@ const Page = () => {
                               </li>
                               <li className="nav-item">
                                 <button
-                                  className={`nav-link ${
-                                    activeTab === "review" ? "active" : ""
-                                  }`}
+                                  className={`nav-link ${activeTab === "review" ? "active" : ""
+                                    }`}
                                   onClick={() => setActiveTab("review")}
                                 >
                                   Review
@@ -453,9 +519,8 @@ const Page = () => {
                               </li>
                               <li className="nav-item">
                                 <button
-                                  className={`nav-link ${
-                                    activeTab === "photos" ? "active" : ""
-                                  }`}
+                                  className={`nav-link ${activeTab === "photos" ? "active" : ""
+                                    }`}
                                   onClick={() => setActiveTab("photos")}
                                 >
                                   Photos
@@ -463,9 +528,8 @@ const Page = () => {
                               </li>
                               <li className="nav-item">
                                 <button
-                                  className={`nav-link ${
-                                    activeTab === "social" ? "active" : ""
-                                  }`}
+                                  className={`nav-link ${activeTab === "social" ? "active" : ""
+                                    }`}
                                   onClick={() => setActiveTab("social")}
                                 >
                                   Social Media
@@ -475,9 +539,8 @@ const Page = () => {
 
                             <div className="tab-content mt-3">
                               <div
-                                className={`tab-pane fade ${
-                                  activeTab === "overview" ? "show active" : ""
-                                }`}
+                                className={`tab-pane fade ${activeTab === "overview" ? "show active" : ""
+                                  }`}
                               >
                                 <div>
                                   <p>
@@ -485,7 +548,7 @@ const Page = () => {
                                     {expanded
                                       ? fullText
                                       : words.slice(0, wordLimit).join(" ") +
-                                        (isLongText ? "..." : "")}
+                                      (isLongText ? "..." : "")}
                                   </p>
                                   {isLongText && (
                                     <button
@@ -517,9 +580,8 @@ const Page = () => {
                                       onClick={() =>
                                         setShowAllHours(!showAllHours)
                                       }
-                                      className={`status ${
-                                        isOpen ? "open" : "closed"
-                                      }`}
+                                      className={`status ${isOpen ? "open" : "closed"
+                                        }`}
                                     >
                                       <b className="text-dark">Hours : </b>{" "}
                                       {isOpen ? "Open" : "Closed"}{" "}
@@ -635,9 +697,8 @@ const Page = () => {
                               </div>
 
                               <div
-                                className={`tab-pane fade ${
-                                  activeTab === "service" ? "show active" : ""
-                                }`}
+                                className={`tab-pane fade ${activeTab === "service" ? "show active" : ""
+                                  }`}
                               >
                                 <ul className="service-list">
                                   {selected.services?.map((service, index) => (
@@ -647,9 +708,8 @@ const Page = () => {
                               </div>
 
                               <div
-                                className={`tab-pane fade ${
-                                  activeTab === "review" ? "show active" : ""
-                                }`}
+                                className={`tab-pane fade ${activeTab === "review" ? "show active" : ""
+                                  }`}
                               >
                                 <ul className="review-list">
                                   {reviews.map((review, index) => (
@@ -748,9 +808,8 @@ const Page = () => {
                               </div>
 
                               <div
-                                className={`tab-pane fade ${
-                                  activeTab === "photos" ? "show active" : ""
-                                }`}
+                                className={`tab-pane fade ${activeTab === "photos" ? "show active" : ""
+                                  }`}
                               >
                                 <h4>Photos</h4>
                                 <div className="photo-gallery d-flex flex-wrap gap-2">
@@ -774,9 +833,8 @@ const Page = () => {
                                 </div>
                               </div>
                               <div
-                                className={`tab-pane fade ${
-                                  activeTab === "social" ? "show active" : ""
-                                }`}
+                                className={`tab-pane fade ${activeTab === "social" ? "show active" : ""
+                                  }`}
                               >
                                 <h4>Social Media</h4>
                                 <div className="socialmedia-details">
@@ -840,14 +898,24 @@ const Page = () => {
                       </div>
                     );
                   })}
-                  <PaidListing />
+                  {businesses.length > 3 && (
+                    <div className="text-center mt-3">
+                      <button
+                        className="business-listing-black-btn"
+                        onClick={handleToggleView}
+                      >
+                        {visibleCount >= businesses.length ? "View Less" : "View More"}
+                      </button>
+                    </div>
+                  )}
+
                 </div>
               </div>
 
-              <div className="col-md-7 right-panel">
+              <div className="col-md-7 right-panel scroll-hidden">
                 <div className="details-card">
                   <h3 className="m-0">{selected.name}</h3>
-                  <div className="d-flex gap-2 align-items-center mb-3">
+                  <div className="d-flex gap-2 align-items-center mb-1">
                     <p>
                       {selected.rating} <i className="bi bi-star-fill"></i>{" "}
                       <i className="bi bi-star-fill"></i>{" "}
@@ -863,17 +931,17 @@ const Page = () => {
                     alt={selected.name}
                     className="business-detail-image mb-3"
                   />
-                  <div className="d-flex justify-content-left flex-wrap mb-3 gap-2">
-                    <Link href={"#"} className="black-btn">
+                  <div className="d-flex justify-content-left flex-wrap mb-2 gap-2">
+                    <Link href={"#"} className="business-listing-black-btn">
                       <i className="bi bi-crosshair"></i> Direction
                     </Link>
-                    <Link href={"#"} className="black-btn">
+                    <Link href={"#"} className="business-listing-black-btn">
                       <i className="bi bi-share"></i> Share
                     </Link>
-                    <Link href={"#"} className="black-btn">
+                    <Link href={"#"} className="business-listing-black-btn">
                       <i className="bi bi-telephone-outbound"></i> Call
                     </Link>
-                    <Link href={"#"} className="black-btn">
+                    <Link href={"#"} className="business-listing-black-btn">
                       <i className="bi bi-globe"></i> Website
                     </Link>
                   </div>
@@ -883,12 +951,11 @@ const Page = () => {
                     <p>Karnal, Haryana</p>
                   </div>
                   {/* End of copied data */}
-                  <ul className="nav nav-tabs mt-3">
+                  <ul className="nav nav-tabs mt-">
                     <li className="nav-item">
                       <button
-                        className={`nav-link listing-tabs-btn ${
-                          activeTab === "overview" ? "active" : ""
-                        }`}
+                        className={`nav-link listing-tabs-btn ${activeTab === "overview" ? "active" : ""
+                          }`}
                         onClick={() => setActiveTab("overview")}
                       >
                         Overview
@@ -896,9 +963,8 @@ const Page = () => {
                     </li>
                     <li className="nav-item">
                       <button
-                        className={`nav-link ${
-                          activeTab === "service" ? "active" : ""
-                        }`}
+                        className={`nav-link ${activeTab === "service" ? "active" : ""
+                          }`}
                         onClick={() => setActiveTab("service")}
                       >
                         Service
@@ -906,9 +972,8 @@ const Page = () => {
                     </li>
                     <li className="nav-item">
                       <button
-                        className={`nav-link ${
-                          activeTab === "review" ? "active" : ""
-                        }`}
+                        className={`nav-link ${activeTab === "review" ? "active" : ""
+                          }`}
                         onClick={() => setActiveTab("review")}
                       >
                         Review
@@ -916,9 +981,8 @@ const Page = () => {
                     </li>
                     <li className="nav-item">
                       <button
-                        className={`nav-link ${
-                          activeTab === "photos" ? "active" : ""
-                        }`}
+                        className={`nav-link ${activeTab === "photos" ? "active" : ""
+                          }`}
                         onClick={() => setActiveTab("photos")}
                       >
                         Photos
@@ -926,9 +990,8 @@ const Page = () => {
                     </li>
                     <li className="nav-item">
                       <button
-                        className={`nav-link ${
-                          activeTab === "social" ? "active" : ""
-                        }`}
+                        className={`nav-link ${activeTab === "social" ? "active" : ""
+                          }`}
                         onClick={() => setActiveTab("social")}
                       >
                         Social Media
@@ -938,9 +1001,8 @@ const Page = () => {
 
                   <div className="tab-content mt-3">
                     <div
-                      className={`tab-pane fade ${
-                        activeTab === "overview" ? "show active" : ""
-                      }`}
+                      className={`tab-pane fade ${activeTab === "overview" ? "show active" : ""
+                        }`}
                     >
                       <div>
                         <p>
@@ -948,7 +1010,7 @@ const Page = () => {
                           {expanded
                             ? fullText
                             : words.slice(0, wordLimit).join(" ") +
-                              (isLongText ? "..." : "")}
+                            (isLongText ? "..." : "")}
                         </p>
                         {isLongText && (
                           <button
@@ -1018,15 +1080,15 @@ const Page = () => {
                         </ul>
                       </div>
                       <hr />
-                        <div className="d-flex justify-content-center">
-                      <button
-                        onClick={() => setShowMore(!showMore)}
-                        className="login-btn"
-                      >
-                        {showMore ? "View Less" : "View More"}
-                      </button>
+                      <div className="d-flex justify-content-center">
+                        <button
+                          onClick={() => setShowMore(!showMore)}
+                          className="business-listing-black-btn"
+                        >
+                          {showMore ? "View Less" : "View More"}
+                        </button>
 
-                        </div>
+                      </div>
 
                       {showMore && (
                         <>
@@ -1101,9 +1163,8 @@ const Page = () => {
                     </div>
 
                     <div
-                      className={`tab-pane fade ${
-                        activeTab === "service" ? "show active" : ""
-                      }`}
+                      className={`tab-pane fade ${activeTab === "service" ? "show active" : ""
+                        }`}
                     >
                       <ul className="service-list">
                         {selected.services?.map((service, index) => (
@@ -1113,9 +1174,8 @@ const Page = () => {
                     </div>
 
                     <div
-                      className={`tab-pane fade ${
-                        activeTab === "review" ? "show active" : ""
-                      }`}
+                      className={`tab-pane fade ${activeTab === "review" ? "show active" : ""
+                        }`}
                     >
                       <ul className="review-list">
                         {reviews.map((review, index) => (
@@ -1212,9 +1272,8 @@ const Page = () => {
                     </div>
 
                     <div
-                      className={`tab-pane fade ${
-                        activeTab === "photos" ? "show active" : ""
-                      }`}
+                      className={`tab-pane fade ${activeTab === "photos" ? "show active" : ""
+                        }`}
                     >
                       <h4>Photos</h4>
                       <div className="photo-gallery d-flex flex-wrap gap-2">
@@ -1238,9 +1297,8 @@ const Page = () => {
                       </div>
                     </div>
                     <div
-                      className={`tab-pane fade ${
-                        activeTab === "social" ? "show active" : ""
-                      }`}
+                      className={`tab-pane fade ${activeTab === "social" ? "show active" : ""
+                        }`}
                     >
                       <h4>Social Media</h4>
                       <div className="socialmedia-details">
@@ -1295,6 +1353,9 @@ const Page = () => {
                     )}
                   </div>
                 </div>
+              </div>
+              <div>
+                <PaidListing />
               </div>
             </div>
           </div>

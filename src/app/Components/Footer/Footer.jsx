@@ -98,12 +98,9 @@ const Footer = () => {
               </Link>
             </div>
             <p>Find and connect with businesses near you.</p>
-            <Link href="/Pages/bus" className="btn btn-secondary">
-              Find a Business
-            </Link>
           </div>
         </div>
-
+        <hr />
         <div className="footer-bottom text-center">
           <p>© 2025 Biziffy Media Inc. All rights reserved.</p>
         </div>

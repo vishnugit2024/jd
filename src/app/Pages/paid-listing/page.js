@@ -52,11 +52,9 @@ const page = () => {
                         <div key={index} className="custom-col">
                             <div>
                                 <div className="listing-content">
-                                    <Image src={shop.image} className="paid-listing-image" alt={shop.name} />
                                     <div className='d-grid'>
                                         <div className='d-flex align-items-center gap-2'>
                                             <Link className='listing-brand-name' href={"#"}>Biziffy</Link>
-                                            <span className='verified-text'><i className="bi bi-check-all"></i> Biziffy Verified</span>
                                         </div>
                                         <Link href={"https://digiindiasolution.com"}>digiindiasolution.com</Link>
                                     </div>
