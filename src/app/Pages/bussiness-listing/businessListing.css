@@ -8,16 +8,17 @@
   overflow: hidden;
 }
 
-/* .col-5-scroll-css {
-  height: 1000px;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  padding: 5px;
-} */
+.listing-banner img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
 
+.listing-banner {
+  margin-bottom: 1rem;
+}
 
-
-.business-card{
+.business-card {
   display: flex;
   align-items: center;
   background-color: transparent;
@@ -36,8 +37,27 @@
   padding: 20px 30px 0;
 }
 
+.business-listing-black-btn {
+  border: 1px solid var(--black);
+  background-color: transparent;
+  color: var(--black);
+  padding: 5px 10px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  margin: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.details-card .nav-link {
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
 .business-card h5 {
-  margin-bottom: 5px;
+  margin-bottom: 0;
   color: var(--black);
   font-size: 16px;
   font-weight: 700;
@@ -50,14 +70,34 @@
 .business-card p {
   color: var(--black);
   margin: 0;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
 }
 
-.left-panel, .right-panel {
+.left-panel,
+.right-panel {
   height: 100vh;
   overflow-y: auto;
 }
+
+.scroll-hidden {
+  height: 100vh;
+  overflow-y: auto;
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE & Edge */
+  -webkit-overflow-scrolling: touch;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  /* Smooth scrolling on iOS */
+}
+
+.scroll-hidden::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, Opera */
+}
+
 
 
 .business-card:hover {
@@ -87,11 +127,12 @@ span {
 .details-card h3 {
   margin-bottom: 10px;
   color: var(--black);
+  font-size: 22px;
 }
 
 .details-card p {
   line-height: 1.6;
-  font-size: 15px;
+  font-size: 12px;
   margin: 0;
 }
 
@@ -306,8 +347,13 @@ span {
 }
 
 @media (max-width: 768px) {
+  .scroll-hidden{
+    height: 100%;
+  }
+
   .col-5-scroll-css {
     height: 100%;
+    padding: 20px 2px;
   }
 
   .expanded-content .nav-link {
@@ -364,7 +410,7 @@ span {
   }
 
   .business-card p {
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .business-card h5 {
