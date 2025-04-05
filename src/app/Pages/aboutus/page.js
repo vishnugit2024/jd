@@ -13,6 +13,8 @@ import count4 from "../../Images/target.gif";
 import count5 from "../../Images/handshake.gif";
 import Link from "next/link";
 import diveImage from "../../Images/aboutImg2.png";
+import Head from "next/head";
+
 const page = () => {
   const countData = [
     { id: 1, image: count1, count: "100%", label: "Growth" },
@@ -24,6 +26,29 @@ const page = () => {
 
   return (
     <>
+      <Head>
+        <title>About Us - Biziffy</title>
+        <meta
+          name="description"
+          content="Learn about Biziffy's mission to help businesses grow online."
+        />
+        <meta
+          name="keywords"
+          content="About Biziffy, Biziffy, business listing site, free business directory, local SEO, digital marketing platform, generate business leads, online visibility, business promotion, service listing, list my business, B2B platform India, local business network, business growth, marketing leads, small business marketing, bizify"
+        />
+        <meta property="og:title" content="About Us - Biziffy" />
+        <meta
+          property="og:description"
+          content="Learn about Biziffy's mission to help businesses grow online."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Biziffy" />
+        <meta name="twitter:title" content="About Us - Biziffy" />
+        <meta
+          name="twitter:description"
+          content="Learn about Biziffy's mission to help businesses grow online."
+        />
+      </Head>
       <section className="some-page-hero-bg">
         <div className="container">
           <div className="row">
