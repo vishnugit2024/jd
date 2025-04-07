@@ -5,7 +5,6 @@ import Head from "next/head";
 import contactImage from "../../Images/contact-man.png";
 import Image from "next/image";
 import ReCAPTCHA from "react-google-recaptcha";
-import Head from "next/head";
 
 const Page = () => {
   const [captchaVerified, setCaptchaVerified] = useState(false);
