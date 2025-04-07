@@ -18,10 +18,12 @@ const ContactPerson = ({ setKey }) => {
   };
 
   const addAlternateNumber = () => {
-    setFormData({
-      ...formData,
-      alternateNumbers: [...formData.alternateNumbers, ""],
-    });
+    if (formData.alternateNumbers.length < 3) {
+      setFormData({
+        ...formData,
+        alternateNumbers: [...formData.alternateNumbers, ""],
+      });
+    }
   };
 
   const handleAlternateNumberChange = (index, value) => {
@@ -93,7 +95,7 @@ const ContactPerson = ({ setKey }) => {
           <input
             type="tel"
             className="form-control"
-            placeholder="Alternate Number"
+            placeholder="Alternative number"
             value={num}
             onChange={(e) => handleAlternateNumberChange(index, e.target.value)}
           />
@@ -104,6 +106,7 @@ const ContactPerson = ({ setKey }) => {
         type="button"
         className="btn btn-secondary mb-3"
         onClick={addAlternateNumber}
+        disabled={formData.alternateNumbers.length >= 3}
       >
         Add Another Number
       </button>
