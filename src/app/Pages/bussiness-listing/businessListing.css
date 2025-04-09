@@ -78,6 +78,8 @@
 .right-panel {
   height: 120vh;
   overflow-y: auto;
+  padding-top: 1rem;
+  padding-bottom: 1px;
 }
 
 /* .scroll-hidden {
@@ -353,12 +355,12 @@ span {
 
   .col-5-scroll-css {
     height: 100%;
-    padding: 20px 2px;
+    padding: 10px 2px;
   }
 
   .expanded-content .nav-link {
     padding: 2px 5px !important;
-    font-size: 10px !important;
+    font-size: 12px !important;
     font-weight: 300 !important;
   }
 
@@ -368,8 +370,8 @@ span {
   }
 
   .gallery-img {
-    width: 150px;
-    height: 130px;
+    width: 80px;
+    height: 80px;
   }
 
   .expanded-content.show {
@@ -399,6 +401,7 @@ span {
     border-radius: 10px;
     box-shadow: none;
     height: 100%;
+    background-color: white;
   }
 
   .left-panel {
@@ -410,11 +413,11 @@ span {
   }
 
   .business-card p {
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .business-card h5 {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .listing-image {
