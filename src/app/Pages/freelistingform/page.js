@@ -30,7 +30,7 @@ const Page = () => {
   return (
     <>
       <Head>
-        <title>Free Business Listing | List Your Business on Biziffy</title>
+        <title>Free Business Listing | List Your Businesses on Biziffy</title>
         <meta
           name="description"
           content="List your business for free on Biziffy and reach thousands of customers. Submit your company details, contact info, category, and go live today!"
