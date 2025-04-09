@@ -114,6 +114,8 @@ span {
   border-radius: 15px;
   box-shadow: 0 0px 2px rgba(0, 0, 0, 0.3);
   color: var(--black);
+  width: 60%;
+  margin: 7rem 2rem;
 }
 
 .details-card h3 {
@@ -397,6 +399,8 @@ span {
     box-shadow: none;
     height: 100%;
     background-color: white;
+    margin: 5rem 0 0;
+    width: 100%;
   }
 
   .left-panel {

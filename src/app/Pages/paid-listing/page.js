@@ -50,7 +50,7 @@ const page = () => {
   return (
     <section className="custom-section">
       <div className="container">
-        <div className="col-md-9">
+        <div className="col-md-12">
           <div className="custom-row">
             {Arr.map((shop, index) => (
               <div key={index} className="custom-col">
