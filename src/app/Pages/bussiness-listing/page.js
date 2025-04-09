@@ -393,9 +393,8 @@ const Page = () => {
                     return (
                       <div key={biz.id}>
                         <div
-                          className={`business-card gap-3 ${
-                            selected?.id === biz.id ? "active" : ""
-                          }`}
+                          className={`business-card gap-2 ${selected?.id === biz.id ? "active" : ""
+                            }`}
                           onClick={() => handleExpand(biz)}
                         >
                           <div>
@@ -434,9 +433,8 @@ const Page = () => {
                             <div className="d-flex gap-2 align-items-center">
                               <div className="opening-hours-container">
                                 <p
-                                  className={`status ${
-                                    isOpen ? "open" : "closed"
-                                  }`}
+                                  className={`status ${isOpen ? "open" : "closed"
+                                    }`}
                                 >
                                   {isOpen ? "Open Now" : "Closed Now"}
                                 </p>
@@ -450,9 +448,8 @@ const Page = () => {
                         {/* Expanded Content */}
                         <div
                           // id="#sidebar"
-                          className={`expanded-content d-block d-md-none ${
-                            isExpanded ? "show" : ""
-                          }`}
+                          className={`expanded-content d-block d-md-none ${isExpanded ? "show" : ""
+                            }`}
                         >
                           <div className="details-card">
                             <h3 className="m-0">{selected.name}</h3>
@@ -516,9 +513,8 @@ const Page = () => {
                             <ul className="nav nav-tabs mt-3">
                               <li className="nav-item">
                                 <button
-                                  className={`nav-link listing-tabs-btn ${
-                                    activeTab === "overview" ? "active" : ""
-                                  }`}
+                                  className={`nav-link listing-tabs-btn ${activeTab === "overview" ? "active" : ""
+                                    }`}
                                   onClick={() => setActiveTab("overview")}
                                 >
                                   Overview
@@ -526,9 +522,8 @@ const Page = () => {
                               </li>
                               <li className="nav-item">
                                 <button
-                                  className={`nav-link ${
-                                    activeTab === "service" ? "active" : ""
-                                  }`}
+                                  className={`nav-link ${activeTab === "service" ? "active" : ""
+                                    }`}
                                   onClick={() => setActiveTab("service")}
                                 >
                                   Service
@@ -536,9 +531,8 @@ const Page = () => {
                               </li>
                               <li className="nav-item">
                                 <button
-                                  className={`nav-link ${
-                                    activeTab === "review" ? "active" : ""
-                                  }`}
+                                  className={`nav-link ${activeTab === "review" ? "active" : ""
+                                    }`}
                                   onClick={() => setActiveTab("review")}
                                 >
                                   Review
@@ -546,9 +540,8 @@ const Page = () => {
                               </li>
                               <li className="nav-item">
                                 <button
-                                  className={`nav-link ${
-                                    activeTab === "photos" ? "active" : ""
-                                  }`}
+                                  className={`nav-link ${activeTab === "photos" ? "active" : ""
+                                    }`}
                                   onClick={() => setActiveTab("photos")}
                                 >
                                   Photos
@@ -556,9 +549,8 @@ const Page = () => {
                               </li>
                               <li className="nav-item">
                                 <button
-                                  className={`nav-link ${
-                                    activeTab === "social" ? "active" : ""
-                                  }`}
+                                  className={`nav-link ${activeTab === "social" ? "active" : ""
+                                    }`}
                                   onClick={() => setActiveTab("social")}
                                 >
                                   Social Media
@@ -568,9 +560,8 @@ const Page = () => {
 
                             <div className="tab-content mt-3">
                               <div
-                                className={`tab-pane fade ${
-                                  activeTab === "overview" ? "show active" : ""
-                                }`}
+                                className={`tab-pane fade ${activeTab === "overview" ? "show active" : ""
+                                  }`}
                               >
                                 <div>
                                   <p>
@@ -578,22 +569,22 @@ const Page = () => {
                                     {expanded
                                       ? fullText
                                       : words.slice(0, wordLimit).join(" ") +
-                                        (isLongText ? "..." : "")}
+                                      (isLongText ? "..." : "")}
+                                    {isLongText && (
+                                      <button
+                                        onClick={toggleText}
+                                        style={{
+                                          border: "none",
+                                          background: "none",
+                                          color: "blue",
+                                          cursor: "pointer",
+                                        }}
+                                      >
+                                        {expanded ? "Read Less" : "Read More"}{" "}
+                                        <i className="bi bi-arrow-right-circle"></i>
+                                      </button>
+                                    )}
                                   </p>
-                                  {isLongText && (
-                                    <button
-                                      onClick={toggleText}
-                                      style={{
-                                        border: "none",
-                                        background: "none",
-                                        color: "blue",
-                                        cursor: "pointer",
-                                      }}
-                                    >
-                                      {expanded ? "Read Less" : "Read More"}{" "}
-                                      <i className="bi bi-arrow-right-circle"></i>
-                                    </button>
-                                  )}
                                 </div>
 
                                 <hr />
@@ -610,9 +601,8 @@ const Page = () => {
                                       onClick={() =>
                                         setShowAllHours(!showAllHours)
                                       }
-                                      className={`status ${
-                                        isOpen ? "open" : "closed"
-                                      }`}
+                                      className={`status ${isOpen ? "open" : "closed"
+                                        }`}
                                     >
                                       <b className="text-dark">Hours : </b>{" "}
                                       {isOpen ? "Open" : "Closed"}{" "}
@@ -732,9 +722,8 @@ const Page = () => {
                               </div>
 
                               <div
-                                className={`tab-pane fade ${
-                                  activeTab === "service" ? "show active" : ""
-                                }`}
+                                className={`tab-pane fade ${activeTab === "service" ? "show active" : ""
+                                  }`}
                               >
                                 <ul className="service-list list-unstyled">
                                   {selected.services?.map((service, index) => (
@@ -748,9 +737,8 @@ const Page = () => {
                               </div>
 
                               <div
-                                className={`tab-pane fade ${
-                                  activeTab === "review" ? "show active" : ""
-                                }`}
+                                className={`tab-pane fade ${activeTab === "review" ? "show active" : ""
+                                  }`}
                               >
                                 <ul className="review-list">
                                   {reviews.map((review, index) => (
@@ -849,9 +837,8 @@ const Page = () => {
                               </div>
 
                               <div
-                                className={`tab-pane fade ${
-                                  activeTab === "photos" ? "show active" : ""
-                                }`}
+                                className={`tab-pane fade ${activeTab === "photos" ? "show active" : ""
+                                  }`}
                               >
                                 <h4>Photos</h4>
                                 <div className="photo-gallery d-flex flex-wrap gap-2">
@@ -875,9 +862,8 @@ const Page = () => {
                                 </div>
                               </div>
                               <div
-                                className={`tab-pane fade ${
-                                  activeTab === "social" ? "show active" : ""
-                                }`}
+                                className={`tab-pane fade ${activeTab === "social" ? "show active" : ""
+                                  }`}
                               >
                                 <h4>Social Media</h4>
                                 <div className="socialmedia-details">
@@ -1022,9 +1008,8 @@ const Page = () => {
                   <ul className="nav nav-tabs mt-">
                     <li className="nav-item">
                       <button
-                        className={`nav-link listing-tabs-btn ${
-                          activeTab === "overview" ? "active" : ""
-                        }`}
+                        className={`nav-link listing-tabs-btn ${activeTab === "overview" ? "active" : ""
+                          }`}
                         onClick={() => setActiveTab("overview")}
                       >
                         Overview
@@ -1032,9 +1017,8 @@ const Page = () => {
                     </li>
                     <li className="nav-item">
                       <button
-                        className={`nav-link ${
-                          activeTab === "service" ? "active" : ""
-                        }`}
+                        className={`nav-link ${activeTab === "service" ? "active" : ""
+                          }`}
                         onClick={() => setActiveTab("service")}
                       >
                         Service
@@ -1042,9 +1026,8 @@ const Page = () => {
                     </li>
                     <li className="nav-item">
                       <button
-                        className={`nav-link ${
-                          activeTab === "review" ? "active" : ""
-                        }`}
+                        className={`nav-link ${activeTab === "review" ? "active" : ""
+                          }`}
                         onClick={() => setActiveTab("review")}
                       >
                         Review
@@ -1052,9 +1035,8 @@ const Page = () => {
                     </li>
                     <li className="nav-item">
                       <button
-                        className={`nav-link ${
-                          activeTab === "photos" ? "active" : ""
-                        }`}
+                        className={`nav-link ${activeTab === "photos" ? "active" : ""
+                          }`}
                         onClick={() => setActiveTab("photos")}
                       >
                         Photos
@@ -1062,9 +1044,8 @@ const Page = () => {
                     </li>
                     <li className="nav-item">
                       <button
-                        className={`nav-link ${
-                          activeTab === "social" ? "active" : ""
-                        }`}
+                        className={`nav-link ${activeTab === "social" ? "active" : ""
+                          }`}
                         onClick={() => setActiveTab("social")}
                       >
                         Social Media
@@ -1074,9 +1055,8 @@ const Page = () => {
 
                   <div className="tab-content mt-3">
                     <div
-                      className={`tab-pane fade ${
-                        activeTab === "overview" ? "show active" : ""
-                      }`}
+                      className={`tab-pane fade ${activeTab === "overview" ? "show active" : ""
+                        }`}
                     >
                       <div>
                         <p>
@@ -1084,7 +1064,7 @@ const Page = () => {
                           {expanded
                             ? fullText
                             : words.slice(0, wordLimit).join(" ") +
-                              (isLongText ? "..." : "")}
+                            (isLongText ? "..." : "")}
                           {isLongText && (
                             <button
                               onClick={toggleText}
@@ -1231,9 +1211,8 @@ const Page = () => {
                     </div>
 
                     <div
-                      className={`tab-pane fade ${
-                        activeTab === "service" ? "show active" : ""
-                      }`}
+                      className={`tab-pane fade ${activeTab === "service" ? "show active" : ""
+                        }`}
                     >
                       <ul className="service-list list-unstyled">
                         {selected.services?.map((service, index) => (
@@ -1246,9 +1225,8 @@ const Page = () => {
                     </div>
 
                     <div
-                      className={`tab-pane fade ${
-                        activeTab === "review" ? "show active" : ""
-                      }`}
+                      className={`tab-pane fade ${activeTab === "review" ? "show active" : ""
+                        }`}
                     >
                       <ul className="review-list">
                         {reviews.map((review, index) => (
@@ -1348,9 +1326,8 @@ const Page = () => {
                     </div>
 
                     <div
-                      className={`tab-pane fade ${
-                        activeTab === "photos" ? "show active" : ""
-                      }`}
+                      className={`tab-pane fade ${activeTab === "photos" ? "show active" : ""
+                        }`}
                     >
                       <h4>Photos</h4>
                       <div className="photo-gallery d-flex flex-wrap gap-2">
@@ -1374,9 +1351,8 @@ const Page = () => {
                       </div>
                     </div>
                     <div
-                      className={`tab-pane fade ${
-                        activeTab === "social" ? "show active" : ""
-                      }`}
+                      className={`tab-pane fade ${activeTab === "social" ? "show active" : ""
+                        }`}
                     >
                       <h4>Social Media</h4>
                       <div className="socialmedia-details">
