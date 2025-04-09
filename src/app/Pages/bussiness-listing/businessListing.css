@@ -92,11 +92,6 @@
   padding-bottom: 1rem;
 } */
 
-.scroll-hidden::-webkit-scrollbar {
-  display: none;
-  /* Chrome, Safari, Opera */
-}
-
 .business-card:hover {
   border: 1px solid var(--blue);
   transform: scale(1.01);

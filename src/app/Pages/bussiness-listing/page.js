@@ -342,9 +342,7 @@ const Page = () => {
     setExpanded(!expanded);
   };
 
-  // const [selected, setSelected] = useState(null);
   const [expandedId, setExpandedId] = useState(null);
-  const [showMore, setShowMore] = useState(false);
 
   const handleExpand = (biz) => {
     setSelected(biz);
@@ -499,6 +497,12 @@ const Page = () => {
                               >
                                 <i className="bi bi-globe"></i> Website
                               </Link>
+                              <Link
+                                href={"#"}
+                                className="business-listing-black-btn"
+                              >
+                                <i className="bi bi-whatsapp"></i> Whatsapp
+                              </Link>
                             </div>
                             <div className="d-flex gap-2 align-items-center">
                               <p>7 years in business</p>
@@ -634,10 +638,14 @@ const Page = () => {
                                   <p>
                                     <b>Services</b>
                                   </p>
-                                  <ul className="service-list">
+                                  <ul className="service-list list-unstyled">
                                     {selected.services?.map(
                                       (service, index) => (
-                                        <li key={index}>{service}</li>
+                                        <li key={index}>
+                                          {" "}
+                                          <i className="bi bi-check2-all me-2"></i>
+                                          {service}
+                                        </li>
                                       )
                                     )}
                                   </ul>
@@ -717,9 +725,13 @@ const Page = () => {
                                 className={`tab-pane fade ${activeTab === "service" ? "show active" : ""
                                   }`}
                               >
-                                <ul className="service-list">
+                                <ul className="service-list list-unstyled">
                                   {selected.services?.map((service, index) => (
-                                    <li key={index}>{service}</li>
+                                    <li key={index}>
+                                      {" "}
+                                      <i className="bi bi-check2-all me-2"></i>{" "}
+                                      {service}
+                                    </li>
                                   ))}
                                 </ul>
                               </div>
@@ -951,7 +963,7 @@ const Page = () => {
                 </div>
               </div>
 
-              <div className="col-md-7 right-panel scroll-hidden">
+              <div className="col-md-7 right-panel">
                 <div className="details-card">
                   <h3 className="m-0">{selected.name}</h3>
                   <div className="d-flex gap-2 align-items-center mb-1">
@@ -970,7 +982,7 @@ const Page = () => {
                     alt={selected.name}
                     className="business-detail-image mb-3"
                   />
-                  <div className="d-flex justify-content-left flex-wrap mb-2 gap-2">
+                  <div className="d-flex justify-content-center flex-wrap mb-2 gap-2">
                     <Link href={"#"} className="business-listing-black-btn">
                       <i className="bi bi-crosshair"></i> Direction
                     </Link>
@@ -982,6 +994,9 @@ const Page = () => {
                     </Link>
                     <Link href={"#"} className="business-listing-black-btn">
                       <i className="bi bi-globe"></i> Website
+                    </Link>
+                    <Link href={"#"} className="business-listing-black-btn">
+                      <i className="bi bi-whatsapp"></i> Whatsapp
                     </Link>
                   </div>
                   <div className="d-flex gap-2 align-items-center mb-1">
@@ -1112,104 +1127,99 @@ const Page = () => {
                         <p>
                           <b>Services</b>
                         </p>
-                        <ul className="service-list">
+                        <ul className="service-list list-unstyled">
                           {selected.services?.map((service, index) => (
-                            <li key={index}>{service}</li>
+                            <li key={index}>
+                              <i className="bi bi-check2-all me-2"></i>
+                              {service}
+                            </li>
                           ))}
                         </ul>
                       </div>
                       <hr />
-                      <div className="d-flex justify-content-center">
-                        <button
-                          onClick={() => setShowMore(!showMore)}
-                          className="business-listing-black-btn"
-                        >
-                          {showMore ? "View Less" : "View More"}
-                        </button>
-                      </div>
 
-                      {showMore && (
-                        <>
-                          <div className="tab-pane mt-3">
-                            <ul className="review-list">
-                              {selected.reviewsData?.map((review, index) => (
-                                <li key={index}>
-                                  <span className="review-name">
-                                    {review.author.charAt(0)}
-                                  </span>
-                                  <div>
-                                    <div className="review-comment-star">
-                                      <i className="bi bi-star-fill"></i>{" "}
-                                      <i className="bi bi-star-fill"></i>{" "}
-                                      <i className="bi bi-star-fill"></i>{" "}
-                                      <i className="bi bi-star-fill"></i>{" "}
-                                      <i className="bi bi-star-fill"></i>
-                                    </div>
-                                    <p className="client-feedback">
-                                      {" "}
-                                      {`"${review.comment}"`}{" "}
-                                    </p>
-                                  </div>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                          <hr />
-                          <div className="tab-pane">
-                            <h4>Photos</h4>
-                            <div className="photo-gallery d-flex flex-wrap gap-2">
-                              {visiblePhotos.map((photo, index) => (
-                                <Image
-                                  key={index}
-                                  src={photo}
-                                  alt={`Photo ${index + 1}`}
-                                  className="gallery-img"
-                                  onClick={() => openLightbox(index)}
-                                />
-                              ))}
-                              {!showAll && staticPhotos.length > 4 && (
-                                <div
-                                  className="plus-overlay"
-                                  onClick={() => setShowAll(true)}
-                                >
-                                  +{staticPhotos.length - 4}
-                                </div>
-                              )}
+                      <div className="tab-pane">
+                        <h4>Photos</h4>
+                        <div className="photo-gallery d-flex flex-wrap gap-2">
+                          {visiblePhotos.map((photo, index) => (
+                            <Image
+                              key={index}
+                              src={photo}
+                              alt={`Photo ${index + 1}`}
+                              className="gallery-img"
+                              onClick={() => openLightbox(index)}
+                            />
+                          ))}
+                          {!showAll && staticPhotos.length > 4 && (
+                            <div
+                              className="plus-overlay"
+                              onClick={() => setShowAll(true)}
+                            >
+                              +{staticPhotos.length - 4}
                             </div>
-                          </div>
-                          <hr />
-                          <div className="tab-pane">
-                            <h4>Social Media</h4>
-                            <div className="socialmedia-details">
+                          )}
+                        </div>
+                      </div>
+                      <hr />
+
+                      <div className="tab-pane mt-3">
+                        <ul className="review-list">
+                          {selected.reviewsData?.map((review, index) => (
+                            <li key={index}>
+                              <span className="review-name">
+                                {review.author.charAt(0)}
+                              </span>
                               <div>
-                                <div className="social-icons">
-                                  <Link href="#">
-                                    <i className="bi bi-twitter"></i>
-                                  </Link>
-                                  <Link href="#">
-                                    <i className="bi bi-facebook"></i>
-                                  </Link>
-                                  <Link href="#">
-                                    <i className="bi bi-linkedin"></i>
-                                  </Link>
-                                  <Link href="#">
-                                    <i className="bi bi-instagram"></i>
-                                  </Link>
+                                <div className="review-comment-star">
+                                  <i className="bi bi-star-fill"></i>{" "}
+                                  <i className="bi bi-star-fill"></i>{" "}
+                                  <i className="bi bi-star-fill"></i>{" "}
+                                  <i className="bi bi-star-fill"></i>{" "}
+                                  <i className="bi bi-star-fill"></i>
                                 </div>
+                                <p className="client-feedback">
+                                  {" "}
+                                  {`"${review.comment}"`}{" "}
+                                </p>
                               </div>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <hr />
+                      <div className="tab-pane">
+                        <h4>Social Media</h4>
+                        <div className="socialmedia-details">
+                          <div>
+                            <div className="social-icons">
+                              <Link href="#">
+                                <i className="bi bi-twitter"></i>
+                              </Link>
+                              <Link href="#">
+                                <i className="bi bi-facebook"></i>
+                              </Link>
+                              <Link href="#">
+                                <i className="bi bi-linkedin"></i>
+                              </Link>
+                              <Link href="#">
+                                <i className="bi bi-instagram"></i>
+                              </Link>
                             </div>
                           </div>
-                        </>
-                      )}
+                        </div>
+                      </div>
                     </div>
 
                     <div
                       className={`tab-pane fade ${activeTab === "service" ? "show active" : ""
                         }`}
                     >
-                      <ul className="service-list">
+                      <ul className="service-list list-unstyled">
                         {selected.services?.map((service, index) => (
-                          <li key={index}>{service}</li>
+                          <li key={index}>
+                            <i className="bi bi-check2-all me-2"></i>
+                            {service}
+                          </li>
                         ))}
                       </ul>
                     </div>
