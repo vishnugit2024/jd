@@ -8,7 +8,6 @@ import gourav3 from "../../Images/gourav3.jpg";
 import ads from "../../Images/ads.png";
 import ads1 from "../../Images/ads1.jpg";
 import "../../Pages/bussiness-listing/businessListing.css";
-import TestimonialSection from "@/app/Components/Testimonial/Testimonial";
 
 const Businesslistingdetails = () => {
   const businesses = [
@@ -254,7 +253,7 @@ const Businesslistingdetails = () => {
         <div className="row">
           <div className="col-md-8">
             <div className="details-card">
-              <h3 className="m-0">dummy</h3>
+              <h5 className="m-0">dummy</h5>
               <div className="d-flex gap-2 align-items-center mb-1">
                 <p>
                   dummy <i className="bi bi-star-fill"></i>{" "}
@@ -724,7 +723,7 @@ const Businesslistingdetails = () => {
                 <label className="form-label">Name</label>
                 <input
                   type="text"
-                  className="form-control"
+                  className=" login-input"
                   placeholder="Enter your name"
                 />
               </div>
@@ -733,7 +732,7 @@ const Businesslistingdetails = () => {
                 <label className="form-label">Email</label>
                 <input
                   type="email"
-                  className="form-control"
+                  className=" login-input"
                   placeholder="Enter email"
                 />
               </div> */}
@@ -742,7 +741,7 @@ const Businesslistingdetails = () => {
                 <label className="form-label">Phone Number</label>
                 <input
                   type="tel"
-                  className="form-control"
+                  className=" login-input"
                   placeholder="Enter phone number"
                 />
               </div>
@@ -752,12 +751,12 @@ const Businesslistingdetails = () => {
                 </label>
                 <input
                   type="text"
-                  className="form-control"
+                  className=" login-input"
                   placeholder="Write you requirement"
                 />
               </div>
 
-              <button type="submit" className="btn btn-primary w-100">
+              <button type="submit" className="btn bg-dark text-white w-100">
                 Get Best Deal <i className="bi bi-chevron-double-right"></i>
               </button>
             </form>
@@ -831,53 +830,6 @@ const Businesslistingdetails = () => {
                 </Link>
               </div>
             ))}
-          </div>
-        </div>
-      </div>
-
-      <div className="container my-3">
-        <div className="row">
-          <div className="col-md-12">
-            <h5>
-              <b>Shakubhabi Bamboo Hut in Yamunanagar Ho, Yamunanagar</b>
-            </h5>
-            <p className="biziffy-listing-text">
-              Shakubhabi Bamboo Hut in Yamunanagar Ho, Yamunanagar is known to
-              satisfactorily cater to the demands of its customer base. The
-              business came into existence in 2000 and has, since then, been a
-              known name in its field. It stands located at H. No 25, Near Bus
-              Stand, Tagore Garden, Yamunanagar HO - 135001. Near Bus Stand is a
-              prominent landmark in the area and this establishment is in close
-              proximity to the same. It has earned stamps like Jd Verified, Jd
-              Pay substantiating the credentials of the business. The business
-              strives to make for a positive experience through its offerings.
-              The accepted modes of payment such as Cash, Credit Card make every
-              business transaction easy and seamless, contributing to making the
-              entire process even more effective.
-            </p>
-            <p className="biziffy-listing-text">
-              Customer centricity is at the core of Shakubhabi Bamboo Hut in
-              Yamunanagar Ho, Yamunanagar and it is this belief that has led the
-              business to build long-term relationships. Ensuring a positive
-              customer experience, making available goods and/or services that
-              are of top-notch quality is given prime importance.
-            </p>
-            <p className="biziffy-listing-text">
-              India’s leading B2B market place, Jd Mart ensures engaging in
-              business activities is a seamless process for small and medium
-              enterprises as well as large businesses. In a wake to enable these
-              businesses to reach their audience, this portal lets them showcase
-              their offerings in terms of the products and/or services through a
-              digital catalogue.
-            </p>
-            <p className="biziffy-listing-text">
-              Kindly scroll up for the address and contact details of Shakubhabi
-              Bamboo Hut in Yamunanagar
-            </p>
-
-            <div>
-              <TestimonialSection />
-            </div>
           </div>
         </div>
       </div>
