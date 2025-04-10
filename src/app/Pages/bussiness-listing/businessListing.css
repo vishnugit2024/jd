@@ -59,8 +59,7 @@
 .business-card h5 {
   margin-bottom: 0;
   color: var(--black);
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 18px;
 }
 
 .bi-star-fill {
@@ -70,8 +69,7 @@
 .business-card p {
   color: var(--black);
   margin: 0;
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 14px;
 }
 
 .left-panel,
@@ -104,10 +102,10 @@ span {
   margin: 2rem 0rem;
 }
 
-.details-card h3 {
+.details-card h5 {
   margin-bottom: 10px;
   color: var(--black);
-  font-size: 22px;
+  font-size: 18px;
 }
 
 .details-card p {
@@ -248,7 +246,7 @@ span {
 }
 
 .rating-selection i {
-  font-size: 20px;
+  font-size: 18px;
   cursor: pointer;
 }
 
@@ -360,21 +358,11 @@ span {
   }
 }
 
-/* Optional styling for form container */
 .enquiry-form {
   padding: 20px;
   margin-top: 2rem;
   border-radius: 20px;
-  border-inline: 4px solid var(--blue);
-}
-
-.enquiry-form .form-label {
-  font-weight: 500;
-  color: #333;
-}
-
-.enquiry-form .form-control {
-  border-radius: 6px;
+  border: 1px solid lightgray;
 }
 
 /* ===== Similar Listing Data =========== */

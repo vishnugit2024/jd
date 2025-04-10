@@ -59,20 +59,20 @@ const page = () => {
                     <div className="d-grid">
                       <div className="d-flex align-items-center gap-2">
                         <Link className="listing-brand-name" href={"#"}>
-                          Biziffy
+                          <h5>Biziffy</h5>
                         </Link>
                       </div>
                       <Link
                         href={"https://digiindiasolutions.com"}
                         target="_blank"
                       >
-                        digiindiasolution.com
+                        <p>digiindiasolution.com</p>
                       </Link>
                     </div>
                   </div>
-                  <div className="align-items-center">
-                    <Link href={shop.link} className="listing-title">
-                      {shop.name}
+                  <div className="align-items-center listing-title ">
+                    <Link href={shop.link} className="text-decoration-none">
+                     <h5> {shop.name}</h5>
                     </Link>
                     <p className="listing-description">
                       {shop.description.slice(0, 100)}...

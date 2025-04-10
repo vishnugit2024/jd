@@ -65,27 +65,25 @@
   text-decoration: none;
 }
 
-.listing-content a:nth-child(1) {
+.listing-content h5 {
   color: var(--black);
-  font-size: 16px;
-  font-weight: 600;
-  margin: 0;
-}
-
-.listing-content a:nth-child(2) {
-  font-size: 12px;
-  margin: 0;
-  color: var(--black);
-}
-
-.listing-title {
   font-size: 18px;
-  font-weight: 400;
+  margin: 0;
+}
+
+.listing-content p {
+  font-size: 14px;
+  margin: 0;
+  color: var(--black);
+}
+
+.listing-title h5 {
+  font-size: 18px;
   color: var(--black);
   text-decoration: none;
 }
 
-.listing-title:hover {
+.listing-title h5:hover {
   text-decoration: underline;
 }
 
@@ -94,7 +92,7 @@
   max-width: 90%;
   margin: 0;
   color: #555;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .listing-rating i {
