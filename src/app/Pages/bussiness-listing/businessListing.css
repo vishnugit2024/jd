@@ -28,7 +28,7 @@
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
   box-shadow: 0 0px 2px rgba(0, 0, 0, 0.3);
-  /* gap: 20px; */
+  gap: 20px;
   text-decoration: none;
 }
 
@@ -82,27 +82,13 @@
   padding-bottom: 1px;
 }
 
-/* .scroll-hidden {
-  height: 100vh;
-  overflow-y: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  -webkit-overflow-scrolling: touch;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-} */
-
 .business-card:hover {
-  border: 1px solid var(--blue);
+  border: 1px solid var(--black);
   transform: scale(1.01);
 }
 
 span {
   color: var(--black);
-}
-
-.business-card.active {
-  border: 1px solid var(--black);
 }
 
 .right-panel {
@@ -114,8 +100,8 @@ span {
   border-radius: 15px;
   box-shadow: 0 0px 2px rgba(0, 0, 0, 0.3);
   color: var(--black);
-  width: 60%;
-  margin: 7rem 2rem;
+  width: 100%;
+  margin: 2rem 0rem;
 }
 
 .details-card h3 {
@@ -345,11 +331,73 @@ span {
   font-size: 14px;
 }
 
-@media (max-width: 768px) {
-  .scroll-hidden {
-    height: 100%;
-  }
+.biziffy-listing-text {
+  background: #d3d3d337;
+  padding: 1.5rem;
+  border-radius: 10px;
+  font-size: 16px;
+  color: var(--black);
+}
 
+/* ====== Enquiry from data ========= */
+
+.enquiry-heading .enquiry-icon {
+  font-size: 1.5rem;
+  color: goldenrod;
+  animation: wiggle 1s infinite;
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(10deg);
+  }
+  75% {
+    transform: rotate(-10deg);
+  }
+}
+
+/* Optional styling for form container */
+.enquiry-form {
+  padding: 20px;
+  margin-top: 2rem;
+  border-radius: 20px;
+  border-inline: 4px solid var(--blue);
+}
+
+.enquiry-form .form-label {
+  font-weight: 500;
+  color: #333;
+}
+
+.enquiry-form .form-control {
+  border-radius: 6px;
+}
+
+/* ===== Similar Listing Data =========== */
+
+.similar-listing-data {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-height: 350px;
+  overflow: auto;
+  padding-right: 10px;
+}
+
+.similar-listing-data::-webkit-scrollbar {
+  width: 6px;
+}
+.similar-listing-data::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
   .col-5-scroll-css {
     height: 100%;
     padding: 10px 2px;
@@ -359,6 +407,10 @@ span {
     padding: 2px 5px !important;
     font-size: 12px !important;
     font-weight: 300 !important;
+  }
+
+  .business-card {
+    gap: 10px;
   }
 
   .business-card:hover {
@@ -399,7 +451,7 @@ span {
     box-shadow: none;
     height: 100%;
     background-color: white;
-    margin: 5rem 0 0;
+    /* margin: 5rem 0 0; */
     width: 100%;
   }
 
@@ -443,5 +495,11 @@ span {
   .service-list li,
   .client-feedback {
     font-size: 10px;
+  }
+
+  .similar-listing-data {
+    justify-content: center;
+
+    max-height: 450px;
   }
 }

@@ -17,20 +17,20 @@ const ContactPerson = ({ setKey }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const addAlternateNumber = () => {
-    if (formData.alternateNumbers.length < 3) {
-      setFormData({
-        ...formData,
-        alternateNumbers: [...formData.alternateNumbers, ""],
-      });
-    }
-  };
+  // const addAlternateNumber = () => {
+  //   if (formData.alternateNumbers.length < 3) {
+  //     setFormData({
+  //       ...formData,
+  //       alternateNumbers: [...formData.alternateNumbers, ""],
+  //     });
+  //   }
+  // };
 
-  const handleAlternateNumberChange = (index, value) => {
-    const updatedNumbers = [...formData.alternateNumbers];
-    updatedNumbers[index] = value;
-    setFormData({ ...formData, alternateNumbers: updatedNumbers });
-  };
+  // const handleAlternateNumberChange = (index, value) => {
+  //   const updatedNumbers = [...formData.alternateNumbers];
+  //   updatedNumbers[index] = value;
+  //   setFormData({ ...formData, alternateNumbers: updatedNumbers });
+  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -90,7 +90,7 @@ const ContactPerson = ({ setKey }) => {
         />
       </div>
 
-      {formData.alternateNumbers.map((num, index) => (
+      {/* {formData.alternateNumbers.map((num, index) => (
         <div className="mb-3" key={index}>
           <input
             type="tel"
@@ -109,14 +109,15 @@ const ContactPerson = ({ setKey }) => {
         disabled={formData.alternateNumbers.length >= 3}
       >
         Add Another Number
-      </button>
+      </button> */}
 
       <div className="mb-3">
         <label className="form-label">
-          WhatsApp Number <span style={{ color: "red" }}>(Optional)</span>
+          WhatsApp Number<sup>*</sup>
         </label>
         <input
           type="tel"
+          required
           className="form-control"
           name="whatsappNumber"
           onChange={handleChange}
