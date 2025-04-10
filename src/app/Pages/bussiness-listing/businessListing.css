@@ -44,7 +44,7 @@
   padding: 5px 10px;
   border-radius: 30px;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   margin: 0;
   cursor: pointer;
@@ -69,7 +69,7 @@
 .business-card p {
   color: var(--black);
   margin: 0;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .left-panel,
@@ -110,7 +110,7 @@ span {
 
 .details-card p {
   line-height: 1.6;
-  font-size: 14px;
+  font-size: 16px;
   margin: 0;
 }
 
@@ -370,7 +370,7 @@ span {
 .similar-listing-data {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   max-height: 350px;
   overflow: auto;
