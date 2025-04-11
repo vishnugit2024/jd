@@ -10,6 +10,7 @@ import ads1 from "../../Images/ads1.jpg";
 import "../../Pages/bussiness-listing/businessListing.css";
 import BusinessSimilarListing from "./BusinessSimilarListing";
 import DealOffers from "./DealOffers";
+import ListingPageFaq from "./ListingPageFaq";
 
 const Businesslistingdetails = () => {
   const businesses = [
@@ -373,6 +374,10 @@ const Businesslistingdetails = () => {
                   </div>
                   <hr />
                   <div className="tab-pane">
+                    <ListingPageFaq />
+                  </div>
+                  <hr />
+                  <div className="tab-pane">
                     <ul className="review-list">
                       {reviews.map((review, index) => (
                         <li key={index}>
@@ -647,14 +652,7 @@ const Businesslistingdetails = () => {
                 />
               </div>
 
-              {/* <div className="mb-3">
-                <label className="form-label">Email</label>
-                <input
-                  type="email"
-                  className=" login-input"
-                  placeholder="Enter email"
-                />
-              </div> */}
+             
 
               <div className="mb-3">
                 <label className="form-label">Phone Number</label>
@@ -698,6 +696,9 @@ const Businesslistingdetails = () => {
       <div className="contain">
         <div className="row">
           <BusinessSimilarListing />
+        </div>
+        <hr />
+        <div className="row">
           <DealOffers />
         </div>
       </div>
