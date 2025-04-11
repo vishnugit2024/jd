@@ -69,18 +69,18 @@ const ListingPageFaq = () => {
 
   return (
     <>
-      <div className="container my-2 mb-5">
+      <div className="container">
         <div className="row">
-          <h5>
+          <p>
             <b>Frequently Asked Questions</b>
-          </h5>
+          </p>
           {visibleFaqs.map((faq) => (
             <div
               key={faq.id}
-              className="testimonil-faq-box py-1 rounded shadow-sm mb-3"
+              className="testimonil-faq-box rounded shadow-sm mb-2"
             >
               <button
-                className="testimonil-faq-btn btn w-100 text-start fw-bold"
+                className="testimonil-faq-btn btn w-100 text-start"
                 onClick={() => toggleFaq(faq.id)}
               >
                 {faq.id}. {faq.question}{" "}
@@ -98,8 +98,11 @@ const ListingPageFaq = () => {
           ))}
 
           {/* View More / View Less Button */}
-          <div className="d-flex justify-content-center mt-2">
-            <button className="login-btn" onClick={() => setShowAll(!showAll)}>
+          <div className="d-flex justify-content-center mt-1">
+            <button
+              className="btn btn-link"
+              onClick={() => setShowAll(!showAll)}
+            >
               {showAll ? "View Less" : "View More"}{" "}
               <i
                 className={`bi bi-chevron-${

@@ -15,7 +15,6 @@ import PaidListing from "../paid-listing/page";
 import banner1 from "../../Images/slide1.webp";
 import banner2 from "../../Images/slide2.webp";
 import banner3 from "../../Images/slide3.webp";
-import ListingPageFaq from "@/app/Components/Businesslistingdetails/ListingPageFaq";
 const Page = () => {
   const businesses = [
     {
@@ -302,7 +301,6 @@ const Page = () => {
               Bamboo Hut in Yamunanagar
             </p>
           </div>
-          <ListingPageFaq />
         </div>
       </section>
     </>

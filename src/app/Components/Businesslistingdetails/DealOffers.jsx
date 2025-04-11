@@ -68,11 +68,11 @@ const DealOffers = () => {
   return (
     <>
       <div className="container my-4">
-        {/* Deals and Offers */}
+        {/* Popular Cities */}
         <div className="mb-4">
-          <h5 className="fw-bold">Deals and Offers</h5>
-          <div className="d-flex flex-wrap gap-2">
-            {data.dealsAndOffers.map((item, index) => (
+          <h6 className="fw-bold">Popular Cities</h6>
+          <div className="d-flex flex-wrap gap-2" style={{ fontSize: "14px" }}>
+            {data.popularCities.map((item, index) => (
               <span key={index}>
                 <Link
                   href={item.link}
@@ -80,7 +80,7 @@ const DealOffers = () => {
                 >
                   {item.name}
                 </Link>
-                {index !== data.dealsAndOffers.length - 1 && (
+                {index !== data.popularCities.length - 1 && (
                   <span className="mx-2 text-muted">|</span>
                 )}
               </span>
@@ -90,8 +90,8 @@ const DealOffers = () => {
 
         {/* JD Collections */}
         <div className="mb-4">
-          <h5 className="fw-bold">Explore JD Collections</h5>
-          <div className="d-flex flex-wrap gap-2">
+          <h6 className="fw-bold">Explore Biziffy Collections</h6>
+          <div className="d-flex flex-wrap gap-2" style={{ fontSize: "14px" }}>
             {data.jdCollections.map((item, index) => (
               <span key={index}>
                 <Link
@@ -108,11 +108,11 @@ const DealOffers = () => {
           </div>
         </div>
 
-        {/* Popular Cities */}
+        {/* Deals and Offers */}
         <div className="mb-4">
-          <h5 className="fw-bold">Popular Cities</h5>
-          <div className="d-flex flex-wrap gap-2">
-            {data.popularCities.map((item, index) => (
+          <h6 className="fw-bold">Deals and Offers</h6>
+          <div className="d-flex flex-wrap gap-2" style={{ fontSize: "14px" }}>
+            {data.dealsAndOffers.map((item, index) => (
               <span key={index}>
                 <Link
                   href={item.link}
@@ -120,7 +120,7 @@ const DealOffers = () => {
                 >
                   {item.name}
                 </Link>
-                {index !== data.popularCities.length - 1 && (
+                {index !== data.dealsAndOffers.length - 1 && (
                   <span className="mx-2 text-muted">|</span>
                 )}
               </span>
