@@ -82,7 +82,11 @@ const Page = () => {
             <div className="col-md-6">
               <h4 className="tab-form-title">Please Fill Your Details</h4>
               <div className="free-listing-multitab">
-                <Tabs activeKey={key} className="border-0">
+                <Tabs
+                  activeKey={key}
+                  onSelect={(k) => setKey(k)}
+                  className="border-0"
+                >
                   <Tab eventKey="contact" className="tab-stlye">
                     <ContactPerson setKey={setKey} />
                   </Tab>
@@ -96,7 +100,7 @@ const Page = () => {
                   <Tab eventKey="timing" className="tab-stlye">
                     <BusinessTiming setKey={setKey} />
                   </Tab>
-                  <Tab eventKey="upgrade" className="tab-stlye">
+                  <Tab eventKey="upgrade" className="tab-stlye" title="Upgrade">
                     <UpgradeListing setKey={setKey} />
                   </Tab>
                 </Tabs>

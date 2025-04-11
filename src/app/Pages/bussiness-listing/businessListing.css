@@ -122,6 +122,14 @@ span {
   border-radius: 10px;
   aspect-ratio: 4 / 3;
 }
+.listing-image {
+  width: 110px;
+  color: transparent;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 10px;
+  aspect-ratio: 4 / 3;
+}
 
 .business-detail-image {
   width: 100%;
@@ -366,24 +374,6 @@ span {
 }
 
 /* ===== Similar Listing Data =========== */
-
-.similar-listing-data {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  max-height: 350px;
-  overflow: auto;
-  padding-right: 10px;
-}
-
-.similar-listing-data::-webkit-scrollbar {
-  width: 6px;
-}
-.similar-listing-data::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-}
 
 @media (max-width: 768px) {
   .col-5-scroll-css {

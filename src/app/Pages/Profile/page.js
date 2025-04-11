@@ -118,7 +118,7 @@ const ProfilePage = () => {
                     className="profile-img"
                   />
                   <h3 className="text-white">{userProfile.name}</h3>
-                  <p className="text-success m-0">{userProfile.userType}</p>
+                  <p className="text-warning m-0">{userProfile.userType}</p>
                 </div>
                 <hr className="text-white" />
                 <div className="sidebar-button-main">
@@ -140,12 +140,13 @@ const ProfilePage = () => {
                   </button>
                   <button
                     className={`sidebar-tab ${
-                      activeTab === "plan" ? "active" : ""
+                      activeTab === "all-enquiry" ? "active" : ""
                     }`}
-                    onClick={() => setActiveTab("plan")}
+                    onClick={() => setActiveTab("all-enquiry")}
                   >
-                    <i className="bi bi-pentagon-half"></i> My Plan
+                    <i className="bi bi-info-circle"></i> All Enquiry
                   </button>
+
                   <button
                     className={`sidebar-tab ${
                       activeTab === "listing" ? "active" : ""
@@ -156,11 +157,19 @@ const ProfilePage = () => {
                   </button>
                   <button
                     className={`sidebar-tab ${
-                      activeTab === "all-enquiry" ? "active" : ""
+                      activeTab === "plan" ? "active" : ""
                     }`}
-                    onClick={() => setActiveTab("all-enquiry")}
+                    onClick={() => setActiveTab("plan")}
                   >
-                    <i className="bi bi-info-circle"></i> All Enquiry
+                    <i className="bi bi-pentagon-half"></i> My Plan
+                  </button>
+                  <button
+                    className={`sidebar-tab ${
+                      activeTab === "plan" ? "active" : ""
+                    }`}
+                    onClick={() => setActiveTab("plan")}
+                  >
+                    <i className="bi bi-patch-question"></i> Support
                   </button>
                 </div>
               </div>
@@ -169,7 +178,7 @@ const ProfilePage = () => {
               {activeTab === "overview" && (
                 <div className="profile-overview card border-0 rounded-4">
                   <div className="d-flex align-items-center">
-                    <div className="profile-overview-main avatar bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3">
+                    <div className="profile-overview-main avatar bg-dark text-white rounded-circle d-flex align-items-center justify-content-center me-3">
                       {userProfile.name.charAt(0)}
                     </div>
                     <div>
