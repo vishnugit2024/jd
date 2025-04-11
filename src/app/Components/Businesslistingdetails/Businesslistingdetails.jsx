@@ -8,6 +8,8 @@ import gourav3 from "../../Images/gourav3.jpg";
 import ads from "../../Images/ads.png";
 import ads1 from "../../Images/ads1.jpg";
 import "../../Pages/bussiness-listing/businessListing.css";
+import BusinessSimilarListing from "./BusinessSimilarListing";
+import DealOffers from "./DealOffers";
 
 const Businesslistingdetails = () => {
   const businesses = [
@@ -21,6 +23,7 @@ const Businesslistingdetails = () => {
       description: "Very polite and extremely knowledgeable doctor.",
       image: gourav,
       services: ["General Check-up", "Vaccination", "Health Consultation"],
+      servicesArea: ["Delhi", "Gurgaon", "Noida"],
       reviewsData: [
         {
           author: "John Doe",
@@ -31,107 +34,6 @@ const Businesslistingdetails = () => {
           comment: "The doctor is very knowledgeable and kind.",
         },
       ],
-    },
-  ];
-
-  //   ===== Similar businesseslisting ======
-
-  const similarlistingbusinesses = [
-    {
-      id: 1,
-      name: "Pasricha Clinic",
-      rating: 3.6,
-      reviews: 5,
-      phone: "+91 9810000000",
-      image: gourav,
-    },
-    {
-      id: 2,
-      name: "The Holistic Clinic",
-      rating: 5.0,
-      reviews: 86,
-      phone: "+91 9810000122",
-      image: gourav2,
-    },
-    {
-      id: 3,
-      name: "Sharva Clinic",
-      rating: 5.0,
-      reviews: 75,
-      phone: "+91 981004598",
-      image: gourav3,
-    },
-    {
-      id: 4,
-      name: "vishnu sahu",
-      rating: 5.0,
-      reviews: 75,
-      phone: "+91 981004598",
-      image: gourav3,
-    },
-    {
-      id: 5,
-      name: "mukesh mehar",
-      rating: 5.0,
-      reviews: 75,
-      phone: "+91 981004598",
-      image: gourav3,
-    },
-    {
-      id: 6,
-      name: "akash singh",
-      rating: 5.0,
-      reviews: 75,
-      phone: "+91 981004598",
-      image: gourav3,
-    },
-    {
-      id: 7,
-      name: "aman tiwari",
-      rating: 5.0,
-      reviews: 75,
-      phone: "+91 981004598",
-      image: gourav3,
-    },
-    {
-      id: 8,
-      name: "nitin rajroiya",
-      rating: 5.0,
-      reviews: 75,
-      phone: "+91 981004598",
-      image: gourav,
-    },
-    {
-      id: 9,
-      name: "nikunj sharma",
-      rating: 5.0,
-      reviews: 75,
-      phone: "+91 981004598",
-      image: gourav3,
-    },
-    {
-      id: 10,
-      name: "deepak pandit",
-      rating: 5.0,
-      reviews: 75,
-      phone: "+91 981004598",
-      image: gourav3,
-    },
-    {
-      id: 11,
-      name: "deepak pandit",
-      rating: 5.0,
-      reviews: 75,
-      phone: "+91 981004598",
-      image: gourav3,
-    },
-    {
-      id: 12,
-      name: "deepak pandit",
-      rating: 5.0,
-      reviews: 75,
-      phone: "+91 981004598",
-      image: gourav3,
     },
   ];
 
@@ -243,7 +145,6 @@ const Businesslistingdetails = () => {
         <div className="row">
           <Link href="/Pages/bussiness-listing">
             <button className="black-btn px-4">
-              {" "}
               <i className="bi bi-arrow-left-short"></i> Back
             </button>
           </Link>
@@ -428,6 +329,24 @@ const Businesslistingdetails = () => {
                         </li>
                       ))}
                     </ul>
+                  </div>
+                  <hr />
+                  <div className="tab-pane">
+                    <p>
+                      <b>Servicing Area</b>
+                    </p>
+                    <div className="d-flex flex-wrap gap-2">
+                      {businesses[0].servicesArea?.map(
+                        (servicesArea, index) => (
+                          <p key={index}>
+                            {servicesArea}{" "}
+                            {index !== servicesArea.length - 1 && (
+                              <span className="mx-1 text-muted">|</span>
+                            )}
+                          </p>
+                        )
+                      )}
+                    </div>
                   </div>
                   <hr />
                   <div className="tab-pane">
@@ -775,62 +694,11 @@ const Businesslistingdetails = () => {
           </div>
         </div>
       </div>
-      <div className="container my-3">
-        <div className="row">
-          <h3 className="text-center fw-bold text-dark">Similar Listings</h3>
-          <div className="similar-listing-data">
-            {similarlistingbusinesses.map((similarbusinesses) => (
-              <div key={similarbusinesses.id}>
-                <Link
-                  className="text-decoration-none"
-                  href={`/Pages/bussiness-listing/${similarbusinesses.id}`}
-                >
-                  <div className="business-card">
-                    <div>
-                      <Image
-                        src={similarbusinesses.image}
-                        alt={similarbusinesses.name}
-                        className="listing-image"
-                      />
-                    </div>
-                    <div>
-                      <div className="d-flex gap-3 mb-2 align-items-center">
-                        <h5>{similarbusinesses.name.slice(0, 15)}...</h5>
-                      </div>
 
-                      <div className="d-flex gap-2 align-items-center">
-                        <p>
-                          {similarbusinesses.rating}{" "}
-                          <i className="bi bi-star-fill"></i>{" "}
-                          <i className="bi bi-star-fill"></i>{" "}
-                          <i className="bi bi-star-fill"></i>{" "}
-                          <i className="bi bi-star-fill"></i>{" "}
-                          <i className="bi bi-star-fill"></i>{" "}
-                          {similarbusinesses.reviews}
-                        </p>
-                        <span>|</span>
-                        <p>Web Designer</p>
-                      </div>
-                      <div className="d-flex gap-2 align-items-center">
-                        <p>7 years in business</p>
-                        <span>|</span>
-                        <p>Karnal, Haryana</p>
-                      </div>
-                      <div className="d-flex gap-2 align-items-center">
-                        <div className="opening-hours-container">
-                          <p className={`status ${isOpen ? "open" : "closed"}`}>
-                            {isOpen ? "Open Now" : "Closed Now"}
-                          </p>
-                        </div>
-                        <span>|</span>
-                        <p>Phone: {similarbusinesses.phone}</p>
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-              </div>
-            ))}
-          </div>
+      <div className="contain">
+        <div className="row">
+          <BusinessSimilarListing />
+          <DealOffers />
         </div>
       </div>
     </>
