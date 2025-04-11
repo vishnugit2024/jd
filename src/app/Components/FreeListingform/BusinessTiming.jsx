@@ -225,7 +225,7 @@ const BusinessTiming = ({ setKey }) => {
             className="btn col-md-4 btn-dark apply-time-btn"
             onClick={applyAllDaysTime}
           >
-            Apply to All
+            Apply 
           </button>
         </div>
       </div>
