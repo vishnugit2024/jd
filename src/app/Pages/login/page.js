@@ -8,10 +8,52 @@ import Link from "next/link";
 import Head from "next/head";
 
 const Login = () => {
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+    remember: false,
+  });
+
+  const [errors, setErrors] = useState({});
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
+  };
+
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData({
+      ...formData,
+      [name]: type === "checkbox" ? checked : value,
+    });
+    setErrors({ ...errors, [name]: "" }); // clear error on change
+  };
+
+  const validate = () => {
+    const newErrors = {};
+    const { email, password } = formData;
+
+    if (!email) {
+      newErrors.email = "Email is required.";
+    } else if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
+      newErrors.email = "Invalid email format.";
+    }
+
+    if (!password) {
+      newErrors.password = "Password is required.";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validate()) {
+      console.log("Sign-in data:", formData);
+      // handle login logic here
+    }
   };
 
   return (
@@ -52,18 +94,16 @@ const Login = () => {
         />
         <meta name="twitter:creator" content="@biziffy" />
       </Head>
-
+        <section className="login-section">
       <div className="container py-3">
         <div className="row align-items-center">
           <div className="col-md-6 p-0">
             <div className="login-welcome-content">
-              <div className="login-welcome-image">
-                <Image src={logo} alt="King Logo" />
-              </div>
               <div className="login-welcome-text">
                 <h1>
-                  Welcome to Bizi
+                 <strong> Welcome to Bizi
                   <span style={{ color: "var(--blue)" }}>ff</span>y
+                  </strong>
                 </h1>
                 <p>
                   Biziffy is a platform that allows you to manage your tasks and
@@ -80,18 +120,25 @@ const Login = () => {
                   <p>Sign in to continue</p>
                 </div>
 
-                <form>
+                <form onSubmit={handleSubmit}>
                   <input
                     type="email"
+                    name="email"
                     placeholder="Email"
                     className="login-input mb-3"
+                    value={formData.email}
+                    onChange={handleChange}
                   />
+                  {errors.email && <p className="text-danger">{errors.email}</p>}
 
                   <div className="password-input mb-3 position-relative">
                     <input
                       type={showPassword ? "text" : "password"}
+                      name="password"
                       placeholder="Password"
                       className="login-input w-100"
+                      value={formData.password}
+                      onChange={handleChange}
                     />
                     <p
                       className="show-password-btn position-absolute"
@@ -110,6 +157,7 @@ const Login = () => {
                       )}
                     </p>
                   </div>
+                  {errors.password && <p className="text-danger">{errors.password}</p>}
 
                   <div className="d-flex justify-content-between align-items-center mb-3">
                     <div className="form-check">
@@ -117,6 +165,9 @@ const Login = () => {
                         type="checkbox"
                         className="form-check-input"
                         id="rememberMe"
+                        name="remember"
+                        checked={formData.remember}
+                        onChange={handleChange}
                       />
                       <label className="form-check-label" htmlFor="rememberMe">
                         Remember me
@@ -130,7 +181,9 @@ const Login = () => {
                     </Link>
                   </div>
 
-                  <button className="login-btn w-100">Login</button>
+                  <button type="submit" className="login-btn bg-primary text-white w-100">
+                    Login
+                  </button>
 
                   <p className="text-center">
                     Don’t have an account?{" "}
@@ -144,6 +197,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+        </section>
     </>
   );
 };
