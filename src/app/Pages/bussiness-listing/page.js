@@ -262,7 +262,7 @@ const Page = () => {
           </div>
         </div>
 
-        <div className="container">
+        {/* <div className="container">
           <div className="row">
             <h5>
               <b>Shakubhabi Bamboo Hut in Yamunanagar Ho, Yamunanagar</b>
@@ -301,7 +301,7 @@ const Page = () => {
               Bamboo Hut in Yamunanagar
             </p>
           </div>
-        </div>
+        </div> */}
       </section>
     </>
   );

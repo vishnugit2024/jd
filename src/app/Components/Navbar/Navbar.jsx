@@ -35,6 +35,30 @@ const Header = () => {
   return (
     <>
       <nav className="navbar navbar-expand-lg">
+        {/* <div className="navbar-top">
+          <div className="bg-light border-bottom py-2 px-3 d-flex justify-content-between align-items-center flex-wrap small">
+            <div className="d-flex align-items-center gap-3 mb-2 mb-md-0">
+              <span><i className="bi bi-envelope me-1"></i> info@bizifffy.com</span>
+              <span><i className="bi bi-telephone me-1"></i> +91 9876543210</span>
+            </div>
+
+            <div className="d-flex align-items-center gap-3">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-dark">
+                <i className="bi bi-facebook"></i>
+              </a>
+              <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" className="text-dark">
+                <i className="bi bi-whatsapp"></i>
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-dark">
+                <i className="bi bi-instagram"></i>
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-dark">
+                <i className="bi bi-linkedin"></i>
+              </a>
+            </div>
+          </div>
+
+        </div> */}
         <div className="container">
           <Link className="navbar-brand" href="/">
             <Image src={logo} alt="logo" />
@@ -164,8 +188,11 @@ const Header = () => {
               </li>
             </ul>
             <div className="d-flex align-items-center ">
-              <Link href="/Pages/login" className="login-btn me-2">
-                SignIn / Signup
+              <Link href="/Pages/login" className="btn btn bg-primary text-white me-2">
+                SignIn
+              </Link>
+              <Link href="/Pages/signup" className="btn btn bg-dark text-white me-2">
+                Register
               </Link>
             </div>
 

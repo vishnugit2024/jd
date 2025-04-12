@@ -7,6 +7,15 @@ import Link from "next/link";
 import Head from "next/head";
 
 const Page = () => {
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    password: "",
+    confirmPassword: "",
+  });
+
+  const [errors, setErrors] = useState({});
   const [showPassword, setShowPassword] = useState({
     password: false,
     confirmPassword: false,
@@ -19,6 +28,54 @@ const Page = () => {
     }));
   };
 
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setErrors({ ...errors, [e.target.name]: "" }); // clear error on change
+  };
+
+  const validate = () => {
+    const newErrors = {};
+    const { fullName, email, phone, password, confirmPassword } = formData;
+
+    if (!fullName.trim()) newErrors.fullName = "Full Name is required.";
+    if (!email) {
+      newErrors.email = "Email is required.";
+    } else if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
+      newErrors.email = "Invalid email format.";
+    }
+
+    if (!phone) {
+      newErrors.phone = "Phone number is required.";
+    } else if (!/^\d{10}$/.test(phone)) {
+      newErrors.phone = "Phone number must be 10 digits.";
+    }
+
+    if (!password) {
+      newErrors.password = "Password is required.";
+    } else if (
+      !/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/.test(password)
+    ) {
+      newErrors.password =
+        "Password must be at least 8 characters and include uppercase, lowercase, number, and special character.";
+    }
+
+    if (!confirmPassword) {
+      newErrors.confirmPassword = "Please confirm your password.";
+    } else if (password !== confirmPassword) {
+      newErrors.confirmPassword = "Passwords do not match.";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validate()) {
+      console.log("Form submitted", formData);
+      // handle successful submission here
+    }
+  };
   return (
     <>
       <Head>
@@ -79,22 +136,45 @@ const Page = () => {
                   <p>Create an account to continue</p>
                 </div>
 
-                <form>
+                <form onSubmit={handleSubmit}>
                   <input
                     type="text"
+                    name="fullName"
                     placeholder="Full Name"
                     className="mb-3 login-input"
+                    value={formData.fullName}
+                    onChange={handleChange}
                   />
+                  {errors.fullName && <p className="validation-text">{errors.fullName}</p>}
+
                   <input
                     type="email"
+                    name="email"
                     placeholder="Email"
                     className="login-input mb-3"
+                    value={formData.email}
+                    onChange={handleChange}
                   />
+                  {errors.email && <p className="validation-text">{errors.email}</p>}
+
+                  <input
+                    type="number"
+                    name="phone"
+                    placeholder="Phone No."
+                    className="login-input mb-3"
+                    value={formData.phone}
+                    onChange={handleChange}
+                  />
+                  {errors.phone && <p className="validation-text">{errors.phone}</p>}
+
                   <div className="password-input mb-3 position-relative">
                     <input
                       type={showPassword.password ? "text" : "password"}
+                      name="password"
                       placeholder="Password"
                       className="login-input w-100"
+                      value={formData.password}
+                      onChange={handleChange}
                     />
                     <p
                       className="show-password-btn position-absolute"
@@ -113,11 +193,16 @@ const Page = () => {
                       )}
                     </p>
                   </div>
+                  {errors.password && <p className="validation-text">{errors.password}</p>}
+
                   <div className="password-input mb-3 position-relative">
                     <input
                       type={showPassword.confirmPassword ? "text" : "password"}
+                      name="confirmPassword"
                       placeholder="Confirm Password"
                       className="login-input w-100"
+                      value={formData.confirmPassword}
+                      onChange={handleChange}
                     />
                     <p
                       className="show-password-btn position-absolute"
@@ -127,9 +212,7 @@ const Page = () => {
                         transform: "translateY(-50%)",
                         cursor: "pointer",
                       }}
-                      onClick={() =>
-                        togglePasswordVisibility("confirmPassword")
-                      }
+                      onClick={() => togglePasswordVisibility("confirmPassword")}
                     >
                       {showPassword.confirmPassword ? (
                         <i className="bi bi-eye"></i>
@@ -138,8 +221,13 @@ const Page = () => {
                       )}
                     </p>
                   </div>
+                  {errors.confirmPassword && (
+                    <p className="validation-text">{errors.confirmPassword}</p>
+                  )}
 
-                  <button className="login-btn w-100 mb-3">Get Started</button>
+                  <button className="login-btn bg-dark text-white border-0 w-100 mb-3">
+                    Get Started
+                  </button>
 
                   <p className="text-center">
                     Already have an account?{" "}

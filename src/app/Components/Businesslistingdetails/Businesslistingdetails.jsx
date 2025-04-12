@@ -180,7 +180,7 @@ const Businesslistingdetails = () => {
                   <i className="bi bi-share"></i> Share
                 </Link>
                 <Link href={"#"} className="business-listing-black-btn">
-                  <i className="bi bi-telephone-outbound"></i> Call
+                  <i className="bi bi-telephone-outbound"></i> Contact
                 </Link>
                 <Link href={"#"} className="business-listing-black-btn">
                   <i className="bi bi-globe"></i> Website
@@ -198,9 +198,8 @@ const Businesslistingdetails = () => {
               <ul className="nav nav-tabs mt-">
                 <li className="nav-item">
                   <button
-                    className={`nav-link listing-tabs-btn ${
-                      activeTab === "overview" ? "active" : ""
-                    }`}
+                    className={`nav-link listing-tabs-btn ${activeTab === "overview" ? "active" : ""
+                      }`}
                     onClick={() => setActiveTab("overview")}
                   >
                     Overview
@@ -208,9 +207,8 @@ const Businesslistingdetails = () => {
                 </li>
                 <li className="nav-item">
                   <button
-                    className={`nav-link ${
-                      activeTab === "service" ? "active" : ""
-                    }`}
+                    className={`nav-link ${activeTab === "service" ? "active" : ""
+                      }`}
                     onClick={() => setActiveTab("service")}
                   >
                     Service
@@ -218,9 +216,8 @@ const Businesslistingdetails = () => {
                 </li>
                 <li className="nav-item">
                   <button
-                    className={`nav-link ${
-                      activeTab === "review" ? "active" : ""
-                    }`}
+                    className={`nav-link ${activeTab === "review" ? "active" : ""
+                      }`}
                     onClick={() => setActiveTab("review")}
                   >
                     Review
@@ -228,9 +225,8 @@ const Businesslistingdetails = () => {
                 </li>
                 <li className="nav-item">
                   <button
-                    className={`nav-link ${
-                      activeTab === "photos" ? "active" : ""
-                    }`}
+                    className={`nav-link ${activeTab === "photos" ? "active" : ""
+                      }`}
                     onClick={() => setActiveTab("photos")}
                   >
                     Photos
@@ -238,9 +234,8 @@ const Businesslistingdetails = () => {
                 </li>
                 <li className="nav-item">
                   <button
-                    className={`nav-link ${
-                      activeTab === "social" ? "active" : ""
-                    }`}
+                    className={`nav-link ${activeTab === "social" ? "active" : ""
+                      }`}
                     onClick={() => setActiveTab("social")}
                   >
                     Social Media
@@ -250,9 +245,8 @@ const Businesslistingdetails = () => {
 
               <div className="tab-content mt-3">
                 <div
-                  className={`tab-pane fade ${
-                    activeTab === "overview" ? "show active" : ""
-                  }`}
+                  className={`tab-pane fade ${activeTab === "overview" ? "show active" : ""
+                    }`}
                 >
                   <div>
                     <p>
@@ -260,7 +254,7 @@ const Businesslistingdetails = () => {
                       {expanded
                         ? fullText
                         : words.slice(0, wordLimit).join(" ") +
-                          (isLongText ? "..." : "")}
+                        (isLongText ? "..." : "")}
                       {isLongText && (
                         <button
                           onClick={toggleText}
@@ -378,12 +372,16 @@ const Businesslistingdetails = () => {
                   </div>
                   <hr />
                   <div className="tab-pane">
+                    <p>
+                      <b>Rating Review</b>
+                    </p>
                     <ul className="review-list">
+
                       {reviews.map((review, index) => (
                         <li key={index}>
                           <span className="review-name">
                             {typeof review.author === "string" &&
-                            review.author.length > 0
+                              review.author.length > 0
                               ? review.author.charAt(0)
                               : "?"}
                           </span>
@@ -433,9 +431,8 @@ const Businesslistingdetails = () => {
                 </div>
 
                 <div
-                  className={`tab-pane fade ${
-                    activeTab === "service" ? "show active" : ""
-                  }`}
+                  className={`tab-pane fade ${activeTab === "service" ? "show active" : ""
+                    }`}
                 >
                   <ul className="service-list list-unstyled">
                     {businesses[0].services?.map((service, index) => (
@@ -447,16 +444,18 @@ const Businesslistingdetails = () => {
                   </ul>
                 </div>
                 <div
-                  className={`tab-pane fade ${
-                    activeTab === "review" ? "show active" : ""
-                  }`}
+                  className={`tab-pane fade ${activeTab === "review" ? "show active" : ""
+                    }`}
                 >
+                   <p>
+                      <b>Review Rating</b>
+                    </p>
                   <ul className="review-list">
                     {reviews.map((review, index) => (
                       <li key={index}>
                         <span className="review-name">
                           {typeof review.author === "string" &&
-                          review.author.length > 0
+                            review.author.length > 0
                             ? review.author.charAt(0)
                             : "?"}
                         </span>
@@ -552,9 +551,8 @@ const Businesslistingdetails = () => {
                 </div>
 
                 <div
-                  className={`tab-pane fade ${
-                    activeTab === "photos" ? "show active" : ""
-                  }`}
+                  className={`tab-pane fade ${activeTab === "photos" ? "show active" : ""
+                    }`}
                 >
                   <h4>Photos</h4>
                   <div className="photo-gallery d-flex flex-wrap gap-2">
@@ -578,9 +576,8 @@ const Businesslistingdetails = () => {
                   </div>
                 </div>
                 <div
-                  className={`tab-pane fade ${
-                    activeTab === "social" ? "show active" : ""
-                  }`}
+                  className={`tab-pane fade ${activeTab === "social" ? "show active" : ""
+                    }`}
                 >
                   <h4>Social Media</h4>
                   <div className="socialmedia-details">
@@ -652,7 +649,7 @@ const Businesslistingdetails = () => {
                 />
               </div>
 
-             
+
 
               <div className="mb-3">
                 <label className="form-label">Phone Number</label>
