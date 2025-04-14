@@ -172,7 +172,7 @@ const Businesslistingdetails = () => {
                 alt="Business Image"
                 className="business-detail-image mb-3"
               />
-              <div className="d-flex justify-content-center flex-wrap mb-2 gap-2">
+              <div className="basic-li-detail d-flex flex-wrap mb-2 gap-2">
                 <Link href={"#"} className="business-listing-black-btn">
                   <i className="bi bi-crosshair"></i> Direction
                 </Link>
@@ -265,7 +265,7 @@ const Businesslistingdetails = () => {
                             cursor: "pointer",
                           }}
                         >
-                          {expanded ? "Read Less" : "Read More"}{" "}
+                          {expanded ? "read less" : "read more"}{" "}
                           <i className="bi bi-arrow-right-circle"></i>
                         </button>
                       )}
@@ -676,12 +676,12 @@ const Businesslistingdetails = () => {
             </form>
             {/* add section  */}
 
-            <section className="ads-section my-5">
+            <section className="ads-section my-3">
               <div className="d-flex justify-content-center align-item-center">
                 <Image src={ads} alt="ads" className="img-fluid" />
               </div>
             </section>
-            <section className="ads-section my-5">
+            <section className="ads-section my-3">
               <div className="d-flex justify-content-center align-item-center">
                 <Image src={ads1} alt="ads" className="img-fluid" />
               </div>

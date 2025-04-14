@@ -94,110 +94,120 @@ const Login = () => {
         />
         <meta name="twitter:creator" content="@biziffy" />
       </Head>
-        <section className="login-section">
-      <div className="container py-3">
-        <div className="row align-items-center">
-          <div className="col-md-6 p-0">
-            <div className="login-welcome-content">
-              <div className="login-welcome-text">
-                <h1>
-                 <strong> Welcome to Bizi
-                  <span style={{ color: "var(--blue)" }}>ff</span>y
-                  </strong>
-                </h1>
-                <p>
-                  Biziffy is a platform that allows you to manage your tasks and
-                  projects in a simple way.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-6">
-            <div className="auth-section">
-              <div className="auth-card">
-                <div className="text-center mb-3">
-                  <h4>Welcome Back!</h4>
-                  <p>Sign in to continue</p>
+      <section className="login-section">
+        <div className="container py-3">
+          <div className="row align-items-center">
+            <div className="col-md-6 p-0">
+              <div className="login-welcome-content  d-flex flex-column justify-content-center align-items-center h-100 px-4 position-relative login-welcome-bg">
+
+                {/* Optional Floating Icon/Illustration */}
+                <div className="login-welcome-icon">
+                  <i className="bi bi-briefcase-fill fs-1  glow-icon"></i>
                 </div>
 
-                <form onSubmit={handleSubmit}>
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    className="login-input mb-3"
-                    value={formData.email}
-                    onChange={handleChange}
-                  />
-                  {errors.email && <p className="text-danger">{errors.email}</p>}
+                <div className="login-welcome-text text-center">
+                <h1 className="display-5 fw-bold mb-3">
+                  Welcome Back to Bizi<span style={{color:'var(--blue)'}}>ff</span>y
+                </h1>
+                  <p className="lead mb-2">
+                    Manage your work like a pro — <br /> login to access your dashboard, tasks, and tools.
+                  </p>
+                  <p className="small fst-italic">
+                    Trusted by hundreds of service providers. Be part of the future.
+                  </p>
+                </div>
 
-                  <div className="password-input mb-3 position-relative">
+                {/* Optional: Animated Background or glow effects */}
+                <div className="animated-bg-gradient"></div>
+              </div>
+            </div>
+
+            <div className="col-md-6">
+              <div className="auth-section">
+                <div className="auth-card">
+                  <div className="text-center mb-3">
+                    <h4>Welcome Back!</h4>
+                    <p>Sign in to continue</p>
+                  </div>
+
+                  <form onSubmit={handleSubmit}>
                     <input
-                      type={showPassword ? "text" : "password"}
-                      name="password"
-                      placeholder="Password"
-                      className="login-input w-100"
-                      value={formData.password}
+                      type="email"
+                      name="email"
+                      placeholder="Email"
+                      className="login-input mb-3"
+                      value={formData.email}
                       onChange={handleChange}
                     />
-                    <p
-                      className="show-password-btn position-absolute"
-                      style={{
-                        top: "50%",
-                        right: "15px",
-                        transform: "translateY(-50%)",
-                        cursor: "pointer",
-                      }}
-                      onClick={togglePasswordVisibility}
-                    >
-                      {showPassword ? (
-                        <i className="bi bi-eye"></i>
-                      ) : (
-                        <i className="bi bi-eye-slash"></i>
-                      )}
-                    </p>
-                  </div>
-                  {errors.password && <p className="text-danger">{errors.password}</p>}
+                    {errors.email && <p className="text-danger">{errors.email}</p>}
 
-                  <div className="d-flex justify-content-between align-items-center mb-3">
-                    <div className="form-check">
+                    <div className="password-input mb-3 position-relative">
                       <input
-                        type="checkbox"
-                        className="form-check-input"
-                        id="rememberMe"
-                        name="remember"
-                        checked={formData.remember}
+                        type={showPassword ? "text" : "password"}
+                        name="password"
+                        placeholder="Password"
+                        className="login-input w-100"
+                        value={formData.password}
                         onChange={handleChange}
                       />
-                      <label className="form-check-label" htmlFor="rememberMe">
-                        Remember me
-                      </label>
+                      <p
+                        className="show-password-btn position-absolute"
+                        style={{
+                          top: "50%",
+                          right: "15px",
+                          transform: "translateY(-50%)",
+                          cursor: "pointer",
+                        }}
+                        onClick={togglePasswordVisibility}
+                      >
+                        {showPassword ? (
+                          <i className="bi bi-eye"></i>
+                        ) : (
+                          <i className="bi bi-eye-slash"></i>
+                        )}
+                      </p>
                     </div>
-                    <Link
-                      href="../../Pages/forgot-password"
-                      className="text-decoration-none"
-                    >
-                      Forgot Password?
-                    </Link>
-                  </div>
+                    {errors.password && <p className="text-danger">{errors.password}</p>}
 
-                  <button type="submit" className="login-btn bg-primary text-white w-100">
-                    Login
-                  </button>
+                    <div className="d-flex justify-content-between align-items-center mb-3">
+                      <div className="form-check">
+                        <input
+                          type="checkbox"
+                          className="form-check-input"
+                          id="rememberMe"
+                          name="remember"
+                          checked={formData.remember}
+                          onChange={handleChange}
+                        />
+                        <label className="form-check-label" htmlFor="rememberMe">
+                          Remember me
+                        </label>
+                      </div>
+                      <Link
+                        href="../../Pages/forgot-password"
+                        className="text-decoration-none"
+                      >
+                        Forgot Password?
+                      </Link>
+                    </div>
 
-                  <p className="text-center">
-                    Don’t have an account?{" "}
-                    <Link href="../../Pages/signup" className="text-primary">
-                      Register
-                    </Link>
-                  </p>
-                </form>
+                    <button type="submit" className="login-btn bg-primary text-white w-100">
+                      Login
+                    </button>
+
+                    <p className="text-center">
+                      Don’t have an account?{" "}
+                      <Link href="../../Pages/signup" className="text-primary">
+                        Register
+                      </Link>
+                    </p>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-        </section>
+      </section>
     </>
   );
 };

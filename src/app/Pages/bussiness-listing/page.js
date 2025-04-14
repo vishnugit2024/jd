@@ -174,7 +174,7 @@ const Page = () => {
                             </div>
                             <div>
                               <div className="d-flex gap-3 mb-2 align-items-center">
-                                <h5>{biz.name.slice(0, 18)}...</h5>
+                                <h5>{biz.name.slice(0, 15)}...</h5>
                                 <span className="verified-text">
                                   <i className="bi bi-check-all"></i> Biziffy
                                   Verified
