@@ -113,9 +113,9 @@ const Page = () => {
         <div className="row align-items-center">
           <div className="col-md-6 p-0">
             <div className="login-welcome-content">
-              <div className="login-welcome-image">
+              {/* <div className="login-welcome-image">
                 <Image src={logo} alt="King Logo" />
-              </div>
+              </div> */}
               <div className="login-welcome-text">
                 <h1>
                   Welcome to Bizi

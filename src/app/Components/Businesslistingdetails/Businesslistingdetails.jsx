@@ -142,7 +142,7 @@ const Businesslistingdetails = () => {
 
   return (
     <>
-      <div className="container mt-2">
+      <div className="container mt-4">
         <div className="row">
           <Link href="/Pages/bussiness-listing">
             <button className="black-btn px-4">

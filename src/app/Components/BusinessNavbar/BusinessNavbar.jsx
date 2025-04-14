@@ -67,16 +67,27 @@ const BusinessNavbar = () => {
             <Image src={logo} alt="logo" />
           </Link>
           <div className="business-navbar-search-container">
-            {/* Search Input */}
-            <input
-              type="text"
-              className="hero-search-input"
-              placeholder={animatedText}
-            />
-            <button className="hero-search-btn">
-            <i className="bi bi-search"></i> 
-            </button>
-          </div>
+  {/* Location Selector */}
+  <select className="hero-location-select">
+    <option value="">Select Location</option>
+    <option value="new-york">New York</option>
+    <option value="los-angeles">Los Angeles</option>
+    <option value="chicago">Chicago</option>
+    {/* Add more locations as needed */}
+  </select>
+
+  {/* Search Input */}
+  <input
+    type="text"
+    className="hero-search-input"
+    placeholder={animatedText}
+  />
+  
+  <button className="hero-search-btn">
+    <i className="bi bi-search"></i> 
+  </button>
+</div>
+
           <button
             className="navbar-toggler"
             type="button"
@@ -95,9 +106,12 @@ const BusinessNavbar = () => {
             id="navbarSupportedContent"
             ref={navbarCollapseRef}
           >
-            <div className="d-flex align-items-center justify-content-end">
-              <Link href="/Pages/login" className="login-btn me-2">
-                SignIn / Signup
+            <div className="d-flex align-items-center ">
+              <Link href="/Pages/login" className="btn btn bg-primary text-white me-2">
+                SignIn
+              </Link>
+              <Link href="/Pages/signup" className="btn btn bg-dark text-white me-2">
+                Register
               </Link>
             </div>
             {/* ========== This is Profile code show after login please ========== */}

@@ -14,6 +14,22 @@
     width: 500px;
 }
 
+.hero-location-select {
+    padding: 8px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background-color: transparent;
+  }
+
+  .hero-location-select:focus,
+.hero-location-select:active {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+  
+
 .business-navbar-search-container .hero-search-input {
     background: transparent;
 }
