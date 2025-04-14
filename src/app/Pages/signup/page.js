@@ -5,8 +5,9 @@ import Image from "next/image";
 import "../../Pages/login/login.css";
 import Link from "next/link";
 import Head from "next/head";
-
+import "./signup.css";
 const Page = () => {
+
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -108,139 +109,143 @@ const Page = () => {
         />
         <meta name="twitter:creator" content="@biziffy" />
       </Head>
-
-      <div className="container py-3">
-        <div className="row align-items-center">
-          <div className="col-md-6 p-0">
-            <div className="login-welcome-content">
-              <div className="login-welcome-image">
-                <Image src={logo} alt="King Logo" />
-              </div>
-              <div className="login-welcome-text">
-                <h1>
-                  Welcome to Bizi
-                  <span style={{ color: "var(--blue)" }}>ff</span>y
-                </h1>
-                <p>
-                  Biziffy is a platform that allows you to manage your tasks and
-                  projects in a simple way.
-                </p>
+      <section className="signup-page">
+        <div className="container py-3">
+          <div className="row align-items-center">
+            <div className="col-md-6 p-0">
+              <div className="login-welcome-content d-flex flex-column justify-content-center align-items-center h-100 px-4 py-2">
+                <div className="login-welcome-text text-center">
+                  <div className="login-welcome-icon">
+                    <i className="bi bi-person-plus-fill fs-1 glow-icon"></i>
+                  </div>
+                  <h1 className="display-5 fw-bold mb-3">
+                    Welcome to Bizi<span style={{ color: 'var(--blue)' }}>ff</span>y
+                  </h1>
+                  <p className="lead">
+                    Your all-in-one platform to manage <strong>tasks</strong>, grow your <strong>business</strong>, and connect with <strong>local clients</strong>.
+                  </p>
+                  <hr className="border-light w-50 mx-auto" />
+                  <p className="small fst-italic">
+                    Empowering service providers, one click at a time.
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="col-md-6">
-            <div className="auth-section">
-              <div className="auth-card">
-                <div className="text-center mb-3">
-                  <h4>Register Now</h4>
-                  <p>Create an account to continue</p>
+
+            <div className="col-md-6">
+              <div className="auth-section">
+                <div className="auth-card">
+                  <div className="text-center mb-3">
+                    <h4>Register Now</h4>
+                    <p>Create an account to continue</p>
+                  </div>
+
+                  <form onSubmit={handleSubmit}>
+                    <input
+                      type="text"
+                      name="fullName"
+                      placeholder="Full Name"
+                      className="mb-3 login-input"
+                      value={formData.fullName}
+                      onChange={handleChange}
+                    />
+                    {errors.fullName && <p className="validation-text">{errors.fullName}</p>}
+
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Email"
+                      className="login-input mb-3"
+                      value={formData.email}
+                      onChange={handleChange}
+                    />
+                    {errors.email && <p className="validation-text">{errors.email}</p>}
+
+                    <input
+                      type="number"
+                      name="phone"
+                      placeholder="Phone No."
+                      className="login-input mb-3"
+                      value={formData.phone}
+                      onChange={handleChange}
+                    />
+                    {errors.phone && <p className="validation-text">{errors.phone}</p>}
+
+                    <div className="password-input mb-3 position-relative">
+                      <input
+                        type={showPassword.password ? "text" : "password"}
+                        name="password"
+                        placeholder="Password"
+                        className="login-input w-100"
+                        value={formData.password}
+                        onChange={handleChange}
+                      />
+                      <p
+                        className="show-password-btn position-absolute"
+                        style={{
+                          top: "50%",
+                          right: "15px",
+                          transform: "translateY(-50%)",
+                          cursor: "pointer",
+                        }}
+                        onClick={() => togglePasswordVisibility("password")}
+                      >
+                        {showPassword.password ? (
+                          <i className="bi bi-eye"></i>
+                        ) : (
+                          <i className="bi bi-eye-slash"></i>
+                        )}
+                      </p>
+                    </div>
+                    {errors.password && <p className="validation-text">{errors.password}</p>}
+
+                    <div className="password-input mb-3 position-relative">
+                      <input
+                        type={showPassword.confirmPassword ? "text" : "password"}
+                        name="confirmPassword"
+                        placeholder="Confirm Password"
+                        className="login-input w-100"
+                        value={formData.confirmPassword}
+                        onChange={handleChange}
+                      />
+                      <p
+                        className="show-password-btn position-absolute"
+                        style={{
+                          top: "50%",
+                          right: "15px",
+                          transform: "translateY(-50%)",
+                          cursor: "pointer",
+                        }}
+                        onClick={() => togglePasswordVisibility("confirmPassword")}
+                      >
+                        {showPassword.confirmPassword ? (
+                          <i className="bi bi-eye"></i>
+                        ) : (
+                          <i className="bi bi-eye-slash"></i>
+                        )}
+                      </p>
+                    </div>
+                    {errors.confirmPassword && (
+                      <p className="validation-text">{errors.confirmPassword}</p>
+                    )}
+
+                    <button className="login-btn bg-dark text-white border-0 w-100 mb-3">
+                      Get Started
+                    </button>
+
+                    <p className="text-center">
+                      Already have an account?{" "}
+                      <Link href="../../Pages/login" className="text-primary">
+                        Login
+                      </Link>
+                    </p>
+                  </form>
                 </div>
-
-                <form onSubmit={handleSubmit}>
-                  <input
-                    type="text"
-                    name="fullName"
-                    placeholder="Full Name"
-                    className="mb-3 login-input"
-                    value={formData.fullName}
-                    onChange={handleChange}
-                  />
-                  {errors.fullName && <p className="validation-text">{errors.fullName}</p>}
-
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    className="login-input mb-3"
-                    value={formData.email}
-                    onChange={handleChange}
-                  />
-                  {errors.email && <p className="validation-text">{errors.email}</p>}
-
-                  <input
-                    type="number"
-                    name="phone"
-                    placeholder="Phone No."
-                    className="login-input mb-3"
-                    value={formData.phone}
-                    onChange={handleChange}
-                  />
-                  {errors.phone && <p className="validation-text">{errors.phone}</p>}
-
-                  <div className="password-input mb-3 position-relative">
-                    <input
-                      type={showPassword.password ? "text" : "password"}
-                      name="password"
-                      placeholder="Password"
-                      className="login-input w-100"
-                      value={formData.password}
-                      onChange={handleChange}
-                    />
-                    <p
-                      className="show-password-btn position-absolute"
-                      style={{
-                        top: "50%",
-                        right: "15px",
-                        transform: "translateY(-50%)",
-                        cursor: "pointer",
-                      }}
-                      onClick={() => togglePasswordVisibility("password")}
-                    >
-                      {showPassword.password ? (
-                        <i className="bi bi-eye"></i>
-                      ) : (
-                        <i className="bi bi-eye-slash"></i>
-                      )}
-                    </p>
-                  </div>
-                  {errors.password && <p className="validation-text">{errors.password}</p>}
-
-                  <div className="password-input mb-3 position-relative">
-                    <input
-                      type={showPassword.confirmPassword ? "text" : "password"}
-                      name="confirmPassword"
-                      placeholder="Confirm Password"
-                      className="login-input w-100"
-                      value={formData.confirmPassword}
-                      onChange={handleChange}
-                    />
-                    <p
-                      className="show-password-btn position-absolute"
-                      style={{
-                        top: "50%",
-                        right: "15px",
-                        transform: "translateY(-50%)",
-                        cursor: "pointer",
-                      }}
-                      onClick={() => togglePasswordVisibility("confirmPassword")}
-                    >
-                      {showPassword.confirmPassword ? (
-                        <i className="bi bi-eye"></i>
-                      ) : (
-                        <i className="bi bi-eye-slash"></i>
-                      )}
-                    </p>
-                  </div>
-                  {errors.confirmPassword && (
-                    <p className="validation-text">{errors.confirmPassword}</p>
-                  )}
-
-                  <button className="login-btn bg-dark text-white border-0 w-100 mb-3">
-                    Get Started
-                  </button>
-
-                  <p className="text-center">
-                    Already have an account?{" "}
-                    <Link href="../../Pages/login" className="text-primary">
-                      Login
-                    </Link>
-                  </p>
-                </form>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 };
