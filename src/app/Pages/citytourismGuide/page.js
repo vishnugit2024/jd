@@ -84,7 +84,7 @@ const page = () => {
   return (
     <>
       <Head>
-        <title>Find Top Businesses by Category | Biziffy</title>
+        <title>Find Top Businesses by City | Biziffy</title>
         <meta
           name="description"
           content="Explore local businesses by category on Biziffy. Filter top-rated services like restaurants, salons, plumbers, electricians, and more near you."

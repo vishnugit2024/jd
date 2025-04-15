@@ -110,7 +110,7 @@ const categories = [
     id: 15,
     title: "Resturants",
     icon: HOMERESTURANT,
-    link: "/WebDevelopment",
+    link: "/Pages/subCategoryFilter",
   },
   {
     id: 16,
@@ -139,7 +139,7 @@ const BussinessCategory = () => {
           {categories.map((category) => (
             <div key={category.id} className="col-lg-2 col-md-3 col-sm-4 col-4">
               <Link
-                href={"/Pages/bussiness-listing"}
+                href={category.link}
                 alt={category.title}
                 className="text-decoration-none"
               >
@@ -155,11 +155,11 @@ const BussinessCategory = () => {
               </Link>
             </div>
           ))}
-          <div className="d-flex justify-content-center mt-3">
+          {/* <div className="d-flex justify-content-center mt-3">
             <Link className="login-btn" href="../../Pages/all-categories">
               View All <i className="bi bi-eye"></i>
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </>

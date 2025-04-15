@@ -5,8 +5,9 @@ import "../../Pages/freelistingform/freelistingform.css";
 const BusinessCategory = ({ setKey }) => {
   const [category, setCategory] = useState([]);
   const [businessImages, setBusinessImages] = useState([]);
-  const [services, setServices] = useState("");
   const [about, setAbout] = useState("");
+  // const [keywords, setKeywords] = useState([]);
+  // const [input, setInput] = useState("");
 
   const handleSelectChange = (e) => {
     const selectedValues = Array.from(
@@ -27,6 +28,20 @@ const BusinessCategory = ({ setKey }) => {
     const imageUrls = files.map((file) => URL.createObjectURL(file));
     setBusinessImages((prevImages) => [...prevImages, ...imageUrls]);
   };
+
+  // const handleKeyDown = (e) => {
+  //   if (e.key === "Enter" && input.trim()) {
+  //     e.preventDefault();
+  //     if (!keywords.includes(input.trim())) {
+  //       setKeywords([...keywords, input.trim()]);
+  //     }
+  //     setInput("");
+  //   }
+  // };
+
+  // const removeKeyword = (indexToRemove) => {
+  //   setKeywords(keywords.filter((_, index) => index !== indexToRemove));
+  // };
 
   const removeImage = (index) => {
     setBusinessImages((prevImages) => prevImages.filter((_, i) => i !== index));
@@ -94,6 +109,33 @@ const BusinessCategory = ({ setKey }) => {
           ))}
         </div>
       </div>
+
+      {/* <div className="mb-3">
+        <label className="form-label">
+          Add business keyword<sup>*</sup>
+        </label>
+        <input
+          type="text"
+          value={input}
+          className="form-control"
+          onChange={(e) => setInput(e.target.value)}
+          onKeyDown={handleKeyDown}
+          placeholder="Add business keyword..."
+        />
+        <div className="mt-2">
+          {keywords.map((keyword, index) => (
+            <span key={index} className="badge bg-primary m-1 p-2" required>
+              {keyword}
+              <button
+                type="button"
+                className="btn-close ms-2 bg-danger"
+                onClick={() => removeKeyword(index)}
+                aria-label="Remove"
+              ></button>
+            </span>
+          ))}
+        </div>
+      </div> */}
 
       <div className="mb-3">
         <label className="form-label">
