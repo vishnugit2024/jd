@@ -2,8 +2,6 @@
 "use client";
 import React, { useState } from "react";
 import "./login.css";
-import logo from "../../Images/logo.jpg";
-import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
 
