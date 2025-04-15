@@ -6,8 +6,8 @@ const BusinessCategory = ({ setKey }) => {
   const [category, setCategory] = useState([]);
   const [businessImages, setBusinessImages] = useState([]);
   const [about, setAbout] = useState("");
-  const [keywords, setKeywords] = useState([]);
-  const [input, setInput] = useState("");
+  // const [keywords, setKeywords] = useState([]);
+  // const [input, setInput] = useState("");
 
   const handleSelectChange = (e) => {
     const selectedValues = Array.from(
@@ -29,19 +29,19 @@ const BusinessCategory = ({ setKey }) => {
     setBusinessImages((prevImages) => [...prevImages, ...imageUrls]);
   };
 
-  const handleKeyDown = (e) => {
-    if (e.key === "Enter" && input.trim()) {
-      e.preventDefault();
-      if (!keywords.includes(input.trim())) {
-        setKeywords([...keywords, input.trim()]);
-      }
-      setInput("");
-    }
-  };
+  // const handleKeyDown = (e) => {
+  //   if (e.key === "Enter" && input.trim()) {
+  //     e.preventDefault();
+  //     if (!keywords.includes(input.trim())) {
+  //       setKeywords([...keywords, input.trim()]);
+  //     }
+  //     setInput("");
+  //   }
+  // };
 
-  const removeKeyword = (indexToRemove) => {
-    setKeywords(keywords.filter((_, index) => index !== indexToRemove));
-  };
+  // const removeKeyword = (indexToRemove) => {
+  //   setKeywords(keywords.filter((_, index) => index !== indexToRemove));
+  // };
 
   const removeImage = (index) => {
     setBusinessImages((prevImages) => prevImages.filter((_, i) => i !== index));
@@ -110,7 +110,7 @@ const BusinessCategory = ({ setKey }) => {
         </div>
       </div>
 
-      <div className="mb-3">
+      {/* <div className="mb-3">
         <label className="form-label">
           Add business keyword<sup>*</sup>
         </label>
@@ -135,7 +135,8 @@ const BusinessCategory = ({ setKey }) => {
             </span>
           ))}
         </div>
-      </div>
+      </div> */}
+
       <div className="mb-3">
         <label className="form-label">
           About Your Business <sup>*</sup>
