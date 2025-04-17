@@ -39,21 +39,10 @@ const BusinessDetails = ({ setKey }) => {
           className="form-control"
           name="businessName"
           onChange={handleChange}
-          required
+          // required
         />
       </div>
-      <div className="mb-3">
-        <label className="form-label">
-          Pin Code<sup>*</sup>
-        </label>
-        <input
-          type="text"
-          className="form-control"
-          name="pinCode"
-          onChange={handleChange}
-          required
-        />
-      </div>
+     
       <div className="mb-3">
         <label className="form-label">
           Building/Block No<sup>*</sup>
@@ -63,7 +52,7 @@ const BusinessDetails = ({ setKey }) => {
           className="form-control"
           name="building"
           onChange={handleChange}
-          required
+          // required
         />
       </div>
       <div className="mb-3">
@@ -75,7 +64,7 @@ const BusinessDetails = ({ setKey }) => {
           className="form-control"
           name="street"
           onChange={handleChange}
-          required
+          // required
         />
       </div>
       <div className="mb-3">
@@ -87,7 +76,7 @@ const BusinessDetails = ({ setKey }) => {
           className="form-control"
           name="area"
           onChange={handleChange}
-          required
+          // required
         />
       </div>
 
@@ -111,7 +100,7 @@ const BusinessDetails = ({ setKey }) => {
           className="form-control"
           name="city"
           onChange={handleChange}
-          required
+          // required
         />
       </div>
       <div className="mb-3">
@@ -123,7 +112,19 @@ const BusinessDetails = ({ setKey }) => {
           className="form-control"
           name="state"
           onChange={handleChange}
-          required
+          // required
+        />
+      </div>
+      <div className="mb-3">
+        <label className="form-label">
+          Pin Code<sup>*</sup>
+        </label>
+        <input
+          type="text"
+          className="form-control"
+          name="pinCode"
+          onChange={handleChange}
+          // required
         />
       </div>
 
