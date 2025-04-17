@@ -1,57 +1,97 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "../../Pages/freelistingform/freelistingform.css";
 
 const BusinessCategory = ({ setKey }) => {
   const [category, setCategory] = useState([]);
   const [businessImages, setBusinessImages] = useState([]);
   const [about, setAbout] = useState("");
-  // const [keywords, setKeywords] = useState([]);
-  // const [input, setInput] = useState("");
+  const [keywords, setKeywords] = useState([]);
+  const [input, setInput] = useState("");
+  const [areas, setAreas] = useState([]);
+
+  useEffect(() => {
+    const fetchAreas = async () => {
+      try {
+        const res = await axios.get(
+          "https://jsonplaceholder.typicode.com/users"
+        );
+        const areaList = res.data.map(
+          (user) => `${user.address.city} ${user.address.zipcode}`
+        );
+        setAreas(areaList);
+      } catch (error) {
+        console.error("Error fetching areas:", error);
+      }
+    };
+    fetchAreas();
+  }, []);
 
   const handleSelectChange = (e) => {
-    const selectedValues = Array.from(
-      e.target.selectedOptions,
-      (option) => option.value
-    );
-    setCategory((prevCategories) => [
-      ...new Set([...prevCategories, ...selectedValues]),
-    ]);
-  };
-
-  const removeCategory = (categoryToRemove) => {
-    setCategory(category.filter((cat) => cat !== categoryToRemove));
+    const values = Array.from(e.target.selectedOptions, (o) => o.value);
+    setCategory((prev) => [...new Set([...prev, ...values])]);
   };
 
   const handleImageChange = (e) => {
-    const files = Array.from(e.target.files);
-    const imageUrls = files.map((file) => URL.createObjectURL(file));
-    setBusinessImages((prevImages) => [...prevImages, ...imageUrls]);
+    const imageUrls = Array.from(e.target.files).map((file) =>
+      URL.createObjectURL(file)
+    );
+    setBusinessImages((prev) => [...prev, ...imageUrls]);
   };
 
-  // const handleKeyDown = (e) => {
-  //   if (e.key === "Enter" && input.trim()) {
-  //     e.preventDefault();
-  //     if (!keywords.includes(input.trim())) {
-  //       setKeywords([...keywords, input.trim()]);
-  //     }
-  //     setInput("");
-  //   }
-  // };
-
-  // const removeKeyword = (indexToRemove) => {
-  //   setKeywords(keywords.filter((_, index) => index !== indexToRemove));
-  // };
-
-  const removeImage = (index) => {
-    setBusinessImages((prevImages) => prevImages.filter((_, i) => i !== index));
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter" && input.trim()) {
+      e.preventDefault();
+      if (!keywords.includes(input.trim()))
+        setKeywords([...keywords, input.trim()]);
+      setInput("");
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     setKey("timing");
   };
+
+  const removeItem = (list, setList, item) =>
+    setList(list.filter((el) => el !== item));
+  const removeByIndex = (list, setList, index) =>
+    setList(list.filter((_, i) => i !== index));
+
+  // ======= Service Area search =========
+  const [serviceArea, setServiceArea] = useState([]);
+  const [serviceAreainput, setServiceAreaInput] = useState("");
+
+  const handleSelect = (area) => {
+    if (!serviceArea.includes(area)) {
+      setServiceArea([...serviceArea, area]);
+    }
+    setServiceAreaInput("");
+  };
+
+  const removeServiceAreaItem = (itemToRemove) => {
+    setServiceArea(serviceArea.filter((item) => item !== itemToRemove));
+  };
+
+  const filteredAreas = areas.filter(
+    (area) =>
+      area.toLowerCase().includes(serviceAreainput.toLowerCase()) &&
+      !serviceArea.includes(area)
+  );
+
+  const categories = [
+    "Construction",
+    "Real Estate",
+    "Education",
+    "Retail",
+    "Healthcare",
+    "Technology",
+    "Finance",
+    "Hospitality",
+    "Automotive",
+    "Manufacturing",
+  ];
 
   return (
     <form onSubmit={handleSubmit}>
@@ -59,41 +99,33 @@ const BusinessCategory = ({ setKey }) => {
         Select Business Category<sup>*</sup>
       </h5>
 
+      {/* Category Selection */}
       <div className="mb-3">
         <label className="form-label">
           Select Business Category <sup>*</sup>
         </label>
         <select className="form-control" required>
           <option value="">Select Your Category</option>
-          <option value="Construction">Construction</option>
-          <option value="Real Estate">Real Estate</option>
-          <option value="Education">Education</option>
-          <option value="Retail">Retail</option>
-          <option value="Healthcare">Healthcare</option>
-          <option value="Technology">Technology</option>
-          <option value="Finance">Finance</option>
-          <option value="Hospitality">Hospitality</option>
-          <option value="Automotive">Automotive</option>
-          <option value="Manufacturing">Manufacturing</option>
+          {categories.map((cat) => (
+            <option key={cat} value={cat}>
+              {cat}
+            </option>
+          ))}
         </select>
       </div>
 
+      {/* Subcategory Selection */}
       <div className="mb-3">
         <label className="form-label">
           Select Business SubCategory <sup>*</sup>
         </label>
         <select className="form-control" required onChange={handleSelectChange}>
           <option value="">Select Your SubCategory</option>
-          <option value="Construction">Construction</option>
-          <option value="Real Estate">Real Estate</option>
-          <option value="Education">Education</option>
-          <option value="Retail">Retail</option>
-          <option value="Healthcare">Healthcare</option>
-          <option value="Technology">Technology</option>
-          <option value="Finance">Finance</option>
-          <option value="Hospitality">Hospitality</option>
-          <option value="Automotive">Automotive</option>
-          <option value="Manufacturing">Manufacturing</option>
+          {categories.map((cat) => (
+            <option key={cat} value={cat}>
+              {cat}
+            </option>
+          ))}
         </select>
         <div className="mt-2">
           {category.map((cat) => (
@@ -102,17 +134,18 @@ const BusinessCategory = ({ setKey }) => {
               <button
                 type="button"
                 className="btn-close ms-2 bg-danger"
-                onClick={() => removeCategory(cat)}
+                onClick={() => removeItem(category, setCategory, cat)}
                 aria-label="Remove"
-              ></button>
+              />
             </span>
           ))}
         </div>
       </div>
 
-      {/* <div className="mb-3">
+      {/* Services Input */}
+      <div className="mb-3">
         <label className="form-label">
-          Add business keyword<sup>*</sup>
+          Business Services<sup>*</sup>
         </label>
         <input
           type="text"
@@ -120,23 +153,66 @@ const BusinessCategory = ({ setKey }) => {
           className="form-control"
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyDown}
-          placeholder="Add business keyword..."
+          placeholder="Business Services"
         />
         <div className="mt-2">
           {keywords.map((keyword, index) => (
-            <span key={index} className="badge bg-primary m-1 p-2" required>
+            <span key={index} className="badge bg-primary m-1 p-2">
               {keyword}
               <button
                 type="button"
                 className="btn-close ms-2 bg-danger"
-                onClick={() => removeKeyword(index)}
+                onClick={() => removeByIndex(keywords, setKeywords, index)}
                 aria-label="Remove"
-              ></button>
+              />
             </span>
           ))}
         </div>
-      </div> */}
+      </div>
 
+      {/* Area Selection */}
+      <div className="mb-3 position-relative">
+        <label className="form-label">
+          Services Area/Pincode<sup>*</sup>
+        </label>
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Services Area/Pincode"
+          value={serviceAreainput}
+          onChange={(e) => setServiceAreaInput(e.target.value)}
+        />
+        {serviceAreainput && filteredAreas.length > 0 && (
+          <ul className="list-group position-absolute z-3 w-100">
+            {filteredAreas.map((area) => (
+              <li
+                key={area}
+                className="list-group-item list-group-item-action"
+                onClick={() => handleSelect(area)}
+                style={{ cursor: "pointer" }}
+              >
+                {area}
+              </li>
+            ))}
+          </ul>
+        )}
+
+        <div className="mt-2">
+          {serviceArea.map((serarea) => (
+            <span key={serarea} className="badge bg-primary m-1 p-2">
+              {serarea}
+              <button
+                type="button"
+                className="btn-close ms-2 bg-danger"
+                onClick={() => removeServiceAreaItem(serarea)}
+                aria-label="Remove"
+              />
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* About Section */}
       <div className="mb-3">
         <label className="form-label">
           About Your Business <sup>*</sup>
@@ -151,10 +227,10 @@ const BusinessCategory = ({ setKey }) => {
         />
       </div>
 
+      {/* Image Upload */}
       <div className="mb-3">
         <label className="form-label">
-          Upload Business Photos{" "}
-          <span style={{ color: "red" }}>(Optional)</span>
+          Upload Business Photos <span className="text-danger">(Optional)</span>
         </label>
         <input
           type="file"
@@ -177,15 +253,17 @@ const BusinessCategory = ({ setKey }) => {
               <button
                 type="button"
                 className="btn-close position-absolute top-0 start-100 translate-middle bg-danger"
-                onClick={() => removeImage(index)}
+                onClick={() =>
+                  removeByIndex(businessImages, setBusinessImages, index)
+                }
                 aria-label="Remove"
-              ></button>
+              />
             </div>
           ))}
         </div>
       </div>
+
       <button type="submit" className="btn btn-primary w-100 py-3">
-        {" "}
         Next
       </button>
     </form>

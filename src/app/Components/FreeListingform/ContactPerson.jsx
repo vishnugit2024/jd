@@ -61,7 +61,7 @@ const ContactPerson = ({ setKey }) => {
           className="form-control"
           name="firstName"
           onChange={handleChange}
-          required
+          // required
         />
       </div>
       <div className="mb-3">
@@ -73,7 +73,7 @@ const ContactPerson = ({ setKey }) => {
           className="form-control"
           name="lastName"
           onChange={handleChange}
-          required
+          // required
         />
       </div>
 
@@ -86,7 +86,7 @@ const ContactPerson = ({ setKey }) => {
           className="form-control"
           name="contactNumber"
           onChange={handleChange}
-          required
+          // required
         />
       </div>
 
@@ -117,7 +117,7 @@ const ContactPerson = ({ setKey }) => {
         </label>
         <input
           type="tel"
-          required
+          // required
           className="form-control"
           name="whatsappNumber"
           onChange={handleChange}
@@ -133,7 +133,7 @@ const ContactPerson = ({ setKey }) => {
           className="form-control"
           name="email"
           onChange={handleChange}
-          required
+          // required
         />
       </div>
 
