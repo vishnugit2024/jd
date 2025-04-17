@@ -15,11 +15,9 @@ const BusinessCategory = ({ setKey }) => {
     const fetchAreas = async () => {
       try {
         const res = await axios.get(
-          "https://jsonplaceholder.typicode.com/users"
+          "https://6800d7ffb72e9cfaf728eac6.mockapi.io/areapincode"
         );
-        const areaList = res.data.map(
-          (user) => `${user.address.city} ${user.address.zipcode}`
-        );
+        const areaList = res.data.map((user) => `${user.area} ${user.pincode}`);
         setAreas(areaList);
       } catch (error) {
         console.error("Error fetching areas:", error);

@@ -15,12 +15,10 @@ const Enquiryform = () => {
     if (!isSubmitted) {
       let delay;
 
-      // Delay logic based on attempts
-      if (attemptCount === 0) delay = 5000; // First attempt: 5s
-      else if (attemptCount === 1) delay = 15000; // Second attempt: 15s
-      else delay = 30000; // Third attempt onwards: 30s
+      if (attemptCount === 0) delay = 5000;
+      else if (attemptCount === 1) delay = 15000;
+      else delay = 30000;
 
-      // Ensure correct delay if user has closed the form before
       if (!lastClosed || Date.now() - lastClosed > delay) {
         const timer = setTimeout(() => setShow(true), delay);
         return () => clearTimeout(timer);
@@ -38,7 +36,7 @@ const Enquiryform = () => {
   const handleClose = () => {
     let attemptCount = parseInt(localStorage.getItem("formAttemptCount")) || 0;
     localStorage.setItem("contactFormClosed", Date.now());
-    localStorage.setItem("formAttemptCount", attemptCount + 1); // Increase attempt count
+    localStorage.setItem("formAttemptCount", attemptCount + 1);
     setShow(false);
   };
 
